@@ -24,7 +24,7 @@ permissions:
   contents: read
 
 env:
-  TAP_REPO: x6nux/homebrew-zedg
+  TAP_REPO: ${{ github.repository_owner }}/homebrew-zedg
 
 jobs:
   update-cask:

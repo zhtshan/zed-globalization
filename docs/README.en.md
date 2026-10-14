@@ -10,11 +10,11 @@ An AI-driven localization toolchain for the [Zed Editor](https://github.com/zed-
 
 ## Download
 
-Get the pre-built binaries from [Releases](https://github.com/x6nux/zed-globalization/releases/latest):
+Get the pre-built binaries from [Releases](https://github.com/zhtshan/zed-globalization/releases/latest):
 
 | Platform | File | Installation |
 |----------|------|-------------|
-| macOS (Universal) | `zedg-zh-cn-macos-universal-*.dmg` | `brew tap x6nux/zedg && brew install --cask zedg` ([more](#macos-installation)) |
+| macOS (Universal) | `zedg-zh-cn-macos-universal-*.dmg` | `brew tap zhtshan/zedg && brew install --cask zedg` ([more](#macos-installation)) |
 | macOS (Apple Silicon) | `zedg-zh-cn-macos-aarch64-*.dmg` | DMG manual install |
 | macOS (Intel) | `zedg-zh-cn-macos-x86_64-*.dmg` | DMG manual install |
 | Windows (x64) | `zedg-zh-cn-windows-x86_64-*.zip` | `scoop install zedg` ([more](#windows-scoop)) |
@@ -31,14 +31,14 @@ Get the pre-built binaries from [Releases](https://github.com/x6nux/zed-globaliz
 **Stable (Recommended):**
 
 ```bash
-brew tap x6nux/zedg
+brew tap zhtshan/zedg
 brew install --cask zedg
 ```
 
 **Preview (Pre-release):**
 
 ```bash
-brew tap x6nux/zedg
+brew tap zhtshan/zedg
 brew install --cask zedg-preview
 ```
 
@@ -55,14 +55,14 @@ sudo xattr -rd com.apple.quarantine /Applications/ZedG.app
 Stable:
 
 ```powershell
-scoop bucket add zedg https://github.com/x6nux/scoop-zedg
+scoop bucket add zedg https://github.com/zhtshan/scoop-zedg
 scoop install zedg
 ```
 
 Preview (Pre-release):
 
 ```powershell
-scoop bucket add zedg https://github.com/x6nux/scoop-zedg
+scoop bucket add zedg https://github.com/zhtshan/scoop-zedg
 scoop install zedg-preview
 ```
 
@@ -185,9 +185,9 @@ Multiple layers ensure Rust compilation safety during source replacement:
 
 [MIT](../LICENSE)
 
-[stars-url]: https://github.com/x6nux/zed-globalization/stargazers
-[stars-image]: https://img.shields.io/github/stars/x6nux/zed-globalization?style=flat-square&logo=github
-[download-url]: https://github.com/x6nux/zed-globalization/releases/latest
-[download-image]: https://img.shields.io/github/downloads/x6nux/zed-globalization/total?style=flat-square&logo=github
-[license-url]: https://github.com/x6nux/zed-globalization/blob/main/LICENSE
-[license-image]: https://img.shields.io/github/license/x6nux/zed-globalization?style=flat-square
+[stars-url]: https://github.com/zhtshan/zed-globalization/stargazers
+[stars-image]: https://img.shields.io/github/stars/zhtshan/zed-globalization?style=flat-square&logo=github
+[download-url]: https://github.com/zhtshan/zed-globalization/releases/latest
+[download-image]: https://img.shields.io/github/downloads/zhtshan/zed-globalization/total?style=flat-square&logo=github
+[license-url]: https://github.com/zhtshan/zed-globalization/blob/main/LICENSE
+[license-image]: https://img.shields.io/github/license/zhtshan/zed-globalization?style=flat-square

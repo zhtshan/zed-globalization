@@ -10,11 +10,11 @@
 
 ## 다운로드
 
-[Releases](https://github.com/x6nux/zed-globalization/releases/latest)에서 빌드된 바이너리를 다운로드:
+[Releases](https://github.com/zhtshan/zed-globalization/releases/latest)에서 빌드된 바이너리를 다운로드:
 
 | 플랫폼 | 파일 | 설치 방법 |
 |--------|------|----------|
-| macOS (Universal) | `zedg-zh-cn-macos-universal-*.dmg` | `brew tap x6nux/zedg && brew install --cask zedg` ([자세히](#macos-설치)) |
+| macOS (Universal) | `zedg-zh-cn-macos-universal-*.dmg` | `brew tap zhtshan/zedg && brew install --cask zedg` ([자세히](#macos-설치)) |
 | macOS (Apple Silicon) | `zedg-zh-cn-macos-aarch64-*.dmg` | DMG 수동 설치 |
 | macOS (Intel) | `zedg-zh-cn-macos-x86_64-*.dmg` | DMG 수동 설치 |
 | Windows (x64) | `zedg-zh-cn-windows-x86_64-*.zip` | `scoop install zedg` ([자세히](#windows-scoop)) |
@@ -31,14 +31,14 @@
 **안정 버전 (권장):**
 
 ```bash
-brew tap x6nux/zedg
+brew tap zhtshan/zedg
 brew install --cask zedg
 ```
 
 **프리뷰 버전 (Pre-release):**
 
 ```bash
-brew tap x6nux/zedg
+brew tap zhtshan/zedg
 brew install --cask zedg-preview
 ```
 
@@ -55,14 +55,14 @@ sudo xattr -rd com.apple.quarantine /Applications/ZedG.app
 안정 버전:
 
 ```powershell
-scoop bucket add zedg https://github.com/x6nux/scoop-zedg
+scoop bucket add zedg https://github.com/zhtshan/scoop-zedg
 scoop install zedg
 ```
 
 프리뷰 버전 (Pre-release):
 
 ```powershell
-scoop bucket add zedg https://github.com/x6nux/scoop-zedg
+scoop bucket add zedg https://github.com/zhtshan/scoop-zedg
 scoop install zedg-preview
 ```
 
@@ -185,9 +185,9 @@ zed-globalization/
 
 [MIT](../LICENSE)
 
-[stars-url]: https://github.com/x6nux/zed-globalization/stargazers
-[stars-image]: https://img.shields.io/github/stars/x6nux/zed-globalization?style=flat-square&logo=github
-[download-url]: https://github.com/x6nux/zed-globalization/releases/latest
-[download-image]: https://img.shields.io/github/downloads/x6nux/zed-globalization/total?style=flat-square&logo=github
-[license-url]: https://github.com/x6nux/zed-globalization/blob/main/LICENSE
-[license-image]: https://img.shields.io/github/license/x6nux/zed-globalization?style=flat-square
+[stars-url]: https://github.com/zhtshan/zed-globalization/stargazers
+[stars-image]: https://img.shields.io/github/stars/zhtshan/zed-globalization?style=flat-square&logo=github
+[download-url]: https://github.com/zhtshan/zed-globalization/releases/latest
+[download-image]: https://img.shields.io/github/downloads/zhtshan/zed-globalization/total?style=flat-square&logo=github
+[license-url]: https://github.com/zhtshan/zed-globalization/blob/main/LICENSE
+[license-image]: https://img.shields.io/github/license/zhtshan/zed-globalization?style=flat-square

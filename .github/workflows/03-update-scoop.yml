@@ -54,7 +54,7 @@ jobs:
           SCOOP_PAT: ${{ secrets.TAP_GITHUB_TOKEN }}
         run: |
           set -e
-          BUCKET_REPO="https://x-access-token:${SCOOP_PAT}@github.com/x6nux/scoop-zedg.git"
+          BUCKET_REPO="https://x-access-token:${SCOOP_PAT}@github.com/${{ github.repository_owner }}/scoop-zedg.git"
 
           # ── 等待并获取 Windows 产物 URL ────────────────────────────
           fetch_assets() {
@@ -206,7 +206,7 @@ jobs:
             fi
           fi
 
-          # ── 推送到 x6nux/scoop-zedg ───────────────────────────────
+          # ── 推送到 <owner>/scoop-zedg ───────────────────────────────
           git clone --depth 1 "$BUCKET_REPO" /tmp/scoop-zedg
           cd /tmp/scoop-zedg
           git config user.name "github-actions[bot]"
