@@ -2098,7 +2098,7 @@ jobs:
           <plist version="1.0">
           <dict>
               <key>CFBundleExecutable</key><string>zed</string>
-              <key>CFBundleIdentifier</key><string>dev.zed.ZedG</string>
+              <key>CFBundleIdentifier</key><string>dev.zed.Zed</string>
               <key>CFBundleName</key><string>ZedG</string>
               <key>CFBundleIconFile</key><string>AppIcon</string>
               <key>CFBundlePackageType</key><string>APPL</string>

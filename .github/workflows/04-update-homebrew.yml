@@ -133,8 +133,8 @@ jobs:
 
             zap trash: [
               "~/Library/Application Support/Zed",
-              "~/Library/Caches/dev.zed.ZedG",
-              "~/Library/Preferences/dev.zed.ZedG.plist",
+              "~/Library/Caches/dev.zed.Zed",
+              "~/Library/Preferences/dev.zed.Zed.plist",
             ]
           end
           CASK
@@ -211,8 +211,8 @@ jobs:
 
             zap trash: [
               "~/Library/Application Support/Zed",
-              "~/Library/Caches/dev.zed.ZedG",
-              "~/Library/Preferences/dev.zed.ZedG.plist",
+              "~/Library/Caches/dev.zed.Zed",
+              "~/Library/Preferences/dev.zed.Zed.plist",
             ]
           end
           CASK
