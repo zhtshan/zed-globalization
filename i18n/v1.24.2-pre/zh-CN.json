@@ -11461,7 +11461,7 @@
         "changes/nested/untracked.txt": "",
         "`changes` directory should be present in the Git panel": "",
         "Git panel should have an active repository": "",
-        "{prompt}{user_agents_md_section}{rules_section}{instructions_section}{subject_section}\\nHere are the changes in this commit:\\n{diff_text}": "{prompt}{user_agents_md_section}{rules_section}{instructions_section}{subject_section}\\n以下是此提交中的更改:\\n{diff_text}",
+        "{prompt}{user_agents_md_section}{rules_section}{instructions_section}{subject_section}\\nHere are the changes in this commit:\\n{diff_text}": "{prompt}{user_agents_md_section}{rules_section}{instructions_section}{subject_section}\\n以下是本次提交的更改:\\n{diff_text}",
         "src/\\n": "",
         "Show Commit Editor": "显示提交编辑器",
         "Hide Commit Editor": "隐藏提交编辑器",
@@ -14174,7 +14174,7 @@
         "authenticated": "已认证",
         "-embed": "",
         "": "",
-        "Only tool result should be extracted": "",
+        "Only tool result should be extracted": "应只提取工具结果",
         "ollama/{}": "",
         "{}-{}": "",
         "63e02e...": "",
@@ -14746,7 +14746,7 @@
         "Focus an editor to show a new tree view": "请聚焦一个编辑器以显示新的语法树视图",
         "Syntax Tree": "语法树",
         "{} {}": "{} {}",
-        "syntax tree header": "",
+        "syntax tree header": "语法树标题",
         "syntax-view-update": "",
         "Update view to '{active_tab_name}'": "将视图更新为 '{active_tab_name}'",
         "[{}:{} - {}:{}]": "[{}:{} - {}:{}]",
@@ -53506,8 +53506,8 @@
         "a<span>b</span>c": "",
         "a<em>b</em>c": "",
         "a<strong>b</strong>c": "",
-        "unrecognized inline HTML \\\"{input}\\\" should emit InlineHtml": "无法识别的内联HTML \"{input}\" 应发出内联HTML",
-        "unrecognized inline HTML \\\"{input}\\\" should not emit HardBreak": "无法识别的内联HTML \"{input}\" 不应发出硬换行",
+        "unrecognized inline HTML \\\"{input}\\\" should emit InlineHtml": "无法识别的内联 HTML \\\"{input}\\\" 应发出 InlineHtml",
+        "unrecognized inline HTML \\\"{input}\\\" should not emit HardBreak": "无法识别的内联 HTML \\\"{input}\\\" 不应发出 HardBreak",
         "&nbsp;&nbsp; https://some.url some \\`&#9658;\\` text": "",
         " ": "",
         "-- --- ... \"double quoted\" 'single quoted' ----------": "",
@@ -60557,7 +60557,9 @@
         "let one = </": "",
         "// inside second function </": "",
         "organized </": "",
-        "สวัสดีชาวโลกนนี่คือข้อความทดสอบภาษาไทย": ""
+        "สวัสดีชาวโลกนนี่คือข้อความทดสอบภาษาไทย": "",
+        "fn main() {\\n    println!(\\\"🙂\\\");  \\n}\\n": "",
+        "fn main() {\\n    println!(\\\"🙂\\\");\\n}\\n": ""
     },
     "zed/crates/project/tests/integration/search.rs": {
         "file": "",
@@ -74740,7 +74742,7 @@
         "hidden_files": "",
         "read_only_files": "",
         "Failed to parse globs from {}": "无法从 {} 解析 glob",
-        "Failed to compile patterns in `{context}`: {error}": "无法编译 `{context}` 中的模式: {error}",
+        "Failed to compile patterns in `{context}`: {error}": "无法在上下文 `{context}` 中编译模式: {error}",
         "Failed to compile patterns in `file_scan_inclusions`: {error}": "无法编译 `file_scan_inclusions` 中的模式: {error}",
         "}": "",
         "{}*{closing_braces}": "",
@@ -78480,7 +78482,7 @@
         "scenario failed\nstdout:\n{stdout}\nstderr:\n{}": "",
         "the transition fails": "",
         "expected an error containing {expected:?}, got: {error:#}": "",
-        "scenario failed\\nstdout:\\n{stdout}\\nstderr:\\n{}": ""
+        "scenario failed\\nstdout:\\n{stdout}\\nstderr:\\n{}": "场景测试失败\nstdout:\n{stdout}\nstderr:\n{}"
     },
     "zed/crates/gpui_linux/src/linux/text_system.rs": {
         "": "",
@@ -88345,7 +88347,21 @@
         " /etc/passwd || true) | head -n 1 | cut -d: -f6": "",
         "C:\\\\path\\\\to\\\\local\\\\project": "",
         "zd-devcontainer-{prefix}-{}-{now}": "",
-        "zd": ""
+        "zd": "",
+        "]/docker-compose-v1": "",
+        "(?:^|\\s)(\\w+) =": "",
+        "ARG \"": "",
+        "$( (command -v getent >/dev/null 2>&1 && getent passwd \"": "",
+        " || grep -E \"": "",
+        "$(cat \"": "",
+        "if [ \"": "",
+        "{\\\"id\\\":\\\"docker-in-docker\\\",\\\"version\\\":\\\"2.16.1\\\",\\\"name\\\":\\\"Docker (Docker-in-Docker)\\\",\\\"documentationURL\\\":\\\"https://github.com/devcontainers/features/tree/main/src/docker-in-docker\\\",\\\"description\\\":\\\"Create child containers *inside* a container, independent from the host's docker instance. Installs Docker extension in the container along with needed CLIs.\\\",\\\"options\\\":{\\\"version\\\":{\\\"type\\\":\\\"string\\\",\\\"proposals\\\":[\\\"latest\\\",\\\"none\\\",\\\"20.10\\\"],\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Select or enter a Docker/Moby Engine version. (Availability can vary by OS version.)\\\"},\\\"moby\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Install OSS Moby build instead of Docker CE\\\"},\\\"mobyBuildxVersion\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Install a specific version of moby-buildx when using Moby\\\"},\\\"dockerDashComposeVersion\\\":{\\\"type\\\":\\\"string\\\",\\\"enum\\\":[\\\"none\\\",\\\"v1\\\",\\\"v2\\\"],\\\"default\\\":\\\"v2\\\",\\\"description\\\":\\\"Default version of Docker Compose (v1, v2 or none)\\\"},\\\"azureDnsAutoDetection\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Allow automatically setting the dockerd DNS server when the installation script detects it is running in Azure\\\"},\\\"dockerDefaultAddressPool\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"\\\",\\\"proposals\\\":[],\\\"description\\\":\\\"Define default address pools for Docker networks. e.g. base=192.168.0.0/16,size=24\\\"},\\\"installDockerBuildx\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Install Docker Buildx\\\"},\\\"installDockerComposeSwitch\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":false,\\\"description\\\":\\\"Install Compose Switch (provided docker compose is available) which is a replacement to the Compose V1 docker-compose (python) executable. It translates the command line into Compose V2 docker compose then runs the latter.\\\"},\\\"disableIp6tables\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":false,\\\"description\\\":\\\"Disable ip6tables (this option is only applicable for Docker versions 27 and greater)\\\"}},\\\"entrypoint\\\":\\\"/usr/local/share/docker-init.sh\\\",\\\"privileged\\\":true,\\\"containerEnv\\\":{\\\"DOCKER_BUILDKIT\\\":\\\"1\\\"},\\\"customizations\\\":{\\\"vscode\\\":{\\\"extensions\\\":[\\\"ms-azuretools.vscode-containers\\\"],\\\"settings\\\":{\\\"github.copilot.chat.codeGeneration.instructions\\\":[{\\\"text\\\":\\\"This dev container includes the Docker CLI (`docker`) pre-installed and available on the `PATH` for running and managing containers using a dedicated Docker daemon running inside the dev container.\\\"}]}}},\\\"mounts\\\":[{\\\"source\\\":\\\"dind-var-lib-docker-${devcontainerId}\\\",\\\"target\\\":\\\"/var/lib/docker\\\",\\\"type\\\":\\\"volume\\\"}],\\\"installsAfter\\\":[\\\"ghcr.io/devcontainers/features/common-utils\\\"]]}</s><v></v></t>\n<t><s><![CDATA[2.16.1": "",
+        "$(awk -v val=1000 -F \"": "",
+        "$(echo \"": "",
+        " | grep -o \"": "",
+        "$(git ls-remote --tags ${repository} | grep -oP \"": "",
+        " | tr -d ' ' | tr \"": "",
+        " | grep -E -m 1 \"": ""
     },
     "zed/crates/dev_container/src/docker.rs": {
         "/proc/fs": "",
@@ -96497,7 +96513,7 @@
         "git runtime diagnostics: `lsof -p {pid}` failed: {err}": "Git 运行时诊断:`lsof -p {pid}` 失败:{err}",
         "{program} exited with status {:?}: {}": "{program} 以状态 {:?} 退出:{}",
         "\n…(truncated)": "",
-        "\\n…(truncated)": ""
+        "\\n…(truncated)": "\\n…(已截断)"
     },
     "zed/crates/git_ui/src/solo_diff_view.rs": {
         "workspace was dropped": "工作区已被销毁",
@@ -106673,9 +106689,9 @@
         "above {above}, selection {index}": ""
     },
     "zed/crates/editor/src/cursor_animation.rs": {
-        "the corners argument is a 4 item array, which should always have an x min": "",
-        "the corners argument is a 4 item array, which should always have an x max": "",
-        "the corners argument is a 4 item array, which should always have an y min": ""
+        "the corners argument is a 4 item array, which should always have an x min": "corners 参数是一个 4 元素数组, 其 x 分量必然存在最小值",
+        "the corners argument is a 4 item array, which should always have an x max": "corners 参数是一个 4 元素数组, 其 x 分量必然存在最大值",
+        "the corners argument is a 4 item array, which should always have an y min": "corners 参数是一个 4 元素数组, 其 y 分量必然存在最小值"
     },
     "zed/crates/gpui_platform/benches/inspector_render.rs": {
         "{}-{}-{}-cycles": "",
