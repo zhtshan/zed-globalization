@@ -2659,9 +2659,16 @@ jobs:
           tag_name: ${{ needs.versioning.outputs.version }}
           body_path: /tmp/release_body.md
           prerelease: ${{ needs.versioning.outputs.is_prerelease == 'true' }}
+          # 仓库启用了不可变 Release：发布后无法再上传资产，需先以草稿上传完所有文件再发布
+          draft: true
           files: release-dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 发布草稿 Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release edit "${{ needs.versioning.outputs.version }}" --repo "${{ github.repository }}" --draft=false
 
       - name: 触发 Scoop 和 Homebrew 更新
         env:
