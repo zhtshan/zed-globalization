@@ -52,7 +52,7 @@ def _build_project_header(
         f"## ZedG {version}",
         "",
         f"> [Zed](https://zed.dev) 编辑器的{lang_name}本地化构建版本，"
-        "由 [zed-globalization](https://github.com/x6nux/zed-globalization) "
+        "由 [zed-globalization](https://github.com/zhtshan/zed-globalization) "
         "自动翻译并编译。",
         "",
         f"**目标语言**: {lang_name} (`{lang}`)",
@@ -70,7 +70,7 @@ def _build_project_header(
         "Homebrew（推荐）：",
         "```bash",
         "# 首次安装",
-        "brew tap x6nux/zedg && brew install --cask zedg",
+        "brew tap zhtshan/zedg && brew install --cask zedg",
         "",
         "# 更新",
         "brew update && brew upgrade --cask zedg",
@@ -96,7 +96,7 @@ def _build_project_header(
         "Scoop（推荐）：",
         "```powershell",
         "# 首次安装",
-        "scoop bucket add zedg https://github.com/x6nux/scoop-zedg",
+        "scoop bucket add zedg https://github.com/zhtshan/scoop-zedg",
         "scoop install zedg",
         "",
         "# 更新",

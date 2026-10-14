@@ -598,7 +598,7 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
         pat = r'(const\s+SHOULD_SHOW_UPDATE_NOTIFICATION_KEY:\s*&str\s*=\s*"auto-updater-should-show-updated-notification";)'
         repl = (
             r'\1\n'
-            r'const ZEDG_GITHUB_REPO: &str = "x6nux/zed-globalization";' '\n'
+            r'const ZEDG_GITHUB_REPO: &str = "zhtshan/zed-globalization";' '\n'
             r'const ZEDG_LANG: &str = "zh-cn";'
         )
         new_content = re.sub(pat, repl, content, count=1)
