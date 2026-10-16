@@ -108846,6 +108846,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " /etc/passwd || true) | head -n 1 | cut -d: -f6)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " 2>/dev/null || true)",
             "reason": "ai:translate-empty"
         },
@@ -108902,6 +108907,11 @@
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " | wc -l)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " || grep -E ",
             "reason": "ai:translate-empty"
         },
         {
@@ -109396,6 +109406,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${DOCKER_VERSION//./\\\\.}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${DOCKER_VERSION}",
             "reason": "ai:translate-empty"
         },
@@ -109482,6 +109497,11 @@
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${MOBYBUILDXVERSION:-",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${MOBY_BUILDX_VERSION//./\\\\.}",
             "reason": "ai:translate-empty"
         },
         {
@@ -109942,6 +109962,16 @@
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${{HOME:-}}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{{environment_source}:",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{{key}}}",
             "reason": "ai:translate-empty"
         },
         {
@@ -112371,6 +112401,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "BASE_IMAGE={}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "BUILDKIT_INLINE_CACHE",
             "reason": "rule:identifier"
         },
@@ -112606,6 +112641,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "IMAGE_USER={}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "Install wrapper should be generated for local feature",
             "reason": "rule:test_assertion"
         },
@@ -112676,6 +112716,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "NEW_GID={}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "NEW_UID={}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "OTHER_ENV",
             "reason": "rule:identifier"
         },
@@ -112693,6 +112743,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "PATH=/usr/local/bin:/usr/bin",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "REMOTE_USER={}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -112748,6 +112803,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "VERSION=0.1.0",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "[ \\\"$command_status\\\" -eq 0 ] || exit \\\"$command_status\\\"\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -113587,6 +113647,11 @@
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "enum",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "exec \\\"$@\\\"",
             "reason": "ai:translate-empty"
         },
         {
@@ -114521,6 +114586,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "trap \\\"exit 0\\\" 15",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "trixie",
             "reason": "ai:translate-empty"
         },
@@ -114693,6 +114763,21 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{TEST_PROJECT_PATH}/.devcontainer/lsp-devtools",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\\\"id\\\":\\\"aws-cli\\\",\\\"version\\\":\\\"1.1.3\\\",\\\"name\\\":\\\"AWS CLI\\\",\\\"documentationURL\\\":\\\"https://github.com/devcontainers/features/tree/main/src/aws-cli\\\",\\\"description\\\":\\\"Installs the AWS CLI along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like gpg.\\\",\\\"options\\\":{\\\"version\\\":{\\\"type\\\":\\\"string\\\",\\\"proposals\\\":[\\\"latest\\\"],\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Select or enter an AWS CLI version.\\\"},\\\"verbose\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Suppress verbose output.\\\"}},\\\"customizations\\\":{\\\"vscode\\\":{\\\"extensions\\\":[\\\"AmazonWebServices.aws-toolkit-vscode\\\"],\\\"settings\\\":{\\\"github.copilot.chat.codeGeneration.instructions\\\":[{\\\"text\\\":\\\"This dev container includes the AWS CLI along with needed dependencies pre-installed and available on the `PATH`, along with the AWS Toolkit extensions for AWS development.\\\"}]}}},\\\"installsAfter\\\":[\\\"ghcr.io/devcontainers/features/common-utils\\\"]}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\\\"id\\\":\\\"docker-in-docker\\\",\\\"version\\\":\\\"2.16.1\\\",\\\"name\\\":\\\"Docker (Docker-in-Docker)\\\",\\\"documentationURL\\\":\\\"https://github.com/devcontainers/features/tree/main/src/docker-in-docker\\\",\\\"description\\\":\\\"Create child containers *inside* a container, independent from the host's docker instance. Installs Docker extension in the container along with needed CLIs.\\\",\\\"options\\\":{\\\"version\\\":{\\\"type\\\":\\\"string\\\",\\\"proposals\\\":[\\\"latest\\\",\\\"none\\\",\\\"20.10\\\"],\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Select or enter a Docker/Moby Engine version. (Availability can vary by OS version.)\\\"},\\\"moby\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Install OSS Moby build instead of Docker CE\\\"},\\\"mobyBuildxVersion\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Install a specific version of moby-buildx when using Moby\\\"},\\\"dockerDashComposeVersion\\\":{\\\"type\\\":\\\"string\\\",\\\"enum\\\":[\\\"none\\\",\\\"v1\\\",\\\"v2\\\"],\\\"default\\\":\\\"v2\\\",\\\"description\\\":\\\"Default version of Docker Compose (v1, v2 or none)\\\"},\\\"azureDnsAutoDetection\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Allow automatically setting the dockerd DNS server when the installation script detects it is running in Azure\\\"},\\\"dockerDefaultAddressPool\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"\\\",\\\"proposals\\\":[],\\\"description\\\":\\\"Define default address pools for Docker networks. e.g. base=192.168.0.0/16,size=24\\\"},\\\"installDockerBuildx\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":true,\\\"description\\\":\\\"Install Docker Buildx\\\"},\\\"installDockerComposeSwitch\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":false,\\\"description\\\":\\\"Install Compose Switch (provided docker compose is available) which is a replacement to the Compose V1 docker-compose (python) executable. It translates the command line into Compose V2 docker compose then runs the latter.\\\"},\\\"disableIp6tables\\\":{\\\"type\\\":\\\"boolean\\\",\\\"default\\\":false,\\\"description\\\":\\\"Disable ip6tables (this option is only applicable for Docker versions 27 and greater)\\\"}},\\\"entrypoint\\\":\\\"/usr/local/share/docker-init.sh\\\",\\\"privileged\\\":true,\\\"containerEnv\\\":{\\\"DOCKER_BUILDKIT\\\":\\\"1\\\"},\\\"customizations\\\":{\\\"vscode\\\":{\\\"extensions\\\":[\\\"ms-azuretools.vscode-containers\\\"],\\\"settings\\\":{\\\"github.copilot.chat.codeGeneration.instructions\\\":[{\\\"text\\\":\\\"This dev container includes the Docker CLI (`docker`) pre-installed and available on the `PATH` for running and managing containers using a dedicated Docker daemon running inside the dev container.\\\"}]}}},\\\"mounts\\\":[{\\\"source\\\":\\\"dind-var-lib-docker-${devcontainerId}\\\",\\\"target\\\":\\\"/var/lib/docker\\\",\\\"type\\\":\\\"volume\\\"}],\\\"installsAfter\\\":[\\\"ghcr.io/devcontainers/features/common-utils\\\"]}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\\\"id\\\":\\\"go\\\",\\\"version\\\":\\\"1.3.3\\\",\\\"name\\\":\\\"Go\\\",\\\"documentationURL\\\":\\\"https://github.com/devcontainers/features/tree/main/src/go\\\",\\\"description\\\":\\\"Installs Go and common Go utilities. Auto-detects latest version and installs needed dependencies.\\\",\\\"options\\\":{\\\"version\\\":{\\\"type\\\":\\\"string\\\",\\\"proposals\\\":[\\\"latest\\\",\\\"none\\\",\\\"1.24\\\",\\\"1.23\\\"],\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Select or enter a Go version to install\\\"},\\\"golangciLintVersion\\\":{\\\"type\\\":\\\"string\\\",\\\"default\\\":\\\"latest\\\",\\\"description\\\":\\\"Version of golangci-lint to install\\\"}},\\\"init\\\":true,\\\"customizations\\\":{\\\"vscode\\\":{\\\"extensions\\\":[\\\"golang.Go\\\"],\\\"settings\\\":{\\\"github.copilot.chat.codeGeneration.instructions\\\":[{\\\"text\\\":\\\"This dev container includes Go and common Go utilities pre-installed and available on the `PATH`, along with the Go language extension for Go development.\\\"}]}}},\\\"containerEnv\\\":{\\\"GOROOT\\\":\\\"/usr/local/go\\\",\\\"GOPATH\\\":\\\"/go\\\",\\\"PATH\\\":\\\"/usr/local/go/bin:/go/bin:${PATH}\\\"},\\\"capAdd\\\":[\\\"SYS_PTRACE\\\"],\\\"securityOpt\\\":[\\\"seccomp=unconfined\\\"],\\\"installsAfter\\\":[\\\"ghcr.io/devcontainers/features/common-utils\\\"]}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -164531,6 +164616,31 @@
         },
         {
             "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "fn foo() {}\\n\\nfn bar() {}\\nˇ\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "fn foo() {}\\n\\nfn bˇar() {}\\n\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "fn foo() {}\\nˇ\\nfn bar() {}\\n\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "fn fˇoo() {}\\n\\nfn bar() {}\\n\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "fn main() { let aˇ = 1; let b = 2; let c = 3; let d = 4; let e = 5; let f = 6; let g = 7; let h = 8; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
             "original": "fn main(){foo+= bar; ˇ}",
             "reason": "ai:translate-empty"
         },
@@ -164672,6 +164782,16 @@
         {
             "file": "zed/crates/editor/src/hover_popover.rs",
             "original": "foo+ˇ=bar",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "foo\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/hover_popover.rs",
+            "original": "foo\\n+bar",
             "reason": "ai:translate-empty"
         },
         {
@@ -166176,6 +166296,16 @@
         },
         {
             "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn first() { let a = 1; }\\nfn third() { let c = 3; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn first() { let a: u32 = 1; }\\nfn third() { let c = 3; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
             "original": "fn foo(s: &'_ Xstr) {}",
             "reason": "rule:test_assertion"
         },
@@ -166241,7 +166371,27 @@
         },
         {
             "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn main() { let value = 1; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
             "original": "fn main() { let value: u32 = 1; }",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn main() { let value: u32 = 1; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn main() { let value: u64 = 1; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn main() { let valueˇ = 1; }\\n",
             "reason": "ai:translate-empty"
         },
         {
@@ -166276,7 +166426,22 @@
         },
         {
             "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn second() { let b = 2; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn second() { let b: u64 = 2; }\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
             "original": "fn second() { let b: u64: u64 = 2; }",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/inlays/inlay_hints.rs",
+            "original": "fn third() { let c = 3; }\\n\\nfn second() { let b = 2; }\\n",
             "reason": "ai:translate-empty"
         },
         {
@@ -331991,7 +332156,22 @@
         },
         {
             "file": "zed/crates/remote/src/command.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
             "original": "$env.HOME",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "'\\\"\\n\\r\\t\\\\$()=secret\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "($env.HOME | path join \\\"a b/O'Brien\\\")",
             "reason": "ai:translate-empty"
         },
         {
@@ -332022,6 +332202,16 @@
         {
             "file": "zed/crates/remote/src/command.rs",
             "original": ":",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": ":[",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": ":{",
             "reason": "ai:translate-empty"
         },
         {
@@ -332061,7 +332251,32 @@
         },
         {
             "file": "zed/crates/remote/src/command.rs",
+            "original": "\\\"$HOME\\\"",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "\\\"$HOME\\\"/'a b/c'",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "\\\"$HOME\\\"/'bang'\\\\!",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "\\\"$HOME\\\"/{quoted}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
             "original": "\\n\\r\\t\\\\$()=secret\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "],",
             "reason": "ai:translate-empty"
         },
         {
@@ -332111,6 +332326,11 @@
         },
         {
             "file": "zed/crates/remote/src/command.rs",
+            "original": "exec \\\"$HOME\\\"/'x y' exec",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
             "original": "exec {helper} exec",
             "reason": "ai:translate-empty"
         },
@@ -332142,6 +332362,16 @@
         {
             "file": "zed/crates/remote/src/command.rs",
             "original": "{",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"id\\\":1}\\n\\0\\xff",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/command.rs",
+            "original": "{}/{relative_binary_path}",
             "reason": "ai:translate-empty"
         },
         {
@@ -333208,6 +333438,11 @@
             "file": "zed/crates/remote/src/transport.rs",
             "original": "cat",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/remote/src/transport.rs",
+            "original": "cd; exec \\\"$0\\\" \\\"$@\\\"",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport.rs",
@@ -336452,6 +336687,11 @@
         {
             "file": "zed/crates/remote/src/transport/wsl.rs",
             "original": "exec '/home/a^b/.local/share/zed/remote server' exec",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/wsl.rs",
+            "original": "exec '/home/bang'\\\\!'user/.local/share/zed/remote server' exec",
             "reason": "ai:translate-empty"
         },
         {
@@ -340448,6 +340688,11 @@
             "file": "zed/crates/remote_server/src/remote_editing_tests.rs",
             "original": "~/.cargo/bin/rust-analyzer",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote_server/src/server.rs",
@@ -347073,6 +347318,11 @@
             "file": "zed/crates/sandbox/src/util.rs",
             "original": "not-created-yet",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/sandbox/src/util/canonical_path.rs",
+            "original": " and refuse to treat ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/util/canonical_path.rs",
@@ -378638,6 +378888,11 @@
             "file": "zed/crates/terminal/src/alacritty/hyperlinks.rs",
             "original": "Failed to parse file IRI `{iri_or_path}`",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/terminal/src/alacritty/hyperlinks.rs",
+            "original": "File ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/terminal/src/alacritty/hyperlinks.rs",

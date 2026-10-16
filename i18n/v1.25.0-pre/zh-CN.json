@@ -19958,7 +19958,8 @@
         "​": "",
         "​{shell_output:?}": "",
         "​WRAPPER_RAN|controlled|3|spoofed-argv0|/usr/bin/printf\\n": "",
-        "printf 'WRAPPER_RAN|%s|%s|%s|%s\\\\n' \\\"$TOKEN\\\" \\\"$#\\\" \\\"$1\\\" \\\"$2\\\"\\n": ""
+        "printf 'WRAPPER_RAN|%s|%s|%s|%s\\\\n' \\\"$TOKEN\\\" \\\"$#\\\" \\\"$1\\\" \\\"$2\\\"\\n": "",
+        "": ""
     },
     "zed/crates/repl/src/components/kernel_options.rs": {
         "...{}": "...{}",
