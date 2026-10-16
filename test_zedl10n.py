@@ -321,6 +321,46 @@ def test_translate_packs_and_records_empties() -> None:
     assert all(e["reason"] == "ai:translate-empty" for e in dnt["entries"])
 
 
+def test_missing_ai_keys_warns_and_leaves_retry_candidate() -> None:
+    """AI 响应里整条缺失的 key：告警、不写禁翻清单、回填其余正常条目"""
+    import asyncio
+    import json
+    import types
+
+    from zedl10n.translate import _translate_batch
+
+    class FakeAsyncIter:
+        def __init__(self, text: str) -> None:
+            self._sent = False
+            self._text = text
+
+        def __aiter__(self):
+            return self
+
+        async def __anext__(self):
+            if self._sent:
+                raise StopAsyncIteration
+            self._sent = True
+            return types.SimpleNamespace(
+                choices=[types.SimpleNamespace(
+                    delta=types.SimpleNamespace(content=self._text),
+                )],
+            )
+
+    async def create(**kw):
+        # 模拟 AI 漏答 "Hard" 这个 key（不是返回空串，是压根没提）
+        return FakeAsyncIter(json.dumps({"Easy": "简单"}, ensure_ascii=False))
+
+    client = types.SimpleNamespace(
+        chat=types.SimpleNamespace(completions=types.SimpleNamespace(create=create)),
+    )
+    units = [("a.rs", {"Easy": "", "Hard": ""}, "")]
+    result, ai_empty = asyncio.run(_translate_batch(client, "m", units, "sys"))
+    assert result == {"Easy": "简单"}, result
+    assert ai_empty == set(), "漏答的 key 不应被当成「AI 判定无需翻译」"
+    assert "Hard" not in result, "漏答的 key 不该出现在结果里，留给下次增量重翻"
+
+
 def main() -> int:
     logging.disable(logging.WARNING)
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]

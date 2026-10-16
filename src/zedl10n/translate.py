@@ -197,6 +197,24 @@ async def _translate_batch(
         return result, set()
     ai_empty = {s for s in strings if s in result and not str(result[s]).strip()}
 
+    # 告警：AI 返回的 JSON 里整条 key 都没出现（不是返回空串，是压根没提）。
+    # 这类条目既不会被写入译文也不会进禁翻清单，下次增量运行会自动重翻，
+    # 不是数据丢失，但集中出现说明批次过大或字符串本身难以被模型完整应答。
+    missing = strings.keys() - result.keys()
+    if missing:
+        if len(units) > 1:
+            detail = ", ".join(
+                f"{fp}×{len(missing & unit_strings.keys())}"
+                for fp, unit_strings, _ in units
+                if missing & unit_strings.keys()
+            )
+        else:
+            detail = file_path
+        log.warning(
+            "AI 响应缺失 %d/%d 个 key（非空串，整条未返回，下次增量重试）: %s",
+            len(missing), len(strings), detail,
+        )
+
     # 占位符校验 + 重试（最多 2 次）
     for retry in range(2):
         errors = validate_placeholders(result)
@@ -377,6 +395,7 @@ async def _translate_async(
     pbar = ProgressBar(total, desc="翻译")
 
     fail_count = 0
+    missing_count = 0
     empties: list[tuple[str, str]] = []
     for coro in asyncio.as_completed(tasks):
         pack, (translations, ai_empty) = await coro
@@ -390,8 +409,15 @@ async def _translate_async(
             if per_file:
                 result.setdefault(fp, {}).update(per_file)
             empties.extend((fp, s) for s in unit_strings if s in ai_empty)
+            missing_count += len(unit_strings.keys() - translations.keys())
         pbar.update(extra=f"失败 {fail_count}")
     pbar.finish()
+    if missing_count:
+        log.warning(
+            "本轮共 %d 条字符串被 AI 响应整条遗漏，已跳过写入（非禁翻），"
+            "下次增量运行会自动重翻",
+            missing_count,
+        )
 
     # AI 一致性修复（最多 2 轮）
     for fix_round in range(2):
