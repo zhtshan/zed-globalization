@@ -264,6 +264,33 @@ def load_skip_sets(path: str) -> tuple[set[tuple[str, str]], set[str]]:
     return covered, covered_global
 
 
+def record_translate_empties(
+    dnt_path: str, items: list[tuple[str, str]],
+) -> int:
+    """把翻译阶段 AI 明确返回空串的条目写入清单，返回新增条数。
+
+    翻译请求已附带源码上下文，空串本身就是一次判定；不沉淀下来的话，
+    这些条目要等每周的 05 流程才进清单，期间每轮增量都会重问一遍
+    （实测某轮 3016 条待翻里 3005 条属于这种情况）。
+    """
+    if not dnt_path or not items:
+        return 0
+    data, covered, covered_global = _load_registry(dnt_path)
+    added = 0
+    for file_path, original in items:
+        if original in covered_global or (file_path, original) in covered:
+            continue
+        covered.add((file_path, original))
+        data["entries"].append(
+            {"file": file_path, "original": original, "reason": "ai:translate-empty"},
+        )
+        added += 1
+    if added:
+        data["entries"].sort(key=lambda e: (e["file"], e["original"]))
+        save_json(data, dnt_path)
+    return added
+
+
 def collect_candidates(
     translations: TranslationDict,
     covered: set[tuple[str, str]],
@@ -290,8 +317,11 @@ async def _judge_all(
     """并发调用 AI 判定，每完成一批立即追加到 data["entries"] 并保存进度，返回判定总数。"""
     from openai import AsyncOpenAI
 
+    from .translate import set_rate_limit
+
     client = AsyncOpenAI(base_url=ai_cfg.base_url, api_key=ai_cfg.api_key)
     semaphore = asyncio.Semaphore(ai_cfg.concurrency)
+    set_rate_limit(ai_cfg.rpm)
     batches = _build_batches(items)
     log.info("AI 判定: %d 条，拆分为 %d 批", len(items), len(batches))
 

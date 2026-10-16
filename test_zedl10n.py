@@ -195,6 +195,132 @@ def test_collect_candidates_only_empty_and_uncovered() -> None:
     assert got == [("a.rs", "tool_name")], got
 
 
+def test_pack_units_budget_and_duplicates() -> None:
+    """合包：小文件合并；同一原文不进同一包；超预算另起一包"""
+    from zedl10n.batch import MAX_INPUT_CHARS, pack_units
+
+    units = [
+        ("a.rs", {"Open": "", "Close": ""}, "fn a() {}"),
+        ("b.rs", {"Save": ""}, "fn b() {}"),
+        ("c.rs", {"Open": ""}, "fn c() {}"),  # 与 a.rs 重复
+        ("d.rs", {"Big": ""}, "x" * MAX_INPUT_CHARS),  # 单独超预算
+    ]
+    packs = pack_units(units, "sys")
+    files = [[u[0] for u in p] for p in packs]
+    assert files == [["a.rs", "b.rs"], ["c.rs"], ["d.rs"]], files
+
+
+def test_multi_file_prompt_numbering() -> None:
+    """多文件 prompt 编号跨文件连续，单文件退化为原 prompt"""
+    from zedl10n.prompts import build_multi_file_prompt, build_user_prompt
+
+    one = [("crates/x/src/a.rs", {"Open": ""}, "code")]
+    assert build_multi_file_prompt(one) == build_user_prompt(*one[0])
+    two = one + [("crates/y/src/b.rs", {"Save": "", "Quit": ""}, "")]
+    prompt = build_multi_file_prompt(two)
+    assert '1. "Open"' in prompt and '2. "Save"' in prompt and '3. "Quit"' in prompt
+    assert '{"Open": "", "Save": "", "Quit": ""}' in prompt
+
+
+def test_rate_limiter_spacing() -> None:
+    """限速器按 60/rpm 秒间隔放行"""
+    import asyncio
+    import time
+
+    from zedl10n.utils import RateLimiter
+
+    async def go() -> float:
+        lim = RateLimiter(600)  # 间隔 0.1s
+        t0 = time.monotonic()
+        await asyncio.gather(*(lim.acquire() for _ in range(4)))
+        return time.monotonic() - t0
+
+    elapsed = asyncio.run(go())
+    assert 0.29 <= elapsed < 0.6, elapsed
+    assert RateLimiter(0).interval == 0
+
+
+def test_translate_packs_and_records_empties() -> None:
+    """端到端（假 AI）：多文件合并请求、按文件回填、空串写入禁翻清单"""
+    import json
+    import re
+    import tempfile
+    import types
+
+    import openai
+
+    from zedl10n.translate import translate_all
+    from zedl10n.utils import AIConfig
+
+    requests: list[str] = []
+
+    class FakeStream:
+        def __init__(self, text: str) -> None:
+            self.chunks = [text]
+
+        def __aiter__(self):
+            return self
+
+        async def __anext__(self):
+            if not self.chunks:
+                raise StopAsyncIteration
+            delta = types.SimpleNamespace(content=self.chunks.pop())
+            return types.SimpleNamespace(choices=[types.SimpleNamespace(delta=delta)])
+
+    async def create(**kw):
+        prompt = kw["messages"][1]["content"]
+        requests.append(prompt)
+        blocks = re.findall(r"```json\n(.*?)\n```", prompt, re.S)
+        if not blocks:  # 占位符修正 / 一致性修复请求，原样不改
+            return FakeStream("{}")
+        payload = json.loads(blocks[-1])
+        out = {}
+        for k in payload:
+            if k.startswith("id_"):
+                out[k] = ""  # AI 判定无需翻译
+            elif k == "Got {}":
+                out[k] = "得到"  # 占位符丢失，校验后被丢弃
+            else:
+                out[k] = "译" + k
+        return FakeStream(json.dumps(out, ensure_ascii=False))
+
+    class FakeClient:
+        def __init__(self, **kw) -> None:
+            self.chat = types.SimpleNamespace(
+                completions=types.SimpleNamespace(create=create),
+            )
+
+    real = openai.AsyncOpenAI
+    openai.AsyncOpenAI = FakeClient
+    try:
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            strings = {f"f{i}.rs": [f"Text{i}", f"id_{i}"] for i in range(5)}
+            strings["f0.rs"].append("Got {}")
+            (d / "s.json").write_text(json.dumps(strings))
+            (d / "out.json").write_text(json.dumps({"f1.rs": {"Text1": "旧"}}))
+            translate_all(
+                str(d / "s.json"), str(d / "out.json"),
+                glossary_path=str(d / "none.yaml"),
+                ai_cfg=AIConfig(api_key="x", model="m", concurrency=2),
+                do_not_translate=str(d / "dnt.json"),
+            )
+            out = json.loads((d / "out.json").read_text())
+            dnt = json.loads((d / "dnt.json").read_text())
+    finally:
+        openai.AsyncOpenAI = real
+
+    # 其余请求是 "Got {}" 的占位符修正与一致性修复
+    packed = [r for r in requests if "以上字符串来自 5 个源文件" in r]
+    assert len(packed) == 1, f"5 个小文件应合并为 1 个翻译请求，实际 {len(packed)}"
+    assert out["f1.rs"]["Text1"] == "旧", "增量模式不应重翻已有译文"
+    assert out["f3.rs"]["Text3"] == "译Text3"
+    assert "Text3" not in out["f2.rs"], "译文不应回填到别的文件"
+    recorded = {(e["file"], e["original"]) for e in dnt["entries"]}
+    assert recorded == {(f"f{i}.rs", f"id_{i}") for i in range(5)}, recorded
+    assert all(e["reason"] == "ai:translate-empty" for e in dnt["entries"])
+
+
 def main() -> int:
     logging.disable(logging.WARNING)
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]

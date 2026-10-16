@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .replace import _check_placeholders, _is_positional  # noqa: F401
 from .utils import (
-    AIConfig, TranslationDict, extract_placeholders,
+    AIConfig, RateLimiter, TranslationDict, extract_placeholders,
     load_json, save_json,
 )
 
@@ -33,7 +33,7 @@ _FIX_PROMPT = """\
 
 
 def _ai_fix_one(
-    client: object, model: str,
+    client: object, model: str, limiter: RateLimiter,
     original: str, bad_value: str,
     src_ph: list[str], dst_ph: list[str],
 ) -> str | None:
@@ -44,6 +44,7 @@ def _ai_fix_one(
     )
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
+            limiter.acquire_sync()
             resp = client.chat.completions.create(  # type: ignore[attr-defined]
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
@@ -79,6 +80,7 @@ def fix_translation_json(
     data: TranslationDict = load_json(trans_path)
     root = Path(source_root)
     client = OpenAI(base_url=ai_cfg.base_url, api_key=ai_cfg.api_key)
+    limiter = RateLimiter(ai_cfg.rpm)
 
     fixed_count = 0
     removed_ph_count = 0
@@ -105,7 +107,7 @@ def fix_translation_json(
                 original, translated, src_ph, dst_ph, file_path,
             )
             fixed = _ai_fix_one(
-                client, ai_cfg.model,
+                client, ai_cfg.model, limiter,
                 original, translated, src_ph, dst_ph,
             )
             if fixed:

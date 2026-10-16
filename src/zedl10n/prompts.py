@@ -103,10 +103,10 @@ def build_numbered_instruction(count: int) -> str:
 - 必须包含所有编号，从 1 到 {count}"""
 
 
-def build_entries_text(strings: dict[str, str]) -> str:
+def build_entries_text(strings: dict[str, str], start: int = 1) -> str:
     """构建待翻译条目文本（编号 + 字符串）"""
     lines: list[str] = []
-    for i, (s, _) in enumerate(strings.items(), 1):
+    for i, (s, _) in enumerate(strings.items(), start):
         lines.append(f'{i}. "{s}"')
     return "\n".join(lines)
 
@@ -128,6 +128,44 @@ def build_user_prompt(
             file_path=file_path, crate_name=crate_name, entries=entries_text,
         )
     input_json = {s: "" for s in strings}
+    prompt += f"\n\n输入:\n```json\n{json.dumps(input_json, ensure_ascii=False)}\n```"
+    return prompt
+
+
+_MULTI_FILE_SECTION = """=== 文件: {file_path}（模块: {crate_name}）===
+```rust
+{file_content}
+```
+待翻译字符串:
+{entries}"""
+
+_MULTI_FILE_TAIL = """以上字符串来自 {count} 个源文件，请结合各自文件的源代码上下文判断用途后翻译，\
+将全部结果合并为一个 JSON 对象返回。"""
+
+
+def build_multi_file_prompt(
+    units: list[tuple[str, dict[str, str], str]],
+) -> str:
+    """构建多文件合并请求的 prompt，units 为 [(文件路径, 字符串, 源码片段)]。
+
+    单文件时退化为 build_user_prompt，保持原有提示词不变。编号跨文件连续，
+    与末尾 JSON 输入的顺序一致，编号格式降级时据此映射回原文。
+    """
+    if len(units) == 1:
+        return build_user_prompt(*units[0])
+    sections: list[str] = []
+    all_strings: dict[str, str] = {}
+    for file_path, strings, file_content in units:
+        sections.append(_MULTI_FILE_SECTION.format(
+            file_path=file_path,
+            crate_name=extract_crate_name(file_path),
+            file_content=file_content or "（源码不可用）",
+            entries=build_entries_text(strings, len(all_strings) + 1),
+        ))
+        all_strings.update(strings)
+    prompt = "\n\n".join(sections)
+    prompt += "\n\n" + _MULTI_FILE_TAIL.format(count=len(units))
+    input_json = {s: "" for s in all_strings}
     prompt += f"\n\n输入:\n```json\n{json.dumps(input_json, ensure_ascii=False)}\n```"
     return prompt
 

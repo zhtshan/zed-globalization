@@ -8,20 +8,27 @@ import logging
 import random
 from pathlib import Path
 
-from .batch import split_batch
+from .batch import (
+    MAX_CONTEXT_CHARS_PER_FILE,
+    Unit,
+    fit_context,
+    pack_units,
+    split_batch,
+)
 from .error_codes import report as report_error
 from .prompts import (
     SYSTEM_PROMPT_TEMPLATE,
     XML_FALLBACK_INSTRUCTION,
     build_consistency_fix_prompt,
     build_fix_prompt,
+    build_multi_file_prompt,
     build_numbered_instruction,
-    build_user_prompt,
     validate_placeholders,
 )
 from .utils import (
     AIConfig,
     ProgressBar,
+    RateLimiter,
     TranslationDict,
     build_glossary_section,
     load_json,
@@ -40,6 +47,17 @@ log = logging.getLogger(__name__)
 # 主动放弃并重试，而不是干等到客户端自身超时。
 STREAM_IDLE_TIMEOUT = 120.0
 
+# 进程内所有 _call_ai 共用的限速器，由入口按 AIConfig.rpm 设置
+_rate_limiter = RateLimiter(0)
+
+
+def set_rate_limit(rpm: int) -> None:
+    """设置全局 RPM 限速（需在事件循环内的首个请求前调用）"""
+    global _rate_limiter
+    _rate_limiter = RateLimiter(rpm)
+    if rpm > 0:
+        log.info("AI 请求限速: %d 次/分钟", rpm)
+
 
 async def _call_ai(
     client: object,
@@ -57,6 +75,7 @@ async def _call_ai(
     last_err: Exception | None = None
     for attempt in range(5):
         try:
+            await _rate_limiter.acquire()
             stream = await client.chat.completions.create(  # type: ignore[attr-defined]
                 model=model,
                 messages=[
@@ -98,12 +117,10 @@ async def _fetch_translation(
     model: str,
     file_path: str,
     strings: dict[str, str],
-    file_content: str,
+    user_prompt: str,
     system_prompt: str,
 ) -> dict[str, str]:
     """通过 JSON → XML(CDATA) → 编号格式 三级降级获取翻译结果"""
-    user_prompt = build_user_prompt(file_path, strings, file_content)
-
     # 第一级: JSON 格式重试 3 次
     for attempt in range(3):
         try:
@@ -150,26 +167,41 @@ async def _fetch_translation(
     return {}
 
 
+def _pack_label(units: list[Unit]) -> str:
+    """日志里标识一个请求包"""
+    if len(units) == 1:
+        return units[0][0]
+    return f"{units[0][0]} 等 {len(units)} 个文件"
+
+
 async def _translate_batch(
     client: object,
     model: str,
-    file_path: str,
-    strings: dict[str, str],
-    file_content: str,
+    units: list[Unit],
     system_prompt: str,
-) -> dict[str, str]:
-    """翻译一批字符串，含占位符校验和自动重试"""
+) -> tuple[dict[str, str], set[str]]:
+    """翻译一个请求包（一或多个文件的字符串），含占位符校验和自动重试。
+
+    返回 (译文, AI 明确返回空串的原文集合)。后者要在占位符校验前取，
+    校验失败被丢弃成空串的条目不算「无需翻译」。
+    """
+    file_path = _pack_label(units)
+    strings: dict[str, str] = {}
+    for _, unit_strings, _ in units:
+        strings.update(unit_strings)
     result = await _fetch_translation(
-        client, model, file_path, strings, file_content, system_prompt,
+        client, model, file_path, strings,
+        build_multi_file_prompt(units), system_prompt,
     )
     if not result:
-        return result
+        return result, set()
+    ai_empty = {s for s in strings if s in result and not str(result[s]).strip()}
 
     # 占位符校验 + 重试（最多 2 次）
     for retry in range(2):
         errors = validate_placeholders(result)
         if not errors:
-            return result
+            return result, ai_empty
         log.debug(
             "占位符不匹配 %d 条，重试修正 (%d/2): %s",
             len(errors), retry + 1, file_path,
@@ -195,7 +227,7 @@ async def _translate_batch(
         )
         result[original] = ""
 
-    return result
+    return result, ai_empty
 
 
 def _read_source_file(file_path: str, source_root: str) -> str:
@@ -276,12 +308,13 @@ async def _translate_async(
     ai_cfg: AIConfig,
     source_root: str = "",
     skip_sets: tuple[set[tuple[str, str]], set[str]] | None = None,
-) -> TranslationDict:
-    """异步并发翻译"""
+) -> tuple[TranslationDict, list[tuple[str, str]]]:
+    """异步并发翻译，返回 (译文, AI 判定无需翻译的 (文件, 原文) 列表)"""
     from openai import AsyncOpenAI
 
     client = AsyncOpenAI(base_url=ai_cfg.base_url, api_key=ai_cfg.api_key)
     semaphore = asyncio.Semaphore(ai_cfg.concurrency)
+    set_rate_limit(ai_cfg.rpm)
 
     glossary_section = build_glossary_section(glossary_path)
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
@@ -290,7 +323,7 @@ async def _translate_async(
     )
 
     result: TranslationDict = {fp: dict(v) for fp, v in existing.items()}
-    tasks: list[asyncio.Task] = []
+    units: list[Unit] = []
     skip_covered, skip_global = skip_sets or (set(), set())
     skipped = 0
 
@@ -313,37 +346,50 @@ async def _translate_async(
                 to_translate[s] = ""
         if not to_translate:
             continue
-        raw_content = _read_source_file(file_path, source_root)
-        batches, file_content = split_batch(
-            to_translate, system_prompt, file_path, raw_content,
+        snippet = fit_context(
+            _read_source_file(file_path, source_root),
+            to_translate, MAX_CONTEXT_CHARS_PER_FILE,
         )
-        for batch in batches:
+        # 字符串本身就超预算的大文件先按文件拆分，再参与合包
+        batches, snippet = split_batch(
+            to_translate, system_prompt, file_path, snippet,
+        )
+        units.extend((file_path, batch, snippet) for batch in batches)
 
-            async def do_batch(
-                fp: str = file_path,
-                b: dict = batch,
-                fc: str = file_content,
-            ) -> tuple[str, dict[str, str]]:
-                async with semaphore:
-                    return fp, await _translate_batch(
-                        client, ai_cfg.model, fp, b, fc, system_prompt,
-                    )
+    packs = pack_units(units, system_prompt)
 
-            tasks.append(asyncio.create_task(do_batch()))
+    async def do_pack(
+        pack: list[Unit],
+    ) -> tuple[list[Unit], tuple[dict[str, str], set[str]]]:
+        async with semaphore:
+            return pack, await _translate_batch(
+                client, ai_cfg.model, pack, system_prompt,
+            )
 
+    tasks = [asyncio.create_task(do_pack(p)) for p in packs]
     total = len(tasks)
     if skipped:
         log.info("按禁翻清单跳过 %d 条", skipped)
-    log.info("共 %d 个翻译批次，并发数 %d", total, ai_cfg.concurrency)
+    log.info(
+        "共 %d 个文件片段，合并为 %d 个请求，并发数 %d",
+        len(units), total, ai_cfg.concurrency,
+    )
     pbar = ProgressBar(total, desc="翻译")
 
     fail_count = 0
+    empties: list[tuple[str, str]] = []
     for coro in asyncio.as_completed(tasks):
-        fp, translations = await coro
-        if translations:
-            result.setdefault(fp, {}).update(translations)
-        else:
+        pack, (translations, ai_empty) = await coro
+        if not translations:
             fail_count += 1
+        # 按文件回填：包内同一原文只属于一个文件（pack_units 保证）
+        for fp, unit_strings, _ in pack:
+            per_file = {
+                s: translations[s] for s in unit_strings if s in translations
+            }
+            if per_file:
+                result.setdefault(fp, {}).update(per_file)
+            empties.extend((fp, s) for s in unit_strings if s in ai_empty)
         pbar.update(extra=f"失败 {fail_count}")
     pbar.finish()
 
@@ -357,7 +403,7 @@ async def _translate_async(
         if not ai_fix_log:
             break
 
-    return result
+    return result, empties
 
 
 def translate_all(
@@ -388,7 +434,7 @@ def translate_all(
             len(skip_sets[0]), len(skip_sets[1]),
         )
 
-    result = asyncio.run(
+    result, empties = asyncio.run(
         _translate_async(
             all_strings, existing, mode, lang,
             glossary_path, ai_cfg, source_root, skip_sets,
@@ -409,6 +455,17 @@ def translate_all(
 
     save_json(result, output_path)
     log.info("翻译结果已保存: %s", output_path)
+
+    # 最终仍为空的才记入禁翻清单（一致性修复可能补上了译文）
+    from .untranslatable import record_translate_empties
+
+    still_empty = [
+        (fp, s) for fp, s in empties
+        if not str(result.get(fp, {}).get(s, "")).strip()
+    ]
+    added = record_translate_empties(do_not_translate, still_empty)
+    if added:
+        log.info("AI 返回空串的 %d 条已写入禁翻清单: %s", added, do_not_translate)
 
 
 def run(args: argparse.Namespace) -> None:

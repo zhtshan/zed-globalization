@@ -409,6 +409,7 @@ jobs:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
           AI_CONCURRENCY: ${{ vars.AI_CONCURRENCY || '10' }}
+          AI_RPM: ${{ vars.AI_RPM || '0' }}
           VERSION: ${{ steps.params.outputs.VERSION }}
           TARGET_LANG: ${{ steps.params.outputs.TARGET_LANG }}
           EXTRACT_MODE: ${{ steps.params.outputs.EXTRACT_MODE }}
@@ -428,6 +429,7 @@ jobs:
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
+          AI_RPM: ${{ vars.AI_RPM || '0' }}
           VERSION: ${{ steps.params.outputs.VERSION }}
           TARGET_LANG: ${{ steps.params.outputs.TARGET_LANG }}
         run: |
@@ -453,10 +455,34 @@ jobs:
           cp /tmp/string.json /tmp/string_context.json /tmp/scan_result.json /tmp/i18n-branch/
           cp -r /tmp/i18n-result/* /tmp/i18n-branch/i18n/
 
+          # 禁翻清单：翻译阶段会追加 AI 返回空串的条目；与分支上的版本取并集，
+          # 避免覆盖 05 流程在本次运行期间推送的新条目
+          if [ -f "$GITHUB_WORKSPACE/config/do_not_translate.json" ]; then
+            mkdir -p /tmp/i18n-branch/config
+            python3 - "$GITHUB_WORKSPACE/config/do_not_translate.json" /tmp/i18n-branch/config/do_not_translate.json << 'PYEOF'
+          import json, sys
+          from pathlib import Path
+          ours, theirs = Path(sys.argv[1]), Path(sys.argv[2])
+          data = json.loads(ours.read_text(encoding="utf-8"))
+          if theirs.exists():
+              remote = json.loads(theirs.read_text(encoding="utf-8"))
+              for key, ident in (("entries", lambda e: (e["file"], e["original"])),
+                                 ("global_entries", lambda e: e["original"])):
+                  seen = {ident(e) for e in data.get(key, [])}
+                  for e in remote.get(key, []):
+                      if ident(e) not in seen:
+                          data.setdefault(key, []).append(e)
+                          seen.add(ident(e))
+              data.setdefault("entries", []).sort(key=lambda e: (e["file"], e["original"]))
+          theirs.write_text(json.dumps(data, ensure_ascii=False, indent=4), encoding="utf-8")
+          PYEOF
+          fi
+
           cd /tmp/i18n-branch
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add string.json string_context.json scan_result.json i18n/
+          if [ -f config/do_not_translate.json ]; then git add config/do_not_translate.json; fi
           git diff --cached --quiet || git commit -m "feat(i18n): 更新提取与翻译结果"
           git push origin i18n
 

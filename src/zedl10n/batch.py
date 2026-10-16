@@ -8,6 +8,7 @@ run 33756674101 实证），改用字符数硬限制：对中英混合文本，
 
 from __future__ import annotations
 
+import json
 import logging
 
 from .prompts import build_user_prompt
@@ -16,6 +17,14 @@ log = logging.getLogger(__name__)
 
 MAX_INPUT_TOKENS = 10_000  # 兼容保留（外部可能引用）
 MAX_INPUT_CHARS = 50_000  # 请求总字符数硬上限
+
+# 合包参数：服务商按请求数限流（RPM），把多个小文件塞进同一个请求比
+# 给每个文件附带完整源码更划算。每个文件只带字符串附近的源码片段。
+MAX_CONTEXT_CHARS_PER_FILE = 8_000
+MAX_STRINGS_PER_REQUEST = 200  # 输出过长时整包失败的代价也大，限制条数
+
+# 合包单元：(文件路径, {原文: ""}, 源码片段)
+Unit = tuple[str, dict[str, str], str]
 
 
 def estimate_request_tokens(
@@ -41,6 +50,11 @@ def truncate_file_content(
     chars_budget ≈ max_tokens * 5，且不超过 MAX_INPUT_CHARS。
     """
     budget = min(max_tokens * 5, MAX_INPUT_CHARS) - len(system_prompt) - 25_000
+    return fit_context(file_content, strings, budget)
+
+
+def fit_context(file_content: str, strings: dict[str, str], budget: int) -> str:
+    """把源码压到 budget 字符以内：不超限原样返回，否则保留字符串附近上下文"""
     if budget <= 0:
         return ""
     if len(file_content) <= budget:
@@ -171,3 +185,42 @@ def split_batch(
 
     batches = [dict(items[i : i + capacity]) for i in range(0, len(items), capacity)]
     return batches, content
+
+
+def _unit_chars(unit: Unit) -> int:
+    """单元在合并 prompt 中的字符开销（源码 + 编号条目 + JSON 输入 + 标题）"""
+    _, strings, content = unit
+    entries = sum(len(k) + 8 for k in strings)
+    return len(content) + entries + len(json.dumps(strings, ensure_ascii=False)) + 200
+
+
+def pack_units(units: list[Unit], system_prompt: str) -> list[list[Unit]]:
+    """把单元按字符预算和条数上限首次适应装箱，返回请求列表。
+
+    同一个原文不能出现在同一包的两个文件里：结果按 {原文: 译文} 回填，
+    重复键会让两个文件抢同一条译文。
+    """
+    budget = MAX_INPUT_CHARS - len(system_prompt)
+    packs: list[list[Unit]] = []
+    sizes: list[int] = []
+    counts: list[int] = []
+    keys: list[set[str]] = []
+    for unit in units:
+        cost, n = _unit_chars(unit), len(unit[1])
+        for i in range(len(packs)):
+            if (
+                sizes[i] + cost <= budget
+                and counts[i] + n <= MAX_STRINGS_PER_REQUEST
+                and keys[i].isdisjoint(unit[1])
+            ):
+                packs[i].append(unit)
+                sizes[i] += cost
+                counts[i] += n
+                keys[i].update(unit[1])
+                break
+        else:
+            packs.append([unit])
+            sizes.append(cost)
+            counts.append(n)
+            keys.append(set(unit[1]))
+    return packs

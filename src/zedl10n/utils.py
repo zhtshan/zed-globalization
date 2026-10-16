@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import os
@@ -33,6 +34,7 @@ class AIConfig:
     api_key: str = ""
     model: str = ""
     concurrency: int = 10
+    rpm: int = 0  # 每分钟请求上限，0 表示不限速
 
     def __post_init__(self) -> None:
         if not self.base_url:
@@ -46,6 +48,9 @@ class AIConfig:
         if self.concurrency <= 0:
             raw = os.environ.get("AI_CONCURRENCY", "10")
             self.concurrency = int(raw) if raw.isdigit() else 10
+        if self.rpm <= 0:
+            raw = os.environ.get("AI_RPM", "0")
+            self.rpm = int(raw) if raw.isdigit() else 0
 
     def validate(self) -> None:
         """校验必填字段"""
@@ -54,6 +59,38 @@ class AIConfig:
                 "错误: 未设置 AI API Key。"
                 "请通过 --api-key 参数或 AI_API_KEY 环境变量提供。"
             )
+
+
+class RateLimiter:
+    """按固定间隔放行请求，把速率压在服务商的 RPM 限额之内。
+
+    撞 429 再退避会白白消耗配额（被拒的请求同样计数），还让并发槽空等；
+    主动限速后请求均匀发出，重试也走同一个闸门。
+    """
+
+    def __init__(self, rpm: int) -> None:
+        self.interval = 60.0 / rpm if rpm > 0 else 0.0
+        self._next = 0.0
+        self._lock = asyncio.Lock()
+
+    async def acquire(self) -> None:
+        if not self.interval:
+            return
+        async with self._lock:
+            loop = asyncio.get_running_loop()
+            delay = self._next - loop.time()
+            if delay > 0:
+                await asyncio.sleep(delay)
+            self._next = loop.time() + self.interval
+
+    def acquire_sync(self) -> None:
+        """同步客户端用的版本（单线程顺序调用）"""
+        if not self.interval:
+            return
+        delay = self._next - time.monotonic()
+        if delay > 0:
+            time.sleep(delay)
+        self._next = time.monotonic() + self.interval
 
 
 class ProgressBar:
