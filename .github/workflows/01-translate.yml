@@ -176,9 +176,9 @@ jobs:
       matrix: ${{ fromJSON(needs.check-version.outputs.matrix) }}
       max-parallel: 1 # 串行执行，避免 i18n 分支推送冲突
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
