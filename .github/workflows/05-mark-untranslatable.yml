@@ -87,7 +87,7 @@ jobs:
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
-          AI_CONCURRENCY: ${{ vars.AI_CONCURRENCY || '100' }}
+          AI_CONCURRENCY: "100" # 不跟随 vars.AI_CONCURRENCY（那是给 01 翻译用的）
           AI_RPM: ${{ vars.AI_RPM || '0' }}
           RULES_ONLY: ${{ inputs.rules_only }}
           LIMIT: ${{ inputs.limit }}
