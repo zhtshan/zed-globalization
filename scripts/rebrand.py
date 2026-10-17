@@ -762,6 +762,36 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Category 8: Help menu feedback URLs -> ZedG GitHub repo
+# ---------------------------------------------------------------------------
+
+def apply_category_8(zed_dir: Path, *, dry_run: bool = False) -> None:
+    """Category 8: Help menu feedback URLs redirect to ZedG GitHub repo.
+
+    ZedG user bugs are usually translation/build specific, so feedback
+    entries point at the ZedG repo instead of upstream zed-industries/zed.
+    Informational links (docs, twitter, jobs) stay upstream.
+    """
+    log.info("Category 8: Help menu feedback URLs redirect to ZedG GitHub repo")
+
+    path = zed_dir / "crates" / "feedback" / "src" / "feedback.rs"
+    replacements = [
+        # Covers ZED_REPO_URL, REQUEST_FEATURE_URL and file_bug_report_url()
+        # in one pass (all three share this prefix).
+        (
+            "https://github.com/zed-industries/zed",
+            "https://github.com/zhtshan/zed-globalization",
+        ),
+        # EmailZed has no ZedG mailbox; fall back to the ZedG issue tracker.
+        (
+            "mailto:hi@zed.dev",
+            "https://github.com/zhtshan/zed-globalization/issues/new",
+        ),
+    ]
+    apply_replacements(path, replacements, dry_run=dry_run, description="feedback URLs")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -800,6 +830,7 @@ def main() -> int:
         apply_category_5,
         apply_category_6,
         apply_category_7,
+        apply_category_8,
     ]
 
     class WarningCounter(logging.Handler):
