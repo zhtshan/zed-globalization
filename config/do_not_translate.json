@@ -84416,6 +84416,11 @@
         },
         {
             "file": "zed/crates/collab/src/auth.rs",
+            "original": "no HTTP client",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/src/auth.rs",
             "original": "no such access token",
             "reason": "api_identifier"
         },
@@ -94298,6 +94303,11 @@
             "file": "zed/crates/collab_ui/src/collab_panel.rs",
             "original": "remove_contact",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/collab_ui/src/collab_panel.rs",
+            "original": "screen",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/collab_ui/src/collab_panel.rs",
@@ -206611,6 +206621,11 @@
         },
         {
             "file": "zed/crates/google_ai/src/completion.rs",
+            "original": "-argon",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/google_ai/src/completion.rs",
             "original": "-pro",
             "reason": "ai:api_identifier"
         },
@@ -206913,6 +206928,11 @@
             "file": "zed/crates/google_ai/src/completion.rs",
             "original": "gemini-3.8-flash",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/google_ai/src/completion.rs",
+            "original": "gemini-4",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/google_ai/src/completion.rs",
@@ -207233,6 +207253,11 @@
             "file": "zed/crates/google_ai/src/google_ai.rs",
             "original": "Gemini 3.8 Flash",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": "Gemini 4 Argon",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/google_ai/src/google_ai.rs",
@@ -207758,6 +207783,11 @@
             "file": "zed/crates/google_ai/src/google_ai.rs",
             "original": "{}",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": "{} reserves its whole context window for output",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/google_ai/src/google_ai.rs",
@@ -212143,6 +212173,11 @@
             "file": "zed/crates/gpui/src/element.rs",
             "original": "must call request_layout only once",
             "reason": "test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui/src/element.rs",
+            "original": "prints timings; run by hand",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/element.rs",
