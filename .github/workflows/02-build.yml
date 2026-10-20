@@ -192,7 +192,7 @@ jobs:
         run: python3 scripts/rebrand.py --zed-dir zed
 
       - name: 安装 Python 与工具
-        run: pip install .
+        run: pip install ".[ai]"
 
       - name: 校验保护规则与响应解析
         run: python3 test_zedl10n.py
