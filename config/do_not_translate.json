@@ -252246,6 +252246,11 @@
         },
         {
             "file": "zed/crates/language_models/src/provider/opencode.rs",
+            "original": "api",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/opencode.rs",
             "original": "assistant",
             "reason": "ai:serialization"
         },
@@ -252318,6 +252323,11 @@
             "file": "zed/crates/language_models/src/provider/opencode.rs",
             "original": "https://opencode.ai/auth",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/opencode.rs",
+            "original": "https://opencode.ai/inference/openai/v1",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models/src/provider/opencode.rs",
@@ -252506,6 +252516,11 @@
         },
         {
             "file": "zed/crates/language_models/src/provider/opencode.rs",
+            "original": "provider",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/opencode.rs",
             "original": "reasoning",
             "reason": "ai:api_identifier"
         },
@@ -252653,6 +252668,11 @@
             "file": "zed/crates/language_models/src/provider/opencode.rs",
             "original": "{subscription:?}: {cost}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/opencode.rs",
+            "original": "{subscription:?}: {model_provider}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models/src/provider/opencode.rs",
