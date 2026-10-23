@@ -54371,6 +54371,11 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v2.rs",
+            "original": " opaque/会話:007?x=%2F \\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v2.rs",
             "original": "$ACP_STARTUP_RESPONSE",
             "reason": "ai:translate-empty"
         },
@@ -68831,6 +68836,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view.rs",
+            "original": "More content\\n\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view.rs",
             "original": "My Custom Title",
             "reason": "rule:test_assertion"
         },
@@ -71413,6 +71423,11 @@
             "file": "zed/crates/agent_ui/src/conversation_view.rs",
             "original": "following assistant message should be accepted",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view.rs",
+            "original": "following message",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view.rs",
@@ -78673,6 +78688,11 @@
             "file": "zed/crates/agent_ui/src/inline_prompt_editor.rs",
             "original": "{keybinding} to chat",
             "reason": "pattern:prompt"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/inline_prompt_editor.rs",
+            "original": "{} ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent_ui/src/inline_prompt_editor.rs",
@@ -204721,6 +204741,11 @@
         },
         {
             "file": "zed/crates/git/src/repository.rs",
+            "original": ":file.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/repository.rs",
             "original": ":file1",
             "reason": "ai:test_assertion"
         },
@@ -220566,8 +220591,23 @@
         },
         {
             "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": ":400,",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
             "original": ":503,",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": ":[]}]}}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": ":[{",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/google_ai/src/google_ai.rs",
@@ -221167,6 +221207,11 @@
         {
             "file": "zed/crates/google_ai/src/google_ai.rs",
             "original": "{}/v1beta/models",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/google_ai/src/google_ai.rs",
+            "original": "}]}}",
             "reason": "ai:translate-empty"
         },
         {
