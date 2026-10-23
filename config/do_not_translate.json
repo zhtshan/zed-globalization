@@ -297686,6 +297686,11 @@
         },
         {
             "file": "zed/crates/node_runtime/src/node_runtime.rs",
+            "original": "v24.22.1",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/node_runtime/src/node_runtime.rs",
             "original": "versions",
             "reason": "ai:serialization"
         },
