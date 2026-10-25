@@ -19216,6 +19216,11 @@
         },
         {
             "file": "zed/crates/agent/src/native_agent_server.rs",
+            "original": "NativeAgentServer::connect called for path: {:?}",
+            "reason": "ai:format_spec"
+        },
+        {
+            "file": "zed/crates/agent/src/native_agent_server.rs",
             "original": "Zed Agent",
             "reason": "pattern:native_agent"
         },
@@ -235411,6 +235416,11 @@
         },
         {
             "file": "zed/crates/gpui_linux/src/linux/platform.rs",
+            "original": "scenario failed\nstdout:\n{stdout}\nstderr:\n{}",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui_linux/src/linux/platform.rs",
             "original": "screen-capture",
             "reason": "rule:identifier"
         },
@@ -266588,6 +266598,11 @@
             "file": "zed/crates/language_models/src/provider/opencode.rs",
             "original": "assistant",
             "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/opencode.rs",
+            "original": "configured",
+            "reason": "ai:api_identifier"
         },
         {
             "file": "zed/crates/language_models/src/provider/opencode.rs",
@@ -310565,6 +310580,11 @@
             "reason": "rule:identifier"
         },
         {
+            "file": "zed/crates/platform_title_bar/src/platforms/platform_linux.rs",
+            "original": "原文",
+            "reason": "ai:serialization"
+        },
+        {
             "file": "zed/crates/platform_title_bar/src/platforms/platform_windows.rs",
             "original": "Segoe Fluent Icons",
             "reason": "ai:api_identifier"
@@ -346136,6 +346156,11 @@
         },
         {
             "file": "zed/crates/recent_projects/src/recent_projects.rs",
+            "original": "EDIT",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/recent_projects.rs",
             "original": "Failed to connect: {e:#}",
             "reason": "api_identifier"
         },
@@ -356963,6 +356988,11 @@
             "file": "zed/crates/remote_server/src/server.rs",
             "original": "ping handled without draining stdout",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "printf 'WRAPPER_RAN|%s|%s|%s|%s\\\\n' \"$TOKEN\" \"$#\" \"$1\" \"$2\"\\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/remote_server/src/server.rs",
@@ -456926,6 +456956,11 @@
         },
         {
             "file": "zed/crates/zed/src/watcher_debug.rs",
+            "original": "  {} ({} registrations)\n",
+            "reason": "ai:format_spec"
+        },
+        {
+            "file": "zed/crates/zed/src/watcher_debug.rs",
             "original": "%H:%M:%S%.3f",
             "reason": "ai:format_spec"
         },
@@ -457228,6 +457263,11 @@
             "file": "zed/crates/zed/src/watcher_debug.rs",
             "original": "zed_version",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/watcher_debug.rs",
+            "original": "{:?}: recursive={}, cooldown remaining={:?} ms\n",
+            "reason": "ai:format_spec"
         },
         {
             "file": "zed/crates/zed/src/watcher_debug.rs",
