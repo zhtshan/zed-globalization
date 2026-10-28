@@ -75646,6 +75646,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "../outside/missing.md",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "../outside/missing.md:2",
             "reason": "rule:test_assertion"
         },
@@ -76381,6 +76386,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "crates/editor/src/element.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "crates/editor/src/element.rs:608",
             "reason": "rule:identifier"
         },
@@ -76388,6 +76398,11 @@
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "crates/editor/src/inlays",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "crates/editor/src/inlays/inlay_hints.rs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
@@ -350351,6 +350366,11 @@
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "-Command",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "-D",
             "reason": "ai:format_spec"
         },
@@ -350403,6 +350423,16 @@
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "-N",
             "reason": "ai:format_spec"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "-NoProfile",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "-NonInteractive",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
@@ -350498,6 +350528,11 @@
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "-r",
             "reason": "ai:format_spec"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "-s",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
@@ -350652,6 +350687,11 @@
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "/usr/bin/fish",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "/usr/bin/pwsh",
             "reason": "ai:translate-empty"
         },
         {
@@ -351231,6 +351271,11 @@
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "cd; sh -s",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "cd{separator} {to_run}",
             "reason": "ai:code_snippet"
         },
@@ -351311,6 +351356,11 @@
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "exec 0<&-; printf 'probe failed' >&2; exit 7",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "exec env ",
             "reason": "ai:code_snippet"
         },
@@ -351351,6 +351401,11 @@
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "failed to run command {command:?}: probe failed",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "failed to upload directory via SCP {src_path_display} -> {dest_path_str}: {stderr}",
             "reason": "api_identifier"
         },
@@ -351388,6 +351443,11 @@
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "gz",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "head -c 1048576 /dev/zero; cat",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
@@ -351488,6 +351548,11 @@
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "put {src_path_display} {dest_path_str}\\n",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "pwsh",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
@@ -351698,6 +351763,11 @@
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "{assignment} ",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "{command:?}: {output:?}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
@@ -419046,6 +419116,26 @@
         },
         {
             "file": "zed/crates/util/src/paths.rs",
+            "original": "/home/user/project/src/main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "/home/user/project/src/main.rs:49",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "/home/user/project/src/main.rs:49:7",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "/home/user/project/src/main.rs:49:in",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
             "original": "/home/zed",
             "reason": "rule:path"
         },
@@ -419336,6 +419426,16 @@
         },
         {
             "file": "zed/crates/util/src/paths.rs",
+            "original": "C:/project/src/main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "C:/project/src/main.rs:49",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
             "original": "C:\\",
             "reason": "ai:test_assertion"
         },
@@ -419518,6 +419618,16 @@
             "file": "zed/crates/util/src/paths.rs",
             "original": "C:\\a\\bc",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "C:\\project\\src\\main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "C:\\project\\src\\main.rs:49",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -419823,6 +419933,16 @@
             "file": "zed/crates/util/src/paths.rs",
             "original": "\\\\server\\share",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "\\\\server\\share/main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "\\\\server\\share/main.rs:49",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -420811,8 +420931,18 @@
         },
         {
             "file": "zed/crates/util/src/paths.rs",
+            "original": "parent/./file.rs:49",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
             "original": "parent//file.rs",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "parent//file.rs:49",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -420843,6 +420973,16 @@
             "file": "zed/crates/util/src/paths.rs",
             "original": "parent/😀(b).rs(12,3)",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "parent/😀.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "parent/😀.rs:49",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -420956,6 +421096,21 @@
         },
         {
             "file": "zed/crates/util/src/paths.rs",
+            "original": "src/main.rs(49,7)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "src/main.rs:49/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "src/main.rs:49/.",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
             "original": "src\\file.rs\\file.rs",
             "reason": "rule:test_assertion"
         },
@@ -420963,6 +421118,16 @@
             "file": "zed/crates/util/src/paths.rs",
             "original": "src\\file.rs\\file.rs:12:3",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "src\\mixed/main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "src\\mixed/main.rs:49",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -421258,6 +421423,11 @@
             "file": "zed/crates/util/src/paths.rs",
             "original": "{path_string}:{row}:{column}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/util/src/paths.rs",
+            "original": "{prefix}{replacement}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/paths.rs",
@@ -423026,13 +423196,38 @@
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
+            "original": "0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
             "original": "; exit",
             "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
+            "original": "> /dev/fd/0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": "> /dev/fd/{FD_STDIN}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": ">&{FD_STDIN}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
             "original": ">&{}",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": ">[1={FD_STDIN}]",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
@@ -423121,6 +423316,16 @@
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
+            "original": "powershell",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": "pwsh",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
             "original": "shell exited with 1 but environment was captured successfully",
             "reason": "rule:test_assertion"
         },
@@ -423141,6 +423346,16 @@
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
+            "original": "{\\\"PROBE\\\":\\\"ok\\\"}\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": "{process_output:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
             "original": "{}",
             "reason": "rule:punctuation"
         },
@@ -423148,6 +423363,11 @@
             "file": "zed/crates/util/src/shell_env.rs",
             "original": "{} --printenv {}",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
+            "original": "{}\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/util/src/size.rs",
