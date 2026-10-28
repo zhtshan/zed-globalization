@@ -632,7 +632,7 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
                 f"{indent}if asset == \"zed\" {{\n"
                 f"{indent}    let http: Arc<dyn HttpClient> =\n"
                 f"{indent}        this.read_with(cx, |this, _| this.client.http_client());\n"
-                f"{indent}    return Self::get_release_asset_from_github(os, arch, http).await;\n"
+                f"{indent}    return Self::get_release_asset_from_github(release_channel, os, arch, http).await;\n"
                 f"{indent}}}\n"
             )
             return f"{dispatch_block}\n{indent}{client_line}{sep}{destructure_line}"
@@ -647,19 +647,19 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
         pat_update_fn = r'(\n)([ \t]*)(async\s+fn\s+update\s*\(\s*this:\s*Entity<Self>.*?\)\s*->\s*Result<\(\)>\s*\{)'
         github_fn = (
             "    async fn get_release_asset_from_github(\n"
+            "        release_channel: ReleaseChannel,\n"
             "        os: &str,\n"
             "        arch: &str,\n"
             "        http: Arc<dyn HttpClient>,\n"
             "    ) -> Result<ReleaseAsset> {\n"
             '        let asset_prefix = format!("zedg-{}-{}-{}-", ZEDG_LANG, os, arch);\n'
             "\n"
-            "        let release =\n"
-            "            match latest_github_release(ZEDG_GITHUB_REPO, true, false, http.clone()).await {\n"
-            "                Ok(r) => r,\n"
-            "                Err(_) => latest_github_release(ZEDG_GITHUB_REPO, true, true, http)\n"
-            "                    .await\n"
-            '                    .context("failed to fetch any GitHub release")?,\n'
-            "            };\n"
+            "        // Only follow releases of the running channel, so a failed lookup\n"
+            "        // never moves a stable install onto a pre-release (or vice versa).\n"
+            "        let pre_release = release_channel == ReleaseChannel::Preview;\n"
+            "        let release = latest_github_release(ZEDG_GITHUB_REPO, true, pre_release, http)\n"
+            "            .await\n"
+            '            .context("failed to fetch GitHub release")?;\n'
             "\n"
             "        let matched_asset = release\n"
             "            .assets\n"
