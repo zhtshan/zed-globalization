@@ -62535,6 +62535,16 @@
             "reason": "ai:api_identifier"
         },
         {
+            "file": "zed/crates/agent_ui/src/agent_configuration.rs",
+            "original": "{}-authenticating",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/agent_configuration.rs",
+            "original": "{}-starting",
+            "reason": "ai:api_identifier"
+        },
+        {
             "file": "zed/crates/agent_ui/src/agent_configuration/add_llm_provider_modal.rs",
             "original": "Failed to write API key to keychain",
             "reason": "api_identifier"
@@ -123546,6 +123556,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\nFROM dev_container_feature_content_temp as dev_containers_feature_content_source\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\ncommand_status=$?\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " ",
             "reason": "rule:punctuation"
         },
@@ -123566,13 +123586,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " '{print $2}' | sed -e 's/^[ \\t]*//' | grep -E -m 1 \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " (command -v getent >/dev/null 2>&1 && getent passwd '{shell}' || grep -E '^{re}|^[^:]*:[^:]*:{re}:' /etc/passwd || true)",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " /etc/passwd || true) | head -n 1 | cut -d: -f6",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " /etc/passwd || true) | head -n 1 | cut -d: -f6)",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " /workspaces",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123596,8 +123631,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " | grep -E -m 1 \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " | grep -o ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " | grep -o \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123631,6 +123676,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " | tr -d ' ' | tr \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " | wc -l)",
             "reason": "ai:translate-empty"
         },
@@ -123638,6 +123688,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " || grep -E ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " || grep -E \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123651,8 +123706,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\" (command -v getent >/dev/null 2>&1 && getent passwd '{shell}' || grep -E '^{re}|^[^:]*:[^:]*:{re}:' /etc/passwd || true)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\" /etc/passwd || true) | head -n 1 | cut -d: -f6)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\" 2>/dev/null || true)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\" = \"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\" || grep -E \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123663,6 +123738,156 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"$$\"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$${containerEnv:PATH}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$( (command -v getent >/dev/null 2>&1 && getent passwd \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$(cat \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$EXISTING_GROUP\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$EXISTING_USER\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$NEW_GID\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$NEW_UID\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$OLD_GID\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$OLD_UID\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$home_directory\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$home_directory/.devcontainer\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$marker\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$marker_directory\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$marker_directory/.postStartCommandMarker\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$previous_started_at\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"$started_at\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${containerEnv:PATH}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${containerEnv:PATH}:/some/other/path\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${containerWorkspaceFolderBasename}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${containerWorkspaceFolder}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${devcontainerId}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${key}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${localEnv:local_env_1}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${localEnv:my_other_env}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${localEnv:with_defaults:default}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${localWorkspaceFolderBasename}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${localWorkspaceFolder}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${{HOME:-}}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${{{environment_source}:\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"${{{key}}}\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123681,6 +123906,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"(?:^|\\s)(\\w+)=\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"-\"",
             "reason": "rule:punctuation"
         },
@@ -123688,6 +123918,151 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"--\"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--build-arg\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--build-context\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--cache-from\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--cap-add\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--cap-add=SYS_PTRACE\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--entrypoint\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--init\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--load\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--mount\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--no-recreate\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--privileged\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--project-name\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--security-opt\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--security-opt=label=disable\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--sig-proxy\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--sig-proxy=false\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--sig-proxy=true\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--target\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--userns\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"--userns=keep-id\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-c\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-d\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-e\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-f\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-g\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-l\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-p\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-t\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"-u\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123701,13 +124076,163 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"../sibling-feature\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"./\"",
             "reason": "rule:punctuation"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"./devcontainer-features.builtin.env\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"./lsp-devtools\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"./myFeature\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"./some/nested/feature\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\".devcontainer\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\".devcontainer/Dockerfile\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\".env\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\".postStartCommandMarker\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"/\"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/bin/sh\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/custom/bin:${PATH}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/dev/null\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/go_\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/home/$USERNAME/.bashrc\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/path/to/local/project\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/tmp/build-features/devcontainer-features.builtin.env\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/tmp/dev-container-features\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/tmp/zed-devcontainer\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/var/lib/docker\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/workspace/customfolder\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/workspace2\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/workspaces\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/workspaces/project\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"/workspaces/{}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"0\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"1\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"16-bullseye\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"18-bookworm\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"2026-06-23T10:00:00Z\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"8085:8086\"",
+            "reason": "ai:test_assertion"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123718,6 +124243,201 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\":\"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\":[^:]*:${FREE_GID}:\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ARG \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"BASE_IMAGE={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"BUILDKIT_INLINE_CACHE\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"COMPOSE_PROJECT_NAME\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"COMPOSE_PROJECT_NAME=\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"DEVCONTAINER_ID\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"DOCKER_BUILDKIT\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"Dockerfile\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"Dockerfile.extended\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"Dockerfile.feature-content\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"FOO\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"FOUND\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"FROM scratch\\nCOPY . /tmp/build-features/\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"FROM\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"GitHub.vscode-pull-request-github\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"HOME\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"IMAGE_USER={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_ENV_VAR_1\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_ENV_VAR_2\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_ENV_VAR_3\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_ENV_VAR_4\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_WORKSPACE_FOLDER\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"LOCAL_WORKSPACE_FOLDER_BASENAME\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"MYVAR2\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"NEW_GID={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"NEW_UID={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"OTHER_ENV\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"PATH\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"PATH=/usr/local/bin:/usr/bin\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"REMOTE_USER={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"REMOTE_WORKSPACE_FOLDER\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"REMOTE_WORKSPACE_FOLDER_BASENAME\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"SYS_PTRACE\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"THISVALUEHERE\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"VARIABLE_VALUE\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"VARIABLE_VALUE=value\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"VARIANT\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"[ \\\"$command_status\\\" -eq 0 ] || exit \\\"$command_status\\\"\\n\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123736,13 +124456,838 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"\\nFROM dev_container_feature_content_temp as dev_containers_feature_content_source\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"\\ncommand_status=$?\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_CONTAINER_USER={}\\n_REMOTE_USER={}\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_CONTAINER_USER_HOME=$( (command -v getent >/dev/null 2>&1 && getent passwd 'root' || grep -E '^root|^[^:]*:[^:]*:root:' /etc/passwd || true) | cut -d: -f6)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_CONTAINER_USER_HOME=$({container_home_cmd} | cut -d: -f6)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_BASE_IMAGE\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_BASE_IMAGE={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_FEATURE_CONTENT_SOURCE=dev_container_feature_content_temp\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_IMAGE_USER\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_DEV_CONTAINERS_IMAGE_USER={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_REMOTE_USER_HOME=$( (command -v getent >/dev/null 2>&1 && getent passwd 'node' || grep -E '^node|^[^:]*:[^:]*:node:' /etc/passwd || true) | cut -d: -f6)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"_REMOTE_USER_HOME=$({remote_home_cmd} | cut -d: -f6)\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"application/vnd.devcontainers.layer.v1+tar\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"as\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"aws-cli\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"bar\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"base-image-id\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before ${containerEnv:FOUND} middle ${containerEnv:MISSING:default-value} after${containerEnv:MISSING2}\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before ${containerEnv:MISSING:one:two} after\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before one:two after\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before value middle default-value after\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before-${localEnv:missing_local_env}-after\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"before--after\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"build\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"buildx\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"capAdd\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"cli-${devcontainerId}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"compose\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"container-features-{}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"containerEnv\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"containerUser\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"customfolder\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dbaeumer.vscode-eslint\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dev_container_auto_added_stage_label\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dev_container_feature_content_temp\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dev_containers_feature_content_source\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dev_containers_feature_content_source={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dev_containers_target_stage\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer-feature.json\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer-features-install.sh\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer-features.builtin.env\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer-zed\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.config_file\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.config_file={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.json\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.local_folder\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.local_folder={}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.metadata\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.metadata=\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainer.metadata={serialized}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainers\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"devcontainers/features\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dind-var-lib-docker-${devcontainerId}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dind-var-lib-docker-{}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"docker\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"docker_compose_build.json\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"docker_compose_runtime.json\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"docker_id\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"dst\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo 'onCreateCommand' >> ON_CREATE_COMMAND.md\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo 'postAttachCommand' >> POST_ATTACH_COMMAND.md\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo 'postStartCommand' >> POST_START_COMMAND.md\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo 'updateContentCommand' >> UPDATE_CONTENT_COMMAND.md\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo Container started\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo Container started\\n    trap \\\"exit 0\\\" 15\\n    exec \\\"$@\\\"\\n    while sleep 1 & wait $!; do :; done\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo post-attach\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo post-start\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo post-start\\ncommand_status=$?\\n[ \\\"$command_status\\\" -eq 0 ] || exit \\\"$command_status\\\"\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"echo\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"empty-folder\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"exec \\\"$@\\\"\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"export HISTFILE=/home/$USERNAME/commandhistory/.bash_history\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"export PROMPT_COMMAND='history -a'\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"found\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/devcontainers/features/aws-cli:1\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/devcontainers/features/docker-in-docker:2\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/devcontainers/features/go\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/devcontainers/features/go:1\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/devcontainers/features/rust@sha256:abc123\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ghcr.io/user/repo/node:18.0.0\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"go\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"https://example.com/feature.tgz\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"id -g\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"id -u\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"id\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"if [ \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"init\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"label={k}={v}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"localEnv\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"local_env_1\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"local_env_value1\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"marker=\\\"$marker_directory/.postStartCommandMarker\\\"\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"marker_directory=\\\"$home_directory/.devcontainer\\\"\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"mcr.microsoft.com/devcontainers/base:ubuntu\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"mcr.microsoft.com/devcontainers/rust:2-1-bookworm\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"mcr.microsoft.com/devcontainers/typescript-node:16-bullseye\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"moby\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"mounts\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"myDevContainer-${devcontainerId}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"myDevContainer-{devcontainer_id}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"myFeature\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"my_other_env\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"myvarothervalue\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"name\": my-project\nservices: {}\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"name\": my-project\\nservices: {}\\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"node\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"other_env_value\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"pa$$word\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"pa$word\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"podman\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"post-start\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"printf '%s'\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"privileged\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"remoteUser\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"root\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"ruby\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"run\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"rust\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/${REMOTE_USER}:[^:]*:\\([^:]*\\):\\([^:]*\\):[^:]*:\\([^:]*\\).*/OLD_UID=\\1;OLD_GID=\\2;HOME_FOLDER=\\3/p\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/\\(${EXISTING_GROUP}:[^:]*:\\)${NEW_GID}:/\\1${FREE_GID}:/\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/\\(${REMOTE_USER}:[^:]*:\\)[^:]*:[^:]*/\\1${NEW_UID}:${NEW_GID}/\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/\\([^:]*:[^:]*:\\)${OLD_GID}:/\\1${NEW_GID}:/\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/\\([^:]*\\):[^:]*:${NEW_GID}:.*/EXISTING_GROUP=\\1/p\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"s/\\([^:]*\\):[^:]*:${NEW_UID}:.*/EXISTING_USER=\\1/p\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"seccomp=unconfined\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"securityOpt\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"service:\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"sh\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"source=/local/folder,target=/workspace/subfolder,type=bind,consistency=cached\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"source=dev-containers-cli-bashhistory,target=/home/node/commandhistory\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"src\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"test_image:latest\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"touch IAM.md\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"trap \\\"exit 0\\\" 15\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"type=bind,source={TEST_PROJECT_PATH},target=/workspaces/project,consistency=cached\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"up\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"updateUID.Dockerfile\"",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"user_id=\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"volume\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"vsc-myproject-features\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"vue\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"while sleep 1 & wait $!; do :; done\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"windows\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"yarn install\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"yarn\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"zed\"",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"zed-dc\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"zed-devcontainer-{prefix}-{}-{now}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"{\"",
             "reason": "rule:punctuation"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{:016x}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{TEST_PROJECT_PATH}/.devcontainer\"",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{dockerfile_content}\\nFROM {existing_alias} AS {alias}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{dockerfile}ENV {key}={value}\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{dockerfile}\\n{container_env_layer}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{escaped_name}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{extended_dockerfile}ENV {key}={value}\\n\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{extended_dockerfile}\\n{container_env_layer}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{key}={value}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{line} AS {alias}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{message}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{port_number}:{port_number}\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{workspace_fallback}_devcontainer\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"{}\"",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"{}-{:x}-features\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123766,13 +125311,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "# comment\nCOMPOSE_PROJECT_NAME=from_dotenv\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "# comment\\nCOMPOSE_PROJECT_NAME=from_dotenv\\n",
             "reason": "rule:test_assertion"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "# name: commented-out\nservices: {}\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "# name: commented-out\\nservices: {}\\n",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "#!/bin/sh\nset -e\necho 'Installing lsp-devtools'",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123796,13 +125356,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$( (command -v getent >/dev/null 2>&1 && getent passwd \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "$(awk -v val=1000 -F ",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(awk -v val=1000 -F \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "$(cat ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(cat \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123821,8 +125396,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(curl -sSL \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "$(dirname ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(dirname \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123833,6 +125418,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "$(echo ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(echo \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -123848,6 +125438,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "$(git ls-remote --tags ${repository} | grep -oP ",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "$(git ls-remote --tags ${repository} | grep -oP \"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -124131,6 +125726,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${DOCKER_VERSION//./\\.}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${DOCKER_VERSION//./\\\\..}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${DOCKER_VERSION//./\\\\.}",
             "reason": "ai:translate-empty"
         },
@@ -124223,6 +125828,16 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${MOBYBUILDXVERSION:-",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${MOBY_BUILDX_VERSION//./\\.}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${MOBY_BUILDX_VERSION//./\\\\..}",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -124381,6 +125996,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${buildx_version_dot_escaped//+/\\+}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${buildx_version_dot_escaped//+/\\\\+}",
             "reason": "ai:translate-empty"
         },
@@ -124448,6 +126068,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${docker_ok}",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${docker_version_dot_escaped//+/\\+}",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -124543,6 +126168,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${prefix}",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${prefix}\\K[0-9]+${escaped_separator}[0-9]+${last_part}$",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -124656,6 +126286,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${url/https://github.com/https://api.github.com/repos}/releases",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${url/https:\\/\\/github.com/https:\\/\\/api.github.com\\/repos}/releases",
             "reason": "ai:translate-empty"
         },
@@ -124688,6 +126323,26 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "${{HOME:-}}",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{containerEnv:{k}}}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{environment_source}:",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{key}}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "${{localEnv:{k}}}",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -124736,8 +126391,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "(?:^|\\s)(\\w+) =",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "(?:^|\\s)(\\w+)=",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "(?:^|\\s)(\\w+)=\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -125528,6 +127193,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "1234",
             "reason": "rule:numeric"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "1234:1234",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -126796,6 +128466,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "5432:5432",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "55",
             "reason": "rule:numeric"
         },
@@ -126941,13 +128616,33 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "8081:8080",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "8082:8082",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "8083",
             "reason": "rule:numeric"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "8083:8083",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "8084",
             "reason": "rule:numeric"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "8084:8084",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127101,13 +128796,43 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "=(apt-cache madison ${cli_package_name} | awk -F",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "=(apt-cache madison ${engine_package_name} | awk -F",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "=(apt-cache madison moby-buildx | awk -F",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "ARG ",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "ARG \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "ARG RUBY_VERSION=3.4.4\nARG RUBY_VERSION2=3.3.0\nFROM ghcr.io/rails/devcontainer/images/ruby:3.4.4\nRUN echo 3.3.0",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "ARG RUBY_VERSION=3.4.4\\nARG RUBY_VERSION2=3.3.0\\nFROM ghcr.io/rails/devcontainer/images/ruby:3.4.4\\nRUN echo 3.3.0",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "ARG ]",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127136,8 +128861,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "C:\\\\path\\\\to\\\\local\\\\project",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "C:\\\\path\\to\\local\\project",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "C:\\path\\to\\local\\project",
+            "reason": "ai:test_assertion"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127148,6 +128883,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "COMPOSE_PROJECT_NAME=",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "COMPOSE_PROJECT_NAME=from_dotenv\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127226,13 +128966,33 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ${BASE_IMAGE}\nUSER root\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM ${BASE_IMAGE}\\nUSER root\\n",
             "reason": "rule:test_assertion"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM --platform=linux/amd64 ubuntu:24.04\nRUN echo ok",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM --platform=linux/amd64 ubuntu:24.04 AS base\nFROM base AS development",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM --platform=linux/amd64 ubuntu:24.04 AS base\\nFROM base AS development",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM --platform=linux/amd64 ubuntu:24.04 AS dev_container_auto_added_stage_label\nRUN echo ok",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127246,8 +129006,23 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM a AS b\nFROM b AS a",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM a AS b\\nFROM b AS a",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM scratch\nCOPY . /tmp/build-features/\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM scratch AS builder\nFROM builder AS final",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127261,13 +129036,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM test_image:latest\nUSER root",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM test_image:latest\\nUSER root",
             "reason": "rule:test_assertion"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu AS build\nFROM debian AS ubuntu",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM ubuntu AS build\\nFROM debian AS ubuntu",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS Base\nFROM Base AS Development",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127278,6 +129068,26 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM ubuntu:24.04 AS base",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS base\nFROM base",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS base\nFROM base AS development",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS base\nFROM base AS development\nFROM development AS dev_container_auto_added_stage_label",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS base\nFROM base AS mid\nFROM mid AS development",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127306,6 +129116,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS development\nFROM ubuntu:22.04 AS production",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 AS development\nFROM ubuntu:22.04 AS production\nFROM development AS dev_container_auto_added_stage_label",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM ubuntu:24.04 AS development\\nFROM ubuntu:22.04 AS production",
             "reason": "rule:test_assertion"
         },
@@ -127313,6 +129133,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "FROM ubuntu:24.04 AS development\\nFROM ubuntu:22.04 AS production\\nFROM development AS dev_container_auto_added_stage_label",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "FROM ubuntu:24.04 \\\n    --platform=linux/amd64\nRUN echo ok",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127531,8 +129356,23 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "[ \"$command_status\" -eq 0 ] || exit \"$command_status\"\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "[ \"$command_status\" -eq 0 ] || exit \"$command_status\"\\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "[ \\\"$command_status\\\" -eq 0 ] || exit \\\"$command_status\\\"\\n",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "[{\\\"remoteUser\\\":\\\"vscode\\\"}]",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127576,6 +129416,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "]/docker-compose-v1",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "^${!variable_name//./\\.}$",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "^${!variable_name//./\\\\.}$",
             "reason": "ai:translate-empty"
         },
@@ -127591,8 +129441,23 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "^(.+:)?${buildx_version_dot_plus_escaped}([\\.\\+ ~:-]|$)",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "^(.+:)?${buildx_version_dot_plus_escaped}([\\.\\\\+ ~:-]|$)",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "^(.+:)?${buildx_version_dot_plus_escaped}([\\\\.\\\\+ ~:-]|$)",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "^(.+:)?${docker_version_dot_plus_escaped}([\\.\\+ ~:-]|$)",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127603,6 +129468,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?(\\+([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?$",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?\\+([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?$",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -127623,6 +129493,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "_",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "_CONTAINER_USER={}\n_REMOTE_USER={}\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128116,6 +129991,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.config_file=/path/to/local/project/.devcontainer/devcontainer.json",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.config_file={expected_config_file_label}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "devcontainer.config_file={}",
             "reason": "rule:test_assertion"
         },
@@ -128131,6 +130016,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.local_folder=/path/to/local/project",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.local_folder={TEST_PROJECT_PATH}",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "devcontainer.local_folder={}",
             "reason": "rule:test_assertion"
         },
@@ -128143,6 +130038,16 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "devcontainer.metadata=",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.metadata=[{\\\"remoteUser\\\":\\\"node\\\"}]",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "devcontainer.metadata=[{\\\"remoteUser\\\":\\\"vscode\\\"}]",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128341,8 +130246,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "echo Container started\\n    trap \"exit 0\" 15\\n    exec \"$@\"\\n    while sleep 1 & wait $!; do :; done",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "echo Container started\\n    trap \\\"exit 0\\\" 15\\n    exec \\\"$@\\\"\\n    while sleep 1 & wait $!; do :; done",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "echo Container started\\ntrap \\\"exit 0\\\" 15\\n/usr/local/share/docker-init.sh\\nexec \\\"$@\\\"\\nwhile sleep 1 & wait $!; do :; done",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128353,6 +130268,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "echo post-start",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "echo post-start\\ncommand_status=$?\\n[ \"$command_status\" -eq 0 ] || exit \"$command_status\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128373,6 +130293,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "enum",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "exec \"$@\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128616,6 +130541,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "if [ \"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "image id must still be present in docker run command",
             "reason": "rule:test_assertion"
         },
@@ -128673,6 +130603,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "key2",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "label=disable",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128736,8 +130671,18 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "marker=\"$marker_directory/.postStartCommandMarker\"",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "marker=\\\"$marker_directory/.postStartCommandMarker\\\"",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "marker_directory=\"$home_directory/.devcontainer\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -128853,6 +130798,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "myworkspace_devcontainer",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "name: my-project\nservices:\n  app:\n    image: foo\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129071,6 +131021,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "s/\\(${EXISTING_GROUP}:[^:]*:\\)${NEW_GID}:/\\1${FREE_GID}:",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "s/\\(${EXISTING_GROUP}:[^:]*:\\)${NEW_GID}:/\\1${FREE_GID}:/",
             "reason": "ai:translate-empty"
         },
@@ -129078,6 +131033,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "s/\\(${REMOTE_USER}:[^:]*:\\)[^:]*:[^:]*/\\1${NEW_UID}:${NEW_GID}/",
             "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "s/\\([^:]*:[^:]*:\\)${OLD_GID}:/\\1${NEW_GID}:",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129143,6 +131103,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "service:db",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "services:\n  app:\n    name: inner\n    image: foo\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129311,6 +131276,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "trap \"exit 0\" 15",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "trap \\\"exit 0\\\" 15",
             "reason": "ai:translate-empty"
         },
@@ -129331,8 +131301,28 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "type=bind,source=/path/to/local/project,target=/workspace2,consistency=cached",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "type=bind,source=/path/to/local/project,target=/workspaces/project,consistency=cached",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "type=bind,source={TEST_PROJECT_PATH},target=/workspaces/project,consistency=cached",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "type=volume,source=dev-containers-cli-bashhistory,target=/home/node/commandhistory,consistency=cached",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "type=volume,source=dind-var-lib-docker-42dad4b4ca7b8ced,target=/var/lib/docker,consistency=cached",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129456,6 +131446,16 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "zd",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "zd-devcontainer-{prefix}-{}-{now}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "zed",
             "reason": "ai:translate-empty"
         },
@@ -129473,6 +131473,21 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\"id\":\"aws-cli\",\"version\":\"1.1.3\",\"name\":\"AWS CLI\",\"documentationURL\":\"https://github.com/devcontainers/features/tree/main/src/aws-cli\",\"description\":\"Installs the AWS CLI along with needed dependencies. Useful for base Dockerfiles that often are missing required install dependencies like gpg.\",\"options\":{\"version\":{\"type\":\"string\",\"proposals\":[\"latest\"],\"default\":\"latest\",\"description\":\"Select or enter an AWS CLI version.\"},\"verbose\":{\"type\":\"boolean\",\"default\":true,\"description\":\"Suppress verbose output.\"}},\"customizations\":{\"vscode\":{\"extensions\":[\"AmazonWebServices.aws-toolkit-vscode\"],\"settings\":{\"github.copilot.chat.codeGeneration.instructions\":[{\"text\":\"This dev container includes the AWS CLI along with needed dependencies pre-installed and available on the `PATH`, along with the AWS Toolkit extensions for AWS development.\"}]}}},\"installsAfter\":[\"ghcr.io/devcontainers/features/common-utils\"]}",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\"id\":\"docker-in-docker\",\"version\":\"2.16.1\",\"name\":\"Docker (Docker-in-Docker)\",\"documentationURL\":\"https://github.com/devcontainers/features/tree/main/src/docker-in-docker\",\"description\":\"Create child containers *inside* a container, independent from the host's docker instance. Installs Docker extension in the container along with needed CLIs.\",\"options\":{\"version\":{\"type\":\"string\",\"proposals\":[\"latest\",\"none\",\"20.10\"],\"default\":\"latest\",\"description\":\"Select or enter a Docker/Moby Engine version. (Availability can vary by OS version.)\"},\"moby\":{\"type\":\"boolean\",\"default\":true,\"description\":\"Install OSS Moby build instead of Docker CE\"},\"mobyBuildxVersion\":{\"type\":\"string\",\"default\":\"latest\",\"description\":\"Install a specific version of moby-buildx when using Moby\"},\"dockerDashComposeVersion\":{\"type\":\"string\",\"enum\":[\"none\",\"v1\",\"v2\"],\"default\":\"v2\",\"description\":\"Default version of Docker Compose (v1, v2 or none)\"},\"azureDnsAutoDetection\":{\"type\":\"boolean\",\"default\":true,\"description\":\"Allow automatically setting the dockerd DNS server when the installation script detects it is running in Azure\"},\"dockerDefaultAddressPool\":{\"type\":\"string\",\"default\":\"\",\"proposals\":[],\"description\":\"Define default address pools for Docker networks. e.g. base=192.168.0.0/16,size=24\"},\"installDockerBuildx\":{\"type\":\"boolean\",\"default\":true,\"description\":\"Install Docker Buildx\"},\"installDockerComposeSwitch\":{\"type\":\"boolean\",\"default\":false,\"description\":\"Install Compose Switch (provided docker compose is available) which is a replacement to the Compose V1 docker-compose (python) executable. It translates the command line into Compose V2 docker compose then runs the latter.\"},\"disableIp6tables\":{\"type\":\"boolean\",\"default\":false,\"description\":\"Disable ip6tables (this option is only applicable for Docker versions 27 and greater)\"}},\"entrypoint\":\"/usr/local/share/docker-init.sh\",\"privileged\":true,\"containerEnv\":{\"DOCKER_BUILDKIT\":\"1\"},\"customizations\":{\"vscode\":{\"extensions\":[\"ms-azuretools.vscode-containers\"],\"settings\":{\"github.copilot.chat.codeGeneration.instructions\":[{\"text\":\"This dev container includes the Docker CLI (`docker`) pre-installed and available on the `PATH` for running and managing containers using a dedicated Docker daemon running inside the dev container.\"}]}}},\"mounts\":[{\"source\":\"dind-var-lib-docker-${devcontainerId}\",\"target\":\"/var/lib/docker\",\"type\":\"volume\"}],\"installsAfter\":[\"ghcr.io/devcontainers/features/common-utils\"]}",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{\"id\":\"go\",\"version\":\"1.3.3\",\"name\":\"Go\",\"documentationURL\":\"https://github.com/devcontainers/features/tree/main/src/go\",\"description\":\"Installs Go and common Go utilities. Auto-detects latest version and installs needed dependencies.\",\"options\":{\"version\":{\"type\":\"string\",\"proposals\":[\"latest\",\"none\",\"1.24\",\"1.23\"],\"default\":\"latest\",\"description\":\"Select or enter a Go version to install\"},\"golangciLintVersion\":{\"type\":\"string\",\"default\":\"latest\",\"description\":\"Version of golangci-lint to install\"}},\"init\":true,\"customizations\":{\"vscode\":{\"extensions\":[\"golang.Go\"],\"settings\":{\"github.copilot.chat.codeGeneration.instructions\":[{\"text\":\"This dev container includes Go and common Go utilities pre-installed and available on the `PATH`, along with the Go language extension for Go development.\"}]}}},\"containerEnv\":{\"GOROOT\":\"/usr/local/go\",\"GOPATH\":\"/go\",\"PATH\":\"/usr/local/go/bin:/go/bin:${PATH}\"},\"capAdd\":[\"SYS_PTRACE\"],\"securityOpt\":[\"seccomp=unconfined\"],\"installsAfter\":[\"ghcr.io/devcontainers/features/common-utils\"]}",
+            "reason": "ai:api_identifier"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129511,6 +131526,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{dockerfile_content}\nFROM {existing_alias} AS {alias}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{dockerfile_content}\\nFROM {existing_alias} AS {alias}",
             "reason": "ai:translate-empty"
         },
@@ -129518,6 +131538,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{dockerfile}\n{container_env_layer}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{dockerfile}ENV {key}={value}\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129538,6 +131563,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{extended_dockerfile}\n{container_env_layer}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{extended_dockerfile}ENV {key}={value}\n",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -129566,6 +131596,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{name: my-project, services: {app: {image: foo}}}\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{name: my-project, services: {app: {image: foo}}}\\n",
             "reason": "rule:test_assertion"
         },
@@ -129588,6 +131623,16 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "{}",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{} AS {}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "{}-uid",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -246221,6 +248266,11 @@
         },
         {
             "file": "zed/crates/gpui_wgpu/src/wgpu_renderer.rs",
+            "original": "size is at least 16",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui_wgpu/src/wgpu_renderer.rs",
             "original": "subpixel_sprites",
             "reason": "rule:identifier"
         },
@@ -317121,6 +319171,11 @@
         },
         {
             "file": "zed/crates/project/src/agent_server_store.rs",
+            "original": "expected package to be installed",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/src/agent_server_store.rs",
             "original": "expected {installer_url} to be rejected",
             "reason": "rule:test_assertion"
         },
@@ -364010,6 +366065,171 @@
             "reason": "ai:translate-empty"
         },
         {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​-a",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​-x/agent",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​.",
+            "reason": "ai:string_comparison"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​./-bin/agent",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​./-x/agent",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​./agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​./bin/agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/bin/agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/bin/sh",
+            "reason": "ai:string_comparison"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/not-utf8-\\xff",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/not-utf8-\\xff/agent",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/opt/bin",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/opt/bin/-a",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/srv/agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/usr/bin/agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/usr/bin/printf",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/usr/bin:bin::-bin",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/usr/local/bin/agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​/usr/local/bin:/bin:/usr/bin",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​OPTION_INTERPRETED",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​PWD",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​TOKEN",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​WRAPPER_RAN|controlled|3|spoofed-argv0|/usr/bin/printf\\n",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​agent",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​bin",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​controlled",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​missing",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​printf 'WRAPPER_RAN|%s|%s|%s|%s\\\\n' \\\"$TOKEN\\\" \\\"$#\\\" \\\"$1\\\" \\\"$2\\\"\\n",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​shell fallback ran",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​spoofed-argv0",
+            "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​{shell_output:?}",
+            "reason": "ai:format_spec"
+        },
+        {
+            "file": "zed/crates/remote_server/src/server.rs",
+            "original": "​{}:{}",
+            "reason": "ai:format_spec"
+        },
+        {
             "file": "zed/crates/remote_server/src/windows.rs",
             "original": "",
             "reason": "rule:empty_string"
@@ -365553,6 +367773,11 @@
             "file": "zed/crates/repl/src/kernels/mod.rs",
             "original": "python3",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/repl/src/kernels/mod.rs",
+            "original": "python_env_kernel_specifications: is_remote: {}",
+            "reason": "ai:api_identifier"
         },
         {
             "file": "zed/crates/repl/src/kernels/mod.rs",
