@@ -204777,7 +204777,7 @@
             "context": "}\n\nstatic WASM_ENGINE: LazyLock<wasmtime::Engine> = LazyLock::new(|| {\n    wasmtime::Engine::new(&wasmtime::Config::new()).expect(\"Failed to create Wasmtime engine\")\n});\n\n/// A shared grammar for plain text, exposed for reuse by downstream crates."
         },
         "Plain Text": {
-            "line": 2146,
+            "line": 2154,
             "context": "            languages.language_names(),\n            &[\n                LanguageName::new_static(\"JSON\"),\n                LanguageName::new_static(\"Plain Text\"),\n                LanguageName::new_static(\"Rust\"),\n            ]\n        );"
         },
         ")]}": {
@@ -204837,7 +204837,7 @@
             "context": "\nimpl Debug for CachedLspAdapter {\n    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {\n        f.debug_struct(\"CachedLspAdapter\")\n            .field(\"name\", &self.name)\n            .field(\n                \"disk_based_diagnostic_sources\","
         },
         "name": {
-            "line": 1468,
+            "line": 1478,
             "context": "impl Debug for Language {\n    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {\n        f.debug_struct(\"Language\")\n            .field(\"name\", &self.config.name)\n            .finish()\n    }\n}"
         },
         "disk_based_diagnostic_sources": {
@@ -204885,299 +204885,303 @@
             "context": "                        delegate.update_status(\n                            self.name(),\n                            BinaryStatus::Failed {\n                                error: format!(\"{error:?}\"),\n                            },\n                        );\n                    }"
         },
         "test-support": {
-            "line": 1794,
+            "line": 1802,
             "context": "    test_language(\"markdown\", tree_sitter_md::LANGUAGE.into())\n}\n\n#[cfg(any(test, feature = \"test-support\"))]\nfn test_language(name: &str, grammar: tree_sitter::Language) -> Arc<Language> {\n    Arc::new(\n        Language::new(grammars::load_config(name), Some(grammar))"
         },
         "cannot mutate grammar": {
             "line": 1093,
             "context": "    ) -> Result<Self> {\n        if let Some(grammar_arc) = self.grammar.take() {\n            let grammar = Arc::try_unwrap(grammar_arc)\n                .map_err(|_| anyhow::anyhow!(\"cannot mutate grammar\"))?;\n            self.grammar = Some(Arc::new(build(grammar, &self.config.name)?));\n        }\n        Ok(self)"
         },
+        "highlighting {} text of {text_len} bytes: {error:#}": {
+            "line": 1200,
+            "context": "            Ok(tree) => tree,\n            Err(error) => {\n                log::warn!(\n                    \"highlighting {} text of {text_len} bytes: {error:#}\",\n                    self.name()\n                );\n                return ResolvedHighlights::default();"
+        },
         "Language": {
-            "line": 1467,
+            "line": 1477,
             "context": "\nimpl Debug for Language {\n    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {\n        f.debug_struct(\"Language\")\n            .field(\"name\", &self.config.name)\n            .finish()\n    }"
         },
-        "incompatible grammar": {
-            "line": 1525,
-            "context": "    with_parser(|parser| {\n        parser\n            .set_language(&grammar.ts_language)\n            .expect(\"incompatible grammar\");\n        let mut chunks = text.chunks_in_range(0..text.len());\n        parser\n            .parse_with_options("
+        "tree-sitter returned no tree": {
+            "line": 1544,
+            "context": "                old_tree.as_ref(),\n                None,\n            )\n            .context(\"tree-sitter returned no tree\")\n    })\n}\n"
         },
         "type": {
-            "line": 1573,
+            "line": 1581,
             "context": "                    .or_else(|| grammar.highlight_id_for_name(\"function\")),\n                Kind::OPERATOR => grammar.highlight_id_for_name(\"operator\"),\n                Kind::PROPERTY => grammar.highlight_id_for_name(\"property\"),\n                Kind::STRUCT => grammar.highlight_id_for_name(\"type\"),\n                Kind::VARIABLE => grammar.highlight_id_for_name(\"variable\"),\n                Kind::KEYWORD => grammar.highlight_id_for_name(\"keyword\"),\n                _ => None,"
         },
         "constant": {
-            "line": 1557,
+            "line": 1565,
             "context": "            use lsp::CompletionItemKind as Kind;\n            match kind {\n                Kind::CLASS => grammar.highlight_id_for_name(\"type\"),\n                Kind::CONSTANT => grammar.highlight_id_for_name(\"constant\"),\n                Kind::CONSTRUCTOR => grammar.highlight_id_for_name(\"constructor\"),\n                Kind::ENUM => grammar\n                    .highlight_id_for_name(\"enum\")"
         },
         "constructor": {
-            "line": 1558,
+            "line": 1566,
             "context": "            match kind {\n                Kind::CLASS => grammar.highlight_id_for_name(\"type\"),\n                Kind::CONSTANT => grammar.highlight_id_for_name(\"constant\"),\n                Kind::CONSTRUCTOR => grammar.highlight_id_for_name(\"constructor\"),\n                Kind::ENUM => grammar\n                    .highlight_id_for_name(\"enum\")\n                    .or_else(|| grammar.highlight_id_for_name(\"type\")),"
         },
         "enum": {
-            "line": 1560,
+            "line": 1568,
             "context": "                Kind::CONSTANT => grammar.highlight_id_for_name(\"constant\"),\n                Kind::CONSTRUCTOR => grammar.highlight_id_for_name(\"constructor\"),\n                Kind::ENUM => grammar\n                    .highlight_id_for_name(\"enum\")\n                    .or_else(|| grammar.highlight_id_for_name(\"type\")),\n                Kind::ENUM_MEMBER => grammar\n                    .highlight_id_for_name(\"variant\")"
         },
         "variant": {
-            "line": 1563,
+            "line": 1571,
             "context": "                    .highlight_id_for_name(\"enum\")\n                    .or_else(|| grammar.highlight_id_for_name(\"type\")),\n                Kind::ENUM_MEMBER => grammar\n                    .highlight_id_for_name(\"variant\")\n                    .or_else(|| grammar.highlight_id_for_name(\"property\")),\n                Kind::FIELD => grammar.highlight_id_for_name(\"property\"),\n                Kind::FUNCTION => grammar.highlight_id_for_name(\"function\"),"
         },
         "property": {
-            "line": 1572,
+            "line": 1580,
             "context": "                    .highlight_id_for_name(\"function.method\")\n                    .or_else(|| grammar.highlight_id_for_name(\"function\")),\n                Kind::OPERATOR => grammar.highlight_id_for_name(\"operator\"),\n                Kind::PROPERTY => grammar.highlight_id_for_name(\"property\"),\n                Kind::STRUCT => grammar.highlight_id_for_name(\"type\"),\n                Kind::VARIABLE => grammar.highlight_id_for_name(\"variable\"),\n                Kind::KEYWORD => grammar.highlight_id_for_name(\"keyword\"),"
         },
         "function": {
-            "line": 1963,
+            "line": 1971,
             "context": "        let language = rust_lang();\n        let theme = SyntaxTheme::new(\n            [\n                (\"function\", rgba(0x100000ff)),\n                (\"keyword\", rgba(0x200000ff)),\n            ]\n            .iter()"
         },
         "function.method": {
-            "line": 1814,
+            "line": 1822,
             "context": "        let theme = SyntaxTheme::new(\n            [\n                (\"function\", rgba(0x100000ff)),\n                (\"function.method\", rgba(0x200000ff)),\n                (\"function.async\", rgba(0x300000ff)),\n                (\"variable.builtin.self.rust\", rgba(0x400000ff)),\n                (\"variable.builtin\", rgba(0x500000ff)),"
         },
         "operator": {
-            "line": 1571,
+            "line": 1579,
             "context": "                Kind::METHOD => grammar\n                    .highlight_id_for_name(\"function.method\")\n                    .or_else(|| grammar.highlight_id_for_name(\"function\")),\n                Kind::OPERATOR => grammar.highlight_id_for_name(\"operator\"),\n                Kind::PROPERTY => grammar.highlight_id_for_name(\"property\"),\n                Kind::STRUCT => grammar.highlight_id_for_name(\"type\"),\n                Kind::VARIABLE => grammar.highlight_id_for_name(\"variable\"),"
         },
         "variable": {
-            "line": 1951,
+            "line": 1959,
             "context": "            vec![\n                (0..2, \"keyword\"),\n                (2..3, \"function\"),\n                (3..7, \"variable\"),\n                (7..12, \"function\"),\n            ],\n            \"a theme change must invalidate memoized highlights and resolve against the new theme\""
         },
         "keyword": {
-            "line": 1964,
+            "line": 1972,
             "context": "        let theme = SyntaxTheme::new(\n            [\n                (\"function\", rgba(0x100000ff)),\n                (\"keyword\", rgba(0x200000ff)),\n            ]\n            .iter()\n            .map(|(name, color)| (name.to_string(), (*color).into())),"
         },
         "{label} {detail}": {
-            "line": 1586,
+            "line": 1594,
             "context": "            .map(|highlight_id| vec![(0..label_length, highlight_id)])\n            .unwrap_or_default();\n        let text = if let Some(detail) = item.detail.as_deref().filter(|detail| detail != label) {\n            format!(\"{label} {detail}\")\n        } else if let Some(description) = item\n            .label_details\n            .as_ref()"
         },
         "{label} {description}": {
-            "line": 1593,
+            "line": 1601,
             "context": "            .and_then(|label_details| label_details.description.as_deref())\n            .filter(|description| description != label)\n        {\n            format!(\"{label} {description}\")\n        } else {\n            label.clone()\n        };"
         },
         "the-fake-language-server": {
-            "line": 1614,
+            "line": 1622,
             "context": "impl Default for FakeLspAdapter {\n    fn default() -> Self {\n        Self {\n            name: \"the-fake-language-server\",\n            capabilities: lsp::LanguageServer::full_capabilities(),\n            initializer: None,\n            disk_based_diagnostics_progress_token: None,"
         },
         "/the/fake/lsp/path": {
-            "line": 1624,
+            "line": 1632,
             "context": "            disk_based_diagnostics_sources: Vec::new(),\n            prettier_plugins: Vec::new(),\n            language_server_binary: LanguageServerBinary {\n                path: \"/the/fake/lsp/path\".into(),\n                arguments: vec![],\n                env: Default::default(),\n            },"
         },
         "Inverted range provided to an LSP request: {:?}-{:?}": {
-            "line": 1751,
+            "line": 1759,
             "context": "pub fn range_to_lsp(range: Range<PointUtf16>) -> Result<lsp::Range> {\n    anyhow::ensure!(\n        range.start <= range.end,\n        \"Inverted range provided to an LSP request: {:?}-{:?}\",\n        range.start,\n        range.end\n    );"
         },
         "range_from_lsp called with inverted range {start:?}-{end:?}": {
-            "line": 1770,
+            "line": 1778,
             "context": "        // range_from_lsp calls (especially during completions), that can hang the main thread.\n        //\n        // See issue #36223.\n        zlog::debug!(\"range_from_lsp called with inverted range {start:?}-{end:?}\");\n        mem::swap(&mut start, &mut end);\n    }\n    start..end"
         },
         "rust": {
-            "line": 2108,
+            "line": 2116,
             "context": "        });\n        languages.register_test_language(LanguageConfig {\n            name: \"Rust\".into(),\n            grammar: Some(\"rust\".into()),\n            matcher: (LanguageMatcher {\n                path_suffixes: vec![\"rs\".into()],\n                ..Default::default()"
         },
         "json": {
-            "line": 2100,
+            "line": 2108,
             "context": "            name: \"JSON\".into(),\n            grammar: Some(\"json\".into()),\n            matcher: (LanguageMatcher {\n                path_suffixes: vec![\"json\".into()],\n                ..Default::default()\n            })\n            .into(),"
         },
         "markdown": {
-            "line": 1791,
+            "line": 1799,
             "context": "#[doc(hidden)]\n#[cfg(any(test, feature = \"test-support\"))]\npub fn markdown_lang() -> Arc<Language> {\n    test_language(\"markdown\", tree_sitter_md::LANGUAGE.into())\n}\n\n#[cfg(any(test, feature = \"test-support\"))]"
         },
         "could not parse queries for language {name}: {error}": {
-            "line": 1799,
+            "line": 1807,
             "context": "    Arc::new(\n        Language::new(grammars::load_config(name), Some(grammar))\n            .with_queries(grammars::load_queries(name))\n            .unwrap_or_else(|error| panic!(\"could not parse queries for language {name}: {error}\")),\n    )\n}\n"
         },
         "function.async": {
-            "line": 1837,
+            "line": 1845,
             "context": "        );\n        assert_eq!(\n            theme.get_capture_name(map.get(CaptureId(1)).unwrap()),\n            Some(\"function.async\")\n        );\n        assert_eq!(\n            theme.get_capture_name(map.get(CaptureId(2)).unwrap()),"
         },
         "variable.builtin.self.rust": {
-            "line": 1816,
+            "line": 1824,
             "context": "                (\"function\", rgba(0x100000ff)),\n                (\"function.method\", rgba(0x200000ff)),\n                (\"function.async\", rgba(0x300000ff)),\n                (\"variable.builtin.self.rust\", rgba(0x400000ff)),\n                (\"variable.builtin\", rgba(0x500000ff)),\n                (\"variable\", rgba(0x600000ff)),\n            ]"
         },
         "variable.builtin": {
-            "line": 1841,
+            "line": 1849,
             "context": "        );\n        assert_eq!(\n            theme.get_capture_name(map.get(CaptureId(2)).unwrap()),\n            Some(\"variable.builtin\")\n        );\n    }\n"
         },
         "function.special": {
-            "line": 1825,
+            "line": 1833,
             "context": "        );\n\n        let capture_names = &[\n            \"function.special\",\n            \"function.async.rust\",\n            \"variable.builtin.self\",\n        ];"
         },
         "function.async.rust": {
-            "line": 1826,
+            "line": 1834,
             "context": "\n        let capture_names = &[\n            \"function.special\",\n            \"function.async.rust\",\n            \"variable.builtin.self\",\n        ];\n"
         },
         "variable.builtin.self": {
-            "line": 1827,
+            "line": 1835,
             "context": "        let capture_names = &[\n            \"function.special\",\n            \"function.async.rust\",\n            \"variable.builtin.self\",\n        ];\n\n        let map = build_highlight_map(capture_names, &theme);"
         },
         "Rust": {
-            "line": 2147,
+            "line": 2155,
             "context": "            &[\n                LanguageName::new_static(\"JSON\"),\n                LanguageName::new_static(\"Plain Text\"),\n                LanguageName::new_static(\"Rust\"),\n            ]\n        );\n"
         },
         "fn": {
-            "line": 1859,
+            "line": 1867,
             "context": "                r#\"\n                (function_item) @function.definition\n                (identifier) @variable\n                \"fn\" @keyword\n                \"#,\n            )\n            .unwrap(),"
         },
         "fn main() {}": {
-            "line": 1971,
+            "line": 1979,
             "context": "        );\n        language.set_theme(&theme);\n\n        let small_code = \"fn main() {}\";\n        let small_highlights =\n            language.highlight_text_resolved(&Rope::from(small_code), 0..small_code.len());\n        assert!("
         },
         "an inner capture missing from the theme must fall back to its outer capture": {
-            "line": 1891,
+            "line": 1899,
             "context": "        assert_eq!(\n            named,\n            vec![(0..2, \"keyword\"), (2..12, \"function\")],\n            \"an inner capture missing from the theme must fall back to its outer capture\"\n        );\n\n        let memoized = language.highlight_text_resolved(&Rope::from(code), 0..code.len());"
         },
         "repeated highlighting of the same text must be memoized": {
-            "line": 1897,
+            "line": 1905,
             "context": "        let memoized = language.highlight_text_resolved(&Rope::from(code), 0..code.len());\n        assert!(\n            Arc::ptr_eq(&highlights.runs, &memoized.runs),\n            \"repeated highlighting of the same text must be memoized\"\n        );\n        let memoized_str = language.highlight_text_resolved(code, 0..code.len());\n        assert!("
         },
         "str and rope sources of the same text must share memoized highlights": {
-            "line": 1902,
+            "line": 1910,
             "context": "        let memoized_str = language.highlight_text_resolved(code, 0..code.len());\n        assert!(\n            Arc::ptr_eq(&highlights.runs, &memoized_str.runs),\n            \"str and rope sources of the same text must share memoized highlights\"\n        );\n        let partial = language.highlight_text_resolved(&Rope::from(code), 0..2);\n        assert!("
         },
         "a different range must not reuse the memoized highlights": {
-            "line": 1907,
+            "line": 1915,
             "context": "        let partial = language.highlight_text_resolved(&Rope::from(code), 0..2);\n        assert!(\n            !Arc::ptr_eq(&highlights.runs, &partial.runs),\n            \"a different range must not reuse the memoized highlights\"\n        );\n        assert_eq!(partial.runs.as_ref(), &[(0..2, highlights.runs[0].1)]);\n"
         },
         "a theme change must invalidate previously resolved highlights": {
-            "line": 1932,
+            "line": 1940,
             "context": "        );\n        assert!(\n            !highlights.is_current(),\n            \"a theme change must invalidate previously resolved highlights\"\n        );\n        let rethemed = language.highlight_text_resolved(&Rope::from(code), 0..code.len());\n        assert!(rethemed.is_current());"
         },
         "a theme change must invalidate memoized highlights and resolve against the new theme": {
-            "line": 1954,
+            "line": 1962,
             "context": "                (3..7, \"variable\"),\n                (7..12, \"function\"),\n            ],\n            \"a theme change must invalidate memoized highlights and resolve against the new theme\"\n        );\n    }\n"
         },
         "texts within the size cap must be highlighted": {
-            "line": 1976,
+            "line": 1984,
             "context": "            language.highlight_text_resolved(&Rope::from(small_code), 0..small_code.len());\n        assert!(\n            !small_highlights.runs.is_empty(),\n            \"texts within the size cap must be highlighted\"\n        );\n\n        let oversized_code = format!("
         },
         "fn main() {{}}{}": {
-            "line": 1980,
+            "line": 1988,
             "context": "        );\n\n        let oversized_code = format!(\n            \"fn main() {{}}{}\",\n            \" \".repeat(MAX_TEXT_HIGHLIGHT_ENTRY_BYTES)\n        );\n        let oversized_rope = Rope::from(oversized_code.as_str());"
         },
         " ": {
-            "line": 1981,
+            "line": 1989,
             "context": "\n        let oversized_code = format!(\n            \"fn main() {{}}{}\",\n            \" \".repeat(MAX_TEXT_HIGHLIGHT_ENTRY_BYTES)\n        );\n        let oversized_rope = Rope::from(oversized_code.as_str());\n        let first_highlights ="
         },
         "texts over the cache entry cap must still be highlighted": {
-            "line": 1989,
+            "line": 1997,
             "context": "        assert_eq!(\n            first_highlights.runs.as_ref(),\n            small_highlights.runs.as_ref(),\n            \"texts over the cache entry cap must still be highlighted\"\n        );\n        assert_eq!(\n            language"
         },
         "str and rope sources must be highlighted identically": {
-            "line": 1997,
+            "line": 2005,
             "context": "                .runs\n                .as_ref(),\n            first_highlights.runs.as_ref(),\n            \"str and rope sources must be highlighted identically\"\n        );\n        let second_highlights =\n            language.highlight_text_resolved(&oversized_rope, 0..oversized_code.len());"
         },
         "texts over the cache entry cap must not be memoized": {
-            "line": 2007,
+            "line": 2015,
             "context": "        );\n        assert!(\n            !Arc::ptr_eq(&first_highlights.runs, &second_highlights.runs),\n            \"texts over the cache entry cap must not be memoized\"\n        );\n    }\n"
         },
         "fn a() {{ {} }}": {
-            "line": 2025,
+            "line": 2033,
             "context": "\n        // Large enough that tree-sitter invokes the progress callback before\n        // the parse completes; otherwise the cancellation never fires.\n        let large_input = format!(\"fn a() {{ {} }}\", \"b(c, d); e(f, g); \".repeat(5000));\n        let small_input = \"fn z() {}\";\n\n        // Cancel a parse via the progress callback. Tree-sitter retains the"
         },
         "b(c, d); e(f, g); ": {
-            "line": 2025,
+            "line": 2033,
             "context": "\n        // Large enough that tree-sitter invokes the progress callback before\n        // the parse completes; otherwise the cancellation never fires.\n        let large_input = format!(\"fn a() {{ {} }}\", \"b(c, d); e(f, g); \".repeat(5000));\n        let small_input = \"fn z() {}\";\n\n        // Cancel a parse via the progress callback. Tree-sitter retains the"
         },
         "fn z() {}": {
-            "line": 2026,
+            "line": 2034,
             "context": "        // Large enough that tree-sitter invokes the progress callback before\n        // the parse completes; otherwise the cancellation never fires.\n        let large_input = format!(\"fn a() {{ {} }}\", \"b(c, d); e(f, g); \".repeat(5000));\n        let small_input = \"fn z() {}\";\n\n        // Cancel a parse via the progress callback. Tree-sitter retains the\n        // in-progress parse state on the parser (its `canceled_balancing` flag"
         },
         "first parse should be cancelled by the progress callback": {
-            "line": 2053,
+            "line": 2061,
             "context": "        });\n        assert!(\n            cancelled.is_none(),\n            \"first parse should be cancelled by the progress callback\"\n        );\n\n        // Deliberately do NOT call `set_language` here: tree-sitter's"
         },
         "parse of small_input should succeed": {
-            "line": 2075,
+            "line": 2083,
             "context": "                    None,\n                    None,\n                )\n                .expect(\"parse of small_input should succeed\")\n        });\n\n        assert_eq!(tree.root_node().byte_range(), 0..small_input.len());"
         },
         "source_file": {
-            "line": 2079,
+            "line": 2087,
             "context": "        });\n\n        assert_eq!(tree.root_node().byte_range(), 0..small_input.len());\n        assert_eq!(tree.root_node().kind(), \"source_file\");\n        assert!(\n            !tree.root_node().has_error(),\n            \"tree should be error-free, got: {}\","
         },
         "tree should be error-free, got: {}": {
-            "line": 2082,
+            "line": 2090,
             "context": "        assert_eq!(tree.root_node().kind(), \"source_file\");\n        assert!(\n            !tree.root_node().has_error(),\n            \"tree should be error-free, got: {}\",\n            tree.root_node().to_sexp()\n        );\n    }"
         },
         "JSON": {
-            "line": 2145,
+            "line": 2153,
             "context": "        assert_eq!(\n            languages.language_names(),\n            &[\n                LanguageName::new_static(\"JSON\"),\n                LanguageName::new_static(\"Plain Text\"),\n                LanguageName::new_static(\"Rust\"),\n            ]"
         },
         "rs": {
-            "line": 2110,
+            "line": 2118,
             "context": "            name: \"Rust\".into(),\n            grammar: Some(\"rust\".into()),\n            matcher: (LanguageMatcher {\n                path_suffixes: vec![\"rs\".into()],\n                ..Default::default()\n            })\n            .into(),"
         },
         "Unknown": {
-            "line": 2152,
+            "line": 2160,
             "context": "        );\n\n        // Loading an unknown language returns an error.\n        assert!(languages.language_for_name(\"Unknown\").await.is_err());\n    }\n\n    #[gpui::test]"
         },
         "regular1": {
-            "line": 2158,
+            "line": 2166,
             "context": "    #[gpui::test]\n    async fn test_completion_label_omits_duplicate_data() {\n        let regular_completion_item_1 = lsp::CompletionItem {\n            label: \"regular1\".to_string(),\n            detail: Some(\"detail1\".to_string()),\n            label_details: Some(lsp::CompletionItemLabelDetails {\n                detail: None,"
         },
         "detail1": {
-            "line": 2159,
+            "line": 2167,
             "context": "    async fn test_completion_label_omits_duplicate_data() {\n        let regular_completion_item_1 = lsp::CompletionItem {\n            label: \"regular1\".to_string(),\n            detail: Some(\"detail1\".to_string()),\n            label_details: Some(lsp::CompletionItemLabelDetails {\n                detail: None,\n                description: Some(\"description 1\".to_string()),"
         },
         "description 1": {
-            "line": 2162,
+            "line": 2170,
             "context": "            detail: Some(\"detail1\".to_string()),\n            label_details: Some(lsp::CompletionItemLabelDetails {\n                detail: None,\n                description: Some(\"description 1\".to_string()),\n            }),\n            ..lsp::CompletionItem::default()\n        };"
         },
         "regular2": {
-            "line": 2168,
+            "line": 2176,
             "context": "        };\n\n        let regular_completion_item_2 = lsp::CompletionItem {\n            label: \"regular2\".to_string(),\n            label_details: Some(lsp::CompletionItemLabelDetails {\n                detail: None,\n                description: Some(\"description 2\".to_string()),"
         },
         "description 2": {
-            "line": 2171,
+            "line": 2179,
             "context": "            label: \"regular2\".to_string(),\n            label_details: Some(lsp::CompletionItemLabelDetails {\n                detail: None,\n                description: Some(\"description 2\".to_string()),\n            }),\n            ..lsp::CompletionItem::default()\n        };"
         },
         "{} {}": {
-            "line": 2226,
+            "line": 2234,
             "context": "            )\n            .text,\n            format!(\n                \"{} {}\",\n                regular_completion_item_1.label,\n                regular_completion_item_1\n                    .label_details"
         },
         "LSP completion items with both detail and label_details.description should prefer detail": {
-            "line": 2202,
+            "line": 2210,
             "context": "                regular_completion_item_1.label,\n                regular_completion_item_1.detail.unwrap()\n            ),\n            \"LSP completion items with both detail and label_details.description should prefer detail\"\n        );\n        assert_eq!(\n            CodeLabel::fallback_for_completion(&regular_completion_item_2, None).text,"
         },
         "LSP completion items without detail but with label_details.description should use that": {
-            "line": 2217,
+            "line": 2225,
             "context": "                    .as_ref()\n                    .unwrap()\n            ),\n            \"LSP completion items without detail but with label_details.description should use that\"\n        );\n        assert_eq!(\n            CodeLabel::fallback_for_completion("
         },
         "LSP completion items with both detail and label_details.description should prefer description only if the detail duplicates the completion label": {
-            "line": 2236,
+            "line": 2244,
             "context": "                    .as_ref()\n                    .unwrap()\n            ),\n            \"LSP completion items with both detail and label_details.description should prefer description only if the detail duplicates the completion label\"\n        );\n        assert_eq!(\n            CodeLabel::fallback_for_completion(&completion_item_with_duplicate_detail, None).text,"
         },
         "LSP completion items with duplicate label and detail, should omit the detail": {
-            "line": 2247,
+            "line": 2255,
             "context": "            CodeLabel::fallback_for_completion(&completion_item_with_duplicate_description, None)\n                .text,\n            regular_completion_item_2.label,\n            \"LSP completion items with duplicate label and detail, should omit the detail\"\n        );\n    }\n"
         },
         "Foo": {
-            "line": 2307,
+            "line": 2315,
             "context": "        {\n            let config: LanguageConfig = ::toml::from_str(\n                r#\"\n                name = \"Foo\"\n                block_comment = [\"a\", \"b\"]\n                \"#,\n            )"
         },
         "a": {
-            "line": 2315,
+            "line": 2323,
             "context": "            assert_matches!(config.block_comment, Some(BlockCommentConfig { .. }));\n\n            let config = config.block_comment.unwrap();\n            assert_eq!(config.start.as_ref(), \"a\");\n            assert_eq!(config.end.as_ref(), \"b\");\n            assert_eq!(config.prefix.as_ref(), \"\");\n            assert_eq!(config.tab_size, 0);"
         },
         "b": {
-            "line": 2316,
+            "line": 2324,
             "context": "\n            let config = config.block_comment.unwrap();\n            assert_eq!(config.start.as_ref(), \"a\");\n            assert_eq!(config.end.as_ref(), \"b\");\n            assert_eq!(config.prefix.as_ref(), \"\");\n            assert_eq!(config.tab_size, 0);\n        }"
         },
         "c": {
-            "line": 2299,
+            "line": 2307,
             "context": "            let config = config.documentation_comment.unwrap();\n            assert_eq!(config.start.as_ref(), \"a\");\n            assert_eq!(config.end.as_ref(), \"b\");\n            assert_eq!(config.prefix.as_ref(), \"c\");\n            assert_eq!(config.tab_size, 1);\n        }\n"
         },
         "d": {
-            "line": 2276,
+            "line": 2284,
             "context": "            assert_eq!(block_config.tab_size, 1);\n\n            let doc_config = config.documentation_comment.unwrap();\n            assert_eq!(doc_config.start.as_ref(), \"d\");\n            assert_eq!(doc_config.end.as_ref(), \"e\");\n            assert_eq!(doc_config.prefix.as_ref(), \"f\");\n            assert_eq!(doc_config.tab_size, 2);"
         },
         "e": {
-            "line": 2277,
+            "line": 2285,
             "context": "\n            let doc_config = config.documentation_comment.unwrap();\n            assert_eq!(doc_config.start.as_ref(), \"d\");\n            assert_eq!(doc_config.end.as_ref(), \"e\");\n            assert_eq!(doc_config.prefix.as_ref(), \"f\");\n            assert_eq!(doc_config.tab_size, 2);\n        }"
         },
         "f": {
-            "line": 2278,
+            "line": 2286,
             "context": "            let doc_config = config.documentation_comment.unwrap();\n            assert_eq!(doc_config.start.as_ref(), \"d\");\n            assert_eq!(doc_config.end.as_ref(), \"e\");\n            assert_eq!(doc_config.prefix.as_ref(), \"f\");\n            assert_eq!(doc_config.tab_size, 2);\n        }\n"
         },
         "": {
-            "line": 2317,
+            "line": 2325,
             "context": "            let config = config.block_comment.unwrap();\n            assert_eq!(config.start.as_ref(), \"a\");\n            assert_eq!(config.end.as_ref(), \"b\");\n            assert_eq!(config.prefix.as_ref(), \"\");\n            assert_eq!(config.tab_size, 0);\n        }\n    }"
         }
     },
@@ -364943,539 +364947,583 @@
             "context": "        let marks = vim\n            .update_editor(cx, |vim, editor, cx| {\n                vim.get_mark(\"<\", editor, window, cx)\n                    .zip(vim.get_mark(\">\", editor, window, cx))\n            })\n            .flatten();\n        let Some((Mark::Local(start), Mark::Local(end))) = marks else {"
         },
         "v": {
-            "line": 1747,
+            "line": 1784,
             "context": "        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"This is a newlinˇe\\n\", Mode::Normal);\n        cx.simulate_keystrokes(\"v\");\n        cx.assert_state(\"This is a newlin«eˇ»\\n\", Mode::Visual);\n        cx.simulate_keystrokes(\"l\");\n        cx.assert_state(\"This is a newlin«e\\nˇ»\", Mode::Visual);"
         },
         "w j": {
-            "line": 971,
+            "line": 979,
             "context": "        cx.update_editor(|editor, _, cx| assert_eq!(cursor, editor.pixel_position_of_cursor(cx)));\n\n        // forwards motions should extend the selection\n        cx.simulate_shared_keystrokes(\"w j\").await;\n        cx.shared_state().await.assert_eq(indoc! { \"The «quick brown\n            fox jumps oˇ»ver\n            the lazy dog\"});"
         },
         "escape": {
-            "line": 976,
+            "line": 984,
             "context": "            fox jumps oˇ»ver\n            the lazy dog\"});\n\n        cx.simulate_shared_keystrokes(\"escape\").await;\n        cx.shared_state().await.assert_eq(indoc! { \"The quick brown\n            fox jumps ˇover\n            the lazy dog\"});"
         },
         "v k b": {
-            "line": 982,
+            "line": 990,
             "context": "            the lazy dog\"});\n\n        // motions work backwards\n        cx.simulate_shared_keystrokes(\"v k b\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(indoc! { \"The «ˇquick brown"
         },
         "g shift-i": {
-            "line": 1039,
+            "line": 1047,
             "context": "            },\n            Mode::Visual,\n        );\n        cx.simulate_keystrokes(\"g shift-i\");\n        cx.assert_state(\n            indoc! {\n                \"ˇThe quick brown"
         },
         "g shift-a": {
-            "line": 1062,
+            "line": 1070,
             "context": "            },\n            Mode::Visual,\n        );\n        cx.simulate_keystrokes(\"g shift-a\");\n        cx.assert_state(\n            indoc! {\n                \"The quick brownˇ"
         },
         "shift-v": {
-            "line": 1116,
+            "line": 1124,
             "context": "            ˇ\"})\n            .await;\n        let cursor = cx.update_editor(|editor, _, cx| editor.pixel_position_of_cursor(cx));\n        cx.simulate_shared_keystrokes(\"shift-v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            a\n            b"
         },
         "x": {
-            "line": 1122,
+            "line": 1130,
             "context": "            b\n            ˇ\"});\n        cx.update_editor(|editor, _, cx| assert_eq!(cursor, editor.pixel_position_of_cursor(cx)));\n        cx.simulate_shared_keystrokes(\"x\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            a\n            ˇb\"});"
         },
         "v w": {
-            "line": 1132,
+            "line": 1140,
             "context": "    async fn test_visual_delete(cx: &mut gpui::TestAppContext) {\n        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.simulate(\"v w\", \"The quick ˇbrown\")\n            .await\n            .assert_matches();\n"
         },
         "The quick ˇbrown": {
-            "line": 1224,
+            "line": 1232,
             "context": "\n        cx.set_shared_state(\"The quick ˇbrown\").await;\n        cx.simulate_shared_keystrokes(\"v w y\").await;\n        cx.shared_state().await.assert_eq(\"The quick ˇbrown\");\n        cx.shared_clipboard().await.assert_eq(\"brown\");\n\n        cx.set_shared_state(indoc! {\""
         },
         "v w x": {
-            "line": 1136,
+            "line": 1144,
             "context": "            .await\n            .assert_matches();\n\n        cx.simulate(\"v w x\", \"The quick ˇbrown\")\n            .await\n            .assert_matches();\n        cx.simulate("
         },
         "v w j x": {
-            "line": 1153,
+            "line": 1161,
             "context": "        cx.shared_state().await.assert_matches();\n\n        cx.simulate_at_each_offset(\n            \"v w j x\",\n            indoc! {\"\n                The ˇquick brown\n                fox jumps over"
         },
         "j p": {
-            "line": 1149,
+            "line": 1157,
             "context": "        .await\n        .assert_matches();\n        // Test pasting code copied on delete\n        cx.simulate_shared_keystrokes(\"j p\").await;\n        cx.shared_state().await.assert_matches();\n\n        cx.simulate_at_each_offset("
         },
         "v b k x": {
-            "line": 1162,
+            "line": 1170,
             "context": "        .await\n        .assert_matches();\n        cx.simulate_at_each_offset(\n            \"v b k x\",\n            indoc! {\"\n                The ˇquick brown\n                fox jumps ˇover"
         },
         "shift-v x": {
-            "line": 1193,
+            "line": 1201,
             "context": "                fox jumps over\n                the laˇzy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"shift-v x\").await;\n        cx.shared_state().await.assert_matches();\n        cx.shared_clipboard().await.assert_eq(\"the lazy dog\\n\");\n"
         },
         "p": {
-            "line": 1205,
+            "line": 1213,
             "context": "        cx.simulate_shared_keystrokes(\"shift-v j x\").await;\n        cx.shared_state().await.assert_matches();\n        // Test pasting code copied on delete\n        cx.simulate_shared_keystrokes(\"p\").await;\n        cx.shared_state().await.assert_matches();\n\n        cx.set_shared_state(indoc! {\""
         },
         "the lazy dog\\n": {
-            "line": 1253,
+            "line": 1261,
             "context": "                    the ˇlazy dog\"});\n        cx.shared_clipboard().await.assert_eq(\"lazy d\");\n        cx.simulate_shared_keystrokes(\"shift-v y\").await;\n        cx.shared_clipboard().await.assert_eq(\"the lazy dog\\n\");\n\n        cx.set_shared_state(indoc! {\"\n                    The ˇquick brown"
         },
         "shift-v j x": {
-            "line": 1202,
+            "line": 1210,
             "context": "                                fox jumps over\n                                the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"shift-v j x\").await;\n        cx.shared_state().await.assert_matches();\n        // Test pasting code copied on delete\n        cx.simulate_shared_keystrokes(\"p\").await;"
         },
         "shift-v $ x": {
-            "line": 1214,
+            "line": 1222,
             "context": "            crash\n            \"})\n            .await;\n        cx.simulate_shared_keystrokes(\"shift-v $ x\").await;\n        cx.shared_state().await.assert_matches();\n    }\n"
         },
         "v w y": {
-            "line": 1223,
+            "line": 1231,
             "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(\"The quick ˇbrown\").await;\n        cx.simulate_shared_keystrokes(\"v w y\").await;\n        cx.shared_state().await.assert_eq(\"The quick ˇbrown\");\n        cx.shared_clipboard().await.assert_eq(\"brown\");\n"
         },
         "brown": {
-            "line": 1225,
+            "line": 1233,
             "context": "        cx.set_shared_state(\"The quick ˇbrown\").await;\n        cx.simulate_shared_keystrokes(\"v w y\").await;\n        cx.shared_state().await.assert_eq(\"The quick ˇbrown\");\n        cx.shared_clipboard().await.assert_eq(\"brown\");\n\n        cx.set_shared_state(indoc! {\"\n                The ˇquick brown"
         },
         "v w j y": {
-            "line": 1246,
+            "line": 1254,
             "context": "                    fox jumps over\n                    the ˇlazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"v w j y\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n                    The quick brown\n                    fox jumps over"
         },
         "lazy d": {
-            "line": 1251,
+            "line": 1259,
             "context": "                    The quick brown\n                    fox jumps over\n                    the ˇlazy dog\"});\n        cx.shared_clipboard().await.assert_eq(\"lazy d\");\n        cx.simulate_shared_keystrokes(\"shift-v y\").await;\n        cx.shared_clipboard().await.assert_eq(\"the lazy dog\\n\");\n"
         },
         "shift-v y": {
-            "line": 1252,
+            "line": 1260,
             "context": "                    fox jumps over\n                    the ˇlazy dog\"});\n        cx.shared_clipboard().await.assert_eq(\"lazy d\");\n        cx.simulate_shared_keystrokes(\"shift-v y\").await;\n        cx.shared_clipboard().await.assert_eq(\"the lazy dog\\n\");\n\n        cx.set_shared_state(indoc! {\""
         },
         "v b k y": {
-            "line": 1260,
+            "line": 1268,
             "context": "                    fox jumps over\n                    the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"v b k y\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n                    ˇThe quick brown\n                    fox jumps over"
         },
         "The q": {
-            "line": 1269,
+            "line": 1277,
             "context": "            cx.read_from_clipboard()\n                .map(|item| item.text().unwrap())\n                .unwrap(),\n            \"The q\"\n        );\n\n        cx.set_shared_state(indoc! {\""
         },
         "shift-v shift-g shift-y": {
-            "line": 1277,
+            "line": 1285,
             "context": "                    fox ˇjumps over\n                    the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"shift-v shift-g shift-y\")\n            .await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n                    The quick brown"
         },
         "fox jumps over\\nthe lazy dog\\n": {
-            "line": 1285,
+            "line": 1293,
             "context": "                    the lazy dog\"});\n        cx.shared_clipboard()\n            .await\n            .assert_eq(\"fox jumps over\\nthe lazy dog\\n\");\n\n        cx.set_shared_state(indoc! {\"\n                    The quick brown"
         },
         "shift-v $ shift-y": {
-            "line": 1292,
+            "line": 1300,
             "context": "                    fox ˇjumps over\n                    the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"shift-v $ shift-y\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n                    The quick brown\n                    ˇfox jumps over"
         },
         "fox jumps over\\n": {
-            "line": 1297,
+            "line": 1305,
             "context": "                    The quick brown\n                    ˇfox jumps over\n                    the lazy dog\"});\n        cx.shared_clipboard().await.assert_eq(\"fox jumps over\\n\");\n    }\n\n    #[gpui::test]"
         },
         "ctrl-v": {
-            "line": 1758,
+            "line": 1795,
             "context": "        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"aˇbc\", Mode::Normal);\n        cx.simulate_keystrokes(\"ctrl-v\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n        cx.simulate_keystrokes(\"cmd-shift-p escape\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);"
         },
         "2 down": {
-            "line": 1316,
+            "line": 1324,
             "context": "            fox jumps over\n            the lazy dog\"\n        });\n        cx.simulate_shared_keystrokes(\"2 down\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «qˇ»uick brown\n            fox «jˇ»umps over"
         },
         "e": {
-            "line": 1322,
+            "line": 1330,
             "context": "            fox «jˇ»umps over\n            the «lˇ»azy dog\"\n        });\n        cx.simulate_shared_keystrokes(\"e\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quicˇ»k brown\n            fox «jumpˇ»s over"
         },
         "^": {
-            "line": 1328,
+            "line": 1336,
             "context": "            fox «jumpˇ»s over\n            the «lazyˇ» dog\"\n        });\n        cx.simulate_shared_keystrokes(\"^\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«ˇThe q»uick brown\n            «ˇfox j»umps over"
         },
         "$": {
-            "line": 1334,
+            "line": 1342,
             "context": "            «ˇfox j»umps over\n            «ˇthe l»azy dog\"\n        });\n        cx.simulate_shared_keystrokes(\"$\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quick brownˇ»\n            fox «jumps overˇ»"
         },
         "shift-f space": {
-            "line": 1340,
+            "line": 1348,
             "context": "            fox «jumps overˇ»\n            the «lazy dogˇ»\"\n        });\n        cx.simulate_shared_keystrokes(\"shift-f space\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quickˇ» brown\n            fox «jumpsˇ» over"
         },
         "ctrl-v down down": {
-            "line": 1371,
+            "line": 1379,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v down down\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The«ˇ q»uick\n            bro«ˇwn»"
         },
         "down": {
-            "line": 1381,
+            "line": 1389,
             "context": "            lazy dog\n            \"\n        });\n        cx.simulate_shared_keystrokes(\"down\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «qˇ»uick\n            brow«nˇ»"
         },
         "left": {
-            "line": 1391,
+            "line": 1399,
             "context": "            lazy dog\n            \"\n        });\n        cx.simulate_shared_keystrokes(\"left\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The«ˇ q»uick\n            bro«ˇwn»"
         },
         "s o escape": {
-            "line": 1401,
+            "line": 1409,
             "context": "            lazy dog\n            \"\n        });\n        cx.simulate_shared_keystrokes(\"s o escape\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"Theˇouick\n            broo"
         },
         "l ctrl-v j j": {
-            "line": 1421,
+            "line": 1429,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"l ctrl-v j j\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «qˇ»uick brown\n"
         },
         "ctrl-v right down": {
-            "line": 1442,
+            "line": 1450,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v right down\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quˇ»ick brown\n            fox «juˇ»mps over"
         },
         "ctrl-v l l l l l j": {
-            "line": 1458,
+            "line": 1466,
             "context": "            fox jumps over\n            the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l l l l l j\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            The «quick ˇ»brown\n            fox «jumps ˇ»over"
         },
         "ctrl-v h h h h h k": {
-            "line": 1473,
+            "line": 1481,
             "context": "            fox jumpsˇ over\n            the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v h h h h h k\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            The «ˇquick »brown\n            fox «ˇjumps »over"
         },
         "ctrl-v l l l l j": {
-            "line": 1508,
+            "line": 1516,
             "context": "            fox jˇumps over\n            the lazy dog\"})\n            .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l l l l j\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            The quick brown\n            fox j«umps ˇ»over"
         },
         "o k": {
-            "line": 1493,
+            "line": 1501,
             "context": "            The quick brown\n            fox j«umps ˇ»over\n            the l«azy dˇ»og\"});\n        cx.simulate_shared_keystrokes(\"o k\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            The q«ˇuick »brown\n            fox j«ˇumps »over"
         },
         "shift-o k": {
-            "line": 1513,
+            "line": 1521,
             "context": "            The quick brown\n            fox j«umps ˇ»over\n            the l«azy dˇ»og\"});\n        cx.simulate_shared_keystrokes(\"shift-o k\").await;\n        cx.shared_state().await.assert_eq(indoc! {\"\n            The quick brown\n            fox j«ˇumps »over"
         },
         "ctrl-v 9 down": {
-            "line": 1554,
+            "line": 1562,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v 9 down\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«Tˇ»he quick brown\n            «fˇ»ox jumps over"
         },
         "shift-i k escape": {
-            "line": 1539,
+            "line": 1547,
             "context": "            ˇ\"\n        });\n\n        cx.simulate_shared_keystrokes(\"shift-i k escape\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"ˇkThe quick brown\n            kfox jumps over"
         },
         "c k escape": {
-            "line": 1561,
+            "line": 1569,
             "context": "            «tˇ»he lazy dog\n            ˇ\"\n        });\n        cx.simulate_shared_keystrokes(\"c k escape\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"ˇkhe quick brown\n            kox jumps over"
         },
         "{line_number:02}": {
-            "line": 1574,
+            "line": 1582,
             "context": "    async fn test_visual_block_insert_after_ctrl_d_scroll(cx: &mut gpui::TestAppContext) {\n        let mut cx = NeovimBackedTestContext::new(cx).await;\n        let shared_state_lines = (1..=10)\n            .map(|line_number| format!(\"{line_number:02}\"))\n            .collect::<Vec<_>>()\n            .join(\"\\n\");\n        let shared_state = format!(\"ˇ{shared_state_lines}\\n\");"
         },
         "\\n": {
-            "line": 1576,
+            "line": 1584,
             "context": "        let shared_state_lines = (1..=10)\n            .map(|line_number| format!(\"{line_number:02}\"))\n            .collect::<Vec<_>>()\n            .join(\"\\n\");\n        let shared_state = format!(\"ˇ{shared_state_lines}\\n\");\n\n        cx.set_scroll_height(5).await;"
         },
         "ˇ{shared_state_lines}\\n": {
-            "line": 1577,
+            "line": 1585,
             "context": "            .map(|line_number| format!(\"{line_number:02}\"))\n            .collect::<Vec<_>>()\n            .join(\"\\n\");\n        let shared_state = format!(\"ˇ{shared_state_lines}\\n\");\n\n        cx.set_scroll_height(5).await;\n        cx.set_shared_state(&shared_state).await;"
         },
         "ctrl-v ctrl-d": {
-            "line": 1582,
+            "line": 1590,
             "context": "        cx.set_scroll_height(5).await;\n        cx.set_shared_state(&shared_state).await;\n\n        cx.simulate_shared_keystrokes(\"ctrl-v ctrl-d\").await;\n        cx.shared_state().await.assert_matches();\n\n        cx.simulate_shared_keystrokes(\"shift-i x escape\").await;"
         },
         "shift-i x escape": {
-            "line": 1585,
+            "line": 1593,
             "context": "        cx.simulate_shared_keystrokes(\"ctrl-v ctrl-d\").await;\n        cx.shared_state().await.assert_matches();\n\n        cx.simulate_shared_keystrokes(\"shift-i x escape\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"\n            ˇx01"
         },
         "ctrl-v j": {
-            "line": 1616,
+            "line": 1624,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v j\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«1ˇ»2345678901234567890\n            «1ˇ»2345678901234567890"
         },
         "ctrl-v 2 j": {
-            "line": 1633,
+            "line": 1641,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v 2 j\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«1ˇ»23456789012345678901234567890123456789012345678901234567890\n            «1ˇ»234567890123456789012345678901234567890"
         },
         "ctrl-v 2 k": {
-            "line": 1650,
+            "line": 1658,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v 2 k\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«1ˇ»23456789012345678901234567890123456789012345678901234567890\n            «1ˇ»234567890123456789012345678901234567890"
         },
+        "123456789012ˇ34\\n12345678901234": {
+            "line": 1672,
+            "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n        cx.set_shared_wrap(12).await;\n\n        cx.set_shared_state(\"123456789012ˇ34\\n12345678901234\").await;\n        assert_eq!(cx.display_text(), \"123456789012\\n34\\n123456789012\\n34\");\n        cx.simulate_shared_keystrokes(\"ctrl-v shift-g\").await;\n        cx.shared_state()"
+        },
+        "123456789012\\n34\\n123456789012\\n34": {
+            "line": 1673,
+            "context": "        cx.set_shared_wrap(12).await;\n\n        cx.set_shared_state(\"123456789012ˇ34\\n12345678901234\").await;\n        assert_eq!(cx.display_text(), \"123456789012\\n34\\n123456789012\\n34\");\n        cx.simulate_shared_keystrokes(\"ctrl-v shift-g\").await;\n        cx.shared_state()\n            .await"
+        },
+        "ctrl-v shift-g": {
+            "line": 1680,
+            "context": "            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");\n\n        cx.set_shared_state(\"12345678901ˇ2\\n12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v shift-g\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"12345678901«2ˇ»\\n12345678901«2ˇ»34\");"
+        },
+        "123456789012«3ˇ»4\\n123456789012«3ˇ»4": {
+            "line": 1689,
+            "context": "        cx.simulate_shared_keystrokes(\"ctrl-v g g\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");\n\n        cx.set_shared_state(\"ˇ12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"g j ctrl-v k\").await;"
+        },
+        "12345678901ˇ2\\n12345678901234": {
+            "line": 1679,
+            "context": "            .await\n            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");\n\n        cx.set_shared_state(\"12345678901ˇ2\\n12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v shift-g\").await;\n        cx.shared_state()\n            .await"
+        },
+        "12345678901«2ˇ»\\n12345678901«2ˇ»34": {
+            "line": 1683,
+            "context": "        cx.simulate_shared_keystrokes(\"ctrl-v shift-g\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"12345678901«2ˇ»\\n12345678901«2ˇ»34\");\n\n        cx.set_shared_state(\"12345678901234\\n123456789012ˇ34\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v g g\").await;"
+        },
+        "12345678901234\\n123456789012ˇ34": {
+            "line": 1685,
+            "context": "            .await\n            .assert_eq(\"12345678901«2ˇ»\\n12345678901«2ˇ»34\");\n\n        cx.set_shared_state(\"12345678901234\\n123456789012ˇ34\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v g g\").await;\n        cx.shared_state()\n            .await"
+        },
+        "ctrl-v g g": {
+            "line": 1686,
+            "context": "            .assert_eq(\"12345678901«2ˇ»\\n12345678901«2ˇ»34\");\n\n        cx.set_shared_state(\"12345678901234\\n123456789012ˇ34\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v g g\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");"
+        },
+        "ˇ12345678901234": {
+            "line": 1691,
+            "context": "            .await\n            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");\n\n        cx.set_shared_state(\"ˇ12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"g j ctrl-v k\").await;\n        cx.shared_state().await.assert_eq(\"123456789012«3ˇ»4\");\n    }"
+        },
+        "g j ctrl-v k": {
+            "line": 1692,
+            "context": "            .assert_eq(\"123456789012«3ˇ»4\\n123456789012«3ˇ»4\");\n\n        cx.set_shared_state(\"ˇ12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"g j ctrl-v k\").await;\n        cx.shared_state().await.assert_eq(\"123456789012«3ˇ»4\");\n    }\n"
+        },
+        "123456789012«3ˇ»4": {
+            "line": 1693,
+            "context": "\n        cx.set_shared_state(\"ˇ12345678901234\").await;\n        cx.simulate_shared_keystrokes(\"g j ctrl-v k\").await;\n        cx.shared_state().await.assert_eq(\"123456789012«3ˇ»4\");\n    }\n\n    #[gpui::test]"
+        },
         "hello (in [parˇens] o)": {
-            "line": 1663,
+            "line": 1700,
             "context": "    async fn test_visual_object(cx: &mut gpui::TestAppContext) {\n        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(\"hello (in [parˇens] o)\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l\").await;\n        cx.simulate_shared_keystrokes(\"a ]\").await;\n        cx.shared_state()"
         },
         "ctrl-v l": {
-            "line": 1664,
+            "line": 1701,
             "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(\"hello (in [parˇens] o)\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l\").await;\n        cx.simulate_shared_keystrokes(\"a ]\").await;\n        cx.shared_state()\n            .await"
         },
         "a ]": {
-            "line": 1665,
+            "line": 1702,
             "context": "\n        cx.set_shared_state(\"hello (in [parˇens] o)\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l\").await;\n        cx.simulate_shared_keystrokes(\"a ]\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello (in «[parens]ˇ» o)\");"
         },
         "hello (in «[parens]ˇ» o)": {
-            "line": 1668,
+            "line": 1705,
             "context": "        cx.simulate_shared_keystrokes(\"a ]\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello (in «[parens]ˇ» o)\");\n        cx.simulate_shared_keystrokes(\"i (\").await;\n        cx.shared_state()\n            .await"
         },
         "i (": {
-            "line": 1669,
+            "line": 1706,
             "context": "        cx.shared_state()\n            .await\n            .assert_eq(\"hello (in «[parens]ˇ» o)\");\n        cx.simulate_shared_keystrokes(\"i (\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello («in [parens] oˇ»)\");"
         },
         "hello («in [parens] oˇ»)": {
-            "line": 1672,
+            "line": 1709,
             "context": "        cx.simulate_shared_keystrokes(\"i (\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello («in [parens] oˇ»)\");\n\n        cx.set_shared_state(\"hello in a wˇord again.\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l i w\").await;"
         },
         "hello in a wˇord again.": {
-            "line": 1674,
+            "line": 1711,
             "context": "            .await\n            .assert_eq(\"hello («in [parens] oˇ»)\");\n\n        cx.set_shared_state(\"hello in a wˇord again.\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l i w\").await;\n        cx.shared_state()\n            .await"
         },
         "ctrl-v l i w": {
-            "line": 1675,
+            "line": 1712,
             "context": "            .assert_eq(\"hello («in [parens] oˇ»)\");\n\n        cx.set_shared_state(\"hello in a wˇord again.\").await;\n        cx.simulate_shared_keystrokes(\"ctrl-v l i w\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello in a w«ordˇ» again.\");"
         },
         "hello in a w«ordˇ» again.": {
-            "line": 1678,
+            "line": 1715,
             "context": "        cx.simulate_shared_keystrokes(\"ctrl-v l i w\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"hello in a w«ordˇ» again.\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n        cx.simulate_shared_keystrokes(\"o a s\").await;\n        cx.shared_state()"
         },
         "o a s": {
-            "line": 1680,
+            "line": 1717,
             "context": "            .await\n            .assert_eq(\"hello in a w«ordˇ» again.\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n        cx.simulate_shared_keystrokes(\"o a s\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"«ˇhello in a word» again.\");"
         },
         "«ˇhello in a word» again.": {
-            "line": 1683,
+            "line": 1720,
             "context": "        cx.simulate_shared_keystrokes(\"o a s\").await;\n        cx.shared_state()\n            .await\n            .assert_eq(\"«ˇhello in a word» again.\");\n    }\n\n    #[gpui::test]"
         },
         "v l": {
-            "line": 1700,
+            "line": 1737,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v l\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"{\n                {"
         },
         "a {": {
-            "line": 1730,
+            "line": 1767,
             "context": "            }\n            \"\n        });\n        // cx.simulate_shared_keystrokes(\"a {\").await;\n        // cx.shared_state().await.assert_eq(indoc! {\n        //     \"{\n        //         «{"
         },
         "This is a newlinˇe\\n": {
-            "line": 1746,
+            "line": 1783,
             "context": "    async fn test_visual_move_trailing_newline(cx: &mut gpui::TestAppContext) {\n        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"This is a newlinˇe\\n\", Mode::Normal);\n        cx.simulate_keystrokes(\"v\");\n        cx.assert_state(\"This is a newlin«eˇ»\\n\", Mode::Visual);\n        cx.simulate_keystrokes(\"l\");"
         },
         "This is a newlin«eˇ»\\n": {
-            "line": 1748,
+            "line": 1785,
             "context": "\n        cx.set_state(\"This is a newlinˇe\\n\", Mode::Normal);\n        cx.simulate_keystrokes(\"v\");\n        cx.assert_state(\"This is a newlin«eˇ»\\n\", Mode::Visual);\n        cx.simulate_keystrokes(\"l\");\n        cx.assert_state(\"This is a newlin«e\\nˇ»\", Mode::Visual);\n    }"
         },
         "l": {
-            "line": 1749,
+            "line": 1786,
             "context": "        cx.set_state(\"This is a newlinˇe\\n\", Mode::Normal);\n        cx.simulate_keystrokes(\"v\");\n        cx.assert_state(\"This is a newlin«eˇ»\\n\", Mode::Visual);\n        cx.simulate_keystrokes(\"l\");\n        cx.assert_state(\"This is a newlin«e\\nˇ»\", Mode::Visual);\n    }\n"
         },
         "This is a newlin«e\\nˇ»": {
-            "line": 1750,
+            "line": 1787,
             "context": "        cx.simulate_keystrokes(\"v\");\n        cx.assert_state(\"This is a newlin«eˇ»\\n\", Mode::Visual);\n        cx.simulate_keystrokes(\"l\");\n        cx.assert_state(\"This is a newlin«e\\nˇ»\", Mode::Visual);\n    }\n\n    #[gpui::test]"
         },
         "aˇbc": {
-            "line": 1757,
+            "line": 1794,
             "context": "    async fn test_mode_across_command(cx: &mut gpui::TestAppContext) {\n        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"aˇbc\", Mode::Normal);\n        cx.simulate_keystrokes(\"ctrl-v\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n        cx.simulate_keystrokes(\"cmd-shift-p escape\");"
         },
         "cmd-shift-p escape": {
-            "line": 1760,
+            "line": 1797,
             "context": "        cx.set_state(\"aˇbc\", Mode::Normal);\n        cx.simulate_keystrokes(\"ctrl-v\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n        cx.simulate_keystrokes(\"cmd-shift-p escape\");\n        assert_eq!(cx.mode(), Mode::VisualBlock);\n    }\n"
         },
         "aaˇ aa aa aa aa": {
-            "line": 1839,
+            "line": 1876,
             "context": "\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aaˇ aa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aaˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;"
         },
         "/ a a enter": {
-            "line": 1825,
+            "line": 1862,
             "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");"
         },
         "aa ˇaa aa aa aa": {
-            "line": 1826,
+            "line": 1863,
             "context": "\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;"
         },
         "g n": {
-            "line": 1773,
+            "line": 1810,
             "context": "        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aaˇ» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aa aaˇ» aa aa\");\n        cx.simulate_shared_keystrokes(\"escape d g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa ˇ aa aa\");"
         },
         "aa «aaˇ» aa aa aa": {
-            "line": 1772,
+            "line": 1809,
             "context": "        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aaˇ» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aa aaˇ» aa aa\");\n        cx.simulate_shared_keystrokes(\"escape d g n\").await;"
         },
         "aa «aa aaˇ» aa aa": {
-            "line": 1774,
+            "line": 1811,
             "context": "        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aaˇ» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aa aaˇ» aa aa\");\n        cx.simulate_shared_keystrokes(\"escape d g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa ˇ aa aa\");\n"
         },
         "escape d g n": {
-            "line": 1775,
+            "line": 1812,
             "context": "        cx.shared_state().await.assert_eq(\"aa «aaˇ» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aa aaˇ» aa aa\");\n        cx.simulate_shared_keystrokes(\"escape d g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa ˇ aa aa\");\n\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;"
         },
         "aa aa ˇ aa aa": {
-            "line": 1776,
+            "line": 1813,
             "context": "        cx.simulate_shared_keystrokes(\"g n\").await;\n        cx.shared_state().await.assert_eq(\"aa «aa aaˇ» aa aa\");\n        cx.simulate_shared_keystrokes(\"escape d g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa ˇ aa aa\");\n\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;"
         },
         "3 g n": {
-            "line": 1781,
+            "line": 1818,
             "context": "        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"3 g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa aa «aaˇ» aa\");\n\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;"
         },
         "aa aa aa «aaˇ» aa": {
-            "line": 1782,
+            "line": 1819,
             "context": "        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"3 g n\").await;\n        cx.shared_state().await.assert_eq(\"aa aa aa «aaˇ» aa\");\n\n        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;"
         },
         "g shift-n": {
-            "line": 1789,
+            "line": 1826,
             "context": "        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"aa «ˇaa» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"«ˇaa aa» aa aa aa\");\n    }\n"
         },
         "aa «ˇaa» aa aa aa": {
-            "line": 1788,
+            "line": 1825,
             "context": "        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"aa «ˇaa» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"«ˇaa aa» aa aa aa\");\n    }"
         },
         "«ˇaa aa» aa aa aa": {
-            "line": 1790,
+            "line": 1827,
             "context": "        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"aa «ˇaa» aa aa aa\");\n        cx.simulate_shared_keystrokes(\"g shift-n\").await;\n        cx.shared_state().await.assert_eq(\"«ˇaa aa» aa aa aa\");\n    }\n\n    #[gpui::test]"
         },
         "aaˇ aa\\naa": {
-            "line": 1797,
+            "line": 1834,
             "context": "    async fn test_gl(cx: &mut gpui::TestAppContext) {\n        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"aaˇ aa\\naa\", Mode::Normal);\n        cx.simulate_keystrokes(\"g l\");\n        cx.assert_state(\"«aaˇ» «aaˇ»\\naa\", Mode::Visual);\n        cx.simulate_keystrokes(\"g >\");"
         },
         "g l": {
-            "line": 1798,
+            "line": 1835,
             "context": "        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"aaˇ aa\\naa\", Mode::Normal);\n        cx.simulate_keystrokes(\"g l\");\n        cx.assert_state(\"«aaˇ» «aaˇ»\\naa\", Mode::Visual);\n        cx.simulate_keystrokes(\"g >\");\n        cx.assert_state(\"«aaˇ» aa\\n«aaˇ»\", Mode::Visual);"
         },
         "«aaˇ» «aaˇ»\\naa": {
-            "line": 1799,
+            "line": 1836,
             "context": "\n        cx.set_state(\"aaˇ aa\\naa\", Mode::Normal);\n        cx.simulate_keystrokes(\"g l\");\n        cx.assert_state(\"«aaˇ» «aaˇ»\\naa\", Mode::Visual);\n        cx.simulate_keystrokes(\"g >\");\n        cx.assert_state(\"«aaˇ» aa\\n«aaˇ»\", Mode::Visual);\n    }"
         },
         "g >": {
-            "line": 1800,
+            "line": 1837,
             "context": "        cx.set_state(\"aaˇ aa\\naa\", Mode::Normal);\n        cx.simulate_keystrokes(\"g l\");\n        cx.assert_state(\"«aaˇ» «aaˇ»\\naa\", Mode::Visual);\n        cx.simulate_keystrokes(\"g >\");\n        cx.assert_state(\"«aaˇ» aa\\n«aaˇ»\", Mode::Visual);\n    }\n"
         },
         "«aaˇ» aa\\n«aaˇ»": {
-            "line": 1801,
+            "line": 1838,
             "context": "        cx.simulate_keystrokes(\"g l\");\n        cx.assert_state(\"«aaˇ» «aaˇ»\\naa\", Mode::Visual);\n        cx.simulate_keystrokes(\"g >\");\n        cx.assert_state(\"«aaˇ» aa\\n«aaˇ»\", Mode::Visual);\n    }\n\n    #[gpui::test]"
         },
         "d g n": {
-            "line": 1811,
+            "line": 1848,
             "context": "        cx.set_shared_state(\"aaˇ aa aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ a a enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"d g n\").await;\n\n        cx.shared_state().await.assert_eq(\"aa ˇ aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;"
         },
         "aa ˇ aa aa aa": {
-            "line": 1813,
+            "line": 1850,
             "context": "        cx.shared_state().await.assert_eq(\"aa ˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"d g n\").await;\n\n        cx.shared_state().await.assert_eq(\"aa ˇ aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa  ˇ aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;"
         },
         ".": {
-            "line": 1850,
+            "line": 1887,
             "context": "        cx.shared_state().await.assert_eq(\"aa ˇbb aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n    }\n"
         },
         "aa  ˇ aa aa": {
-            "line": 1815,
+            "line": 1852,
             "context": "\n        cx.shared_state().await.assert_eq(\"aa ˇ aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa  ˇ aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa   ˇ aa\");\n    }"
         },
         "aa   ˇ aa": {
-            "line": 1817,
+            "line": 1854,
             "context": "        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa  ˇ aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa   ˇ aa\");\n    }\n\n    #[gpui::test]"
         },
         "c g n x escape": {
-            "line": 1848,
+            "line": 1885,
             "context": "        cx.set_shared_state(\"aaˇ bb aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇbb aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");"
         },
         "aa ˇx aa aa aa": {
-            "line": 1851,
+            "line": 1888,
             "context": "        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n    }\n\n    #[gpui::test]"
         },
         "aa x ˇx aa aa": {
-            "line": 1830,
+            "line": 1867,
             "context": "        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aa x ˇx aa aa\");\n    }\n\n    #[gpui::test]"
         },
         "/ b b enter": {
-            "line": 1846,
+            "line": 1883,
             "context": "        cx.shared_state().await.assert_eq(\"aaˇa aa aa aa\");\n\n        cx.set_shared_state(\"aaˇ bb aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇbb aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");"
         },
         "aaˇaa aa aa aa": {
-            "line": 1841,
+            "line": 1878,
             "context": "        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aaˇ aa aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aaˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aaˇa aa aa aa\");\n"
         },
         "aaˇa aa aa aa": {
-            "line": 1843,
+            "line": 1880,
             "context": "        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aaˇaa aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aaˇa aa aa aa\");\n\n        cx.set_shared_state(\"aaˇ bb aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;"
         },
         "aaˇ bb aa aa aa": {
-            "line": 1845,
+            "line": 1882,
             "context": "        cx.simulate_shared_keystrokes(\".\").await;\n        cx.shared_state().await.assert_eq(\"aaˇa aa aa aa\");\n\n        cx.set_shared_state(\"aaˇ bb aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇbb aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;"
         },
         "aa ˇbb aa aa aa": {
-            "line": 1847,
+            "line": 1884,
             "context": "\n        cx.set_shared_state(\"aaˇ bb aa aa aa\").await;\n        cx.simulate_shared_keystrokes(\"/ b b enter\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇbb aa aa aa\");\n        cx.simulate_shared_keystrokes(\"c g n x escape\").await;\n        cx.shared_state().await.assert_eq(\"aa ˇx aa aa aa\");\n        cx.simulate_shared_keystrokes(\".\").await;"
         },
         "v down shift-d": {
-            "line": 1865,
+            "line": 1902,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v down shift-d\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"the ˇlazy dog\\n\"\n        });"
         },
         "the ˇlazy dog\\n": {
-            "line": 1867,
+            "line": 1904,
             "context": "        .await;\n        cx.simulate_shared_keystrokes(\"v down shift-d\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"the ˇlazy dog\\n\"\n        });\n\n        cx.set_shared_state(indoc! {"
         },
         "ctrl-v down shift-d": {
-            "line": 1877,
+            "line": 1914,
             "context": "            \"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"ctrl-v down shift-d\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"Theˇ•\n            fox•"
         },
         "The ˇquick brown\\n": {
-            "line": 1891,
+            "line": 1928,
             "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(indoc! {\n            \"The ˇquick brown\\n\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v i w shift-y\").await;"
         },
         "v i w shift-y": {
-            "line": 1894,
+            "line": 1931,
             "context": "            \"The ˇquick brown\\n\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v i w shift-y\").await;\n        cx.shared_clipboard().await.assert_eq(indoc! {\n            \"The quick brown\\n\"\n        });"
         },
         "The quick brown\\n": {
-            "line": 1896,
+            "line": 1933,
             "context": "        .await;\n        cx.simulate_shared_keystrokes(\"v i w shift-y\").await;\n        cx.shared_clipboard().await.assert_eq(indoc! {\n            \"The quick brown\\n\"\n        });\n    }\n"
         },
         "The ˇquick brown": {
-            "line": 1905,
+            "line": 1942,
             "context": "        let mut cx = NeovimBackedTestContext::new(cx).await;\n\n        cx.set_shared_state(indoc! {\n            \"The ˇquick brown\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v i w escape g v\").await;"
         },
         "v i w escape g v": {
-            "line": 1908,
+            "line": 1945,
             "context": "            \"The ˇquick brown\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v i w escape g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quickˇ» brown\"\n        });"
         },
         "The «quickˇ» brown": {
-            "line": 1910,
+            "line": 1947,
             "context": "        .await;\n        cx.simulate_shared_keystrokes(\"v i w escape g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «quickˇ» brown\"\n        });\n\n        cx.simulate_shared_keystrokes(\"o escape g v\").await;"
         },
         "o escape g v": {
-            "line": 1913,
+            "line": 1950,
             "context": "            \"The «quickˇ» brown\"\n        });\n\n        cx.simulate_shared_keystrokes(\"o escape g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «ˇquick» brown\"\n        });"
         },
         "The «ˇquick» brown": {
-            "line": 1924,
+            "line": 1961,
             "context": "        });\n        cx.simulate_shared_keystrokes(\"g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The «ˇquick» brown\"\n        });\n        cx.simulate_shared_keystrokes(\"g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {"
         },
         "escape ^ ctrl-v l": {
-            "line": 1918,
+            "line": 1955,
             "context": "            \"The «ˇquick» brown\"\n        });\n\n        cx.simulate_shared_keystrokes(\"escape ^ ctrl-v l\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«Thˇ»e quick brown\"\n        });"
         },
         "«Thˇ»e quick brown": {
-            "line": 1928,
+            "line": 1965,
             "context": "        });\n        cx.simulate_shared_keystrokes(\"g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«Thˇ»e quick brown\"\n        });\n\n        cx.set_state("
         },
         "g v": {
-            "line": 1926,
+            "line": 1963,
             "context": "        cx.shared_state().await.assert_eq(indoc! {\n            \"The «ˇquick» brown\"\n        });\n        cx.simulate_shared_keystrokes(\"g v\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«Thˇ»e quick brown\"\n        });"
         },
         "4 g l escape escape g v": {
-            "line": 1940,
+            "line": 1977,
             "context": "        \"},\n            Mode::Normal,\n        );\n        cx.simulate_keystrokes(\"4 g l escape escape g v\");\n        cx.assert_state(\n            indoc! {\"\n                «fishˇ» one"
         },
         "y g v": {
-            "line": 1950,
+            "line": 1987,
             "context": "            \"},\n            Mode::Visual,\n        );\n        cx.simulate_keystrokes(\"y g v\");\n        cx.assert_state(\n            indoc! {\"\n                «fishˇ» one"
         },
         "y y j shift-v p g v y": {
-            "line": 1973,
+            "line": 2010,
             "context": "            fox\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"y y j shift-v p g v y\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"The\n            quick"
         },
         "quick\\n": {
-            "line": 1980,
+            "line": 2017,
             "context": "            ˇquick\n            fox\"\n        });\n        cx.shared_clipboard().await.assert_eq(\"quick\\n\");\n    }\n\n    #[gpui::test]"
         },
         "v 2 a p": {
-            "line": 1995,
+            "line": 2032,
             "context": "            fox\"\n        })\n        .await;\n        cx.simulate_shared_keystrokes(\"v 2 a p\").await;\n        cx.shared_state().await.assert_eq(indoc! {\n            \"«The\n            quick"
         },
         "v w w w": {
-            "line": 2021,
+            "line": 2058,
             "context": "        );\n\n        // Enter visual mode and select the statement\n        cx.simulate_keystrokes(\"v w w w\");\n        cx.assert_state(\n            indoc! {\"\n                fn test() {"
         },
         "«Hällöˇ» Wörld": {
-            "line": 2042,
+            "line": 2079,
             "context": "    async fn test_visual_replace_uses_graphemes(cx: &mut gpui::TestAppContext) {\n        let mut cx = VimTestContext::new(cx, true).await;\n\n        cx.set_state(\"«Hällöˇ» Wörld\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ11111 Wörld\", Mode::Normal);\n"
         },
         "r 1": {
-            "line": 2051,
+            "line": 2088,
             "context": "        cx.assert_state(\"ˇ1\", Mode::Normal);\n\n        cx.set_state(\"«🙂ˇ»\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ1\", Mode::Normal);\n    }\n}"
         },
         "ˇ11111 Wörld": {
-            "line": 2044,
+            "line": 2081,
             "context": "\n        cx.set_state(\"«Hällöˇ» Wörld\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ11111 Wörld\", Mode::Normal);\n\n        cx.set_state(\"«e\\u{301}ˇ»\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");"
         },
         "«e\\u{301}ˇ»": {
-            "line": 2046,
+            "line": 2083,
             "context": "        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ11111 Wörld\", Mode::Normal);\n\n        cx.set_state(\"«e\\u{301}ˇ»\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ1\", Mode::Normal);\n"
         },
         "ˇ1": {
-            "line": 2052,
+            "line": 2089,
             "context": "\n        cx.set_state(\"«🙂ˇ»\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ1\", Mode::Normal);\n    }\n}"
         },
         "«🙂ˇ»": {
-            "line": 2050,
+            "line": 2087,
             "context": "        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ1\", Mode::Normal);\n\n        cx.set_state(\"«🙂ˇ»\", Mode::Visual);\n        cx.simulate_keystrokes(\"r 1\");\n        cx.assert_state(\"ˇ1\", Mode::Normal);\n    }"
         }
     },

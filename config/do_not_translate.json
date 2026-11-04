@@ -236701,6 +236701,11 @@
         },
         {
             "file": "zed/crates/gpui/src/text_system.rs",
+            "original": "failed to load font {font:?}: {error:#}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/text_system.rs",
             "original": "glyph not found for character '{character}'",
             "reason": "api_identifier"
         },
@@ -247552,6 +247557,11 @@
         {
             "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
             "original": ".ZedMono",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
+            "original": ".ZedSans",
             "reason": "ai:translate-empty"
         },
         {
@@ -259991,6 +260001,11 @@
         },
         {
             "file": "zed/crates/language/src/language.rs",
+            "original": "highlighting {} text of {text_len} bytes: {error:#}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language/src/language.rs",
             "original": "import",
             "reason": "ai:api_identifier"
         },
@@ -260283,6 +260298,11 @@
             "file": "zed/crates/language/src/language.rs",
             "original": "tree should be error-free, got: {}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/language/src/language.rs",
+            "original": "tree-sitter returned no tree",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language/src/language.rs",
@@ -324011,6 +324031,21 @@
         },
         {
             "file": "zed/crates/project/src/lsp_store.rs",
+            "original": "[[{class}]&&[^/]]",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/lsp_store.rs",
+            "original": "[^/]",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/lsp_store.rs",
+            "original": "[^/]*?",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/lsp_store.rs",
             "original": "\\\\SERVER\\équipe\\a.rs",
             "reason": "ai:translate-empty"
         },
@@ -324883,6 +324918,11 @@
             "file": "zed/crates/project/src/lsp_store.rs",
             "original": "{string}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/project/src/lsp_store.rs",
+            "original": "{{{}}}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/lsp_store.rs",
@@ -432241,6 +432281,11 @@
         },
         {
             "file": "zed/crates/util/src/shell_env.rs",
+            "original": "Write-Output '{{}}'; /bin/echo '{{\\\"PROBE\\\":\\\"ok\\\"}}' {redirection}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/util/src/shell_env.rs",
             "original": "cd",
             "reason": "ai:code_snippet"
         },
@@ -437098,6 +437143,11 @@
             "file": "zed/crates/vim/src/helix/paste.rs",
             "original": "ˇkept\\n",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/helix/surround.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/helix/surround.rs",
@@ -449581,6 +449631,41 @@
         },
         {
             "file": "zed/crates/vim/src/visual.rs",
+            "original": "12345678901234\\n123456789012ˇ34",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "123456789012\\n34\\n123456789012\\n34",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "123456789012«3ˇ»4",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "123456789012«3ˇ»4\\n123456789012«3ˇ»4",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "123456789012ˇ34\\n12345678901234",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "12345678901«2ˇ»\\n12345678901«2ˇ»34",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "12345678901ˇ2\\n12345678901234",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
             "original": "2 down",
             "reason": "ai:test_assertion"
         },
@@ -449821,6 +449906,11 @@
         },
         {
             "file": "zed/crates/vim/src/visual.rs",
+            "original": "ctrl-v g g",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
             "original": "ctrl-v h h h h h k",
             "reason": "ai:test_assertion"
         },
@@ -449853,6 +449943,11 @@
             "file": "zed/crates/vim/src/visual.rs",
             "original": "ctrl-v right down",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "ctrl-v shift-g",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/visual.rs",
@@ -449898,6 +449993,11 @@
             "file": "zed/crates/vim/src/visual.rs",
             "original": "g >",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "g j ctrl-v k",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/visual.rs",
@@ -450238,6 +450338,11 @@
             "file": "zed/crates/vim/src/visual.rs",
             "original": "ˇ11111 Wörld",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/visual.rs",
+            "original": "ˇ12345678901234",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/visual.rs",
