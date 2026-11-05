@@ -581,9 +581,29 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
     original = content
 
     # 7a. Add import for github module (idempotent check)
+    # Zed v1.28+ moved `http_client::github` into the `github_releases` crate.
+    has_github_releases = (zed_dir / "crates" / "github_releases").is_dir()
+    if has_github_releases:
+        cargo_toml = zed_dir / "crates" / "auto_update" / "Cargo.toml"
+        cargo = read_file(cargo_toml)
+        if cargo is not None and "github_releases" not in cargo:
+            new_cargo = cargo.replace(
+                "http_client.workspace = true",
+                "github_releases.workspace = true\nhttp_client.workspace = true",
+                1,
+            )
+            if new_cargo == cargo:
+                log.warning("  Pattern not matched for github_releases dep in %s", cargo_toml)
+            else:
+                write_file(cargo_toml, new_cargo, dry_run=dry_run)
+                log.info("  [patched] %s (add github_releases dep)", cargo_toml)
+
     if "latest_github_release" not in content:
         pat = r'(use\s+http_client::\{[^}]*HttpClientWithUrl[^}]*\};)'
-        repl = r'\1\nuse http_client::github::latest_github_release;'
+        if has_github_releases:
+            repl = r'\1\nuse github_releases::latest_github_release;'
+        else:
+            repl = r'\1\nuse http_client::github::latest_github_release;'
         new_content = re.sub(pat, repl, content, count=1)
         if new_content == content:
             log.warning("  Pattern not matched for github import in %s", auto_update)
