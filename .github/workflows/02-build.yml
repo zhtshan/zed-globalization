@@ -2565,11 +2565,10 @@ jobs:
       needs.versioning.outputs.should_release == 'true' &&
       needs.versioning.outputs.publish == 'release' &&
       needs.versioning.result == 'success' &&
-      needs.build-windows-x86_64.result != 'failure' && needs.build-windows-x86_64.result != 'cancelled' &&
-      needs.build-windows-aarch64.result != 'failure' && needs.build-windows-aarch64.result != 'cancelled' &&
-      needs.build-linux-x86_64.result != 'failure' && needs.build-linux-x86_64.result != 'cancelled' &&
-      needs.build-linux-aarch64.result != 'failure' && needs.build-linux-aarch64.result != 'cancelled' &&
-      needs.build-macos-universal.result != 'failure' && needs.build-macos-universal.result != 'cancelled'
+      (needs.versioning.outputs.run_windows != 'true' || (needs.build-windows-x86_64.result == 'success' && needs.build-windows-aarch64.result == 'success' && needs.build-windows-msi.result == 'success')) &&
+      (needs.versioning.outputs.run_linux_x64 != 'true' || needs.build-linux-x86_64.result == 'success') &&
+      (needs.versioning.outputs.run_linux_arm64 != 'true' || needs.build-linux-aarch64.result == 'success') &&
+      (needs.versioning.outputs.run_macos != 'true' || needs.build-macos-universal.result == 'success')
     env:
       LANG_LOWER: ${{ needs.versioning.outputs.lang_lower }}
       TARGET_LANG: ${{ needs.versioning.outputs.lang }}
