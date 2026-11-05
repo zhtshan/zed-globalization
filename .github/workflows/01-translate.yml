@@ -326,6 +326,21 @@ jobs:
               rel_files = [str(f.relative_to(root)) for f in all_files]
               print(f"共找到 {len(rel_files)} 个 .rs 文件")
 
+          # 合并 ZedG 功能补丁触及的文件：增量模式下上游 git diff 不会包含它们，
+          # 若不合并，补丁新增/修改的界面文案不会被提取翻译
+          patch_path = Path("patches/zedg-recent-projects-sort.patch")
+          if patch_path.exists():
+              import re
+
+              patch_files = []
+              for line in patch_path.read_text(encoding="utf-8").splitlines():
+                  m = re.match(r"^diff --git a/(\S+) b/(\S+)$", line)
+                  if m and m.group(1).startswith("crates/") and m.group(1).endswith(".rs"):
+                      patch_files.append(m.group(1))
+              if patch_files:
+                  rel_files = sorted(set(rel_files) | set(patch_files))
+                  print(f"合并补丁文件 {len(patch_files)} 个 → 共 {len(rel_files)} 个待提取文件")
+
           # 保存扫描结果
           save_scan_result("scan_result.json", new_ver, rel_files)
 
