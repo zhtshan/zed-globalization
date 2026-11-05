@@ -1,0 +1,665 @@
+diff --git a/crates/recent_projects/Cargo.toml b/crates/recent_projects/Cargo.toml
+index f4e151a..c84b7fb 100644
+--- a/crates/recent_projects/Cargo.toml
++++ b/crates/recent_projects/Cargo.toml
+@@ -41,6 +41,7 @@ release_channel.workspace = true
+ remote.workspace = true
+ remote_connection.workspace = true
+ semver.workspace = true
++serde.workspace = true
+ serde_json.workspace = true
+ settings.workspace = true
+ telemetry.workspace = true
+diff --git a/crates/recent_projects/src/recent_projects.rs b/crates/recent_projects/src/recent_projects.rs
+index 5578ae9..d48ab60 100644
+--- a/crates/recent_projects/src/recent_projects.rs
++++ b/crates/recent_projects/src/recent_projects.rs
+@@ -4,6 +4,7 @@ mod remote_connections;
+ mod remote_servers;
+ pub mod sidebar_recent_projects;
+ mod ssh_config;
++mod zedg_recent_sort;
+ 
+ use std::{
+     path::{Path, PathBuf},
+diff --git a/crates/recent_projects/src/sidebar_recent_projects.rs b/crates/recent_projects/src/sidebar_recent_projects.rs
+index 006fb7f..71aec52 100644
+--- a/crates/recent_projects/src/sidebar_recent_projects.rs
++++ b/crates/recent_projects/src/sidebar_recent_projects.rs
+@@ -11,7 +11,10 @@ use picker::{
+ };
+ use remote::RemoteConnectionOptions;
+ use settings::Settings;
+-use ui::{ButtonLike, KeyBinding, ListItem, ListItemSpacing, Tooltip, prelude::*};
++use ui::{
++    ButtonLike, ContextMenu, DropdownMenu, KeyBinding, ListItem, ListItemSpacing, Tooltip,
++    prelude::*, right_click_menu,
++};
+ use util::{ResultExt, paths::PathExt};
+ use workspace::{
+     MultiWorkspace, OpenMode, OpenOptions, ProjectGroupKey, RecentWorkspace,
+@@ -20,7 +23,10 @@ use workspace::{
+ 
+ use zed_actions::OpenRemote;
+ 
+-use crate::{highlights_for_path, icon_for_remote_connection, open_remote_project};
++use crate::{
++    highlights_for_path, icon_for_remote_connection, open_remote_project,
++    zedg_recent_sort::{self, MoveTarget, SortMode, SortState, SortableEntry},
++};
+ 
+ pub struct SidebarRecentProjects {
+     pub picker: Entity<Picker<SidebarRecentProjectsDelegate>>,
+@@ -48,6 +54,7 @@ impl SidebarRecentProjects {
+                 selected_index: 0,
+                 has_any_non_local_projects: false,
+                 focus_handle: cx.focus_handle(),
++                sort_state: zedg_recent_sort::load_state(),
+             };
+ 
+             let picker: Entity<Picker<SidebarRecentProjectsDelegate>> = cx.new(|cx| {
+@@ -119,6 +126,8 @@ pub struct SidebarRecentProjectsDelegate {
+     selected_index: usize,
+     has_any_non_local_projects: bool,
+     focus_handle: FocusHandle,
++    /// ZedG：最近项目排序状态。
++    sort_state: SortState,
+ }
+ 
+ impl SidebarRecentProjectsDelegate {
+@@ -127,6 +136,82 @@ impl SidebarRecentProjectsDelegate {
+             .iter()
+             .any(|workspace| !matches!(workspace.location, SerializedWorkspaceLocation::Local));
+         self.workspaces = workspaces;
++        self.apply_sort();
++    }
++
++    /// ZedG：项目的唯一标识（本地用路径，远程用 `host::path`）。
++    fn key_for(&self, workspace: &RecentWorkspace) -> String {
++        let path = workspace
++            .identity_paths
++            .ordered_paths()
++            .next()
++            .map(|p| p.to_string_lossy().to_string())
++            .unwrap_or_default();
++        let host = match &workspace.location {
++            SerializedWorkspaceLocation::Remote(options) => {
++                Some(options.display_name().to_string())
++            }
++            SerializedWorkspaceLocation::Local => None,
++        };
++        zedg_recent_sort::project_key_from(&path, host.as_deref())
++    }
++
++    /// ZedG：用于名称排序的显示名。
++    fn name_for(&self, workspace: &RecentWorkspace) -> String {
++        let path = workspace
++            .identity_paths
++            .ordered_paths()
++            .next()
++            .map(|p| p.to_string_lossy().to_string())
++            .unwrap_or_default();
++        zedg_recent_sort::display_name_from(&path)
++    }
++
++    /// ZedG：按当前排序模式重排列表。
++    fn apply_sort(&mut self) {
++        let original = std::mem::take(&mut self.workspaces);
++        let mut entries: Vec<SortableEntry> = original
++            .iter()
++            .enumerate()
++            .map(|(index, workspace)| SortableEntry {
++                key: self.key_for(workspace),
++                name: self.name_for(workspace),
++                index,
++            })
++            .collect();
++        zedg_recent_sort::sort_entries(&mut entries, &self.sort_state);
++        self.workspaces = entries
++            .iter()
++            .map(|entry| original[entry.index].clone())
++            .collect();
++    }
++
++    /// ZedG：当前显示顺序对应的 key 列表。
++    fn current_display_order(&self) -> Vec<String> {
++        self.workspaces.iter().map(|ws| self.key_for(ws)).collect()
++    }
++
++    /// ZedG：切换排序模式并持久化。切到手动模式时以当前显示顺序作为初始顺序。
++    pub fn set_sort_mode(&mut self, mode: SortMode) {
++        let mut state = self.sort_state.clone();
++        state.mode = mode;
++        if mode == SortMode::Manual {
++            state.order = self.current_display_order();
++        }
++        zedg_recent_sort::save_state(&state);
++        self.sort_state = state;
++        self.apply_sort();
++    }
++
++    /// ZedG：手动调整某个项目的位置并持久化。
++    pub fn move_recent_project(&mut self, key: &str, target: MoveTarget) {
++        let display_order = self.current_display_order();
++        let mut state = self.sort_state.clone();
++        state.mode = SortMode::Manual;
++        state.order = zedg_recent_sort::apply_move(&display_order, key, target);
++        zedg_recent_sort::save_state(&state);
++        self.sort_state = state;
++        self.apply_sort();
+     }
+ }
+ 
+@@ -166,6 +251,7 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
+         _: &mut Window,
+         cx: &mut Context<Picker<Self>>,
+     ) -> Task<()> {
++        self.apply_sort();
+         let query = query.trim_start();
+         let case = fuzzy_nucleo::Case::smart_if_uppercase_in(query);
+         let is_empty_query = query.is_empty();
+@@ -350,37 +436,121 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
+             SerializedWorkspaceLocation::Remote(options) => Some(options),
+         });
+ 
++        let picker = cx.entity();
++        let key = self.key_for(workspace);
++
++        let item = ListItem::new(ix)
++            .toggle_state(selected)
++            .inset(true)
++            .spacing(ListItemSpacing::Sparse)
++            .child(
++                h_flex()
++                    .w_full()
++                    .min_w_0()
++                    .gap_3()
++                    .flex_grow_1()
++                    .when(self.has_any_non_local_projects, |this| {
++                        this.child(Icon::new(icon).color(Color::Muted))
++                    })
++                    .child(highlighted_match.render(window, cx)),
++            )
++            .tooltip(move |_, cx| {
++                Tooltip::with_meta(
++                    "Open Project in This Window",
++                    None,
++                    tooltip_path.clone(),
++                    cx,
++                )
++            });
++
+         Some(
+-            ListItem::new(ix)
+-                .toggle_state(selected)
+-                .inset(true)
+-                .spacing(ListItemSpacing::Sparse)
+-                .child(
+-                    h_flex()
+-                        .w_full()
+-                        .min_w_0()
+-                        .gap_3()
+-                        .flex_grow_1()
+-                        .when(self.has_any_non_local_projects, |this| {
+-                            this.child(Icon::new(icon).color(Color::Muted))
++            right_click_menu(SharedString::from(format!("recent-project-row-{ix}")))
++                .menu(move |window, cx| {
++                    let picker = picker.clone();
++                    let key = key.clone();
++                    ContextMenu::build(window, cx, move |menu, _, _| {
++                        menu.entry("Move Up", None, {
++                            let picker = picker.clone();
++                            let key = key.clone();
++                            move |window, cx| {
++                                picker.update(cx, |picker, cx| {
++                                    picker.delegate.move_recent_project(&key, MoveTarget::Up);
++                                    let query = picker.query(cx);
++                                    picker.update_matches(query, window, cx);
++                                });
++                            }
+                         })
+-                        .child(highlighted_match.render(window, cx)),
+-                )
+-                .tooltip(move |_, cx| {
+-                    Tooltip::with_meta(
+-                        "Open Project in This Window",
+-                        None,
+-                        tooltip_path.clone(),
+-                        cx,
+-                    )
++                        .entry("Move Down", None, {
++                            let picker = picker.clone();
++                            let key = key.clone();
++                            move |window, cx| {
++                                picker.update(cx, |picker, cx| {
++                                    picker.delegate.move_recent_project(&key, MoveTarget::Down);
++                                    let query = picker.query(cx);
++                                    picker.update_matches(query, window, cx);
++                                });
++                            }
++                        })
++                        .entry("Pin to Top", None, {
++                            let picker = picker.clone();
++                            let key = key.clone();
++                            move |window, cx| {
++                                picker.update(cx, |picker, cx| {
++                                    picker
++                                        .delegate
++                                        .move_recent_project(&key, MoveTarget::PinToTop);
++                                    let query = picker.query(cx);
++                                    picker.update_matches(query, window, cx);
++                                });
++                            }
++                        })
++                    })
+                 })
++                .trigger(move |_, _, _| item.into_any_element())
+                 .into_any_element(),
+         )
+     }
+ 
+-    fn render_footer(&self, _: &mut Window, cx: &mut Context<Picker<Self>>) -> Option<AnyElement> {
++    fn render_footer(
++        &self,
++        window: &mut Window,
++        cx: &mut Context<Picker<Self>>,
++    ) -> Option<AnyElement> {
+         let focus_handle = self.focus_handle.clone();
+ 
++        let picker = cx.entity();
++        let current_mode = self.sort_state.mode;
++        let sort_menu = ContextMenu::build(window, cx, move |mut menu, _, _| {
++            for mode in SortMode::ALL {
++                let picker = picker.clone();
++                menu = menu.toggleable_entry(
++                    mode.label(),
++                    mode == current_mode,
++                    IconPosition::Start,
++                    None,
++                    move |window, cx| {
++                        picker.update(cx, |picker, cx| {
++                            picker.delegate.set_sort_mode(mode);
++                            let query = picker.query(cx);
++                            picker.update_matches(query, window, cx);
++                        });
++                    },
++                );
++            }
++            menu
++        });
++        let sort_button = DropdownMenu::new_with_element(
++            SharedString::from("recent-projects-sort"),
++            h_flex()
++                .w_full()
++                .gap_1()
++                .justify_between()
++                .child(Label::new("Sort By"))
++                .child(Label::new(current_mode.label()))
++                .into_any_element(),
++            sort_menu,
++        );
++
+         Some(
+             v_flex()
+                 .p_1p5()
+@@ -388,6 +558,7 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
+                 .gap_1()
+                 .border_t_1()
+                 .border_color(cx.theme().colors().border_variant)
++                .child(sort_button)
+                 .child({
+                     let open_action = workspace::Open {
+                         create_new_window: Some(false),
+diff --git a/crates/recent_projects/src/zedg_recent_sort.rs b/crates/recent_projects/src/zedg_recent_sort.rs
+new file mode 100644
+index 0000000..910cbd0
+--- /dev/null
++++ b/crates/recent_projects/src/zedg_recent_sort.rs
+@@ -0,0 +1,335 @@
++//! ZedG 扩展：侧边栏「最近项目」弹窗的排序支持。
++//!
++//! 支持自动排序（最近使用 / 名称升序 / 名称降序）与手动排序（右键上移 / 下移 / 置顶）。
++//! 排序偏好保存在 Zed 配置目录下的 `zedg-recent-projects-sort.json`。
++
++use std::path::{Path, PathBuf};
++
++use serde::{Deserialize, Serialize};
++
++/// 排序状态文件名（位于 Zed 配置目录）。
++pub const STATE_FILE_NAME: &str = "zedg-recent-projects-sort.json";
++
++/// 排序模式。
++#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
++#[serde(rename_all = "snake_case")]
++pub enum SortMode {
++    /// 最近使用优先（与上游默认行为一致）。
++    #[default]
++    Recent,
++    /// 按名称升序排列。
++    NameAsc,
++    /// 按名称降序排列。
++    NameDesc,
++    /// 手动顺序。
++    Manual,
++}
++
++impl SortMode {
++    /// 全部模式，顺序即菜单展示顺序。
++    pub const ALL: [SortMode; 4] = [
++        SortMode::Recent,
++        SortMode::NameAsc,
++        SortMode::NameDesc,
++        SortMode::Manual,
++    ];
++
++    /// 菜单展示文案（会被汉化流程提取翻译）。
++    pub fn label(self) -> &'static str {
++        match self {
++            SortMode::Recent => "Recent",
++            SortMode::NameAsc => "Name (A-Z)",
++            SortMode::NameDesc => "Name (Z-A)",
++            SortMode::Manual => "Manual",
++        }
++    }
++}
++
++/// 排序状态，对应 `zedg-recent-projects-sort.json` 的内容。
++#[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
++pub struct SortState {
++    /// 当前排序模式。
++    pub mode: SortMode,
++    /// 手动顺序，元素是项目 key（见 [`project_key_from`]）。
++    #[serde(default)]
++    pub order: Vec<String>,
++}
++
++/// 参与排序的最小信息。
++#[derive(Clone, Debug, PartialEq, Eq)]
++pub struct SortableEntry {
++    /// 项目唯一标识。
++    pub key: String,
++    /// 参与名称排序的显示名。
++    pub name: String,
++    /// 排序前在原始列表中的下标，用于排序后还原条目。
++    pub index: usize,
++}
++
++/// 手动调整的目标位置。
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++pub enum MoveTarget {
++    /// 上移一位。
++    Up,
++    /// 下移一位。
++    Down,
++    /// 置顶。
++    PinToTop,
++}
++
++/// 由路径与（可选的）远程主机名计算项目 key。
++///
++/// 本地项目直接用路径；远程项目用 `host::path`，避免不同主机上的同名项目冲突。
++pub fn project_key_from(path: &str, host: Option<&str>) -> String {
++    match host {
++        Some(host) => format!("{host}::{path}"),
++        None => path.to_string(),
++    }
++}
++
++/// 由路径推导用于排序的显示名（最后一级目录名）。
++pub fn display_name_from(path: &str) -> String {
++    Path::new(path)
++        .file_name()
++        .map(|name| name.to_string_lossy().to_string())
++        .unwrap_or_else(|| path.to_string())
++}
++
++/// 名称比较：大小写不敏感。
++fn compare_names(a: &str, b: &str) -> std::cmp::Ordering {
++    a.to_lowercase().cmp(&b.to_lowercase())
++}
++
++/// 按 `state` 对 `entries` 原地排序（稳定排序）。
++pub fn sort_entries(entries: &mut [SortableEntry], state: &SortState) {
++    match state.mode {
++        // 上游数据库已按最近使用时间倒序返回，这里保持原顺序。
++        SortMode::Recent => {}
++        SortMode::NameAsc => {
++            entries.sort_by(|a, b| compare_names(&a.name, &b.name).then_with(|| a.key.cmp(&b.key)))
++        }
++        SortMode::NameDesc => {
++            entries.sort_by(|a, b| compare_names(&b.name, &a.name).then_with(|| a.key.cmp(&b.key)))
++        }
++        SortMode::Manual => {
++            let position = |entry: &SortableEntry| {
++                state
++                    .order
++                    .iter()
++                    .position(|key| key == &entry.key)
++                    .unwrap_or(usize::MAX)
++            };
++            entries.sort_by_key(position);
++        }
++    }
++}
++
++/// 在 `display_order` 中把 `key` 移动到指定位置，返回新的完整顺序。
++///
++/// `display_order` 是当前显示顺序（可能不包含 `key`）。
++pub fn apply_move(display_order: &[String], key: &str, target: MoveTarget) -> Vec<String> {
++    let mut order: Vec<String> = display_order
++        .iter()
++        .filter(|k| k.as_str() != key)
++        .cloned()
++        .collect();
++
++    let Some(index) = display_order.iter().position(|k| k == key) else {
++        // key 不在当前顺序里（正常不会出现）：置顶或追加到末尾。
++        match target {
++            MoveTarget::PinToTop => order.insert(0, key.to_string()),
++            _ => order.push(key.to_string()),
++        }
++        return order;
++    };
++
++    match target {
++        MoveTarget::Up => order.insert(index.saturating_sub(1).min(order.len()), key.to_string()),
++        MoveTarget::Down => order.insert((index + 1).min(order.len()), key.to_string()),
++        MoveTarget::PinToTop => order.insert(0, key.to_string()),
++    }
++
++    order
++}
++
++/// 排序状态文件路径（Zed 配置目录）。
++pub fn state_file_path() -> PathBuf {
++    paths::config_dir().join(STATE_FILE_NAME)
++}
++
++/// 从指定文件读取排序状态；文件不存在或内容损坏时返回默认状态。
++pub fn load_state_from(path: &Path) -> SortState {
++    let Ok(contents) = std::fs::read_to_string(path) else {
++        return SortState::default();
++    };
++    serde_json::from_str(&contents).unwrap_or_default()
++}
++
++/// 读取排序状态。
++pub fn load_state() -> SortState {
++    load_state_from(&state_file_path())
++}
++
++/// 把排序状态写入指定文件；失败时静默忽略，不影响使用。
++pub fn save_state_to(path: &Path, state: &SortState) {
++    let Ok(contents) = serde_json::to_string_pretty(state) else {
++        return;
++    };
++    let _ = std::fs::write(path, contents);
++}
++
++/// 写回排序状态。
++pub fn save_state(state: &SortState) {
++    save_state_to(&state_file_path(), state);
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    fn entry(key: &str, name: &str, index: usize) -> SortableEntry {
++        SortableEntry {
++            key: key.to_string(),
++            name: name.to_string(),
++            index,
++        }
++    }
++
++    fn keys(entries: &[SortableEntry]) -> Vec<&str> {
++        entries.iter().map(|e| e.key.as_str()).collect()
++    }
++
++    #[test]
++    fn default_mode_is_recent() {
++        assert_eq!(SortMode::default(), SortMode::Recent);
++        assert_eq!(SortState::default().mode, SortMode::Recent);
++        assert!(SortState::default().order.is_empty());
++    }
++
++    #[test]
++    fn sorts_by_name_ascending_case_insensitively() {
++        let mut entries = vec![
++            entry("b", "beta", 0),
++            entry("a", "Alpha", 1),
++            entry("c", "Beta", 2),
++        ];
++        sort_entries(
++            &mut entries,
++            &SortState {
++                mode: SortMode::NameAsc,
++                order: vec![],
++            },
++        );
++        assert_eq!(keys(&entries), vec!["a", "b", "c"]);
++    }
++
++    #[test]
++    fn sorts_by_name_descending() {
++        let mut entries = vec![
++            entry("a", "Alpha", 0),
++            entry("c", "gamma", 1),
++            entry("b", "Beta", 2),
++        ];
++        sort_entries(
++            &mut entries,
++            &SortState {
++                mode: SortMode::NameDesc,
++                order: vec![],
++            },
++        );
++        assert_eq!(keys(&entries), vec!["c", "b", "a"]);
++    }
++
++    #[test]
++    fn recent_mode_keeps_original_order() {
++        let mut entries = vec![entry("a", "Alpha", 0), entry("b", "Beta", 1)];
++        sort_entries(
++            &mut entries,
++            &SortState {
++                mode: SortMode::Recent,
++                order: vec![],
++            },
++        );
++        assert_eq!(keys(&entries), vec!["a", "b"]);
++    }
++
++    #[test]
++    fn manual_order_wins_and_unknown_items_go_last() {
++        let mut entries = vec![
++            entry("a", "Alpha", 0),
++            entry("b", "Beta", 1),
++            entry("c", "Gamma", 2),
++        ];
++        let state = SortState {
++            mode: SortMode::Manual,
++            order: vec!["c".to_string(), "a".to_string()],
++        };
++        sort_entries(&mut entries, &state);
++        assert_eq!(keys(&entries), vec!["c", "a", "b"]);
++    }
++
++    #[test]
++    fn move_up_swaps_with_previous_item() {
++        let order = vec!["a".to_string(), "b".to_string(), "c".to_string()];
++        assert_eq!(apply_move(&order, "c", MoveTarget::Up), vec!["a", "c", "b"]);
++    }
++
++    #[test]
++    fn move_down_swaps_with_next_item() {
++        let order = vec!["a".to_string(), "b".to_string(), "c".to_string()];
++        assert_eq!(
++            apply_move(&order, "b", MoveTarget::Down),
++            vec!["a", "c", "b"]
++        );
++    }
++
++    #[test]
++    fn pin_to_top_moves_item_first() {
++        let order = vec!["a".to_string(), "b".to_string(), "c".to_string()];
++        assert_eq!(
++            apply_move(&order, "c", MoveTarget::PinToTop),
++            vec!["c", "a", "b"]
++        );
++    }
++
++    #[test]
++    fn project_key_includes_remote_host() {
++        assert_eq!(project_key_from("/tmp/proj", None), "/tmp/proj");
++        assert_eq!(
++            project_key_from("/tmp/proj", Some("dev-box")),
++            "dev-box::/tmp/proj"
++        );
++    }
++
++    #[test]
++    fn display_name_uses_last_path_segment() {
++        assert_eq!(display_name_from("/home/me/work/proj"), "proj");
++        assert_eq!(display_name_from("/"), "/");
++    }
++
++    #[test]
++    fn state_round_trips_through_disk() {
++        let dir = std::env::temp_dir().join(format!("zedg-sort-test-{}", std::process::id()));
++        std::fs::create_dir_all(&dir).unwrap();
++        let path = dir.join("state.json");
++        let state = SortState {
++            mode: SortMode::Manual,
++            order: vec!["/a".to_string(), "/b".to_string()],
++        };
++        save_state_to(&path, &state);
++        assert_eq!(load_state_from(&path), state);
++        std::fs::remove_dir_all(&dir).ok();
++    }
++
++    #[test]
++    fn missing_or_broken_state_falls_back_to_default() {
++        let dir =
++            std::env::temp_dir().join(format!("zedg-sort-test-broken-{}", std::process::id()));
++        std::fs::create_dir_all(&dir).unwrap();
++        let path = dir.join("state.json");
++        assert_eq!(load_state_from(&path), SortState::default());
++        std::fs::write(&path, "{ not json").unwrap();
++        assert_eq!(load_state_from(&path), SortState::default());
++        std::fs::remove_dir_all(&dir).ok();
++    }
++}
+diff --git a/Cargo.lock b/Cargo.lock
+index 1e0942c..8b54150 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -14762,6 +14762,7 @@ dependencies = [
+  "remote_server",
+  "rpc",
+  "semver",
++ "serde",
+  "serde_json",
+  "settings",
+  "telemetry",
