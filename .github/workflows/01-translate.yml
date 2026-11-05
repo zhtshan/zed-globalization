@@ -233,6 +233,14 @@ jobs:
             git fetch origin tag "$OLD_VER" --no-tags 2>/dev/null || true
           fi
 
+          # 应用 ZedG 功能补丁，确保新增界面文案能被提取翻译
+          # 用绝对路径：上方增量分支可能已 cd zed，相对路径会失效
+          if git -C "$GITHUB_WORKSPACE/zed" apply "$GITHUB_WORKSPACE/patches/zedg-recent-projects-sort.patch"; then
+            echo "ZedG 功能补丁应用成功"
+          else
+            echo "::warning::ZedG 功能补丁应用失败，新增文案可能未被翻译"
+          fi
+
       - name: 提取字符串
         env:
           NEW_VER: ${{ steps.params.outputs.VERSION }}
