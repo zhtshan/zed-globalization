@@ -226161,6 +226161,11 @@
         },
         {
             "file": "zed/crates/github_releases/src/releases.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/github_releases/src/releases.rs",
             "original": ",",
             "reason": "ai:translate-empty"
         },
@@ -247226,6 +247231,11 @@
         },
         {
             "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "  {group:<34} {family:<15} {:>5} {:>14}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
             "original": " = document.visible_lines(viewport);",
             "reason": "ai:translate-empty"
         },
@@ -247553,6 +247563,11 @@
             "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
             "original": "root layout",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "scene stats {group}/{input}: batches={}, paths={}, surfaces={}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
@@ -317951,6 +317966,16 @@
         },
         {
             "file": "zed/crates/path/src/path.rs",
+            "original": "..\\c",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": "..\\foo\\.",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
             "original": "..\\worktrees",
             "reason": "ai:test_assertion"
         },
@@ -318012,6 +318037,11 @@
         {
             "file": "zed/crates/path/src/path.rs",
             "original": ".\\baz",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": ".\\foo\\.",
             "reason": "ai:translate-empty"
         },
         {
@@ -318741,6 +318771,11 @@
         },
         {
             "file": "zed/crates/path/src/path.rs",
+            "original": "\\\\?\\A:\\x\\y\\foo",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
             "original": "\\\\?\\C:",
             "reason": "ai:translate-empty"
         },
@@ -318753,6 +318788,11 @@
             "file": "zed/crates/path/src/path.rs",
             "original": "\\\\?\\C:/foo/bar",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": "\\\\?\\C:\\\", ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/path/src/path.rs",
@@ -318807,6 +318847,11 @@
         {
             "file": "zed/crates/path/src/path.rs",
             "original": "\\\\?\\C:a\\b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": "\\\\?\\D:\\foo\\.\\\", r",
             "reason": "ai:translate-empty"
         },
         {
@@ -319057,6 +319102,11 @@
         {
             "file": "zed/crates/path/src/path.rs",
             "original": "a\\b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": "a\\b\\.",
             "reason": "ai:translate-empty"
         },
         {
@@ -319323,6 +319373,11 @@
             "file": "zed/crates/path/src/path.rs",
             "original": "foo/bar/baz",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/path/src/path.rs",
+            "original": "foo\\\", ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/path/src/path.rs",
@@ -336241,6 +336296,11 @@
         },
         {
             "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
             "original": "/root",
             "reason": "rule:path"
         },
@@ -336248,6 +336308,21 @@
             "file": "zed/crates/project/tests/integration/image_store.rs",
             "original": "/root/image_1.png",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "<!-- <svg xmlns=\\\"http://www.w3.org/2000/svg\\\"/> -->",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "<!-- image -->\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "<?xml version=\\\"1.0\\\"?>\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/image_store.rs",
@@ -336262,6 +336337,11 @@
         {
             "file": "zed/crates/project/tests/integration/image_store.rs",
             "original": "<svg",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"20\\\" height=\\\"10\\\"/>",
             "reason": "ai:translate-empty"
         },
         {
@@ -336297,6 +336377,11 @@
         {
             "file": "zed/crates/project/tests/integration/image_store.rs",
             "original": "{image_path}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/image_store.rs",
+            "original": "{prefix}<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 200 100\\\"><rect width=\\\"200\\\" height=\\\"100\\\" fill=\\\"red\\\"/></svg>",
             "reason": "ai:translate-empty"
         },
         {
@@ -360116,6 +360201,16 @@
         },
         {
             "file": "zed/crates/recent_projects/src/sidebar_recent_projects.rs",
+            "original": "recent-project-row-{ix}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/sidebar_recent_projects.rs",
+            "original": "recent-projects-sort",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/sidebar_recent_projects.rs",
             "original": "sidebar recent projects",
             "reason": "ai:telemetry"
         },
@@ -360313,6 +360408,121 @@
             "file": "zed/crates/recent_projects/src/wsl_picker.rs",
             "original": "failed to open subkey for distro",
             "reason": "api_identifier"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "/a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "/b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "/home/me/work/proj",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "/tmp/proj",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "Alpha",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "Beta",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "Gamma",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "beta",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "c",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "dev-box",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "dev-box::/tmp/proj",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "gamma",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "proj",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "snake_case",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "state.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "zedg-recent-projects-sort.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "zedg-sort-test-broken-{}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "zedg-sort-test-{}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "{ not json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/zedg_recent_sort.rs",
+            "original": "{host}::{path}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/refineable/derive_refineable/src/derive_refineable.rs",
@@ -440018,6 +440228,61 @@
             "file": "zed/crates/vim/src/helix.rs",
             "original": "[",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" + shift-p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" + shift-r",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" + y",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" - p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" 0 p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" 1 p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" 2 p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" \\\" p",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" \\\" shift-r",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" a shift-r",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\\" a y",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/helix.rs",

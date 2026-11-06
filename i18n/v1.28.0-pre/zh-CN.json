@@ -61992,7 +61992,13 @@
         "worktree": "工作树",
         "ImageStore should identify SVG by contents": "ImageStore 应根据内容识别 SVG",
         "SVG should have metadata": "SVG 应有元数据",
-        "{image_path}": ""
+        "{image_path}": "",
+        "": "",
+        "<?xml version=\\\"1.0\\\"?>\\n": "",
+        "<!-- image -->\\n": "",
+        "{prefix}<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 200 100\\\"><rect width=\\\"200\\\" height=\\\"100\\\" fill=\\\"red\\\"/></svg>": "",
+        "<!-- <svg xmlns=\\\"http://www.w3.org/2000/svg\\\"/> -->": "",
+        "<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"20\\\" height=\\\"10\\\"/>": ""
     },
     "zed/crates/project/tests/integration/lsp_command.rs": {
         "E001": "",
@@ -75880,7 +75886,18 @@
         "«namedˇ»": "",
         "«exportedˇ»": "",
         "exported": "",
-        "ˇz": ""
+        "ˇz": "",
+        "\\\" 0 p": "",
+        "\\\" - p": "",
+        "\\\" 1 p": "",
+        "\\\" 2 p": "",
+        "\\\" \\\" p": "",
+        "\\\" \\\" shift-r": "",
+        "\\\" a y": "",
+        "\\\" a shift-r": "",
+        "\\\" + y": "",
+        "\\\" + shift-p": "",
+        "\\\" + shift-r": ""
     },
     "zed/crates/vim/src/indent.rs": {
         "shiftwidth=4": "",
@@ -90645,7 +90662,13 @@
         "sidebar recent projects": "",
         "Search projects…": "搜索项目…",
         "Open Local Folders": "打开本地文件夹",
-        "Open Remote Folder": "打开远程文件夹"
+        "Open Remote Folder": "打开远程文件夹",
+        "recent-project-row-{ix}": "",
+        "Move Up": "上移",
+        "Move Down": "下移",
+        "Pin to Top": "置顶",
+        "recent-projects-sort": "",
+        "Sort By": "排序方式"
     },
     "zed/crates/settings_content/src/title_bar.rs": {
         "close:minimize,maximize": "",
@@ -107417,7 +107440,15 @@
         "..\\bar": "",
         "\\\\.\\foo\\..\\bar": "",
         "\\\\.\\device\\foo": "",
-        "\\\\.\\device\\bar": ""
+        "\\\\.\\device\\bar": "",
+        "foo\\\", ": "",
+        "a\\b\\.": "",
+        "..\\c": "",
+        "\\\\?\\C:\\\", ": "",
+        "\\\\?\\D:\\foo\\.\\\", r": "",
+        "..\\foo\\.": "",
+        ".\\foo\\.": "",
+        "\\\\?\\A:\\x\\y\\foo": ""
     },
     "zed/crates/path/src/rel_path.rs": {
         "serde": "",
@@ -112982,7 +113013,9 @@
         "{} {index}": "",
         "Status": "状态",
         "File": "文件",
-        "Scroll": "滚动"
+        "Scroll": "滚动",
+        "scene stats {group}/{input}: batches={}, paths={}, surfaces={}": "",
+        "  {group:<34} {family:<15} {:>5} {:>14}": ""
     },
     "zed/crates/hang_telemetry/src/hang_telemetry.rs": {
         "Hang Incidents": "",
@@ -116706,7 +116739,8 @@
         "release/2.3.5": "",
         "microsoft/vscode-eslint": "",
         "https://github.com/microsoft/vscode-eslint/archive/refs/tags/release%2F2.3.5.tar.gz": "",
-        "https://github.com/microsoft/vscode-eslint/archive/refs/tags/release%2F2.3.5.zip": ""
+        "https://github.com/microsoft/vscode-eslint/archive/refs/tags/release%2F2.3.5.zip": "",
+        "": ""
     },
     "zed/crates/gpui_apple/src/display_link.rs": {
         "CAMetalDisplayLink": ""
@@ -116814,5 +116848,34 @@
         "trigger bounds": "",
         "menu bounds": "",
         "trigger: {trigger:?}, menu: {menu:?}": ""
+    },
+    "zed/crates/recent_projects/src/zedg_recent_sort.rs": {
+        "zedg-recent-projects-sort.json": "",
+        "snake_case": "",
+        "Recent": "最近",
+        "Name (A-Z)": "名称 (A-Z)",
+        "Name (Z-A)": "名称 (Z-A)",
+        "Manual": "手动",
+        "{host}::{path}": "",
+        "b": "",
+        "beta": "",
+        "a": "",
+        "Alpha": "",
+        "c": "",
+        "Beta": "",
+        "gamma": "",
+        "Gamma": "",
+        "/tmp/proj": "",
+        "dev-box": "",
+        "dev-box::/tmp/proj": "",
+        "/home/me/work/proj": "",
+        "proj": "",
+        "/": "",
+        "zedg-sort-test-{}": "",
+        "state.json": "",
+        "/a": "",
+        "/b": "",
+        "zedg-sort-test-broken-{}": "",
+        "{ not json": ""
     }
 }

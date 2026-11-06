@@ -281459,403 +281459,403 @@
     },
     "zed/crates/recent_projects/src/recent_projects.rs": {
         "windows": {
-            "line": 578,
+            "line": 579,
             "context": "    .detach();\n}\n\n#[cfg(target_os = \"windows\")]\npub fn add_wsl_distro(\n    fs: Arc<dyn project::Fs>,\n    connection_options: &remote::WslConnectionOptions,"
         },
         "Current Folders": {
-            "line": 2506,
+            "line": 2507,
             "context": "\n    // Test picker for the empty query:\n    //\n    //   [0] Header(\"Current Folders\")\n    //   [1] OpenFolder(0)\n    //   [2] OpenFolder(1)\n    //   [3] Header(\"This Window\")"
         },
         "This Window": {
-            "line": 3212,
+            "line": 3213,
             "context": "    #[gpui::test]\n    async fn test_remove_open_folder_rekeys_this_window_group(cx: &mut TestAppContext) {\n        // Regression test: removing a folder from the active project while the\n        // picker is open must update the \"This Window\" group so it no longer\n        // lists the removed folder.\n        let app_state = init_test(cx);\n        app_state"
         },
         "Recent Projects": {
-            "line": 2512,
+            "line": 2513,
             "context": "    //   [3] Header(\"This Window\")\n    //   [4] ProjectGroup(0)\n    //   [5] ProjectGroup(1)\n    //   [6] Header(\"Recent Projects\")\n    //   [7..=26] RecentProject(0..=19)\n    //\n    const RECENT_PROJECT_COUNT: usize = 20;"
         },
         ", ": {
-            "line": 1527,
+            "line": 1528,
             "context": "\n                let highlighted_match = HighlightedMatchWithPaths {\n                    prefix,\n                    match_label: HighlightedMatch::join(match_labels.into_iter().flatten(), \", \"),\n                    paths,\n                    active: false,\n                };"
         },
         "\\n": {
-            "line": 1497,
+            "line": 1498,
             "context": "                            format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                        }\n                    }\n                    _ => ordered_paths.join(\"\\n\").into(),\n                };\n\n                let mut path_start_offset = 0;"
         },
         "Invalid path": {
-            "line": 359,
+            "line": 360,
             "context": "                        Please note that Zed currently does not support opening network share folders inside wsl.\n                    \"#};\n\n                    let _ = cx.prompt(gpui::PromptLevel::Critical, \"Invalid path\", Some(&message), &[\"OK\"]).await;\n                    return;\n                }\n"
         },
         "OK": {
-            "line": 514,
+            "line": 515,
             "context": "                        gpui::PromptLevel::Critical,\n                        \"Cannot open Dev Container from remote project\",\n                        None,\n                        &[\"OK\"],\n                    )\n                    .await\n                    .ok();"
         },
         "Cannot open Dev Container from remote project": {
-            "line": 512,
+            "line": 513,
             "context": "                cx.spawn_in(window, async move |_, cx| {\n                    cx.prompt(\n                        gpui::PromptLevel::Critical,\n                        \"Cannot open Dev Container from remote project\",\n                        None,\n                        &[\"OK\"],\n                    )"
         },
         "RecentProjects": {
-            "line": 845,
+            "line": 846,
             "context": "impl Render for RecentProjects {\n    fn render(&mut self, _: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {\n        v_flex()\n            .key_context(\"RecentProjects\")\n            .on_action(cx.listener(Self::handle_toggle_open_menu))\n            .on_action(cx.listener(Self::handle_remove_selected))\n            .on_action(cx.listener(Self::handle_add_to_workspace))"
         },
         "recent projects": {
-            "line": 929,
+            "line": 930,
             "context": "    type ListItem = AnyElement;\n\n    fn name() -> &'static str {\n        \"recent projects\"\n    }\n\n    fn placeholder_text(&self, _window: &mut Window, _cx: &mut App) -> Arc<str> {"
         },
         "Search projects…": {
-            "line": 933,
+            "line": 934,
             "context": "    }\n\n    fn placeholder_text(&self, _window: &mut Window, _cx: &mut App) -> Arc<str> {\n        \"Search projects…\".into()\n    }\n\n    fn match_count(&self) -> usize {"
         },
         "Recently opened projects will show up here": {
-            "line": 1220,
+            "line": 1221,
             "context": "\n    fn no_matches_text(&self, _window: &mut Window, _cx: &mut App) -> Option<SharedString> {\n        let text = if self.workspaces.is_empty() && self.open_folders.is_empty() {\n            \"Recently opened projects will show up here\".into()\n        } else {\n            \"No matches\".into()\n        };"
         },
         "No matches": {
-            "line": 1222,
+            "line": 1223,
             "context": "        let text = if self.workspaces.is_empty() && self.open_folders.is_empty() {\n            \"Recently opened projects will show up here\".into()\n        } else {\n            \"No matches\".into()\n        };\n        Some(text)\n    }"
         },
         "remove-folder": {
-            "line": 1256,
+            "line": 1257,
             "context": "                let secondary_actions = h_flex()\n                    .gap_1()\n                    .child(\n                        IconButton::new((\"remove-folder\", worktree_id.to_usize()), IconName::Close)\n                            .icon_size(IconSize::Small)\n                            .tooltip({\n                                let focus_handle = self.focus_handle.clone();"
         },
         "Remove Folder from Project": {
-            "line": 1262,
+            "line": 1263,
             "context": "                                let focus_handle = self.focus_handle.clone();\n                                move |_, cx| {\n                                    Tooltip::for_action_in(\n                                        \"Remove Folder from Project\",\n                                        &RemoveSelected,\n                                        &focus_handle,\n                                        cx,"
         },
         "open_folder_item": {
-            "line": 1293,
+            "line": 1294,
             "context": "                        .spacing(ListItemSpacing::Sparse)\n                        .child(\n                            h_flex()\n                                .id(\"open_folder_item\")\n                                .w_full()\n                                .min_w_0()\n                                .gap_2p5()"
         },
         "{}/{}": {
-            "line": 1337,
+            "line": 1338,
             "context": "                                    this.tooltip(move |_, cx| {\n                                        if let Some(branch) = tooltip_branch.clone() {\n                                            Tooltip::with_meta(\n                                                format!(\"{}/{}\", name, branch),\n                                                None,\n                                                tooltip_path.clone(),\n                                                cx,"
         },
         "move_to_new_window": {
-            "line": 1828,
+            "line": 1829,
             "context": "                                let window_project_groups = self.window_project_groups.clone();\n                                let selected_index = self.selected_index;\n                                let filtered_entries = self.filtered_entries.clone();\n                                Button::new(\"move_to_new_window\", \"New Window\")\n                                    .key_binding(KeyBinding::for_action_in(\n                                        &menu::SecondaryConfirm,\n                                        &focus_handle,"
         },
         "Open in New Window": {
-            "line": 1397,
+            "line": 1398,
             "context": "                                    let focus_handle = self.focus_handle.clone();\n                                    move |_, cx| {\n                                        Tooltip::for_action_in(\n                                            \"Open in New Window\",\n                                            &menu::SecondaryConfirm,\n                                            &focus_handle,\n                                            cx,"
         },
         "remove_open_project": {
-            "line": 1420,
+            "line": 1421,
             "context": "                        )\n                    })\n                    .child(\n                        IconButton::new(\"remove_open_project\", IconName::Close)\n                            .icon_size(IconSize::Small)\n                            .tooltip({\n                                let focus_handle = self.focus_handle.clone();"
         },
         "Remove Project from Window": {
-            "line": 1426,
+            "line": 1427,
             "context": "                                let focus_handle = self.focus_handle.clone();\n                                move |_, cx| {\n                                    Tooltip::for_action_in(\n                                        \"Remove Project from Window\",\n                                        &RemoveSelected,\n                                        &focus_handle,\n                                        cx,"
         },
         "open_project_info_container": {
-            "line": 1456,
+            "line": 1457,
             "context": "                        .spacing(ListItemSpacing::Sparse)\n                        .child(\n                            h_flex()\n                                .id(\"open_project_info_container\")\n                                .w_full()\n                                .min_w_0()\n                                .gap_2p5()"
         },
         "{} ({})": {
-            "line": 1492,
+            "line": 1493,
             "context": "                    SerializedWorkspaceLocation::Remote(options) => {\n                        let host = options.display_name();\n                        if ordered_paths.len() == 1 {\n                            format!(\"{} ({})\", ordered_paths[0], host).into()\n                        } else {\n                            format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                        }"
         },
         "{}\\n({})": {
-            "line": 1494,
+            "line": 1495,
             "context": "                        if ordered_paths.len() == 1 {\n                            format!(\"{} ({})\", ordered_paths[0], host).into()\n                        } else {\n                            format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                        }\n                    }\n                    _ => ordered_paths.join(\"\\n\").into(),"
         },
         "Add Folders to this Project": {
-            "line": 1513,
+            "line": 1514,
             "context": "                    .unzip();\n\n                let tooltip_title = if paths.len() > 1 {\n                    \"Add Folders to this Project\"\n                } else {\n                    \"Add Folder to this Project\"\n                };"
         },
         "Add Folder to this Project": {
-            "line": 1954,
+            "line": 1955,
             "context": "                                        menu.context(focus_handle)\n                                            .when(show_add_to_workspace, |menu| {\n                                                menu.action(\n                                                    \"Add Folder to this Project\",\n                                                    AddToWorkspace.boxed_clone(),\n                                                )\n                                                .separator()"
         },
         "Open Project in This Window": {
-            "line": 1541,
+            "line": 1542,
             "context": "                let primary_confirm_tooltip = if self.create_new_window {\n                    \"Open Project in New Window\"\n                } else {\n                    \"Open Project in This Window\"\n                };\n                let secondary_confirm_icon = if self.create_new_window {\n                    IconName::ThisWindow"
         },
         "Open Project in New Window": {
-            "line": 1539,
+            "line": 1540,
             "context": "                    \"Open Project in New Window\"\n                };\n                let primary_confirm_tooltip = if self.create_new_window {\n                    \"Open Project in New Window\"\n                } else {\n                    \"Open Project in This Window\"\n                };"
         },
         "add_to_workspace": {
-            "line": 1553,
+            "line": 1554,
             "context": "                    .gap_px()\n                    .when(is_local, |this| {\n                        this.child(\n                            IconButton::new(\"add_to_workspace\", IconName::FolderInclude)\n                                .icon_size(IconSize::Small)\n                                .tooltip({\n                                    let focus_handle = self.focus_handle.clone();"
         },
         "As a multi-root folder": {
-            "line": 1561,
+            "line": 1562,
             "context": "                                        Tooltip::with_meta_in(\n                                            tooltip_title,\n                                            Some(&AddToWorkspace),\n                                            \"As a multi-root folder\",\n                                            &focus_handle,\n                                            cx,\n                                        )"
         },
         "alternate_open": {
-            "line": 1582,
+            "line": 1583,
             "context": "                        )\n                    })\n                    .child(\n                        IconButton::new(\"alternate_open\", secondary_confirm_icon)\n                            .icon_size(IconSize::Small)\n                            .tooltip({\n                                move |_, cx| {"
         },
         "delete": {
-            "line": 1602,
+            "line": 1603,
             "context": "                            })),\n                    )\n                    .child(\n                        IconButton::new(\"delete\", IconName::Close)\n                            .icon_size(IconSize::Small)\n                            .tooltip({\n                                let focus_handle = self.focus_handle.clone();"
         },
         "Remove from Recent Projects": {
-            "line": 1608,
+            "line": 1609,
             "context": "                                let focus_handle = self.focus_handle.clone();\n                                move |_, cx| {\n                                    Tooltip::for_action_in(\n                                        \"Remove from Recent Projects\",\n                                        &RemoveSelected,\n                                        &focus_handle,\n                                        cx,"
         },
         "project_info_container": {
-            "line": 1636,
+            "line": 1637,
             "context": "                        .spacing(ListItemSpacing::Sparse)\n                        .child(\n                            h_flex()\n                                .id(\"project_info_container\")\n                                .w_full()\n                                .min_w_0()\n                                .gap_2p5()"
         },
         "open_local_folder": {
-            "line": 1697,
+            "line": 1698,
             "context": "                    .border_t_1()\n                    .border_color(cx.theme().colors().border_variant)\n                    .child({\n                        ButtonLike::new(\"open_local_folder\")\n                            .child(\n                                h_flex()\n                                    .w_full()"
         },
         "Open Local Folders": {
-            "line": 1960,
+            "line": 1961,
             "context": "                                                .separator()\n                                            })\n                                            .entry(\n                                                \"Open Local Folders\",\n                                                Some(open_action.boxed_clone()),\n                                                {\n                                                    let workspace_handle = workspace_handle.clone();"
         },
         "open_remote_folder": {
-            "line": 1726,
+            "line": 1727,
             "context": "                            })\n                    })\n                    .child(\n                        ButtonLike::new(\"open_remote_folder\")\n                            .child(\n                                h_flex()\n                                    .w_full()"
         },
         "Open Remote Folder": {
-            "line": 1975,
+            "line": 1976,
             "context": "                                                },\n                                            )\n                                            .action(\n                                                \"Open Remote Folder\",\n                                                OpenRemote {\n                                                    from_existing_connection: false,\n                                                    create_new_window: Some(create_new_window),"
         },
         "remove_selected": {
-            "line": 1784,
+            "line": 1785,
             "context": "                    .into_any_element(),\n            ),\n            Some(ProjectPickerEntry::ProjectGroup(_)) if !is_current_workspace_entry => Some(\n                Button::new(\"remove_selected\", \"Remove from Window\")\n                    .key_binding(KeyBinding::for_action_in(\n                        &RemoveSelected,\n                        &focus_handle,"
         },
         "Remove Folder": {
-            "line": 1772,
+            "line": 1773,
             "context": "\n        let secondary_footer_actions: Option<AnyElement> = match selected_entry {\n            Some(ProjectPickerEntry::OpenFolder { .. }) => Some(\n                Button::new(\"remove_selected\", \"Remove Folder\")\n                    .key_binding(KeyBinding::for_action_in(\n                        &RemoveSelected,\n                        &focus_handle,"
         },
         "Remove from Window": {
-            "line": 1784,
+            "line": 1785,
             "context": "                    .into_any_element(),\n            ),\n            Some(ProjectPickerEntry::ProjectGroup(_)) if !is_current_workspace_entry => Some(\n                Button::new(\"remove_selected\", \"Remove from Window\")\n                    .key_binding(KeyBinding::for_action_in(\n                        &RemoveSelected,\n                        &focus_handle,"
         },
         "delete_recent": {
-            "line": 1796,
+            "line": 1797,
             "context": "                    .into_any_element(),\n            ),\n            Some(ProjectPickerEntry::RecentProject(_)) => Some(\n                Button::new(\"delete_recent\", \"Remove\")\n                    .key_binding(KeyBinding::for_action_in(\n                        &RemoveSelected,\n                        &focus_handle,"
         },
         "Remove": {
-            "line": 1796,
+            "line": 1797,
             "context": "                    .into_any_element(),\n            ),\n            Some(ProjectPickerEntry::RecentProject(_)) => Some(\n                Button::new(\"delete_recent\", \"Remove\")\n                    .key_binding(KeyBinding::for_action_in(\n                        &RemoveSelected,\n                        &focus_handle,"
         },
         "New Window": {
-            "line": 1883,
+            "line": 1884,
             "context": "                        )\n                    } else {\n                        this.child(\n                            Button::new(\"open_new_window\", \"New Window\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::SecondaryConfirm,\n                                    &focus_handle,"
         },
         "activate": {
-            "line": 1848,
+            "line": 1849,
             "context": "                            })\n                        })\n                        .child(\n                            Button::new(\"activate\", \"Activate\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::Confirm,\n                                    &focus_handle,"
         },
         "Activate": {
-            "line": 1848,
+            "line": 1849,
             "context": "                            })\n                        })\n                        .child(\n                            Button::new(\"activate\", \"Activate\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::Confirm,\n                                    &focus_handle,"
         },
         "open_here": {
-            "line": 1894,
+            "line": 1895,
             "context": "                                }),\n                        )\n                        .child(\n                            Button::new(\"open_here\", \"Open\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::Confirm,\n                                    &focus_handle,"
         },
         "open_new_window": {
-            "line": 1883,
+            "line": 1884,
             "context": "                        )\n                    } else {\n                        this.child(\n                            Button::new(\"open_new_window\", \"New Window\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::SecondaryConfirm,\n                                    &focus_handle,"
         },
         "Open": {
-            "line": 1894,
+            "line": 1895,
             "context": "                                }),\n                        )\n                        .child(\n                            Button::new(\"open_here\", \"Open\")\n                                .key_binding(KeyBinding::for_action_in(\n                                    &menu::Confirm,\n                                    &focus_handle,"
         },
         "actions-menu-popover": {
-            "line": 1908,
+            "line": 1909,
             "context": "                })\n                .child(Divider::vertical())\n                .child(\n                    PopoverMenu::new(\"actions-menu-popover\")\n                        .with_handle(self.actions_menu_handle.clone())\n                        .anchor(gpui::Anchor::BottomRight)\n                        .offset(gpui::Point {"
         },
         "actions-trigger": {
-            "line": 1916,
+            "line": 1917,
             "context": "                            y: px(-2.0),\n                        })\n                        .trigger(\n                            Button::new(\"actions-trigger\", \"Actions\")\n                                .selected_style(ButtonStyle::Tinted(TintColor::Accent))\n                                .key_binding(KeyBinding::for_action_in(\n                                    &ToggleActionsMenu,"
         },
         "Actions": {
-            "line": 1916,
+            "line": 1917,
             "context": "                            y: px(-2.0),\n                        })\n                        .trigger(\n                            Button::new(\"actions-trigger\", \"Actions\")\n                                .selected_style(ButtonStyle::Tinted(TintColor::Accent))\n                                .key_binding(KeyBinding::for_action_in(\n                                    &ToggleActionsMenu,"
         },
         "test-support": {
-            "line": 2004,
+            "line": 2005,
             "context": "            RemoteConnectionOptions::Ssh(_) => IconName::Server,\n            RemoteConnectionOptions::Wsl(_) => IconName::Linux,\n            RemoteConnectionOptions::Docker(_) => IconName::Box,\n            #[cfg(any(test, feature = \"test-support\"))]\n            RemoteConnectionOptions::Mock(_) => IconName::Server,\n        },\n    }"
         },
         "Failed to open project": {
-            "line": 2212,
+            "line": 2213,
             "context": "                            .await\n                    })\n                    .detach_and_prompt_err(\n                        \"Failed to open project\",\n                        window,\n                        cx,\n                        |_, _, _| None,"
         },
         "project-folder-{index}": {
-            "line": 2522,
+            "line": 2523,
             "context": "    fn open_folder(index: usize) -> OpenFolderEntry {\n        OpenFolderEntry {\n            worktree_id: WorktreeId::from_usize(index),\n            name: format!(\"project-folder-{index}\").into(),\n            path: PathBuf::from(format!(\"/current/project-folder-{index}\")),\n            branch: None,\n            is_active: false,"
         },
         "/current/project-folder-{index}": {
-            "line": 2523,
+            "line": 2524,
             "context": "        OpenFolderEntry {\n            worktree_id: WorktreeId::from_usize(index),\n            name: format!(\"project-folder-{index}\").into(),\n            path: PathBuf::from(format!(\"/current/project-folder-{index}\")),\n            branch: None,\n            is_active: false,\n            connection_options: None,"
         },
         "/this-window/project-{index}": {
-            "line": 2533,
+            "line": 2534,
             "context": "    fn project_group(index: usize) -> ProjectGroupKey {\n        ProjectGroupKey::new(\n            None,\n            PathList::new(&[PathBuf::from(format!(\"/this-window/project-{index}\"))]),\n        )\n    }\n"
         },
         "/this-window/remote-project-{index}": {
-            "line": 2543,
+            "line": 2544,
             "context": "                remote::MockConnectionOptions { id: index as u64 },\n            )),\n            PathList::new(&[PathBuf::from(format!(\n                \"/this-window/remote-project-{index}\"\n            ))]),\n        )\n    }"
         },
         "/recent/project-{index:02}": {
-            "line": 2549,
+            "line": 2550,
             "context": "    }\n\n    fn recent_workspace(index: usize) -> RecentWorkspace {\n        let paths = PathList::new(&[PathBuf::from(format!(\"/recent/project-{index:02}\"))]);\n        RecentWorkspace {\n            workspace_id: WorkspaceId::from_i64(index as i64),\n            location: SerializedWorkspaceLocation::Local,"
         },
         "expected entry at {index} to be a recent project": {
-            "line": 2614,
+            "line": 2615,
             "context": "            let Some(ProjectPickerEntry::RecentProject(hit)) =\n                picker.delegate.filtered_entries.get(index)\n            else {\n                panic!(\"expected entry at {index} to be a recent project\");\n            };\n            let mut workspaces = picker.delegate.workspaces.clone();\n            workspaces.remove(hit.candidate_id);"
         },
         "scroll top should remain at {expected} ({phase})": {
-            "line": 2635,
+            "line": 2636,
             "context": "            assert_eq!(\n                picker.logical_scroll_top_index(),\n                expected,\n                \"scroll top should remain at {expected} ({phase})\"\n            );\n            assert_selected_entry_is_recent_project(picker);\n        });"
         },
         "picker should remain pinned to the bottom ({phase})": {
-            "line": 2651,
+            "line": 2652,
             "context": "            assert_eq!(\n                picker.is_scrolled_to_end(),\n                Some(true),\n                \"picker should remain pinned to the bottom ({phase})\"\n            );\n            assert!(\n                picker.logical_scroll_top_index() > 0,"
         },
         "picker should not jump to the top while pinned to the bottom ({phase})": {
-            "line": 2655,
+            "line": 2656,
             "context": "            );\n            assert!(\n                picker.logical_scroll_top_index() > 0,\n                \"picker should not jump to the top while pinned to the bottom ({phase})\"\n            );\n            assert_selected_entry_is_recent_project(picker);\n        });"
         },
         "/repo": {
-            "line": 2716,
+            "line": 2717,
             "context": "    fn is_open_folder_distinguishes_local_and_remote(cx: &mut TestAppContext) {\n        init_test(cx);\n\n        let shared_path = PathBuf::from(\"/repo\");\n        let local_open_folder = OpenFolderEntry {\n            worktree_id: WorktreeId::from_usize(0),\n            name: \"repo\".into(),"
         },
         "repo": {
-            "line": 2719,
+            "line": 2720,
             "context": "        let shared_path = PathBuf::from(\"/repo\");\n        let local_open_folder = OpenFolderEntry {\n            worktree_id: WorktreeId::from_usize(0),\n            name: \"repo\".into(),\n            path: shared_path.clone(),\n            branch: None,\n            is_active: false,"
         },
         "test should start scrolled away from the top": {
-            "line": 2785,
+            "line": 2786,
             "context": "        let scroll_top = scroll_to_and_select(&picker, cx, target);\n        assert!(\n            scroll_top > 0,\n            \"test should start scrolled away from the top\"\n        );\n\n        delete_recent_project_in_picker(&picker, cx, target);"
         },
         "after delete": {
-            "line": 2810,
+            "line": 2811,
             "context": "        });\n\n        delete_recent_project_in_picker(&picker, cx, target);\n        assert_pinned_to_bottom(&picker, cx, \"after delete\");\n\n        draw(cx);\n        assert_pinned_to_bottom(&picker, cx, \"after redraw\");"
         },
         "after redraw": {
-            "line": 2813,
+            "line": 2814,
             "context": "        assert_pinned_to_bottom(&picker, cx, \"after delete\");\n\n        draw(cx);\n        assert_pinned_to_bottom(&picker, cx, \"after redraw\");\n    }\n\n    #[gpui::test]"
         },
         "selecting the last entry should leave the picker pinned to the bottom": {
-            "line": 2805,
+            "line": 2806,
             "context": "            assert_eq!(\n                picker.is_scrolled_to_end(),\n                Some(true),\n                \"selecting the last entry should leave the picker pinned to the bottom\"\n            );\n        });\n"
         },
         "/project": {
-            "line": 2908,
+            "line": 2909,
             "context": "\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(path!(\"/project\"))],\n                app_state,\n                workspace::OpenOptions::default(),\n                cx,"
         },
         ".devcontainer": {
-            "line": 2891,
+            "line": 2892,
             "context": "            .insert_tree(\n                path!(\"/project\"),\n                json!({\n                    \".devcontainer\": {\n                        \"rust\": {\n                            \"devcontainer.json\": \"{}\"\n                        },"
         },
         "devcontainer.json": {
-            "line": 2896,
+            "line": 2897,
             "context": "                            \"devcontainer.json\": \"{}\"\n                        },\n                        \"python\": {\n                            \"devcontainer.json\": \"{}\"\n                        }\n                    },\n                    \"src\": {"
         },
         "{}": {
-            "line": 2896,
+            "line": 2897,
             "context": "                            \"devcontainer.json\": \"{}\"\n                        },\n                        \"python\": {\n                            \"devcontainer.json\": \"{}\"\n                        }\n                    },\n                    \"src\": {"
         },
         "src": {
-            "line": 3032,
+            "line": 3033,
             "context": "            .as_fake()\n            .insert_tree(\n                path!(\"/initial-project\"),\n                json!({ \"src\": { \"main.rs\": \"\" } }),\n            )\n            .await;\n        app_state"
         },
         "main.rs": {
-            "line": 3032,
+            "line": 3033,
             "context": "            .as_fake()\n            .insert_tree(\n                path!(\"/initial-project\"),\n                json!({ \"src\": { \"main.rs\": \"\" } }),\n            )\n            .await;\n        app_state"
         },
         "fn main() {}": {
-            "line": 2900,
+            "line": 2901,
             "context": "                        }\n                    },\n                    \"src\": {\n                        \"main.rs\": \"fn main() {}\"\n                    }\n                }),\n            )"
         },
         "/project/src/main.rs": {
-            "line": 2845,
+            "line": 2846,
             "context": "        // guard that this test validates is still exercised.\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(path!(\"/project/src/main.rs\"))],\n                app_state,\n                workspace::OpenOptions::default(),\n                cx,"
         },
         "Dev container modal should be open after dispatching OpenDevContainer": {
-            "line": 2875,
+            "line": 2876,
             "context": "                    .active_modal::<RemoteServerProjects>(cx);\n                assert!(\n                    modal.is_some(),\n                    \"Dev container modal should be open after dispatching OpenDevContainer\"\n                );\n            })\n            .unwrap();"
         },
         "rust": {
-            "line": 2892,
+            "line": 2893,
             "context": "                path!(\"/project\"),\n                json!({\n                    \".devcontainer\": {\n                        \"rust\": {\n                            \"devcontainer.json\": \"{}\"\n                        },\n                        \"python\": {"
         },
         "python": {
-            "line": 2895,
+            "line": 2896,
             "context": "                        \"rust\": {\n                            \"devcontainer.json\": \"{}\"\n                        },\n                        \"python\": {\n                            \"devcontainer.json\": \"{}\"\n                        }\n                    },"
         },
         "Dev container modal should be open after dispatching OpenDevContainer with multiple configs": {
-            "line": 2932,
+            "line": 2933,
             "context": "                    .active_modal::<RemoteServerProjects>(cx);\n                assert!(\n                    modal.is_some(),\n                    \"Dev container modal should be open after dispatching OpenDevContainer with multiple configs\"\n                );\n            })\n            .unwrap();"
         },
         "/initial-project": {
-            "line": 3043,
+            "line": 3044,
             "context": "\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(path!(\"/initial-project\"))],\n                app_state.clone(),\n                workspace::OpenOptions::default(),\n                cx,"
         },
         "": {
-            "line": 3223,
+            "line": 3224,
             "context": "        app_state\n            .fs\n            .as_fake()\n            .insert_tree(path!(\"/b\"), json!({ \"2.txt\": \"\" }))\n            .await;\n\n        cx.update(|cx| {"
         },
         "/new-project": {
-            "line": 3066,
+            "line": 3067,
             "context": "        workspace.update(cx, |workspace, _cx| {\n            workspace.set_prompt_for_open_path(Box::new(|_, _, _, _| {\n                let (tx, rx) = futures::channel::oneshot::channel();\n                tx.send(Some(vec![PathBuf::from(path!(\"/new-project\"))]))\n                    .ok();\n                rx\n            }));"
         },
         "lib": {
-            "line": 3038,
+            "line": 3039,
             "context": "        app_state\n            .fs\n            .as_fake()\n            .insert_tree(path!(\"/new-project\"), json!({ \"lib\": { \"mod.rs\": \"\" } }))\n            .await;\n\n        cx.update(|cx| {"
         },
         "mod.rs": {
-            "line": 3038,
+            "line": 3039,
             "context": "        app_state\n            .fs\n            .as_fake()\n            .insert_tree(path!(\"/new-project\"), json!({ \"lib\": { \"mod.rs\": \"\" } }))\n            .await;\n\n        cx.update(|cx| {"
         },
         "open_local_project with create_new_window=false should reuse the current multi-workspace window": {
-            "line": 3010,
+            "line": 3011,
             "context": "        let final_window_count = cx.update(|cx| cx.windows().len());\n        assert_eq!(\n            final_window_count, initial_window_count,\n            \"open_local_project with create_new_window=false should reuse the current multi-workspace window\"\n        );\n    }\n"
         },
         "open_local_project with create_new_window=true should open a new window": {
-            "line": 3087,
+            "line": 3088,
             "context": "        assert_eq!(\n            final_window_count,\n            initial_window_count + 1,\n            \"open_local_project with create_new_window=true should open a new window\"\n        );\n    }\n"
         },
         "/local": {
-            "line": 3116,
+            "line": 3117,
             "context": "\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(\"/local\")],\n                app_state,\n                workspace::OpenOptions::default(),\n                cx,"
         },
         "remote project group entry should exist": {
-            "line": 3181,
+            "line": 3182,
             "context": "            .position(|entry| {\n                matches!(entry, ProjectPickerEntry::ProjectGroup(m) if m.candidate_id == groups.len())\n            })\n            .expect(\"remote project group entry should exist\");\n\n        // Select and confirm the remote entry via Entity::update\n        let _ = cx.update(|cx| {"
         },
         "remote project group confirm should not create a local workspace": {
-            "line": 3205,
+            "line": 3206,
             "context": "            .unwrap();\n        assert!(\n            !has_local,\n            \"remote project group confirm should not create a local workspace\"\n        );\n    }\n"
         },
         "/a": {
-            "line": 3228,
+            "line": 3229,
             "context": "\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(path!(\"/a\")), PathBuf::from(path!(\"/b\"))],\n                app_state,\n                workspace::OpenOptions::default(),\n                cx,"
         },
         "1.txt": {
-            "line": 3218,
+            "line": 3219,
             "context": "        app_state\n            .fs\n            .as_fake()\n            .insert_tree(path!(\"/a\"), json!({ \"1.txt\": \"\" }))\n            .await;\n        app_state\n            .fs"
         },
         "/b": {
-            "line": 3228,
+            "line": 3229,
             "context": "\n        cx.update(|cx| {\n            open_paths(\n                &[PathBuf::from(path!(\"/a\")), PathBuf::from(path!(\"/b\"))],\n                app_state,\n                workspace::OpenOptions::default(),\n                cx,"
         },
         "2.txt": {
-            "line": 3223,
+            "line": 3224,
             "context": "        app_state\n            .fs\n            .as_fake()\n            .insert_tree(path!(\"/b\"), json!({ \"2.txt\": \"\" }))\n            .await;\n\n        cx.update(|cx| {"
         },
         "group should span both folders before removal": {
-            "line": 3253,
+            "line": 3254,
             "context": "        assert_eq!(\n            active_key.path_list().paths().len(),\n            2,\n            \"group should span both folders before removal\"\n        );\n        let groups = vec![active_key];\n"
         },
         "a": {
-            "line": 3318,
+            "line": 3319,
             "context": "                .path_list()\n                .paths()\n                .iter()\n                .any(|path| path.ends_with(\"a\"))),\n            \"the removed folder should no longer appear in any This Window group, got {groups_after:?}\"\n        );\n    }"
         },
         "a worktree should exist": {
-            "line": 3291,
+            "line": 3292,
             "context": "                    .find(|wt| wt.read(cx).abs_path().ends_with(\"a\"))\n                    .map(|wt| wt.read(cx).id())\n            })\n            .expect(\"a worktree should exist\");\n\n        cx.update(|cx| {\n            let window = cx.windows()[0];"
         },
         "the removed folder should no longer appear in any This Window group, got {groups_after:?}": {
-            "line": 3319,
+            "line": 3320,
             "context": "                .paths()\n                .iter()\n                .any(|path| path.ends_with(\"a\"))),\n            \"the removed folder should no longer appear in any This Window group, got {groups_after:?}\"\n        );\n    }\n}"
         }
     },
@@ -282687,63 +282687,87 @@
     },
     "zed/crates/recent_projects/src/sidebar_recent_projects.rs": {
         "SidebarRecentProjects": {
-            "line": 108,
+            "line": 115,
             "context": "impl Render for SidebarRecentProjects {\n    fn render(&mut self, _: &mut Window, _cx: &mut Context<Self>) -> impl IntoElement {\n        v_flex()\n            .key_context(\"SidebarRecentProjects\")\n            .w(rems(18.))\n            .child(self.picker.clone())\n    }"
         },
         "sidebar recent projects": {
-            "line": 139,
+            "line": 224,
             "context": "    type ListItem = AnyElement;\n\n    fn name() -> &'static str {\n        \"sidebar recent projects\"\n    }\n\n    fn placeholder_text(&self, _window: &mut Window, _cx: &mut App) -> Arc<str> {"
         },
         "Search projects…": {
-            "line": 143,
+            "line": 228,
             "context": "    }\n\n    fn placeholder_text(&self, _window: &mut Window, _cx: &mut App) -> Arc<str> {\n        \"Search projects…\".into()\n    }\n\n    fn match_count(&self) -> usize {"
         },
         "Failed to open project": {
-            "line": 271,
+            "line": 357,
             "context": "                            .await\n                    })\n                    .detach_and_prompt_err(\n                        \"Failed to open project\",\n                        window,\n                        cx,\n                        |_, _, _| None,"
         },
         "Recently opened projects will show up here": {
-            "line": 286,
+            "line": 372,
             "context": "\n    fn no_matches_text(&self, _window: &mut Window, _cx: &mut App) -> Option<SharedString> {\n        let text = if self.workspaces.is_empty() {\n            \"Recently opened projects will show up here\"\n        } else {\n            \"No matches\"\n        };"
         },
         "No matches": {
-            "line": 288,
+            "line": 374,
             "context": "        let text = if self.workspaces.is_empty() {\n            \"Recently opened projects will show up here\"\n        } else {\n            \"No matches\"\n        };\n        Some(text.into())\n    }"
         },
         "{} ({})": {
-            "line": 313,
+            "line": 399,
             "context": "            SerializedWorkspaceLocation::Remote(options) => {\n                let host = options.display_name();\n                if ordered_paths.len() == 1 {\n                    format!(\"{} ({})\", ordered_paths[0], host).into()\n                } else {\n                    format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                }"
         },
         "{}\\n({})": {
-            "line": 315,
+            "line": 401,
             "context": "                if ordered_paths.len() == 1 {\n                    format!(\"{} ({})\", ordered_paths[0], host).into()\n                } else {\n                    format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                }\n            }\n            _ => ordered_paths.join(\"\\n\").into(),"
         },
         "\\n": {
-            "line": 318,
+            "line": 404,
             "context": "                    format!(\"{}\\n({})\", ordered_paths.join(\"\\n\"), host).into()\n                }\n            }\n            _ => ordered_paths.join(\"\\n\").into(),\n        };\n\n        let mut path_start_offset = 0;"
         },
         ", ": {
-            "line": 343,
+            "line": 429,
             "context": "\n        let highlighted_match = HighlightedMatchWithPaths {\n            prefix,\n            match_label: HighlightedMatch::join(match_labels.into_iter().flatten(), \", \"),\n            paths: Vec::new(),\n            active: false,\n        };"
         },
         "Open Project in This Window": {
-            "line": 371,
-            "context": "                )\n                .tooltip(move |_, cx| {\n                    Tooltip::with_meta(\n                        \"Open Project in This Window\",\n                        None,\n                        tooltip_path.clone(),\n                        cx,"
+            "line": 459,
+            "context": "            )\n            .tooltip(move |_, cx| {\n                Tooltip::with_meta(\n                    \"Open Project in This Window\",\n                    None,\n                    tooltip_path.clone(),\n                    cx,"
+        },
+        "recent-project-row-{ix}": {
+            "line": 467,
+            "context": "            });\n\n        Some(\n            right_click_menu(SharedString::from(format!(\"recent-project-row-{ix}\")))\n                .menu(move |window, cx| {\n                    let picker = picker.clone();\n                    let key = key.clone();"
+        },
+        "Move Up": {
+            "line": 472,
+            "context": "                    let picker = picker.clone();\n                    let key = key.clone();\n                    ContextMenu::build(window, cx, move |menu, _, _| {\n                        menu.entry(\"Move Up\", None, {\n                            let picker = picker.clone();\n                            let key = key.clone();\n                            move |window, cx| {"
+        },
+        "Move Down": {
+            "line": 483,
+            "context": "                                });\n                            }\n                        })\n                        .entry(\"Move Down\", None, {\n                            let picker = picker.clone();\n                            let key = key.clone();\n                            move |window, cx| {"
+        },
+        "Pin to Top": {
+            "line": 494,
+            "context": "                                });\n                            }\n                        })\n                        .entry(\"Pin to Top\", None, {\n                            let picker = picker.clone();\n                            let key = key.clone();\n                            move |window, cx| {"
+        },
+        "recent-projects-sort": {
+            "line": 543,
+            "context": "            menu\n        });\n        let sort_button = DropdownMenu::new_with_element(\n            SharedString::from(\"recent-projects-sort\"),\n            h_flex()\n                .w_full()\n                .gap_1()"
+        },
+        "Sort By": {
+            "line": 548,
+            "context": "                .w_full()\n                .gap_1()\n                .justify_between()\n                .child(Label::new(\"Sort By\"))\n                .child(Label::new(current_mode.label()))\n                .into_any_element(),\n            sort_menu,"
         },
         "open_local_folder": {
-            "line": 396,
+            "line": 567,
             "context": "                        create_new_window: Some(false),\n                    };\n\n                    ButtonLike::new(\"open_local_folder\")\n                        .child(\n                            h_flex()\n                                .w_full()"
         },
         "Open Local Folders": {
-            "line": 402,
+            "line": 573,
             "context": "                                .w_full()\n                                .gap_1()\n                                .justify_between()\n                                .child(Label::new(\"Open Local Folders\"))\n                                .child(KeyBinding::for_action_in(&open_action, &focus_handle, cx)),\n                        )\n                        .on_click(cx.listener(move |_, _, window, cx| {"
         },
         "open_remote_folder": {
-            "line": 411,
+            "line": 582,
             "context": "                        }))\n                })\n                .child(\n                    ButtonLike::new(\"open_remote_folder\")\n                        .child(\n                            h_flex()\n                                .w_full()"
         },
         "Open Remote Folder": {
-            "line": 417,
+            "line": 588,
             "context": "                                .w_full()\n                                .gap_1()\n                                .justify_between()\n                                .child(Label::new(\"Open Remote Folder\"))\n                                .child(KeyBinding::for_action(\n                                    &OpenRemote {\n                                        from_existing_connection: false,"
         }
     },
@@ -282897,6 +282921,116 @@
         "Enter WSL distro name": {
             "line": 101,
             "context": "    }\n\n    fn placeholder_text(&self, _window: &mut Window, _cx: &mut App) -> Arc<str> {\n        Arc::from(\"Enter WSL distro name\")\n    }\n\n    fn update_matches("
+        }
+    },
+    "zed/crates/recent_projects/src/zedg_recent_sort.rs": {
+        "zedg-recent-projects-sort.json": {
+            "line": 11,
+            "context": "use serde::{Deserialize, Serialize};\n\n/// 排序状态文件名（位于 Zed 配置目录）。\npub const STATE_FILE_NAME: &str = \"zedg-recent-projects-sort.json\";\n\n/// 排序模式。\n#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]"
+        },
+        "snake_case": {
+            "line": 15,
+            "context": "\n/// 排序模式。\n#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]\n#[serde(rename_all = \"snake_case\")]\npub enum SortMode {\n    /// 最近使用优先（与上游默认行为一致）。\n    #[default]"
+        },
+        "Recent": {
+            "line": 40,
+            "context": "    /// 菜单展示文案（会被汉化流程提取翻译）。\n    pub fn label(self) -> &'static str {\n        match self {\n            SortMode::Recent => \"Recent\",\n            SortMode::NameAsc => \"Name (A-Z)\",\n            SortMode::NameDesc => \"Name (Z-A)\",\n            SortMode::Manual => \"Manual\","
+        },
+        "Name (A-Z)": {
+            "line": 41,
+            "context": "    pub fn label(self) -> &'static str {\n        match self {\n            SortMode::Recent => \"Recent\",\n            SortMode::NameAsc => \"Name (A-Z)\",\n            SortMode::NameDesc => \"Name (Z-A)\",\n            SortMode::Manual => \"Manual\",\n        }"
+        },
+        "Name (Z-A)": {
+            "line": 42,
+            "context": "        match self {\n            SortMode::Recent => \"Recent\",\n            SortMode::NameAsc => \"Name (A-Z)\",\n            SortMode::NameDesc => \"Name (Z-A)\",\n            SortMode::Manual => \"Manual\",\n        }\n    }"
+        },
+        "Manual": {
+            "line": 43,
+            "context": "            SortMode::Recent => \"Recent\",\n            SortMode::NameAsc => \"Name (A-Z)\",\n            SortMode::NameDesc => \"Name (Z-A)\",\n            SortMode::Manual => \"Manual\",\n        }\n    }\n}"
+        },
+        "{host}::{path}": {
+            "line": 85,
+            "context": "/// 本地项目直接用路径；远程项目用 `host::path`，避免不同主机上的同名项目冲突。\npub fn project_key_from(path: &str, host: Option<&str>) -> String {\n    match host {\n        Some(host) => format!(\"{host}::{path}\"),\n        None => path.to_string(),\n    }\n}"
+        },
+        "b": {
+            "line": 291,
+            "context": "        let order = vec![\"a\".to_string(), \"b\".to_string(), \"c\".to_string()];\n        assert_eq!(\n            apply_move(&order, \"c\", MoveTarget::PinToTop),\n            vec![\"c\", \"a\", \"b\"]\n        );\n    }\n"
+        },
+        "beta": {
+            "line": 212,
+            "context": "    #[test]\n    fn sorts_by_name_ascending_case_insensitively() {\n        let mut entries = vec![\n            entry(\"b\", \"beta\", 0),\n            entry(\"a\", \"Alpha\", 1),\n            entry(\"c\", \"Beta\", 2),\n        ];"
+        },
+        "a": {
+            "line": 291,
+            "context": "        let order = vec![\"a\".to_string(), \"b\".to_string(), \"c\".to_string()];\n        assert_eq!(\n            apply_move(&order, \"c\", MoveTarget::PinToTop),\n            vec![\"c\", \"a\", \"b\"]\n        );\n    }\n"
+        },
+        "Alpha": {
+            "line": 259,
+            "context": "    #[test]\n    fn manual_order_wins_and_unknown_items_go_last() {\n        let mut entries = vec![\n            entry(\"a\", \"Alpha\", 0),\n            entry(\"b\", \"Beta\", 1),\n            entry(\"c\", \"Gamma\", 2),\n        ];"
+        },
+        "c": {
+            "line": 291,
+            "context": "        let order = vec![\"a\".to_string(), \"b\".to_string(), \"c\".to_string()];\n        assert_eq!(\n            apply_move(&order, \"c\", MoveTarget::PinToTop),\n            vec![\"c\", \"a\", \"b\"]\n        );\n    }\n"
+        },
+        "Beta": {
+            "line": 260,
+            "context": "    fn manual_order_wins_and_unknown_items_go_last() {\n        let mut entries = vec![\n            entry(\"a\", \"Alpha\", 0),\n            entry(\"b\", \"Beta\", 1),\n            entry(\"c\", \"Gamma\", 2),\n        ];\n        let state = SortState {"
+        },
+        "gamma": {
+            "line": 230,
+            "context": "    fn sorts_by_name_descending() {\n        let mut entries = vec![\n            entry(\"a\", \"Alpha\", 0),\n            entry(\"c\", \"gamma\", 1),\n            entry(\"b\", \"Beta\", 2),\n        ];\n        sort_entries("
+        },
+        "Gamma": {
+            "line": 261,
+            "context": "        let mut entries = vec![\n            entry(\"a\", \"Alpha\", 0),\n            entry(\"b\", \"Beta\", 1),\n            entry(\"c\", \"Gamma\", 2),\n        ];\n        let state = SortState {\n            mode: SortMode::Manual,"
+        },
+        "/tmp/proj": {
+            "line": 299,
+            "context": "    fn project_key_includes_remote_host() {\n        assert_eq!(project_key_from(\"/tmp/proj\", None), \"/tmp/proj\");\n        assert_eq!(\n            project_key_from(\"/tmp/proj\", Some(\"dev-box\")),\n            \"dev-box::/tmp/proj\"\n        );\n    }"
+        },
+        "dev-box": {
+            "line": 299,
+            "context": "    fn project_key_includes_remote_host() {\n        assert_eq!(project_key_from(\"/tmp/proj\", None), \"/tmp/proj\");\n        assert_eq!(\n            project_key_from(\"/tmp/proj\", Some(\"dev-box\")),\n            \"dev-box::/tmp/proj\"\n        );\n    }"
+        },
+        "dev-box::/tmp/proj": {
+            "line": 300,
+            "context": "        assert_eq!(project_key_from(\"/tmp/proj\", None), \"/tmp/proj\");\n        assert_eq!(\n            project_key_from(\"/tmp/proj\", Some(\"dev-box\")),\n            \"dev-box::/tmp/proj\"\n        );\n    }\n"
+        },
+        "/home/me/work/proj": {
+            "line": 306,
+            "context": "\n    #[test]\n    fn display_name_uses_last_path_segment() {\n        assert_eq!(display_name_from(\"/home/me/work/proj\"), \"proj\");\n        assert_eq!(display_name_from(\"/\"), \"/\");\n    }\n"
+        },
+        "proj": {
+            "line": 306,
+            "context": "\n    #[test]\n    fn display_name_uses_last_path_segment() {\n        assert_eq!(display_name_from(\"/home/me/work/proj\"), \"proj\");\n        assert_eq!(display_name_from(\"/\"), \"/\");\n    }\n"
+        },
+        "/": {
+            "line": 307,
+            "context": "    #[test]\n    fn display_name_uses_last_path_segment() {\n        assert_eq!(display_name_from(\"/home/me/work/proj\"), \"proj\");\n        assert_eq!(display_name_from(\"/\"), \"/\");\n    }\n\n    #[test]"
+        },
+        "zedg-sort-test-{}": {
+            "line": 312,
+            "context": "\n    #[test]\n    fn state_round_trips_through_disk() {\n        let dir = std::env::temp_dir().join(format!(\"zedg-sort-test-{}\", std::process::id()));\n        std::fs::create_dir_all(&dir).unwrap();\n        let path = dir.join(\"state.json\");\n        let state = SortState {"
+        },
+        "state.json": {
+            "line": 329,
+            "context": "        let dir =\n            std::env::temp_dir().join(format!(\"zedg-sort-test-broken-{}\", std::process::id()));\n        std::fs::create_dir_all(&dir).unwrap();\n        let path = dir.join(\"state.json\");\n        assert_eq!(load_state_from(&path), SortState::default());\n        std::fs::write(&path, \"{ not json\").unwrap();\n        assert_eq!(load_state_from(&path), SortState::default());"
+        },
+        "/a": {
+            "line": 317,
+            "context": "        let path = dir.join(\"state.json\");\n        let state = SortState {\n            mode: SortMode::Manual,\n            order: vec![\"/a\".to_string(), \"/b\".to_string()],\n        };\n        save_state_to(&path, &state);\n        assert_eq!(load_state_from(&path), state);"
+        },
+        "/b": {
+            "line": 317,
+            "context": "        let path = dir.join(\"state.json\");\n        let state = SortState {\n            mode: SortMode::Manual,\n            order: vec![\"/a\".to_string(), \"/b\".to_string()],\n        };\n        save_state_to(&path, &state);\n        assert_eq!(load_state_from(&path), state);"
+        },
+        "zedg-sort-test-broken-{}": {
+            "line": 327,
+            "context": "    #[test]\n    fn missing_or_broken_state_falls_back_to_default() {\n        let dir =\n            std::env::temp_dir().join(format!(\"zedg-sort-test-broken-{}\", std::process::id()));\n        std::fs::create_dir_all(&dir).unwrap();\n        let path = dir.join(\"state.json\");\n        assert_eq!(load_state_from(&path), SortState::default());"
+        },
+        "{ not json": {
+            "line": 331,
+            "context": "        std::fs::create_dir_all(&dir).unwrap();\n        let path = dir.join(\"state.json\");\n        assert_eq!(load_state_from(&path), SortState::default());\n        std::fs::write(&path, \"{ not json\").unwrap();\n        assert_eq!(load_state_from(&path), SortState::default());\n        std::fs::remove_dir_all(&dir).ok();\n    }"
         }
     },
     "zed/crates/refineable/derive_refineable/src/derive_refineable.rs": {

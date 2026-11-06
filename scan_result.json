@@ -1549,6 +1549,7 @@
     "crates/recent_projects/src/sidebar_recent_projects.rs",
     "crates/recent_projects/src/ssh_config.rs",
     "crates/recent_projects/src/wsl_picker.rs",
+    "crates/recent_projects/src/zedg_recent_sort.rs",
     "crates/refineable/derive_refineable/src/derive_refineable.rs",
     "crates/refineable/src/refineable.rs",
     "crates/release_channel/build.rs",
