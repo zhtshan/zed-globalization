@@ -22,11 +22,19 @@ cd /Users/startiasoft/work/zed-upstream && cargo test -p recent_projects --lib
 - 应用后 `Cargo.lock` 中 `recent_projects` 的依赖包含 `"serde"`，与 `crates/recent_projects/Cargo.toml` 的 `serde.workspace = true` 一致。
 - 补丁共改动 5 个文件，包含 `Cargo.lock`，不含根 `Cargo.toml`（沙盒的本地 `[patch]` 改动没有混进补丁）。
 
-未验证：干净环境（联网）下的 `cargo check --locked`，要等 CI 首次构建确认。
+## 2.1 CI 构建 —— 通过
+
+- Run：https://github.com/zhtshan/zed-globalization/actions/runs/42153777795
+  （`version=v1.27.0`、`lang=zh-CN`、`arch=macos`、`publish=actions`）
+- `prepare`：`git -C zed apply` 打补丁成功，`l10n.patch` 正常生成。
+- `build-macos-aarch64` / `build-macos-x86_64` / `build-macos-universal` 全部成功；构建命令是
+  `cargo build --release --locked`，确认补丁里的 `Cargo.lock` 改动在干净环境下有效。
+- 首次运行（run 42153539094）在 `prepare` 失败：`git apply` 没进 `zed/` 目录执行，已在 `5eb1f3e` 修复。
+- Linux / Windows 这次没构建，未验证。
 
 ## 3. 人工 UI 验证 —— 待人工验证
 
-本次没有可运行的 ZedG 构建产物，以下各项都还没实测：
+可用产物：上面 CI run 的 `zed-macos` artifact。以下各项都还没实测：
 
 | # | 检查项 | 结果 |
 |---|---|---|
@@ -42,4 +50,4 @@ cd /Users/startiasoft/work/zed-upstream && cargo test -p recent_projects --lib
 
 ## 结论
 
-自动化部分（单元测试、补丁应用）通过；UI 行为要等 CI 产出安装包后按第 3 节逐项人工验证。
+自动化部分（单元测试、补丁应用、macOS CI 构建）都通过了；UI 行为还要用 `zed-macos` 产物按第 3 节逐项人工验证。
