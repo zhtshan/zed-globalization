@@ -25,7 +25,7 @@ grep '^diff --git' patches/*.patch
 
 ## 应用位置
 
-- `.github/workflows/02-build.yml`：`prepare` job 克隆上游后执行 `git apply patches/<name>.patch`，
+- `.github/workflows/02-build.yml`：`prepare` job 克隆上游后执行 `git -C zed apply "$GITHUB_WORKSPACE/patches/<name>.patch"`，
   改动随后随 `l10n.patch` 分发到各平台构建 job。
 - `.github/workflows/01-translate.yml`：「克隆 Zed 源码」步骤中在提取界面文案前同样打补丁，
   保证补丁新增的界面文案能被提取并翻译。
