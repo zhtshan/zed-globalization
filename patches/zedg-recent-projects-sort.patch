@@ -1,3 +1,15 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 0404e33..285ab43 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -14789,6 +14789,7 @@ dependencies = [
+  "remote_server",
+  "rpc",
+  "semver",
++ "serde",
+  "serde_json",
+  "settings",
+  "telemetry",
 diff --git a/crates/recent_projects/Cargo.toml b/crates/recent_projects/Cargo.toml
 index f4e151a..c84b7fb 100644
 --- a/crates/recent_projects/Cargo.toml
@@ -11,7 +23,7 @@ index f4e151a..c84b7fb 100644
  settings.workspace = true
  telemetry.workspace = true
 diff --git a/crates/recent_projects/src/recent_projects.rs b/crates/recent_projects/src/recent_projects.rs
-index 5578ae9..d48ab60 100644
+index 38df265..9aaa828 100644
 --- a/crates/recent_projects/src/recent_projects.rs
 +++ b/crates/recent_projects/src/recent_projects.rs
 @@ -4,6 +4,7 @@ mod remote_connections;
@@ -22,8 +34,144 @@ index 5578ae9..d48ab60 100644
  
  use std::{
      path::{Path, PathBuf},
+@@ -1384,6 +1385,8 @@ impl PickerDelegate for RecentProjectsDelegate {
+                 let project_group_key = key.clone();
+                 let is_local = key.host().is_none();
+                 let has_multiple_groups = self.window_project_groups.len() >= 2;
++                let is_first = hit.candidate_id == 0;
++                let is_last = hit.candidate_id + 1 == self.window_project_groups.len();
+                 let secondary_actions = h_flex()
+                     .gap_0p5()
+                     .when(is_local && has_multiple_groups, |this| {
+@@ -1416,6 +1419,75 @@ impl PickerDelegate for RecentProjectsDelegate {
+                                 }),
+                         )
+                     })
++                    .when(has_multiple_groups, |this| {
++                        this.child(
++                            IconButton::new("zedg_pin_project_group", IconName::Pin)
++                                .icon_size(IconSize::Small)
++                                .disabled(is_first)
++                                .tooltip(Tooltip::text("Pin to Top"))
++                                .on_click({
++                                    let project_group_key = project_group_key.clone();
++                                    cx.listener(move |picker, _, window, cx| {
++                                        cx.stop_propagation();
++                                        window.prevent_default();
++                                        picker.delegate.zedg_move_project_group(
++                                            project_group_key.clone(),
++                                            zedg_recent_sort::MoveTarget::PinToTop,
++                                            window,
++                                            cx,
++                                        );
++                                        let query = picker.query(cx);
++                                        picker.update_matches(query, window, cx);
++                                    })
++                                }),
++                        )
++                    })
++                    .when(has_multiple_groups, |this| {
++                        this.child(
++                            IconButton::new("zedg_move_project_group_up", IconName::ArrowUp)
++                                .icon_size(IconSize::Small)
++                                .disabled(is_first)
++                                .tooltip(Tooltip::text("Move Up"))
++                                .on_click({
++                                    let project_group_key = project_group_key.clone();
++                                    cx.listener(move |picker, _, window, cx| {
++                                        cx.stop_propagation();
++                                        window.prevent_default();
++                                        picker.delegate.zedg_move_project_group(
++                                            project_group_key.clone(),
++                                            zedg_recent_sort::MoveTarget::Up,
++                                            window,
++                                            cx,
++                                        );
++                                        let query = picker.query(cx);
++                                        picker.update_matches(query, window, cx);
++                                    })
++                                }),
++                        )
++                    })
++                    .when(has_multiple_groups, |this| {
++                        this.child(
++                            IconButton::new("zedg_move_project_group_down", IconName::ArrowDown)
++                                .icon_size(IconSize::Small)
++                                .disabled(is_last)
++                                .tooltip(Tooltip::text("Move Down"))
++                                .on_click({
++                                    let project_group_key = project_group_key.clone();
++                                    cx.listener(move |picker, _, window, cx| {
++                                        cx.stop_propagation();
++                                        window.prevent_default();
++                                        picker.delegate.zedg_move_project_group(
++                                            project_group_key.clone(),
++                                            zedg_recent_sort::MoveTarget::Down,
++                                            window,
++                                            cx,
++                                        );
++                                        let query = picker.query(cx);
++                                        picker.update_matches(query, window, cx);
++                                    })
++                                }),
++                        )
++                    })
+                     .child(
+                         IconButton::new("remove_open_project", IconName::Close)
+                             .icon_size(IconSize::Small)
+@@ -2424,6 +2496,50 @@ impl RecentProjectsDelegate {
+         self.window_project_groups.retain(|k| k != &key);
+     }
+ 
++    /// ZedG：调整「当前窗口」项目组的顺序（同步到 MultiWorkspace，侧边栏顺序随之变化并持久化）。
++    fn zedg_move_project_group(
++        &mut self,
++        key: ProjectGroupKey,
++        target: zedg_recent_sort::MoveTarget,
++        window: &mut Window,
++        cx: &mut Context<Picker<Self>>,
++    ) {
++        use zedg_recent_sort::MoveTarget;
++
++        let Some(index) = self.window_project_groups.iter().position(|k| k == &key) else {
++            return;
++        };
++        match target {
++            MoveTarget::Up if index > 0 => self.window_project_groups.swap(index - 1, index),
++            MoveTarget::Down if index + 1 < self.window_project_groups.len() => {
++                self.window_project_groups.swap(index, index + 1)
++            }
++            MoveTarget::PinToTop if index > 0 => {
++                let moved = self.window_project_groups.remove(index);
++                self.window_project_groups.insert(0, moved);
++            }
++            _ => return,
++        }
++
++        if let Some(handle) = window.window_handle().downcast::<MultiWorkspace>() {
++            cx.defer(move |cx| {
++                handle
++                    .update(cx, |multi_workspace, _, cx| match target {
++                        MoveTarget::Up => {
++                            multi_workspace.move_project_group_up(&key, cx);
++                        }
++                        MoveTarget::Down => {
++                            multi_workspace.move_project_group_down(&key, cx);
++                        }
++                        MoveTarget::PinToTop => {
++                            while multi_workspace.move_project_group_up(&key, cx) {}
++                        }
++                    })
++                    .log_err();
++            });
++        }
++    }
++
+     fn is_current_workspace(
+         &self,
+         workspace_id: WorkspaceId,
 diff --git a/crates/recent_projects/src/sidebar_recent_projects.rs b/crates/recent_projects/src/sidebar_recent_projects.rs
-index 006fb7f..71aec52 100644
+index 0b93ee8..ccc0234 100644
 --- a/crates/recent_projects/src/sidebar_recent_projects.rs
 +++ b/crates/recent_projects/src/sidebar_recent_projects.rs
 @@ -11,7 +11,10 @@ use picker::{
@@ -158,7 +306,7 @@ index 006fb7f..71aec52 100644
          let query = query.trim_start();
          let case = fuzzy_nucleo::Case::smart_if_uppercase_in(query);
          let is_empty_query = query.is_empty();
-@@ -350,37 +436,121 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
+@@ -350,37 +436,128 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
              SerializedWorkspaceLocation::Remote(options) => Some(options),
          });
  
@@ -252,8 +400,15 @@ index 006fb7f..71aec52 100644
 +                            }
 +                        })
 +                    })
++                })
++                .trigger(move |_, _, _| {
++                    // ZedG：吞掉右键抬起事件。Picker 行会把右键抬起当作点击触发 confirm
++                    // （打开项目并关闭弹窗），导致右键菜单一闪即逝。
++                    div()
++                        .on_mouse_up(gpui::MouseButton::Right, |_, _, cx| cx.stop_propagation())
++                        .child(item)
++                        .into_any_element()
                  })
-+                .trigger(move |_, _, _| item.into_any_element())
                  .into_any_element(),
          )
      }
@@ -302,7 +457,7 @@ index 006fb7f..71aec52 100644
          Some(
              v_flex()
                  .p_1p5()
-@@ -388,6 +558,7 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
+@@ -388,6 +565,7 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
                  .gap_1()
                  .border_t_1()
                  .border_color(cx.theme().colors().border_variant)
@@ -651,15 +806,3 @@ index 0000000..910cbd0
 +        std::fs::remove_dir_all(&dir).ok();
 +    }
 +}
-diff --git a/Cargo.lock b/Cargo.lock
-index 1e0942c..8b54150 100644
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -14762,6 +14762,7 @@ dependencies = [
-  "remote_server",
-  "rpc",
-  "semver",
-+ "serde",
-  "serde_json",
-  "settings",
-  "telemetry",
