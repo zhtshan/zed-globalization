@@ -40,6 +40,12 @@ CI 的多个平台构建 job 使用 `cargo build --locked`，即 Cargo.lock 必�
 重新生成补丁时若漏掉 `Cargo.lock`，构建会在依赖解析阶段直接失败。生成后务必用上面的
 `grep '^diff --git'` 命令核对，确认列表里有 `a/Cargo.lock`。
 
+补丁里的 `Cargo.lock` 变更应当只有一处：`recent_projects` 的依赖列表新增 `"serde"`。
+若沙盒为离线编译在根 `Cargo.toml` 末尾加过 `[patch."https://github.com/..."]`（把 git 依赖指向
+本地路径），`Cargo.lock` 会随之删除这些依赖的 `source` 行。这类本地构建改动**不能进入补丁**，
+否则 CI 会去找不存在的本地路径。生成补丁前先撤掉它们（`git checkout -- Cargo.toml` 后重新
+`cargo check` 刷新 `Cargo.lock`），或生成后手工删掉对应 hunk，并检查根 `Cargo.toml` 不在补丁里。
+
 ## 上游升级后如何重新生成补丁
 
 1. 在沙盒里检出新的上游 tag，并记录基线 commit（后续生成 diff 要用）：
