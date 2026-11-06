@@ -6,7 +6,7 @@ Applies all necessary renaming transformations from "zed" to "zedg" to the
 upstream Zed source code. Designed to be run after each upstream sync.
 
 Usage:
-    python3 scripts/rebrand.py [--zed-dir ./zed] [--dry-run]
+    python3 scripts/rebrand.py [--zed-dir ./zed] [--release-tag v1.28.0-pre.1] [--dry-run]
 """
 
 import argparse
@@ -569,8 +569,13 @@ def apply_category_6(zed_dir: Path, *, dry_run: bool = False) -> None:
 # Category 7: Auto-update redirect to ZedG GitHub releases
 # ---------------------------------------------------------------------------
 
-def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
-    """Category 7: Auto-update redirect to GitHub releases."""
+def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str = "") -> None:
+    """Category 7: Auto-update redirect to GitHub releases.
+
+    `release_tag` is the ZedG release tag being built (e.g. v1.28.0-pre.1).
+    It is baked into the binary so rebuilds of the same upstream version are
+    still offered as updates.
+    """
     log.info("Category 7: Auto-update redirect to GitHub releases")
 
     auto_update = zed_dir / "crates" / "auto_update" / "src" / "auto_update.rs"
@@ -598,12 +603,12 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
                 write_file(cargo_toml, new_cargo, dry_run=dry_run)
                 log.info("  [patched] %s (add github_releases dep)", cargo_toml)
 
-    if "latest_github_release" not in content:
+    if "::GithubRelease;" not in content:
         pat = r'(use\s+http_client::\{[^}]*HttpClientWithUrl[^}]*\};)'
         if has_github_releases:
-            repl = r'\1\nuse github_releases::latest_github_release;'
+            repl = r'\1\nuse github_releases::GithubRelease;'
         else:
-            repl = r'\1\nuse http_client::github::latest_github_release;'
+            repl = r'\1\nuse http_client::github::GithubRelease;'
         new_content = re.sub(pat, repl, content, count=1)
         if new_content == content:
             log.warning("  Pattern not matched for github import in %s", auto_update)
@@ -619,7 +624,8 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
         repl = (
             r'\1\n'
             r'const ZEDG_GITHUB_REPO: &str = "zhtshan/zed-globalization";' '\n'
-            r'const ZEDG_LANG: &str = "zh-cn";'
+            r'const ZEDG_LANG: &str = "zh-cn";' '\n'
+            f'const ZEDG_RELEASE_TAG: &str = "{release_tag}";'
         )
         new_content = re.sub(pat, repl, content, count=1)
         if new_content == content:
@@ -677,9 +683,42 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
             "        // Only follow releases of the running channel, so a failed lookup\n"
             "        // never moves a stable install onto a pre-release (or vice versa).\n"
             "        let pre_release = release_channel == ReleaseChannel::Preview;\n"
-            "        let release = latest_github_release(ZEDG_GITHUB_REPO, true, pre_release, http)\n"
+            "\n"
+            "        // Fetch the release list ourselves: upstream latest_github_release()\n"
+            "        // pulls every release (~700KB) under a 10s deadline, which times out\n"
+            "        // on slower networks.\n"
+            "        use http_client::HttpRequestExt as _;\n"
+            "        let url = format!(\n"
+            '            "https://api.github.com/repos/{}/releases?per_page=10",\n'
+            "            ZEDG_GITHUB_REPO\n"
+            "        );\n"
+            "        let request = http_client::Request::get(&url)\n"
+            "            .follow_redirects(http_client::RedirectPolicy::FollowAll)\n"
+            "            .timeout(Duration::from_secs(60))\n"
+            "            .body(http_client::AsyncBody::default())?;\n"
+            "        let mut response = http\n"
+            "            .send(request)\n"
             "            .await\n"
             '            .context("failed to fetch GitHub release")?;\n'
+            "        let mut body = Vec::new();\n"
+            "        response\n"
+            "            .body_mut()\n"
+            "            .read_to_end(&mut body)\n"
+            "            .await\n"
+            '            .context("failed to read GitHub release response")?;\n'
+            "        anyhow::ensure!(\n"
+            "            response.status().is_success(),\n"
+            '            "GitHub API status {}: {}",\n'
+            "            response.status().as_u16(),\n"
+            "            String::from_utf8_lossy(&body)\n"
+            "        );\n"
+            "        let releases: Vec<GithubRelease> = serde_json::from_slice(&body)\n"
+            '            .context("failed to parse GitHub releases")?;\n'
+            "        let release = releases\n"
+            "            .into_iter()\n"
+            "            .filter(|r| !r.assets.is_empty())\n"
+            "            .find(|r| r.pre_release == pre_release)\n"
+            '            .context("no GitHub release found for the current channel")?;\n'
             "\n"
             "        let matched_asset = release\n"
             "            .assets\n"
@@ -706,6 +745,34 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
             "            version,\n"
             "            url: matched_asset.browser_download_url.clone(),\n"
             "        })\n"
+            "    }\n"
+            "\n"
+            "    /// ZedG rebuilds of the same upstream version (v1.28.0-pre -> v1.28.0-pre.1)\n"
+            "    /// share a version number, so also compare the release tag baked in at build time.\n"
+            "    fn zedg_rebuild_version(\n"
+            "        fetched: &ReleaseAsset,\n"
+            "        installed_version: &Version,\n"
+            "        status: &AutoUpdateStatus,\n"
+            "    ) -> Option<Version> {\n"
+            "        if ZEDG_RELEASE_TAG.is_empty() || matches!(status, AutoUpdateStatus::Updated { .. }) {\n"
+            "            return None;\n"
+            "        }\n"
+            "        // https://github.com/<repo>/releases/download/<tag>/<asset>\n"
+            "        let fetched_tag = fetched\n"
+            "            .url\n"
+            '            .split("/releases/download/")\n'
+            "            .nth(1)?\n"
+            "            .split('/')\n"
+            "            .next()?;\n"
+            "        if fetched_tag == ZEDG_RELEASE_TAG {\n"
+            "            return None;\n"
+            "        }\n"
+            "        let fetched_version = fetched.version.parse::<Version>().ok()?;\n"
+            "        let mut installed = installed_version.clone();\n"
+            "        installed.pre = semver::Prerelease::EMPTY;\n"
+            "        installed.build = semver::BuildMetadata::EMPTY;\n"
+            "        // Only same-version rebuilds; never downgrade.\n"
+            "        (fetched_version == installed).then_some(fetched_version)\n"
             "    }\n"
         )
 
@@ -774,6 +841,28 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False) -> None:
     else:
         log.info("  [already patched] %s (macOS DMG mount path)", auto_update)
 
+    # 7h. Also offer same-version ZedG rebuilds in update()
+    if "Self::zedg_rebuild_version(" not in content:
+        pat_check = (
+            r'(let\s+newer_version\s*=\s*Self::check_if_fetched_version_is_newer\(\s*'
+            r'release_channel,\s*app_commit_sha,\s*)installed_version(,\s*fetched_version,\s*'
+            r'previous_status\.clone\(\),\s*\)\?;)'
+        )
+        repl_check = (
+            r'\1installed_version.clone()\2\n'
+            '        let newer_version = newer_version.or_else(|| {\n'
+            '            Self::zedg_rebuild_version(&fetched_release_data, &installed_version, &previous_status)\n'
+            '        });'
+        )
+        new_content = re.sub(pat_check, repl_check, content, count=1)
+        if new_content == content:
+            log.warning("  Pattern not matched for rebuild check in %s", auto_update)
+        else:
+            content = new_content
+            log.info("  [patched] %s (same-version rebuild check)", auto_update)
+    else:
+        log.info("  [already patched] %s (same-version rebuild check)", auto_update)
+
     # Write all changes at once
     if content != original:
         write_file(auto_update, content, dry_run=dry_run)
@@ -826,6 +915,12 @@ def main() -> int:
         help="Path to the Zed source directory (default: ./zed)",
     )
     parser.add_argument(
+        "--release-tag",
+        type=str,
+        default="",
+        help="ZedG release tag being built (e.g. v1.28.0-pre.1), used by auto-update",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Show what would change without modifying files",
@@ -863,7 +958,10 @@ def main() -> int:
     logging.root.addHandler(counter)
 
     for fn in categories:
-        fn(zed_dir, dry_run=args.dry_run)
+        if fn is apply_category_7:
+            fn(zed_dir, dry_run=args.dry_run, release_tag=args.release_tag)
+        else:
+            fn(zed_dir, dry_run=args.dry_run)
         log.info("")
 
     logging.root.removeHandler(counter)

@@ -192,7 +192,7 @@ jobs:
         run: git -C zed apply "$GITHUB_WORKSPACE/patches/zedg-recent-projects-sort.patch"
 
       - name: 应用 ZedG 品牌重命名
-        run: python3 scripts/rebrand.py --zed-dir zed
+        run: python3 scripts/rebrand.py --zed-dir zed --release-tag "${{ needs.versioning.outputs.version }}"
 
       - name: 安装 Python 与工具
         run: pip install ".[ai]"
