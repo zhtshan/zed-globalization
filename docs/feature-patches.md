@@ -32,6 +32,40 @@ grep '^diff --git' patches/*.patch
   另外，增量提取模式下上游的 git diff 不会包含补丁触及的文件（基线版本里没有这些改动），
   所以提取步骤会把补丁触及的 `.rs` 文件合并进待提取列表（见 workflow 中「合并 ZedG 功能补丁触及的文件」部分）。
 
+## 补丁新增界面文案的多语言（重要）
+
+ZedG 的多语言不是上游那种「资源文件 + 运行时查表」，而是**源码级字符串替换**：
+`01-translate.yml` 提取 `.rs` 里的英文字面量 → AI 翻译 → 译文存进 i18n 分支的
+`i18n/<版本>/<语言>.json` → `02-build.yml` 的 `prepare` job 用 `zedl10n replace`
+把已打补丁的源码里的英文替换成译文，再生成 `l10n.patch` 分发到各平台。
+
+因此**补丁里新增的用户可见文案，必须先进入 i18n 分支的译文，才会有多语言版本**；
+否则界面会一直显示英文。
+
+触发翻译的方式：
+
+- 补丁文件变更（`patches/**`、`scripts/rebrand.py`）推送到 `main` 时，`01-translate.yml`
+  会自动触发，对上游最新版本重跑提取 + 翻译（`push` 触发器）。
+- 其它情况可手动触发：`Actions → 01 提取与翻译 → Run workflow`，
+  填 `version`（如 `v1.28.0-pre`）、`target_lang`（`zh-CN` / `zh-TW` / `ja` / `ko`）。
+  版本已构建过也能手动重跑。
+
+检查某个补丁文案是否已有译文（以标题栏项目弹窗的置顶按钮为例）：
+
+```bash
+git show origin/i18n:i18n/v1.28.0-pre/zh-CN.json | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+v=d.get('zed/crates/recent_projects/src/recent_projects.rs',{})
+for k in ('Pin to Top','Move Up','Move Down'):
+    print(repr(k), '->', repr(v.get(k)))
+"
+# 期望：'Pin to Top' -> '置顶'、'Move Up' -> '上移'、'Move Down' -> '下移'
+```
+
+注意：补丁里 `IconButton::new("zedg_pin_project_group", ...)` 这类**元素 id** 不要翻译，
+`replace` 会按「纯小写 ASCII 标识符」规则自动跳过；把它译成中文会破坏 UI 行为。
+
 ## `Cargo.lock` 与 `--locked` 的约束（重要）
 
 CI 的多个平台构建 job 使用 `cargo build --locked`，即 Cargo.lock 必须与 `Cargo.toml` 完全一致。

@@ -3,6 +3,12 @@ name: 01 提取与翻译
 on:
   schedule:
     - cron: "0 0,8,16 * * *" # 每日三次（UTC 0/8/16 点）检查 Zed 新版本
+  push:
+    # ZedG 功能补丁新增/修改了界面文案时，重跑提取+翻译，
+    # 否则补丁里的新文案会一直停留在英文（上游不发新版本就不会触发翻译）
+    paths:
+      - 'patches/**'
+      - 'scripts/rebrand.py'
   workflow_dispatch:
     inputs:
       version:
@@ -135,6 +141,19 @@ jobs:
             fi
 
             INCLUDES=$(echo "$INCLUDES" | jq -c --arg v "$V" --arg p "$P" '. + [{"version": $v, "is_prerelease": $p}]')
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            # 补丁变更触发：对最新上游版本强制重跑翻译。
+            # 这里不检查 is_built —— 版本可能已经构建过，但补丁里的新文案
+            # 仍需重新提取并翻译，否则界面会一直是英文。
+            for TAG in "$STABLE_TAG" "$PRE_TAG"; do
+              [ -z "$TAG" ] && continue
+              [ "$TAG" == "null" ] && continue
+              IS_PRE=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases/tags/${TAG}" \
+                | jq -r '.prerelease // false')
+              INCLUDES=$(echo "$INCLUDES" | jq -c --arg v "$TAG" --arg p "$IS_PRE" \
+                '. + [{"version": $v, "is_prerelease": $p}]')
+              echo "补丁变更触发，重跑翻译: ${TAG} (pre-release=${IS_PRE})"
+            done
           else
             # 定时触发：分别检查 stable 和 pre-release
             if [ -n "$STABLE_TAG" ] && [ "$STABLE_TAG" != "null" ]; then

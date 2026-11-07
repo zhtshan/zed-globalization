@@ -176,7 +176,7 @@ sudo ldconfig
 ## 自动化流水线
 
 ```
-01-translate (定时/手动)   扫描 Zed 新版本，提取并翻译字符串
+01-translate (定时/手动/补丁变更)   扫描 Zed 新版本，提取并翻译字符串
        |
 02-build                   三平台编译 + patch_agent_env 补丁，生成 Release
        |
