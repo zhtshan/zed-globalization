@@ -110391,6 +110391,16 @@
         },
         {
             "file": "zed/crates/context_server/src/listener.rs",
+            "original": "recv: {}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/context_server/src/listener.rs",
+            "original": "send: {}",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/context_server/src/listener.rs",
             "original": "zed-mcp",
             "reason": "rule:identifier"
         },
@@ -301211,6 +301221,11 @@
         },
         {
             "file": "zed/crates/migrator/src/migrations/m_2025_06_27/settings.rs",
+            "original": "source",
+            "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/migrator/src/migrations/m_2025_06_27/settings.rs",
             "original": "value",
             "reason": "ai:api_identifier"
         },
@@ -328838,6 +328853,11 @@
             "file": "zed/crates/project/src/lsp_store.rs",
             "original": "{err:#}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/project/src/lsp_store.rs",
+            "original": "{err:#}\n-- stderr --\n{log}",
+            "reason": "ai:format_spec"
         },
         {
             "file": "zed/crates/project/src/lsp_store.rs",
