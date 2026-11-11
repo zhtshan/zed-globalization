@@ -1,5 +1,5 @@
 {
-  "version": "v1.28.1",
+  "version": "v1.29.1-pre",
   "files": [
     "crates/acp_thread/src/acp_thread.rs",
     "crates/acp_thread/src/auth_methods.rs",
@@ -747,9 +747,11 @@
     "crates/git_ui/src/file_diff_view.rs",
     "crates/git_ui/src/git_graph.rs",
     "crates/git_ui/src/git_panel.rs",
+    "crates/git_ui/src/git_panel/branch_mode.rs",
     "crates/git_ui/src/git_panel_settings.rs",
     "crates/git_ui/src/git_picker.rs",
     "crates/git_ui/src/git_runtime_diagnostics.rs",
+    "crates/git_ui/src/git_timestamp.rs",
     "crates/git_ui/src/git_ui.rs",
     "crates/git_ui/src/multi_diff_view.rs",
     "crates/git_ui/src/picker_prompt.rs",
@@ -1519,6 +1521,7 @@
     "crates/project/tests/integration/trusted_worktrees.rs",
     "crates/project/tests/integration/yarn.rs",
     "crates/project_benchmarks/src/main.rs",
+    "crates/project_bookmarks/src/project_bookmarks.rs",
     "crates/project_panel/benches/sorting.rs",
     "crates/project_panel/src/project_panel.rs",
     "crates/project_panel/src/project_panel_settings.rs",

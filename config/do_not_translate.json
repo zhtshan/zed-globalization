@@ -221,6 +221,16 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "# Design\\n- step",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "# Design\\n- step\\n- another",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "# plain preview",
             "reason": "rule:test_assertion"
         },
@@ -741,6 +751,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "C refilled",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "Canceled",
             "reason": "serialization"
         },
@@ -1161,6 +1176,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "Notes",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "Option::is_none",
             "reason": "ai:code_snippet"
         },
@@ -1178,6 +1198,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "Original title",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "Other",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -1416,12 +1441,22 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "Step",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "Str",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "Stream",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "Task",
             "reason": "ai:translate-empty"
         },
         {
@@ -2038,6 +2073,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "a missing v2 terminal creates a placeholder",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "a new empty plan does not hide the visible one",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -2671,6 +2711,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "changed markdown",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "changed output",
             "reason": "rule:test_assertion"
         },
@@ -3086,6 +3131,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "d",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "data",
             "reason": "ai:translate-empty"
         },
@@ -3177,6 +3227,11 @@
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "display-create",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "doc",
             "reason": "ai:translate-empty"
         },
         {
@@ -3306,6 +3361,16 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "empty B retained",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "empty C retained",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "empty command marker",
             "reason": "ai:translate-empty"
         },
@@ -3316,8 +3381,28 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "empty plans do not undo dismissal",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "empty tool call should convert",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "emptying a hidden plan does not select it",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "emptying a plan does not reopen it",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "emptying the visible plan falls back to the most recently changed non-empty plan",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -3856,8 +3941,18 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "fallback skips empty plans",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "fallback source",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "file plan",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -3898,6 +3993,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "file:///tmp/authorize",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "file:///tmp/plan.md",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -4326,6 +4426,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "high",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "historical",
             "reason": "rule:test_assertion"
         },
@@ -4413,6 +4518,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "identical legacy update restores the panel",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "identical markdown keeps dismissal",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -4628,6 +4738,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "items",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "items plan",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -5143,6 +5258,21 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "markdown",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "markdown is updated in place",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "markdown plan",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "markdown plan is visible",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -6306,8 +6436,28 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "plan removal applies",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "plan update applies",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "planId",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "plan_removed",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "plan_update",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -6696,6 +6846,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "removal does not undo dismissal",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "remove",
             "reason": "ai:translate-empty"
         },
@@ -6712,6 +6867,11 @@
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "removed assistant ID may be reused independently",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "removing the visible plan falls back to the most recently changed plan",
             "reason": "ai:translate-empty"
         },
         {
@@ -8011,6 +8171,11 @@
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "the empty update still replaces C's content",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "the original compaction must remain",
             "reason": "ai:translate-empty"
         },
@@ -8673,6 +8838,11 @@
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
             "original": "v1 kind",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/acp_thread/src/acp_thread.rs",
+            "original": "v1 removal",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/acp_thread/src/acp_thread.rs",
@@ -15646,6 +15816,11 @@
         },
         {
             "file": "zed/crates/agent/src/agent.rs",
+            "original": "Saved title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
             "original": "Second",
             "reason": "rule:test_assertion"
         },
@@ -15671,7 +15846,17 @@
         },
         {
             "file": "zed/crates/agent/src/agent.rs",
+            "original": "Sidebar title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
             "original": "Stable title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "Stale title",
             "reason": "ai:translate-empty"
         },
         {
@@ -17916,6 +18101,21 @@
         },
         {
             "file": "zed/crates/agent/src/agent.rs",
+            "original": "titled",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "titled thread should load",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "titled thread should save",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
             "original": "token threshold should start automatic compaction",
             "reason": "ai:test_assertion"
         },
@@ -17982,6 +18182,21 @@
         {
             "file": "zed/crates/agent/src/agent.rs",
             "original": "unsupported content must not reach command dispatch or the model",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "untitled",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "untitled thread should load",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/agent.rs",
+            "original": "untitled thread should save",
             "reason": "ai:translate-empty"
         },
         {
@@ -21766,6 +21981,16 @@
         },
         {
             "file": "zed/crates/agent/src/tests/mod.rs",
+            "original": "Auto title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/tests/mod.rs",
+            "original": "Auto title\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/tests/mod.rs",
             "original": "Automatic context compaction failed: compaction provider error\\n\\n",
             "reason": "rule:test_assertion"
         },
@@ -22208,6 +22433,16 @@
             "file": "zed/crates/agent/src/tests/mod.rs",
             "original": "Make a plan",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent/src/tests/mod.rs",
+            "original": "Manual title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent/src/tests/mod.rs",
+            "original": "Manual title\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent/src/tests/mod.rs",
@@ -50946,6 +51181,16 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "# Design\\n- step",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "# Plan",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "## Assistant\\n\\nnew\\n\\n",
             "reason": "ai:translate-empty"
         },
@@ -52571,6 +52816,11 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "design",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "detail",
             "reason": "ai:translate-empty"
         },
@@ -52607,6 +52857,11 @@
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "display terminal",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "doc",
             "reason": "ai:translate-empty"
         },
         {
@@ -52897,6 +53152,11 @@
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "file plan is visible",
             "reason": "ai:translate-empty"
         },
         {
@@ -53551,6 +53811,11 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "markdown plan",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "medium",
             "reason": "ai:translate-empty"
         },
@@ -54061,6 +54326,11 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "plan_removed",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "plan_update",
             "reason": "ai:translate-empty"
         },
@@ -54317,6 +54587,11 @@
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "released owner's retained message",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "removing the visible plan falls back to the remaining one",
             "reason": "ai:translate-empty"
         },
         {
@@ -55676,6 +55951,11 @@
         },
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "v1 plan operations must only be offered behind acp-beta",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "v1 subagent support must only be offered behind acp-beta",
             "reason": "ai:translate-empty"
         },
@@ -55772,6 +56052,11 @@
         {
             "file": "zed/crates/agent_servers/src/acp/v1.rs",
             "original": "{capability} should be advertised",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_servers/src/acp/v1.rs",
+            "original": "{replacement} must replace the plan",
             "reason": "ai:translate-empty"
         },
         {
@@ -64481,6 +64766,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/agent_panel.rs",
+            "original": "Sidebar title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/agent_panel.rs",
             "original": "Skills menu item should be visible",
             "reason": "rule:test_assertion"
         },
@@ -66601,6 +66891,16 @@
         },
         {
             "file": "zed/crates/agent_ui/src/agent_panel.rs",
+            "original": "saved thread should load",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/agent_panel.rs",
+            "original": "saved-session",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/agent_panel.rs",
             "original": "saving source thread should succeed",
             "reason": "rule:test_assertion"
         },
@@ -66728,6 +67028,11 @@
             "file": "zed/crates/agent_ui/src/agent_panel.rs",
             "original": "should return error when receiver is canceled",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/agent_panel.rs",
+            "original": "sidebar entry should still exist",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent_ui/src/agent_panel.rs",
@@ -73011,6 +73316,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view.rs",
+            "original": "emptied plan",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view.rs",
             "original": "empty selected plan",
             "reason": "rule:test_assertion"
         },
@@ -78061,6 +78371,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": " \\n\\t",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": " \\t\\n",
             "reason": "rule:escape_sequence"
         },
@@ -78701,6 +79016,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "another private thought",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "api_error",
             "reason": "rule:identifier"
         },
@@ -79151,6 +79471,16 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "first part",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "first part\\n\\nlast part",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "first\\naéøbc\\nthird\\n",
             "reason": "rule:test_assertion"
         },
@@ -79338,6 +79668,11 @@
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "just a message",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "last part",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
@@ -79546,6 +79881,26 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "next prompt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "next request",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "next turn private thought",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "next turn response",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "no_api_key",
             "reason": "rule:identifier"
         },
@@ -79726,12 +80081,22 @@
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "plan_markdown",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "plan_summary",
             "reason": "rule:identifier"
         },
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "positive",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "private thought",
             "reason": "ai:translate-empty"
         },
         {
@@ -79842,6 +80207,11 @@
         {
             "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
             "original": "refusal",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/conversation_view/thread_view.rs",
+            "original": "request",
             "reason": "ai:translate-empty"
         },
         {
@@ -87166,6 +87536,11 @@
         },
         {
             "file": "zed/crates/anthropic/src/anthropic.rs",
+            "original": "claude-fable-5-2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/anthropic.rs",
             "original": "claude-haiku-4-5",
             "reason": "rule:identifier"
         },
@@ -87203,6 +87578,11 @@
             "file": "zed/crates/anthropic/src/anthropic.rs",
             "original": "claude-mythos-5-1",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/anthropic/src/anthropic.rs",
+            "original": "claude-mythos-5-2",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/anthropic.rs",
@@ -88046,6 +88426,21 @@
         },
         {
             "file": "zed/crates/anthropic/src/anthropic.rs",
+            "original": "{model_id} rejects forced tool use",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/anthropic.rs",
+            "original": "{model_id} supports compaction",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/anthropic.rs",
+            "original": "{model_id} supports fast mode",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/anthropic.rs",
             "original": "{}",
             "reason": "rule:punctuation"
         },
@@ -88316,6 +88711,11 @@
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "claude-fable-5-2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
             "original": "claude-haiku-5-5",
             "reason": "ai:translate-empty"
         },
@@ -88323,6 +88723,11 @@
             "file": "zed/crates/anthropic/src/completion.rs",
             "original": "claude-mythos-5-1",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "claude-mythos-5-2",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
@@ -88486,6 +88891,11 @@
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "id",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
             "original": "image/png",
             "reason": "rule:identifier"
         },
@@ -88508,6 +88918,11 @@
             "file": "zed/crates/anthropic/src/completion.rs",
             "original": "input_tokens",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "input_transformations",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
@@ -88556,8 +88971,38 @@
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "message_start",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
             "original": "message_stop",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "messages.1.content.0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "messages.3.content.0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "messages.5.content.0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "model",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "msg_1",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
@@ -88586,13 +89031,28 @@
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "path",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
             "original": "pause_after_compaction",
             "reason": "rule:identifier"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "prefix_binding_mismatch",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
             "original": "prefix_mismatch_behavior",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "reason",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
@@ -88608,6 +89068,16 @@
             "file": "zed/crates/anthropic/src/completion.rs",
             "original": "search",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "some_future_reason",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "some_future_transformation",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/anthropic/src/completion.rs",
@@ -88637,6 +89107,16 @@
         {
             "file": "zed/crates/anthropic/src/completion.rs",
             "original": "thinking",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "thinking_dropped",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/anthropic/src/completion.rs",
+            "original": "thinking_mismatch_allowed",
             "reason": "ai:translate-empty"
         },
         {
@@ -99276,6 +99756,11 @@
         },
         {
             "file": "zed/crates/collab/src/api/events.rs",
+            "original": "desktop_environment",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/src/api/events.rs",
             "original": "events not enabled",
             "reason": "critical_file"
         },
@@ -105316,6 +105801,11 @@
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "branch updates held",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "bugfix-branch",
             "reason": "rule:identifier"
         },
@@ -105328,6 +105818,11 @@
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "ccc333",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "changed",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
@@ -105418,6 +105913,11 @@
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "feat: add awesome feature",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "feature",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
@@ -105676,6 +106176,16 @@
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "opening History loads the host's commits",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "opening the project with Changes selected should not fetch history",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "origin",
             "reason": "ai:api_identifier"
         },
@@ -105776,6 +106286,16 @@
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "sha1",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "sha2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "shh\n",
             "reason": "rule:test_fixture"
         },
@@ -105828,6 +106348,11 @@
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
             "original": "src/staged_only.rs",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/collab/tests/integration/git_tests.rs",
+            "original": "switching branches with Changes selected should not fetch history",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/collab/tests/integration/git_tests.rs",
@@ -180416,6 +180941,11 @@
         },
         {
             "file": "zed/crates/editor/src/git/blame.rs",
+            "original": "2 years, 11 months ago",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/git/blame.rs",
             "original": "2c2c2c",
             "reason": "ai:format_spec"
         },
@@ -185993,6 +186523,11 @@
             "file": "zed/crates/editor/src/items.rs",
             "original": "target should open as a file",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/editor/src/items.rs",
+            "original": "text",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/editor/src/items.rs",
@@ -201271,6 +201806,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder.rs",
+            "original": ".",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder.rs",
             "original": "./",
             "reason": "rule:punctuation"
         },
@@ -201321,6 +201861,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder.rs",
+            "original": "a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder.rs",
             "original": "a/",
             "reason": "ai:test_assertion"
         },
@@ -201333,6 +201878,11 @@
             "file": "zed/crates/file_finder/src/file_finder.rs",
             "original": "a\\\\",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder.rs",
+            "original": "b",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder.rs",
@@ -201471,8 +202021,28 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "**/.DS_Store",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "**/.env",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "**/a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "**/b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "**/docs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -201496,13 +202066,43 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "./a/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "./b/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "./bandana",
             "reason": "ai:test_assertion"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "./docs/spec.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": ".DS_Store",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": ".\\\\b/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": ".\\\\bandana",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": ".\\\\docs/spec.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -201528,6 +202128,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": ".txt",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": ".zed",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -201741,6 +202346,16 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/other/docs/spec.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "/p/a/b/c/d/",
             "reason": "rule:path"
         },
@@ -201772,6 +202387,21 @@
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "/remote/external.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/remote/first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/remote/first/.zed/settings.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/remote/second",
             "reason": "ai:translate-empty"
         },
         {
@@ -201811,6 +202441,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/.DS_Store",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "/root/a/b/file1.txt",
             "reason": "rule:path"
         },
@@ -201821,12 +202456,62 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/a/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/docs/spec.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "/root/one",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "/root/one/nested/file.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/outside",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/outside/.DS_Store",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/outside/missing.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/outside/文件.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/project/binary.dat",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "/root/project/main.rs",
             "reason": "ai:translate-empty"
         },
         {
@@ -202063,6 +202748,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": ": ",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": ": [",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202506,6 +203196,16 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "\\0",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "]}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "`Create file:` row should not be offered for an existing file",
             "reason": "rule:test_assertion"
         },
@@ -202531,6 +203231,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "a/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "a/b/file2.txt",
             "reason": "rule:identifier"
         },
@@ -202541,8 +203246,23 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "a/config.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "a/file.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "a/file1.txt",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "a/missing.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202681,8 +203401,18 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "b/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "b/bandana",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "b/config.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202698,6 +203428,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "b\\\\bandana",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "b\\\\config.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202743,6 +203478,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "beta.txt",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "binary.dat",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202793,6 +203533,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "collab_ui/third.rs",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "config.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -202951,8 +203696,53 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs/missing.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs/sp",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs/spec.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "docs/spec.json:2:3",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "efir",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "enter",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "escape",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "excluded",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -203053,6 +203843,16 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "first.txt",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "first\\nsecond",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "first\\nsecond\\nthird",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -203276,6 +204076,21 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "keymaps/default-linux.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "keymaps/default-macos.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "keymaps/default-windows.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "layout",
             "reason": "ai:test_assertion"
         },
@@ -203371,6 +204186,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "macos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "main",
             "reason": "ai:test_assertion"
         },
@@ -203378,6 +204198,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "main.rs",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "metadata",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -203481,6 +204306,21 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "other/docs/spec.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "outside",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "p/a/b/c/d",
             "reason": "rule:identifier"
         },
@@ -203536,6 +204376,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "project/dir/child/grandchild",
             "reason": "rule:identifier"
         },
@@ -203568,6 +204413,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "project_2",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "query: {query}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -203651,6 +204501,16 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "search cancellation",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "search debounce",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "sec",
             "reason": "ai:test_assertion"
         },
@@ -203686,6 +204546,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "settings.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "settings_ui",
             "reason": "rule:identifier"
         },
@@ -203698,6 +204563,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "some notes",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "spec.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -203956,6 +204826,11 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "windows",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "words",
             "reason": "rule:test_assertion"
         },
@@ -203968,6 +204843,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "worktree not found",
             "reason": "test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "x",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -204001,8 +204881,18 @@
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "{absolute_path}\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "{file_query}:{file_row}:{file_column}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "{}:2:3",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
@@ -204028,6 +204918,11 @@
             "file": "zed/crates/file_finder/src/file_finder_tests.rs",
             "original": "其他/S数据表格/task.xlsx",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/file_finder/src/file_finder_tests.rs",
+            "original": "文件.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/file_finder/src/multi_select_tests.rs",
@@ -208175,6 +209070,11 @@
             "reason": "ai:api_identifier"
         },
         {
+            "file": "zed/crates/fuzzy_nucleo/src/fuzzy_nucleo.rs",
+            "original": "limit must be non-zero",
+            "reason": "ai:translate-empty"
+        },
+        {
             "file": "zed/crates/fuzzy_nucleo/src/paths.rs",
             "original": "",
             "reason": "rule:empty_string"
@@ -208198,6 +209098,21 @@
             "file": "zed/crates/fuzzy_nucleo/src/paths.rs",
             "original": "editor: backspace",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/fuzzy_nucleo/src/paths.rs",
+            "original": "main",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/fuzzy_nucleo/src/paths.rs",
+            "original": "src/lib.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/fuzzy_nucleo/src/paths.rs",
+            "original": "src/main.rs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/fuzzy_nucleo/src/strings.rs",
@@ -209081,6 +209996,21 @@
         },
         {
             "file": "zed/crates/git/src/git.rs",
+            "original": "  branch  name  ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
+            "original": " branch-name ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
+            "original": "-",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
             "original": ".git",
             "reason": "ai:api_identifier"
         },
@@ -209133,6 +210063,21 @@
             "file": "zed/crates/git/src/git.rs",
             "original": "abc1234000000000000000000000000000000000",
             "reason": "rule:binary_data"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
+            "original": "branch name",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
+            "original": "branch--name",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git/src/git.rs",
+            "original": "branch-name",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git/src/git.rs",
@@ -215640,6 +216585,16 @@
             "reason": "rule:identifier"
         },
         {
+            "file": "zed/crates/git_ui/src/blame_ui.rs",
+            "original": "{author}, {timestamp}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/blame_ui.rs",
+            "original": "{author}, {timestamp} - {summary}",
+            "reason": "ai:translate-empty"
+        },
+        {
             "file": "zed/crates/git_ui/src/branch_diff.rs",
             "original": "\n",
             "reason": "rule:punctuation"
@@ -216501,8 +217456,28 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "(emphasis) @emphasis",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": ".git",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "0123456789abcdef0123456789abcdef01234567",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -216566,8 +217541,28 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "Subject\\n\\nA longer description.",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "]}}",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "a new\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "a.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -216586,6 +217581,21 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "b new\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "b.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "b.txt should have a file header",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "buffer should build",
             "reason": "rule:test_assertion"
         },
@@ -216601,6 +217611,16 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "c.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "commit message",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "commit-diff-stat",
             "reason": "rule:identifier"
         },
@@ -216613,6 +217633,16 @@
             "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "commit-message-disclosure",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "dino",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "dino@zed.dev",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -216656,6 +217686,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "project should have a repository",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "sha",
             "reason": "ai:api_identifier"
         },
@@ -216663,6 +217698,16 @@
             "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "sha_btn",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "should be valid repository path",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "should have one selection",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -216708,6 +217753,26 @@
             "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "{",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "{name}: changed line {row}\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "{name}: original line {row}\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "{path} new\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "{path} old\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -216791,6 +217856,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_graph.rs",
+            "original": " ago",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_graph.rs",
             "original": "$ZED_FILE",
             "reason": "ai:api_identifier"
         },
@@ -216813,6 +217883,11 @@
             "file": "zed/crates/git_ui/src/git_graph.rs",
             "original": "$ZED_GIT_SHA",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_graph.rs",
+            "original": "%Y",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_graph.rs",
@@ -216878,6 +217953,11 @@
             "file": "zed/crates/git_ui/src/git_graph.rs",
             "original": "0202020",
             "reason": "rule:numeric"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_graph.rs",
+            "original": "2024",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_graph.rs",
@@ -218286,6 +219366,16 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "A1",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "A2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "Amended message",
             "reason": "rule:test_assertion"
         },
@@ -218296,6 +219386,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "B",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "Buffer should have a file",
             "reason": "rule:test_assertion"
         },
@@ -218303,6 +219398,11 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "Buffer should have an active buffer",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "C",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
@@ -218323,6 +219423,16 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "Create untracked",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "D",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "D2",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
@@ -218626,6 +219736,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "a failed reload hides the rows from the last load",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "a fully staged selection should be unstaged as a whole",
             "reason": "rule:test_assertion"
         },
@@ -218653,6 +219768,11 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "a single mark elsewhere should not override the selection",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "a switch on notify {switch_on_notify} kept the previous repository's default",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
@@ -218936,6 +220056,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "committing still acts on the uncommitted files",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "configure-commit-message-provider",
             "reason": "rule:identifier"
         },
@@ -218981,7 +220106,17 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "d.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "deadbeef",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "develop",
             "reason": "ai:translate-empty"
         },
         {
@@ -219116,6 +220251,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "escape returns to the parent menu",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "expand-commit-editor",
             "reason": "rule:identifier"
         },
@@ -219147,6 +220287,11 @@
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "feat: improve commit generation\\n\\nRelease Notes:\\n\\n- Improved commit suggestions",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "feature",
             "reason": "ai:translate-empty"
         },
         {
@@ -219446,6 +220591,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "hotfix",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "https://example.com/repo.git",
             "reason": "ai:translate-empty"
         },
@@ -219651,6 +220801,26 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "opening a row in a new tab keeps focus in the panel",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "opening a row reuses the tab at the panel's base",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "opening another row in the existing tab keeps focus in the panel",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "opening the row the tab already shows focuses the tab",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "operations expand a selected directory to its recursive descendants",
             "reason": "rule:test_assertion"
         },
@@ -219662,6 +220832,11 @@
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "origin",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "origin/develop",
             "reason": "ai:translate-empty"
         },
         {
@@ -219846,6 +221021,21 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "refs/remotes/origin/develop",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "refs/remotes/origin/main",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "release",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "reloading the history should place the cursor on the active commit",
             "reason": "ai:translate-empty"
         },
@@ -219917,6 +221107,11 @@
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "row should be a file row",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "rows from the previous base are dropped without waiting for the debounce",
             "reason": "ai:translate-empty"
         },
         {
@@ -220261,6 +221456,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "switching away from a failed base doesn't bring its rows back",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "switching to a non-commit tab should clear the highlight but keep the cursor",
             "reason": "ai:translate-empty"
         },
@@ -220296,6 +221496,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "the branch list has no section headers",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "the first toggle should also mark the previously selected entry",
             "reason": "rule:test_assertion"
         },
@@ -220303,6 +221508,16 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "the first visible file should be selected",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "the new tab waits for its files to load before scrolling to the row",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "the pending request must not toggle the picker closed",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
@@ -220402,6 +221617,11 @@
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "trust global should be set",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "uncommitted mode keeps no base from the dropped request",
             "reason": "ai:translate-empty"
         },
         {
@@ -220508,6 +221728,11 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "with no selection, menu navigation should skip disabled Cut and Copy and select Paste",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel.rs",
+            "original": "without a base, the base picker opens instead",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_panel.rs",
@@ -220648,6 +221873,16 @@
             "file": "zed/crates/git_ui/src/git_panel.rs",
             "original": "🦀",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel/branch_mode.rs",
+            "original": "git-panel-changes-mode",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_panel/branch_mode.rs",
+            "original": "git-panel-changes-mode-trigger",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/git_picker.rs",
@@ -220997,6 +222232,141 @@
         {
             "file": "zed/crates/git_ui/src/git_runtime_diagnostics.rs",
             "original": "{key}=<redacted>",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": " ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%-m/%-d/%Y",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%A %H:%M",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%B %Y",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%H:%M:%-S",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%Q",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%Y",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%Y-%m-%d %H:%M:%S %z",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%Y年%m月",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%a %b %d %%",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "%d",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "12/25/2024",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "2024-06-09 08:45",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "2024-06-09 08:45:12 +0900",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "2024-09-25 23:59",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "23:59:59",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "25",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "September 2024",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "Sun Jun 09 %",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "Wednesday 23:59",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "Yesterday at ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "Yesterday at 11:59 PM",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "iso",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "locale",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "{format}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "{locale_dates:?}",
             "reason": "ai:translate-empty"
         },
         {
@@ -233081,6 +234451,16 @@
         },
         {
             "file": "zed/crates/gpui/src/elements/list.rs",
+            "original": "item 0 should be measured",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/elements/list.rs",
+            "original": "item 1 was not painted",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/elements/list.rs",
             "original": "offset_in_item must never be negative (would leave blank space above), got {:?}",
             "reason": "rule:test_assertion"
         },
@@ -235126,6 +236506,11 @@
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
+            "original": "GIF",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
             "original": "Headless",
             "reason": "ai:api_identifier"
         },
@@ -235141,6 +236526,11 @@
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
+            "original": "Skipping {format_name} frame due to decode error: {err}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
             "original": "WAYLAND_DISPLAY",
             "reason": "rule:identifier"
         },
@@ -235151,8 +236541,18 @@
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
+            "original": "WebP",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
             "original": "X11",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
+            "original": "XDG_CURRENT_DESKTOP",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
@@ -235273,6 +236673,11 @@
             "file": "zed/crates/gpui/src/platform.rs",
             "original": "gif",
             "reason": "ai:string_comparison"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
+            "original": "headless",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
@@ -235443,6 +236848,11 @@
             "file": "zed/crates/gpui/src/platform.rs",
             "original": "x11",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/gpui/src/platform.rs",
+            "original": "{format_name} could not be decoded: all frames failed",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/platform.rs",
@@ -238011,12 +239421,22 @@
         },
         {
             "file": "zed/crates/gpui/src/randomized_element_tree.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/randomized_element_tree.rs",
             "original": "64 seeds pick both allowed topologies",
             "reason": "rule:test_assertion"
         },
         {
             "file": "zed/crates/gpui/src/randomized_element_tree.rs",
             "original": "RandomizedElementTree",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/randomized_element_tree.rs",
+            "original": "Retained glyphs: abc Ω, now with enough words that narrow parents wrap them",
             "reason": "ai:translate-empty"
         },
         {
@@ -238132,6 +239552,11 @@
         {
             "file": "zed/crates/gpui/src/randomized_element_tree.rs",
             "original": "{underline:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/randomized_element_tree.rs",
+            "original": "Ω",
             "reason": "ai:translate-empty"
         },
         {
@@ -239006,12 +240431,22 @@
         },
         {
             "file": "zed/crates/gpui/src/text_system/line_layout.rs",
+            "original": ".ZedMono",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/text_system/line_layout.rs",
             "original": "a",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/text_system/line_layout.rs",
             "original": "a אבג b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/text_system/line_layout.rs",
+            "original": "let value = compute_something(argument_one, argument_two);",
             "reason": "ai:translate-empty"
         },
         {
@@ -240266,6 +241701,11 @@
         },
         {
             "file": "zed/crates/gpui/src/window.rs",
+            "original": "failed to run drag: {update_result:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/window.rs",
             "original": "failed to start drag: {update_result:?}",
             "reason": "rule:test_assertion"
         },
@@ -240537,6 +241977,11 @@
         {
             "file": "zed/crates/gpui/src/window.rs",
             "original": "rescheduling throttled frame for window {:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/window.rs",
+            "original": "resize-handle",
             "reason": "ai:translate-empty"
         },
         {
@@ -247326,6 +248771,16 @@
         },
         {
             "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "PathlessTree/element style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "PathlessTree/full refresh",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
             "original": "RandomizedTree/changing share",
             "reason": "ai:test_assertion"
         },
@@ -247562,6 +249017,16 @@
         {
             "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
             "original": "panels",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "pathless element style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_platform/benches/randomized_element_tree.rs",
+            "original": "pathless full refresh",
             "reason": "ai:translate-empty"
         },
         {
@@ -250751,6 +252216,11 @@
         },
         {
             "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
+            "original": "combining mark positioned after its base: mark.x={:?}, next.x={:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
             "original": "emoji \\u{1f600}",
             "reason": "ai:test_assertion"
         },
@@ -250813,6 +252283,11 @@
             "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
             "original": "trailing zero-width space should be a wrap boundary past the line width",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
+            "original": "v\\u{0304}v",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui_wgpu/src/cosmic_text_system.rs",
@@ -251776,6 +253251,11 @@
         },
         {
             "file": "zed/crates/gpui_windows/src/direct_write.rs",
+            "original": "Failed to measure color glyph layers",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_windows/src/direct_write.rs",
             "original": "Segoe UI",
             "reason": "ai:api_identifier"
         },
@@ -251876,6 +253356,11 @@
         },
         {
             "file": "zed/crates/gpui_windows/src/direct_write.rs",
+            "original": "color glyph layer coverage is smaller than its bounds",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui_windows/src/direct_write.rs",
             "original": "d",
             "reason": "ai:translate-empty"
         },
@@ -251908,6 +253393,11 @@
             "file": "zed/crates/gpui_windows/src/direct_write.rs",
             "original": "raster bounds are empty for {ch}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/gpui_windows/src/direct_write.rs",
+            "original": "the glyph has no color layers",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui_windows/src/direct_write.rs",
@@ -252133,6 +253623,11 @@
             "file": "zed/crates/gpui_windows/src/directx_renderer.rs",
             "original": "shadow_pipeline",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/gpui_windows/src/directx_renderer.rs",
+            "original": "src/shaders.hlsl",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui_windows/src/directx_renderer.rs",
@@ -276596,6 +278091,11 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "00000000-0000-0000-0000-000000000000",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": ":",
             "reason": "rule:punctuation"
         },
@@ -276653,6 +278153,11 @@
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "Claude Opus 4.6",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "Compaction rate limit exceeded.",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
@@ -276916,6 +278421,11 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "compaction should stop at EOF or StreamEnded without waiting for more bytes",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "compaction_delta",
             "reason": "rule:identifier"
         },
@@ -276996,6 +278506,11 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "expected a missing compaction result error, got {error:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "expected invalid canonical output to be rejected, got {error:?}",
             "reason": "rule:test_assertion"
         },
@@ -277016,6 +278531,16 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "expected the streamed provider rejection, got {error:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "failed",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "finishReason",
             "reason": "ai:api_identifier"
         },
@@ -277027,6 +278552,11 @@
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "future-google-model",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "future_transport_status",
             "reason": "ai:translate-empty"
         },
         {
@@ -277103,6 +278633,11 @@
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "iterations",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "keep_alive",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
@@ -277301,6 +278836,11 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "request_id",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "resp_compact",
             "reason": "rule:identifier"
         },
@@ -277323,6 +278863,11 @@
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "response.completed",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "retry_after",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
@@ -277508,6 +279053,11 @@
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "{response_lines}\\n",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "{result}\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
@@ -277803,6 +279353,11 @@
             "file": "zed/crates/language_tools/src/key_context_view.rs",
             "original": "https://zed.dev/docs/key-bindings",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/language_tools/src/key_context_view.rs",
+            "original": "key-context-possibilities",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_tools/src/key_context_view.rs",
@@ -291346,6 +292901,11 @@
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "# ![](icon.png)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
             "original": "# H1\\n\\n## H2\\n\\n### H3\\n\\nBody text",
             "reason": "ai:test_assertion"
         },
@@ -291646,6 +293206,11 @@
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "<!-- comment -->\\n\\n# ![](icon.png)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
             "original": "<!-- foo -->\n",
             "reason": "ai:test_assertion"
         },
@@ -291653,6 +293218,16 @@
             "file": "zed/crates/markdown/src/markdown.rs",
             "original": "<!-- foo -->\\n",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "<!-- one -->\\n<!-- two -->\\n\\n# ![](icon.png)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "<!--\\nmulti-line\\ncomment\\n-->\\n\\n# ![](icon.png)",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
@@ -292241,6 +293816,11 @@
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "[zed]: https://zed.dev\\n\\n# ![](icon.png)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
             "original": "[{label}]",
             "reason": "ai:test_assertion"
         },
@@ -292283,6 +293863,11 @@
             "file": "zed/crates/markdown/src/markdown.rs",
             "original": "\\n  \\n",
             "reason": "rule:escape_sequence"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "\\n# ![](icon.png)",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
@@ -293101,6 +294686,11 @@
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "expected one image, found {}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
             "original": "expected two images, found {}",
             "reason": "rule:test_assertion"
         },
@@ -293268,6 +294858,11 @@
             "file": "zed/crates/markdown/src/markdown.rs",
             "original": "function",
             "reason": "ai:match_arm"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "heading in {source:?} should sit at the top like it does without the leading content",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
@@ -296586,6 +298181,11 @@
         },
         {
             "file": "zed/crates/markdown_preview/src/markdown_preview_view.rs",
+            "original": "# Notes\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/markdown_preview/src/markdown_preview_view.rs",
             "original": "# Notes\\n\\nintro\\n\\n",
             "reason": "ai:test_assertion"
         },
@@ -296733,6 +298333,11 @@
             "file": "zed/crates/markdown_preview/src/markdown_preview_view.rs",
             "original": "/dir/note.md",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/markdown_preview/src/markdown_preview_view.rs",
+            "original": "/dir/notes.md",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/markdown_preview/src/markdown_preview_view.rs",
@@ -312901,6 +314506,16 @@
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt.rs",
+            "original": "open_primary",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt.rs",
+            "original": "open_secondary",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt.rs",
             "original": "test-support",
             "reason": "rule:identifier"
         },
@@ -313011,8 +314626,23 @@
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/outside.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
             "original": "/root",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/root-file.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
@@ -313098,6 +314728,26 @@
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
             "original": "/root/dir2/dir4/",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/root/file.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/root/first.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/root/second.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "/root/third.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
@@ -313331,6 +314981,11 @@
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "ctrl-enter",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
             "original": "d",
             "reason": "ai:test_assertion"
         },
@@ -313391,13 +315046,78 @@
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "enter",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "escape",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "file.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "first.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "outside",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "outside.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
             "original": "root",
             "reason": "ai:test_assertion"
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "root-file.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
             "original": "sadjaoislkdjasldj",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "second",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "second.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "third",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
+            "original": "third.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/open_path_prompt/src/open_path_prompt_tests.rs",
@@ -320871,8 +322591,23 @@
         },
         {
             "file": "zed/crates/picker/src/picker.rs",
+            "original": "Item 1",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker/src/picker.rs",
+            "original": "Item 2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker/src/picker.rs",
             "original": "Item {ix}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/picker/src/picker.rs",
+            "original": "Item {selected_index}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/picker/src/picker.rs",
@@ -321036,8 +322771,53 @@
         },
         {
             "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "a match on the empty EOF row should highlight that row",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "an ordinary match should retain its range semantics after switching from an EOF match",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "appending text without updating the preview must not extend the row highlight",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "header\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "last",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "one\\ntwo\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
             "original": "picker-preview-editor",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/picker_preview/src/picker_preview.rs",
+            "original": "three\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/platform_title_bar/src/platform_title_bar.rs",
@@ -325071,6 +326851,16 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "/home/me/foo",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/home/me/nested/bar",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "/home/user/dev/lsp-tests",
             "reason": "rule:path"
         },
@@ -325148,6 +326938,41 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "/root/.gitignore",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/./a/../b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/a/lib/protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/b/lib/protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/platform",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/platform/services/gateway/src",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/platform/services/panel/src",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "/work/src",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -325282,6 +327107,21 @@
         {
             "file": "zed/crates/project/src/git_store.rs",
             "original": "C:\\repos\\zed\\.git\\worktrees\\feature",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "C:\\src",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "C:\\work\\a\\lib\\protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "C:\\work\\b\\lib\\protos",
             "reason": "ai:translate-empty"
         },
         {
@@ -325501,6 +327341,16 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "a/lib/protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "a\\lib\\protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "access",
             "reason": "ai:api_identifier"
         },
@@ -325533,6 +327383,26 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "await-result loading commit data for {sha} must have a completion sender",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "b/lib/protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "b\\lib\\protos",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "bar",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -325746,6 +327616,11 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "dir{index}/file.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "e6ebe7974deb6bb6cc0e2595c8ec31f0c71084b7",
             "reason": "rule:binary_data"
         },
@@ -325831,6 +327706,11 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "foo",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "fork",
             "reason": "ai:translate-empty"
         },
@@ -325838,6 +327718,11 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "f{index:02}.txt",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "gateway/src",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -326286,6 +328171,16 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "origin/main",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "panel/src",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "parsing Git remote URL",
             "reason": "api_identifier"
         },
@@ -326313,6 +328208,11 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "pending request for {sha} must correspond to loading commit data",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "platform",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -326423,6 +328323,11 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "reload_buffer_diff_bases",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "reloads that fail the same way again must not announce a new file list",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -326626,6 +328531,11 @@
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
+            "original": "staged\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
             "original": "stash_apply",
             "reason": "rule:identifier"
         },
@@ -326713,6 +328623,11 @@
             "file": "zed/crates/project/src/git_store.rs",
             "original": "upstream",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/project/src/git_store.rs",
+            "original": "work/src",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store.rs",
@@ -326848,6 +328763,16 @@
             "file": "zed/crates/project/src/git_store/diff_buffer_list.rs",
             "original": "HEAD",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/project/src/git_store/diff_buffer_list.rs",
+            "original": "failed to load tree diff: {error:#}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/git_store/diff_buffer_list.rs",
+            "original": "{error:#}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/git_store/git_traversal.rs",
@@ -330631,8 +332556,18 @@
         },
         {
             "file": "zed/crates/project/src/project_settings.rs",
+            "original": "Invalid git.date_format: {error}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/project_settings.rs",
             "original": "Option::is_none",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/project/src/project_settings.rs",
+            "original": "[year]-[month]-[day] [hour]:[minute]",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/project_settings.rs",
@@ -330643,6 +332578,16 @@
             "file": "zed/crates/project/src/project_settings.rs",
             "original": "hint",
             "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/project/src/project_settings.rs",
+            "original": "iso",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/src/project_settings.rs",
+            "original": "locale",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/src/project_settings.rs",
@@ -331866,6 +333811,16 @@
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "/project/sub",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "/project/sub/file.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "/project/tiny.rs",
             "reason": "rule:path"
         },
@@ -331951,6 +333906,11 @@
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "bookmarks should remain readable",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "c.rs",
             "reason": "rule:path"
         },
@@ -332016,6 +333976,11 @@
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "first\\nsecond\\nthird\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "fn main() {\n    println!(\"hello\");\n    return;\n}\n",
             "reason": "ai:code_snippet"
         },
@@ -332023,6 +333988,16 @@
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "fn main() {\\n    println!(\\\"hello\\\");\\n    return;\\n}\\n",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "ignored edit",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "ignored toggle",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
@@ -332121,6 +334096,16 @@
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "original",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "parent worktree should open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "rename_me.rs",
             "reason": "rule:path"
         },
@@ -332131,6 +334116,31 @@
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "sub",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "sub/file.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "the original bookmark should be preserved",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "the original buffer should still find its bookmark",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "the same file should open through the parent worktree",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "tiny.rs",
             "reason": "rule:path"
         },
@@ -332138,6 +334148,11 @@
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
             "original": "untouched.rs",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/bookmark_store.rs",
+            "original": "updated",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/bookmark_store.rs",
@@ -335271,6 +337286,11 @@
         },
         {
             "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "/root/first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
             "original": "/root/junk/a/b/deep.txt",
             "reason": "rule:path"
         },
@@ -335313,6 +337333,11 @@
             "file": "zed/crates/project/tests/integration/git_store.rs",
             "original": "/root/repo1",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "/root/second",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/git_store.rs",
@@ -335866,6 +337891,11 @@
         },
         {
             "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
             "original": "foo",
             "reason": "ai:test_assertion"
         },
@@ -336113,6 +338143,21 @@
             "file": "zed/crates/project/tests/integration/git_store.rs",
             "original": "resolved buffer text should clear visible conflict markers",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "second",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "second repository should exist",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/git_store.rs",
+            "original": "second worktree should exist",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/git_store.rs",
@@ -348983,6 +351028,196 @@
             "file": "zed/crates/project_benchmarks/src/main.rs",
             "original": "ssh initialization returned None",
             "reason": "api_identifier"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/external-a/note.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/external-b/note.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/one.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/second",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "/root/single.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": ":{}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "Toggle",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "a.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "alpha mark",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "alpha\\nbeta\\ngamma\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "b.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "bookmark label should be present",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "bookmark\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "bookmarks",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "c.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "delta\\nepsilon\\nzeta\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "epsilon mark",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "eta\\ntheta\\niota\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "external-a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "external-b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "first worktree should exist",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "gamma",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "gamma mark",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "iota mark",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "matching bookmark should exist",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "note.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "one.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "project bookmarks picker is not open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "same label",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "second",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "second worktree should open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "serialized bookmarks should load",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "shared.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "single.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project_bookmarks/src/project_bookmarks.rs",
+            "original": "two.txt",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project_panel/benches/sorting.rs",
@@ -363161,6 +365396,16 @@
         },
         {
             "file": "zed/crates/remote/src/transport/mock.rs",
+            "original": "message interception requires a mock connection",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/mock.rs",
+            "original": "message interceptors must be installed before connecting",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/mock.rs",
             "original": "mock",
             "reason": "ai:string_comparison"
         },
@@ -373256,8 +375501,18 @@
         },
         {
             "file": "zed/crates/repl/src/notebook/notebook_ui.rs",
+            "original": "Repairing notebook cell IDs: {:?}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/repl/src/notebook/notebook_ui.rs",
             "original": "\\n",
             "reason": "rule:escape_sequence"
+        },
+        {
+            "file": "zed/crates/repl/src/notebook/notebook_ui.rs",
+            "original": "cell is not an object",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/repl/src/notebook/notebook_ui.rs",
@@ -376556,6 +378811,16 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": ".ENVRC",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": ".envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": ".gitignore",
             "reason": "ai:test_assertion"
         },
@@ -376566,8 +378831,18 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "/Users/test/projects/myproject",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "/[aA]\\.[bB]\\+[cC]$",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
@@ -376681,6 +378956,11 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "\\.^$|?*+()[]{}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "\\\\",
             "reason": "rule:punctuation"
         },
@@ -376706,8 +378986,28 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "a.b+c",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "a.bbc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "agent.sock",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "append to an existing file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "axbbc",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
@@ -376851,6 +379151,36 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "create a hard link with the name",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "create a symlink with the name",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "create at the writable root",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "create in a directory made by the same command",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "create with different ASCII case",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "delete an existing file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "echo 'hello' > '{}'",
             "reason": "ai:code_snippet"
         },
@@ -376861,8 +379191,38 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "echo ok > axbbc && echo ok > a.bbc && ! sh -c 'echo x > a.b+c' 2>/dev/null",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "echo ok > ordinary && {}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "echo test 2>/dev/null",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "echo x > .ENVRC",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "echo x > .envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "echo x >> .envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "existing file should be untouched: {context}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
@@ -376878,6 +379238,11 @@
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "file should not have been created",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "file should not have been created: {context}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
@@ -376901,6 +379266,16 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "ln -s other .envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "ln other .envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "localhost:*",
             "reason": "ai:code_snippet"
         },
@@ -376911,6 +379286,51 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "mkdir -p nested/deeper && echo x > nested/deeper/.envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "mv other .envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "nested/deeper/.envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "ok\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "ordinary",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "ordinary file should stay writable: {context}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "original\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "other\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "protected paths should stay readable but not writable even with unrestricted writes: stderr={} stdout={}",
             "reason": "rule:test_assertion"
         },
@@ -376918,6 +379338,16 @@
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "remote unix-socket",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "rename another file onto it",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "rm .envrc",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
@@ -376971,6 +379401,11 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "should be denied: {context}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "target\n",
             "reason": "rule:test_fixture"
         },
@@ -377005,6 +379440,11 @@
             "reason": "rule:format_only"
         },
         {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "{escaped_regex}",
+            "reason": "ai:translate-empty"
+        },
+        {
             "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": "",
             "reason": "rule:empty_string"
@@ -377026,13 +379466,38 @@
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": ".",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": "..",
             "reason": "rule:punctuation"
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "...",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": ".envrc",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": ".envrc/",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": ".git",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "/",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
@@ -377071,8 +379536,23 @@
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "a.b+c",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": "a.com",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "a/b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "a\\0b",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
@@ -377306,6 +379786,11 @@
         },
         {
             "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "with space",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": "zed.dev",
             "reason": "rule:path"
         },
@@ -377318,6 +379803,11 @@
             "file": "zed/crates/sandbox/src/sandbox.rs",
             "original": "{message}",
             "reason": "rule:format_only"
+        },
+        {
+            "file": "zed/crates/sandbox/src/sandbox.rs",
+            "original": "{name:?} should be rejected",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sandbox/src/util.rs",
@@ -387251,6 +389741,16 @@
         },
         {
             "file": "zed/crates/settings_content/src/project.rs",
+            "original": "%Y-%m-%d %H:%M",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_content/src/project.rs",
+            "original": "%b %d, %Y",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_content/src/project.rs",
             "original": "**/*.after",
             "reason": "rule:test_assertion"
         },
@@ -387501,6 +390001,11 @@
         },
         {
             "file": "zed/crates/settings_content/src/project.rs",
+            "original": "examples",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_content/src/project.rs",
             "original": "expected Stdio variant, got {settings:?}",
             "reason": "ai:test_assertion"
         },
@@ -387533,6 +390038,16 @@
             "file": "zed/crates/settings_content/src/project.rs",
             "original": "https://code.corp.big.com",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/settings_content/src/project.rs",
+            "original": "iso",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_content/src/project.rs",
+            "original": "locale",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/settings_content/src/project.rs",
@@ -390816,6 +393331,11 @@
         },
         {
             "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "agent.auto_generate_thread_titles",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
             "original": "agent.max_idle_retained_threads",
             "reason": "rule:identifier"
         },
@@ -390906,8 +393426,53 @@
         },
         {
             "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.blame.date_style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.branch_picker.date_style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.commit_view.expand_description",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.commit_view.expand_files",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.date_format",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.inline_blame.date_style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git.stash_picker.date_style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git_graph.date_style",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
             "original": "git_panel.commit_editor",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/settings_ui/src/page_data.rs",
+            "original": "git_panel.date_style",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/settings_ui/src/page_data.rs",
@@ -397841,6 +400406,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "Choose one",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "Clicking a thread in another workspace should focus that thread",
             "reason": "rule:test_assertion"
         },
@@ -397926,6 +400496,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "Elicitation should be accepted",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "Error thread",
             "reason": "rule:test_assertion"
         },
@@ -397946,6 +400521,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "Expected thread entry in sidebar",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "External Worktree Thread",
             "reason": "rule:test_assertion"
         },
@@ -397963,6 +400543,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "Feature Terminal",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "First",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -398291,6 +400876,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "Second",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "Second Draft",
             "reason": "rule:test_assertion"
         },
@@ -398478,6 +401068,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "Unrelated Thread",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "Valid single-select schema",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -398886,6 +401481,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "choice",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "chunk",
             "reason": "rule:test_assertion"
         },
@@ -398968,6 +401568,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "confirming the historical thread should open a workspace for the new project group",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "const",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -399656,6 +402261,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "first",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "first discarded draft metadata should be deleted",
             "reason": "rule:test_assertion"
         },
@@ -400231,6 +402841,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "object",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "older-historical-thread",
             "reason": "rule:identifier"
         },
@@ -400248,6 +402863,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "one thread under [/wt-feature]",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "oneOf",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -400403,6 +403023,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "prop-thread-{id}",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "properties",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -400621,6 +403246,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "required",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "resetting should stop persisting the width, got {after_reset}",
             "reason": "ai:test_assertion"
         },
@@ -400668,6 +403298,11 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "same-shape metadata update should preserve next header measurements",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "second",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -401096,6 +403731,11 @@
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "string",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "subagent session",
             "reason": "ai:translate-empty"
         },
@@ -401488,6 +404128,16 @@
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
             "original": "tid={:?} sid={:?} archived={} paths={:?}",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "title",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sidebar/src/sidebar_tests.rs",
+            "original": "type",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/sidebar/src/sidebar_tests.rs",
@@ -402236,6 +404886,11 @@
         },
         {
             "file": "zed/crates/snippet_provider/src/registry.rs",
+            "original": "Hello ${1:Zed}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/snippet_provider/src/registry.rs",
             "original": "Hello World",
             "reason": "ai:test_assertion"
         },
@@ -402243,6 +404898,11 @@
             "file": "zed/crates/snippet_provider/src/registry.rs",
             "original": "Python Snippet",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/snippet_provider/src/registry.rs",
+            "original": "Registering the same file again should replace its snippets",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/snippet_provider/src/registry.rs",
@@ -402288,6 +404948,16 @@
             "file": "zed/crates/snippet_provider/src/registry.rs",
             "original": "], ",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/snippet_provider/src/registry.rs",
+            "original": "extension/snippets/ruby.json",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/snippet_provider/src/registry.rs",
+            "original": "first_extension/ruby.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/snippet_provider/src/registry.rs",
@@ -402338,6 +405008,11 @@
             "file": "zed/crates/snippet_provider/src/registry.rs",
             "original": "rust.json",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/snippet_provider/src/registry.rs",
+            "original": "second_extension/ruby.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/snippet_provider/src/registry.rs",
@@ -428731,12 +431406,22 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "A",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "After",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "Available filters",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "B",
             "reason": "ai:translate-empty"
         },
         {
@@ -428777,6 +431462,11 @@
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "Custom",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "Disabled submenu",
             "reason": "ai:translate-empty"
         },
         {
@@ -428836,6 +431526,11 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "Group by",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "Header",
             "reason": "rule:test_assertion"
         },
@@ -428883,6 +431578,11 @@
             "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "Options",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "Project",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
@@ -428961,6 +431661,16 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "a",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "a b",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "clicking a part of the content that can't take focus must leave focus on the content",
             "reason": "ai:translate-empty"
         },
@@ -428991,12 +431701,42 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "custom content",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "custom-toggle",
             "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "custom-trigger",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "disabled custom content",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "disabled submenu must not open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "disabled trigger bounds",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "disabled-trigger",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "down",
             "reason": "ai:translate-empty"
         },
         {
@@ -429022,6 +431762,11 @@
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "filters",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "hover should open the submenu",
             "reason": "ai:translate-empty"
         },
         {
@@ -429052,6 +431797,16 @@
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "nested trigger bounds",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "no-filters",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "one-filter",
             "reason": "ai:translate-empty"
         },
         {
@@ -429106,6 +431861,11 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "submenu stays open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "submenu was closed",
             "reason": "ai:translate-empty"
         },
@@ -429141,7 +431901,17 @@
         },
         {
             "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "two-filters",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
             "original": "wide",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/ui/src/components/context_menu.rs",
+            "original": "{count} filters",
             "reason": "ai:translate-empty"
         },
         {
@@ -448896,6 +451666,11 @@
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
+            "original": " ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
             "original": "#",
             "reason": "rule:punctuation"
         },
@@ -448971,6 +451746,11 @@
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
+            "original": "12345\\n123\\nˇ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
             "original": "2 *",
             "reason": "ai:test_assertion"
         },
@@ -449036,6 +451816,21 @@
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
+            "original": ":%s/A\\([0-9]*\\)B/\\1/g",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": ":%s/A\\([0-9]\\+\\)B/\\1/g",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": ":%s/A\\([0-9]\\{3\\}\\)B/\\1/g",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
             "original": "? a a",
             "reason": "ai:test_assertion"
         },
@@ -449048,6 +451843,11 @@
             "file": "zed/crates/vim/src/normal/search.rs",
             "original": "? enter",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": "A12345B\\nˇ123\\nAB",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
@@ -449343,6 +452143,16 @@
             "file": "zed/crates/vim/src/normal/search.rs",
             "original": "«oneˇ» two one",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": "ˇ12345\\n123\\nAB",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": "ˇA12345B\\nA123B\\nAB",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
@@ -456806,6 +459616,21 @@
         },
         {
             "file": "zed/crates/which_key/src/which_key.rs",
+            "original": ": 0 } }",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": ": true, ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": ": { ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
             "original": "Control-@",
             "reason": "ai:string_comparison"
         },
@@ -456828,6 +459653,16 @@
             "file": "zed/crates/which_key/src/which_key.rs",
             "original": "ctrl-@",
             "reason": "ai:string_comparison"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "ctrl-k",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "ctrl-k ctrl-x",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/which_key/src/which_key.rs",
@@ -456921,6 +459756,11 @@
         },
         {
             "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "ctrl-x",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
             "original": "expected mapped pending keystroke",
             "reason": "ai:test_assertion"
         },
@@ -456971,13 +459811,33 @@
         },
         {
             "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "modal should still be open",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
             "original": "valid test keystroke",
             "reason": "ai:test_assertion"
         },
         {
             "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "valid test settings",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "which-key should not dismiss the open modal",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
             "original": "windows",
             "reason": "ai:string_comparison"
+        },
+        {
+            "file": "zed/crates/which_key/src/which_key.rs",
+            "original": "{ ",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/which_key/src/which_key_modal.rs",
@@ -457378,6 +460238,16 @@
             "file": "zed/crates/workspace/src/invalid_item_view.rs",
             "original": "InvalidItem",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/workspace/src/invalid_item_view.rs",
+            "original": "InvalidItemView",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/workspace/src/invalid_item_view.rs",
+            "original": "abs_path",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/workspace/src/invalid_item_view.rs",
@@ -458381,6 +461251,11 @@
         },
         {
             "file": "zed/crates/workspace/src/pane.rs",
+            "original": "/root/file.bin",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/workspace/src/pane.rs",
             "original": "1",
             "reason": "rule:numeric"
         },
@@ -459066,6 +461941,11 @@
         },
         {
             "file": "zed/crates/workspace/src/pane.rs",
+            "original": "binary file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/workspace/src/pane.rs",
             "original": "buffer 1",
             "reason": "rule:test_assertion"
         },
@@ -459113,6 +461993,11 @@
             "file": "zed/crates/workspace/src/pane.rs",
             "original": "expected axis",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/workspace/src/pane.rs",
+            "original": "file.bin",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/workspace/src/pane.rs",
@@ -459466,6 +462351,16 @@
         },
         {
             "file": "zed/crates/workspace/src/path_link.rs",
+            "original": "/home/user/notes/spec.md:12",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/workspace/src/path_link.rs",
+            "original": "C:\\\\Users\\\\user\\\\spec.md",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/workspace/src/path_link.rs",
             "original": "a",
             "reason": "ai:test_assertion"
         },
@@ -459473,6 +462368,11 @@
             "file": "zed/crates/workspace/src/path_link.rs",
             "original": "b",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/workspace/src/path_link.rs",
+            "original": "src/main.rs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/workspace/src/path_link.rs",
@@ -465701,6 +468601,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "**/link",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "**/node_modules/**",
             "reason": "ai:test_assertion"
         },
@@ -465818,6 +468723,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "../../project",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "../config/target",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -466266,6 +469176,21 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "/parent",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "/parent/worktree",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "/parent/worktree/link",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "/project",
             "reason": "rule:path"
         },
@@ -466358,6 +469283,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "/root/created-before-root-readd.txt",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "/root/destination.rs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -466568,6 +469498,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "/root/project/real-dir/new.txt",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "/root/source.rs",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -467301,6 +470236,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "child.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "child.txt",
             "reason": "rule:path"
         },
@@ -467338,6 +470278,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "config.ini",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "config/target",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -467651,6 +470596,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "destination.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "dir",
             "reason": "ai:test_assertion"
         },
@@ -467786,6 +470736,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "expected a local worktree",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "expected path '{path}' to always be included, but got entry: {entry:?}",
             "reason": "rule:test_assertion"
         },
@@ -467803,6 +470758,26 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "expected path '{path}' to be tracked, but got entry: {entry:?}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "expected the destination entry",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "expected the source entry",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "expected the symlink entry",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "expected the target entry",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -468321,6 +471296,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "link",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "linked worktree repo should survive a gitfile change event",
             "reason": "rule:test_assertion"
         },
@@ -468593,6 +471573,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "old",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "old destination",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -468951,6 +471936,16 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "source",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "source.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "src",
             "reason": "ai:test_assertion"
         },
@@ -469256,6 +472251,11 @@
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "worktree",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "worktrees",
             "reason": "ai:test_assertion"
         },
@@ -469293,6 +472293,11 @@
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
             "original": "{ ",
             "reason": "rule:punctuation"
+        },
+        {
+            "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
+            "original": "{result:?}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/worktree/tests/integration/worktree_tests.rs",
@@ -474926,6 +477931,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed.rs",
+            "original": "project_bookmarks",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed.rs",
             "original": "project_dropdown",
             "reason": "rule:identifier"
         },
@@ -475766,6 +478776,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/project/README.md",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "/project/file.txt",
             "reason": "rule:path"
         },
@@ -475811,6 +478826,21 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/root/cwd",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/root/cwd/after",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/root/cwd/before",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "/root/dir1",
             "reason": "rule:path"
         },
@@ -475848,6 +478878,16 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "/root/new_file.txt",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/root/other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "/root/project",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -475958,6 +478998,16 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "BuiltinJsonSchema",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "C:/root/test.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "C:/root/test.txt:10",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476096,6 +479146,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "Ubuntu",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "Workspace should have two items",
             "reason": "rule:test_assertion"
         },
@@ -476113,6 +479168,16 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "abc123",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "after",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "before",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476138,6 +479203,11 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "content_len",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "cwd",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476178,6 +479248,11 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "error sending ipc handshake",
             "reason": "api_identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "existing local workspace",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476238,6 +479313,21 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "file://",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "file:///C:/root/test.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "file:///home/me/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "file:///tmp/local",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476336,6 +479426,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "new",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "new_window",
             "reason": "rule:identifier"
         },
@@ -476371,6 +479466,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "old",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "open_in_dev_container flag should be cleared when no devcontainer config exists",
             "reason": "rule:test_assertion"
         },
@@ -476381,6 +479481,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "other",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "path with spaces",
             "reason": "ai:test_assertion"
         },
@@ -476388,6 +479493,11 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "path/to/repo",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "project",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476536,6 +479646,16 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "ssh://me@host/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "ssh://me@host/project/README.md",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "ssh://me@host:/",
             "reason": "rule:uri"
         },
@@ -476566,6 +479686,11 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "ssh://me@other/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "ssh://user@domain.tld@host:22/tmp",
             "reason": "rule:uri"
         },
@@ -476588,6 +479713,11 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "ssh://user@host:~/relpath",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "ssh://you@host/project",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476626,8 +479756,18 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "window exists",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "windows",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "workspace window",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476688,6 +479828,16 @@
             "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "zed://file",
             "reason": "rule:uri"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "zed://file/C%3A/root/test.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "zed://file/C:/root/test.txt:10",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -476781,8 +479931,18 @@
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "{input}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
             "original": "{input} should be rejected",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/open_listener.rs",
+            "original": "{urls:?}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed/src/zed/open_listener.rs",
@@ -477151,6 +480311,16 @@
         },
         {
             "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
+            "original": "/Cargo.toml",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
+            "original": "CARGO_MANIFEST_DIR",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
             "original": "CliReceiver",
             "reason": "ai:api_identifier"
         },
@@ -477231,6 +480401,16 @@
         },
         {
             "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
+            "original": "zed://file/C:/project/main.rs:3",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
+            "original": "{file}:2:5",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
             "original": "{message}",
             "reason": "rule:format_only"
         },
@@ -477238,6 +480418,11 @@
             "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
             "original": "{}-Instance-Mutex",
             "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/zed/src/zed/windows_only_instance.rs",
+            "original": "{}:2:5",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/zed_actions/src/lib.rs",
