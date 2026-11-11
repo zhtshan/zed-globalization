@@ -161846,6 +161846,16 @@
         },
         {
             "file": "zed/crates/editor/src/document_colors.rs",
+            "original": "Unexpected highlights in {render_mode:?} mode",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/document_colors.rs",
+            "original": "Unexpected inlays in {render_mode:?} mode",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/document_colors.rs",
             "original": "dirty",
             "reason": "ai:api_identifier"
         },
@@ -359276,6 +359286,21 @@
         },
         {
             "file": "zed/crates/recent_projects/src/recent_projects.rs",
+            "original": "zedg_move_project_group_down",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/recent_projects.rs",
+            "original": "zedg_move_project_group_up",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/recent_projects.rs",
+            "original": "zedg_pin_project_group",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/recent_projects/src/recent_projects.rs",
             "original": "{:?}",
             "reason": "rule:punctuation"
         },
@@ -363851,6 +363876,11 @@
         },
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "Failed to parse the remote environment probed via stdin, retrying with the script as an argument: {error:#}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "Failed to run 'uname -sm' to determine platform",
             "reason": "api_identifier"
         },
@@ -364137,6 +364167,11 @@
         {
             "file": "zed/crates/remote/src/transport/ssh.rs",
             "original": "cat",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/transport/ssh.rs",
+            "original": "cat > /dev/null; {remote_command}",
             "reason": "ai:translate-empty"
         },
         {
@@ -408191,6 +408226,36 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "$ZED_FILENAME",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "$ZED_WORKTREE_ROOT",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "${ZED_CUSTOM_PYTHON_TEST_TARGET:.}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "${ZED_FILENAME:no file}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "${ZED_MAIN_GIT_WORKTREE:no repository}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "${ZED_RELATIVE_FILE:no file}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "(",
             "reason": "rule:punctuation"
         },
@@ -408218,6 +408283,11 @@
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": ",\\n{new_task}",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "-m",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408251,8 +408321,43 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/dir/test.py",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/external",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/external/notes.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/project/main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "/worktrees/Godot Projects/sample-game",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/zed-config",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "/zed-config/tasks.json",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408276,8 +408381,18 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "PYTHON_TEST_TARGET",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "Rust",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "SOURCE_DIRECTORY",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408288,6 +408403,11 @@
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "TypeScript",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "ZED_CONFIG_ONLY",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408321,8 +408441,18 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "a task should be scheduled",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "a.ts",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "active item should be an editor",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408351,8 +408481,18 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "cwd",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "echo",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "editor should provide a task context",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408371,6 +408511,16 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "global task should resolve",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "global tasks",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "is_i",
             "reason": "rule:identifier"
         },
@@ -408381,8 +408531,78 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "local worktree tasks",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "main.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "main_menu.tscn",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "no file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "no repository",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "notes.txt",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "print global task context",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "print worktree root",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "print worktree root and file",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "print(1)",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "project",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "project should have a task inventory",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "pytest",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "pytest from global tasks",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "python3",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408401,8 +408621,28 @@
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "single-file editor should provide an item context",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "tasks.json",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "test.py",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "test_external.py",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "the Python context provider should derive the test target from the file's relative path",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
@@ -408423,6 +408663,21 @@
             "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
             "original": "visible worktree should provide an active task context",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "worktree task should resolve",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "x = 1\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/tasks_ui/src/tasks_ui.rs",
+            "original": "zed-config",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/telemetry/src/telemetry.rs",
