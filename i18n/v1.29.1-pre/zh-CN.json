@@ -104215,7 +104215,9 @@
         "/[aA]\\.[bB]\\+[cC]$": "",
         "echo ok > axbbc && echo ok > a.bbc && ! sh -c 'echo x > a.b+c' 2>/dev/null": "",
         "axbbc": "",
-        "a.bbc": ""
+        "a.bbc": "",
+        "{} (allow_fs_write: {allow_fs_write}): stderr={}": "",
+        "only the literal name should be protected: stderr={}": ""
     },
     "zed/crates/sandbox/src/sandbox.rs": {
         "windows": "",
@@ -117557,7 +117559,8 @@
         "%Y年%m月": "",
         "{format}": "",
         "Yesterday at ": "",
-        "{locale_dates:?}": ""
+        "{locale_dates:?}": "",
+        "": ""
     },
     "zed/crates/project_bookmarks/src/project_bookmarks.rs": {
         "Toggle": "",

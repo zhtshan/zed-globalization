@@ -222236,6 +222236,11 @@
         },
         {
             "file": "zed/crates/git_ui/src/git_timestamp.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/git_timestamp.rs",
             "original": " ",
             "reason": "ai:translate-empty"
         },
@@ -379306,6 +379311,11 @@
         },
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "only the literal name should be protected: stderr={}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "ordinary",
             "reason": "ai:translate-empty"
         },
@@ -379442,6 +379452,11 @@
         {
             "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
             "original": "{escaped_regex}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/macos_seatbelt.rs",
+            "original": "{} (allow_fs_write: {allow_fs_write}): stderr={}",
             "reason": "ai:translate-empty"
         },
         {
