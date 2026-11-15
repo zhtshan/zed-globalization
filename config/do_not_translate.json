@@ -86211,6 +86211,11 @@
         },
         {
             "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
+            "original": "left",
+            "reason": "ai:match_arm"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
             "original": "macos",
             "reason": "ai:string_comparison"
         },
@@ -86228,6 +86233,11 @@
             "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
             "original": "position {pos} is not a valid UTF-8 boundary in {text:?}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
+            "original": "right",
+            "reason": "ai:match_arm"
         },
         {
             "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
@@ -86268,6 +86278,11 @@
             "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
             "original": "xyz",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
+            "original": "•",
+            "reason": "ai:format_spec"
         },
         {
             "file": "zed/crates/agent_ui/src/threads_archive_view.rs",
@@ -125066,6 +125081,11 @@
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": " '{print $2}' | sed -e 's/^[ \t]*//' | grep -E -m 1 ",
+            "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": " '{print $2}' | sed -e 's/^[ \\t]*//' | grep -E -m 1 ",
             "reason": "ai:translate-empty"
         },
@@ -125748,6 +125768,11 @@
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
             "original": "\"BUILDKIT_INLINE_CACHE\"",
             "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
+            "original": "\"C:\\\\path\\to\\local\\project\"",
+            "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/dev_container/src/devcontainer_manifest.rs",
@@ -328783,6 +328808,11 @@
             "file": "zed/crates/project/src/git_store/git_traversal.rs",
             "original": "",
             "reason": "rule:empty_string"
+        },
+        {
+            "file": "zed/crates/project/src/git_store/git_traversal.rs",
+            "original": "原文",
+            "reason": "ai:***"
         },
         {
             "file": "zed/crates/project/src/git_store/job_debug_queue.rs",
