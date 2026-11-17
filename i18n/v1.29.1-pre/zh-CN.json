@@ -23504,7 +23504,7 @@
         "Whether the commit message editor is shown in the Git panel by default.": "是否默认在 Git 面板中显示提交消息编辑器。",
         "git_panel.commit_editor": "",
         "Display P3": "Display P3",
-        "(macOS only) render windows using the Display P3 color space.": "(仅限 macOS) 使用 Display P3 色彩空间渲染窗口。",
+        "(macOS only) render windows using the Display P3 color space.": "(仅限 macOS) 使用 Display P3 色彩空间渲染 Windows。",
         "use_display_p3": "",
         "What to show when opening a new window; Readme opens a project's README when no items are open, leaving the pane empty if none is found.": "打开新窗口时显示的内容;Readme 选项在没有打开任何项目时会显示项目的 README,若未找到则保持窗格为空。",
         "Edit Prediction Button": "编辑预测按钮",
@@ -51523,7 +51523,7 @@
         "inactive": "",
         "hang monitor exited before flushing": "挂起监视器在刷新前退出",
         "the hang monitor was started twice": "挂起监视器被启动了两次",
-        "cannot switch windowing modes while windows are open": "窗口已打开时无法切换窗口模式",
+        "cannot switch windowing modes while windows are open": "Windows 已打开时无法切换窗口模式",
         "RefCell already borrowed: attempted {kind} App borrow at {attempted}; origin unavailable": "",
         "shared": "",
         "mutable": "",
@@ -84500,8 +84500,8 @@
         "a platform created headless can't switch windowing modes": "以无头模式创建的平台无法切换窗口模式",
         "already headless": "已处于无头模式",
         "already windowed": "已经是窗口模式",
-        "cannot open windows while headless": "无头模式下无法打开窗口",
-        "this process's window station is not interactive, so it can't show windows": "此进程的窗口工作站不是交互式的, 因此无法显示窗口",
+        "cannot open windows while headless": "无头模式下无法打开 Windows",
+        "this process's window station is not interactive, so it can't show windows": "此进程的窗口工作站不是交互式的, 因此无法显示 Windows",
         "Failed to query Windows battery saver status: {error}": ""
     },
     "zed/crates/gpui_windows/src/util.rs": {
@@ -117602,5 +117602,11 @@
         "iota mark": "",
         "project bookmarks picker is not open": "",
         "bookmark label should be present": ""
+    },
+    "zed/crates/recent_projects/src/zedg_recent_sort.rs": {
+        "Recent": "最近",
+        "Name (A-Z)": "名称 (A-Z)",
+        "Name (Z-A)": "名称 (Z-A)",
+        "Manual": "手动"
     }
 }
