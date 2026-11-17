@@ -304,8 +304,8 @@ index 0b93ee8..ccc0234 100644
      ) -> Task<()> {
 +        self.apply_sort();
          let query = query.trim_start();
-         let case = fuzzy_nucleo::Case::smart_if_uppercase_in(query);
          let is_empty_query = query.is_empty();
+ 
 @@ -350,37 +436,128 @@ impl PickerDelegate for SidebarRecentProjectsDelegate {
              SerializedWorkspaceLocation::Remote(options) => Some(options),
          });
