@@ -1648,8 +1648,8 @@ jobs:
           RELEASE_CHANNEL: stable
           # macOS 编译优化：减少调试信息和链接时间，加快 CI 构建速度
           CARGO_PROFILE_RELEASE_DEBUG: "none"          # 禁用调试信息，解决 __eh_frame 超限问题
-          CARGO_PROFILE_RELEASE_LTO: "off"             # 禁用 LTO，大幅减少链接时间
-          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"    # 增加代码生成单元，加快编译速度
+          CARGO_PROFILE_RELEASE_LTO: ${{ needs.versioning.outputs.is_prerelease == 'true' && 'thin' || 'off' }}  # pre-release 试用上游同款 thin LTO（减小体积）；stable 暂禁用以加快构建
+          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: ${{ needs.versioning.outputs.is_prerelease == 'true' && '1' || '16' }}  # pre-release 同上游取 1；stable 取 16 加快编译
         run: |
           if [ "$SCCACHE_AVAILABLE" = "true" ]; then
             export RUSTC_WRAPPER=sccache
@@ -1890,8 +1890,8 @@ jobs:
           RELEASE_CHANNEL: stable
           # macOS 编译优化：减少调试信息和链接时间，加快 CI 构建速度
           CARGO_PROFILE_RELEASE_DEBUG: "none"          # 禁用调试信息，解决 __eh_frame 超限问题
-          CARGO_PROFILE_RELEASE_LTO: "off"             # 禁用 LTO，大幅减少链接时间
-          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"    # 增加代码生成单元，加快编译速度
+          CARGO_PROFILE_RELEASE_LTO: ${{ needs.versioning.outputs.is_prerelease == 'true' && 'thin' || 'off' }}  # pre-release 试用上游同款 thin LTO（减小体积）；stable 暂禁用以加快构建
+          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: ${{ needs.versioning.outputs.is_prerelease == 'true' && '1' || '16' }}  # pre-release 同上游取 1；stable 取 16 加快编译
         run: |
           if [ "$SCCACHE_AVAILABLE" = "true" ]; then
             export RUSTC_WRAPPER=sccache
