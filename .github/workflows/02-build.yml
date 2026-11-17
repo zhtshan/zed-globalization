@@ -495,7 +495,10 @@ jobs:
 
           if ($buildExit -eq 0) {
             Write-Host "=== 编译 CLI 辅助二进制 ==="
+            # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+            Push-Location D:\z
             cargo build --release --package cli --locked --manifest-path D:\z\Cargo.toml
+            Pop-Location
           }
 
           # 停止监控并输出摘要
@@ -848,7 +851,10 @@ jobs:
 
           if ($buildExit -eq 0) {
             Write-Host "=== 编译 CLI 辅助二进制 ==="
+            # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+            Push-Location C:\z
             cargo build --release --package cli --locked --target aarch64-pc-windows-msvc --manifest-path C:\z\Cargo.toml
+            Pop-Location
           }
 
           Stop-Job $monitorJob; Remove-Job $monitorJob
@@ -1329,7 +1335,8 @@ jobs:
           [ $BUILD_EXIT -ne 0 ] && exit $BUILD_EXIT
 
           echo "=== 编译 CLI 辅助二进制 ==="
-          cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml"
+          # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -1693,7 +1700,8 @@ jobs:
           [ $BUILD_EXIT -ne 0 ] && exit $BUILD_EXIT
 
           echo "=== 编译 CLI 辅助二进制 ==="
-          cargo build --release --package cli --target aarch64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml"
+          # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --target aarch64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -1935,7 +1943,8 @@ jobs:
           [ $BUILD_EXIT -ne 0 ] && exit $BUILD_EXIT
 
           echo "=== 编译 CLI 辅助二进制 ==="
-          cargo build --release --package cli --target x86_64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml"
+          # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --target x86_64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -2362,7 +2371,8 @@ jobs:
           [ $BUILD_EXIT -ne 0 ] && exit $BUILD_EXIT
 
           echo "=== 编译 CLI 辅助二进制 ==="
-          cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml"
+          # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
+          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
