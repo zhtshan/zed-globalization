@@ -625,7 +625,9 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
             r'\1\n'
             r'const ZEDG_GITHUB_REPO: &str = "zhtshan/zed-globalization";' '\n'
             r'const ZEDG_LANG: &str = "zh-cn";' '\n'
-            f'const ZEDG_RELEASE_TAG: &str = "{release_tag}";'
+            f'const ZEDG_RELEASE_TAG: &str = "{release_tag}";' '\n'
+            r'/// Last release tag the user declined, so background checks do not nag again.' '\n'
+            r'static ZEDG_DECLINED_TAG: std::sync::Mutex<String> = std::sync::Mutex::new(String::new());'
         )
         new_content = re.sub(pat, repl, content, count=1)
         if new_content == content:
@@ -673,16 +675,16 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
         pat_update_fn = r'(\n)([ \t]*)(async\s+fn\s+update\s*\(\s*this:\s*Entity<Self>.*?\)\s*->\s*Result<\(\)>\s*\{)'
         github_fn = (
             "    async fn get_release_asset_from_github(\n"
-            "        release_channel: ReleaseChannel,\n"
+            "        _release_channel: ReleaseChannel,\n"
             "        os: &str,\n"
             "        arch: &str,\n"
             "        http: Arc<dyn HttpClient>,\n"
             "    ) -> Result<ReleaseAsset> {\n"
             '        let asset_prefix = format!("zedg-{}-{}-{}-", ZEDG_LANG, os, arch);\n'
             "\n"
-            "        // Only follow releases of the running channel, so a failed lookup\n"
-            "        // never moves a stable install onto a pre-release (or vice versa).\n"
-            "        let pre_release = release_channel == ReleaseChannel::Preview;\n"
+            "        // Cross-channel: consider stable and pre-release builds together and\n"
+            "        // take the highest version. At equal versions a stable release outranks\n"
+            "        // a pre-release, then the newest (first in the list) wins.\n"
             "\n"
             "        // Fetch the release list ourselves: upstream latest_github_release()\n"
             "        // pulls every release (~700KB) under a 10s deadline, which times out\n"
@@ -714,11 +716,27 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
             "        );\n"
             "        let releases: Vec<GithubRelease> = serde_json::from_slice(&body)\n"
             '            .context("failed to parse GitHub releases")?;\n'
-            "        let release = releases\n"
-            "            .into_iter()\n"
-            "            .filter(|r| !r.assets.is_empty())\n"
-            "            .find(|r| r.pre_release == pre_release)\n"
-            '            .context("no GitHub release found for the current channel")?;\n'
+            "\n"
+            "        let mut best: Option<(Version, bool, GithubRelease)> = None;\n"
+            "        for release in releases {\n"
+            "            if !release.assets.iter().any(|a| a.name.starts_with(&asset_prefix)) {\n"
+            "                continue;\n"
+            "            }\n"
+            "            let Some(version) = Self::zedg_tag_version(&release.tag_name) else {\n"
+            "                continue;\n"
+            "            };\n"
+            "            let is_stable = !release.pre_release;\n"
+            "            let better = match &best {\n"
+            "                None => true,\n"
+            "                Some((best_version, best_stable, _)) => {\n"
+            "                    (&version, is_stable) > (best_version, *best_stable)\n"
+            "                }\n"
+            "            };\n"
+            "            if better {\n"
+            "                best = Some((version, is_stable, release));\n"
+            "            }\n"
+            "        }\n"
+            '        let (version, _, release) = best.context("no GitHub release found")?;\n'
             "\n"
             "        let matched_asset = release\n"
             "            .assets\n"
@@ -731,18 +749,8 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
             "                )\n"
             "            })?;\n"
             "\n"
-            "        let tag = release.tag_name.strip_prefix('v').unwrap_or(&release.tag_name);\n"
-            "        let version = tag\n"
-            "            .split('-')\n"
-            "            .next()\n"
-            "            .unwrap_or(tag)\n"
-            "            .splitn(4, '.')\n"
-            "            .take(3)\n"
-            "            .collect::<Vec<_>>()\n"
-            '            .join(".");\n'
-            "\n"
             "        Ok(ReleaseAsset {\n"
-            "            version,\n"
+            "            version: version.to_string(),\n"
             "            url: matched_asset.browser_download_url.clone(),\n"
             "        })\n"
             "    }\n"
@@ -773,6 +781,75 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
             "        installed.build = semver::BuildMetadata::EMPTY;\n"
             "        // Only same-version rebuilds; never downgrade.\n"
             "        (fetched_version == installed).then_some(fetched_version)\n"
+            "    }\n"
+            "\n"
+            "    /// `v1.29.1-pre.1` / `v1.28.1` -> `1.29.1` / `1.28.1` (channel suffix and rebuild counter dropped).\n"
+            "    fn zedg_tag_version(tag: &str) -> Option<Version> {\n"
+            "        let tag = tag.strip_prefix('v').unwrap_or(tag);\n"
+            "        tag.split('-')\n"
+            "            .next()?\n"
+            "            .splitn(4, '.')\n"
+            "            .take(3)\n"
+            "            .collect::<Vec<_>>()\n"
+            '            .join(".")\n'
+            "            .parse()\n"
+            "            .ok()\n"
+            "    }\n"
+            "\n"
+            "    /// Asks whether to download and install the fetched release. Returns false when\n"
+            "    /// declined, or when no window is available to ask. Background checks do not\n"
+            "    /// ask again about a release the user already declined.\n"
+            "    async fn zedg_confirm_update(\n"
+            "        this: &Entity<Self>,\n"
+            "        fetched: &ReleaseAsset,\n"
+            "        cx: &mut AsyncApp,\n"
+            "    ) -> bool {\n"
+            "        let tag = fetched\n"
+            "            .url\n"
+            '            .split("/releases/download/")\n'
+            "            .nth(1)\n"
+            "            .and_then(|rest| rest.split('/').next())\n"
+            "            .map(str::to_string)\n"
+            "            .unwrap_or_else(|| fetched.version.clone());\n"
+            "        let is_manual = this.read_with(cx, |this, _| this.update_check_type.is_manual());\n"
+            "        if !is_manual\n"
+            "            && ZEDG_DECLINED_TAG\n"
+            "                .lock()\n"
+            "                .is_ok_and(|declined| *declined == tag)\n"
+            "        {\n"
+            "            return false;\n"
+            "        }\n"
+            "\n"
+            "        // Drop the \"checking\" indicator while the dialog is open.\n"
+            "        this.update(cx, |this, cx| {\n"
+            "            this.status = AutoUpdateStatus::Idle;\n"
+            "            cx.notify();\n"
+            "        });\n"
+            "\n"
+            '        let kind = if tag.contains("-pre") { "预览版" } else { "正式版" };\n'
+            '        let message = format!("发现新版本 {tag}（{kind}）");\n'
+            "        let receiver = cx.update(|cx| {\n"
+            "            let window = cx.active_window()?;\n"
+            "            window\n"
+            "                .update(cx, |_, window, cx| {\n"
+            "                    window.prompt(\n"
+            "                        gpui::PromptLevel::Info,\n"
+            "                        &message,\n"
+            '                        Some("是否下载并安装？安装完成后需要重启。"),\n'
+            '                        &["下载并安装", "稍后"],\n'
+            "                        cx,\n"
+            "                    )\n"
+            "                })\n"
+            "                .ok()\n"
+            "        });\n"
+            "        let confirmed = match receiver {\n"
+            "            Some(receiver) => matches!(receiver.await, Ok(0)),\n"
+            "            None => false,\n"
+            "        };\n"
+            "        if !confirmed && let Ok(mut declined) = ZEDG_DECLINED_TAG.lock() {\n"
+            "            *declined = tag;\n"
+            "        }\n"
+            "        confirmed\n"
             "    }\n"
         )
 
@@ -815,7 +892,11 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
             '    let mut cmd = new_command("msiexec");\n'
             '    cmd.args(["/quiet", "/i"])\n'
             '        .arg(downloaded_installer);\n'
-            '    let output = cmd.output().await?;\n'
+            '    let output = cmd.output().await;\n'
+            '    // The installer is no longer needed whether msiexec succeeded or not;\n'
+            '    // cleanup_windows() removes the then-empty `updates` dir on next start.\n'
+            '    _ = smol::fs::remove_file(downloaded_installer).await;\n'
+            '    let output = output?;\n'
             '    anyhow::ensure!(\n'
             '        output.status.success(),\n'
             '        "failed to run msiexec: {:?}",\n'
@@ -863,6 +944,36 @@ def apply_category_7(zed_dir: Path, *, dry_run: bool = False, release_tag: str =
     else:
         log.info("  [already patched] %s (same-version rebuild check)", auto_update)
 
+    # 7i. Ask before downloading (manual and automatic checks alike)
+    if "Self::zedg_confirm_update(" not in content:
+        pat_dl = (
+            r'(\n)([ \t]*)(this\.update\(cx,\s*\|this,\s*cx\|\s*\{\s*'
+            r'this\.status\s*=\s*AutoUpdateStatus::Downloading\s*\{)'
+        )
+        confirm_block = (
+            "\n        if !Self::zedg_confirm_update(&this, &fetched_release_data, cx).await {\n"
+            "            this.update(cx, |this, cx| {\n"
+            "                this.status = match previous_status {\n"
+            "                    AutoUpdateStatus::Updated { .. } => previous_status,\n"
+            "                    _ => AutoUpdateStatus::Idle,\n"
+            "                };\n"
+            "                cx.notify();\n"
+            "            });\n"
+            "            return Ok(());\n"
+            "        }\n"
+        )
+        new_content = re.sub(
+            pat_dl, lambda m: confirm_block + m.group(1) + m.group(2) + m.group(3),
+            content, count=1,
+        )
+        if new_content == content:
+            log.warning("  Pattern not matched for update confirmation in %s", auto_update)
+        else:
+            content = new_content
+            log.info("  [patched] %s (update confirmation dialog)", auto_update)
+    else:
+        log.info("  [already patched] %s (update confirmation dialog)", auto_update)
+
     # Write all changes at once
     if content != original:
         write_file(auto_update, content, dry_run=dry_run)
@@ -898,6 +1009,107 @@ def apply_category_8(zed_dir: Path, *, dry_run: bool = False) -> None:
         ),
     ]
     apply_replacements(path, replacements, dry_run=dry_run, description="feedback URLs")
+
+
+# ---------------------------------------------------------------------------
+# Category 9: Stable and Preview share one database
+# ---------------------------------------------------------------------------
+
+_DB_SHARED_RS = """/// ZedG: Stable and Preview share one database so projects and workspaces
+/// survive cross-channel updates. Dev/Nightly keep their own.
+struct ZedgSharedDbScope;
+
+impl DbScope for ZedgSharedDbScope {
+    fn scope_name(&self) -> &str {
+        match *RELEASE_CHANNEL {
+            ReleaseChannel::Stable | ReleaseChannel::Preview => "stable",
+            channel => channel.dev_name(),
+        }
+    }
+}
+
+/// One-time: seed the shared database from the old Preview-only one.
+/// Skipped if the shared database already exists; the old directory is kept.
+fn zedg_migrate_legacy_preview_db(db_dir: &Path) {
+    if *ZED_STATELESS
+        || !matches!(
+            *RELEASE_CHANNEL,
+            ReleaseChannel::Stable | ReleaseChannel::Preview
+        )
+    {
+        return;
+    }
+    let shared = db_dir.join("0-stable");
+    let legacy = db_dir.join("0-preview");
+    if shared.exists() || !legacy.is_dir() {
+        return;
+    }
+    let staging = db_dir.join("0-stable.migrating");
+    let result = (|| -> std::io::Result<()> {
+        let _ = std::fs::remove_dir_all(&staging);
+        create_dir_all(&staging)?;
+        for entry in std::fs::read_dir(&legacy)? {
+            let entry = entry?;
+            if entry.file_type()?.is_file() {
+                std::fs::copy(entry.path(), staging.join(entry.file_name()))?;
+            }
+        }
+        std::fs::rename(&staging, &shared)
+    })();
+    if result.is_err() {
+        let _ = std::fs::remove_dir_all(&staging);
+    }
+    result.log_err();
+}
+
+"""
+
+
+def apply_category_9(zed_dir: Path, *, dry_run: bool = False) -> None:
+    """Category 9: Stable and Preview share one database.
+
+    Without this, a cross-channel update (stable <-> preview) opens
+    `db/0-preview` instead of `db/0-stable` and the recent projects /
+    workspace state appear to vanish.
+    """
+    log.info("Category 9: Stable and Preview share one database")
+
+    db_rs = zed_dir / "crates" / "db" / "src" / "db.rs"
+    content = read_file(db_rs)
+    if content is not None:
+        if "ZedgSharedDbScope" in content:
+            log.info("  [already patched] %s", db_rs)
+        else:
+            anchor = "/// A database scope shared across all release channels.\npub struct GlobalDbScope;"
+            call = "let connection = gpui::block_on(open_db::<AppMigrator>(db_dir, *RELEASE_CHANNEL));"
+            if anchor not in content or call not in content:
+                log.warning("  Pattern not matched in %s", db_rs)
+            else:
+                content = content.replace(anchor, _DB_SHARED_RS + anchor, 1)
+                content = content.replace(
+                    call,
+                    "zedg_migrate_legacy_preview_db(db_dir);\n"
+                    "        let connection = gpui::block_on(open_db::<AppMigrator>(db_dir, ZedgSharedDbScope));",
+                    1,
+                )
+                write_file(db_rs, content, dry_run=dry_run)
+                log.info("  [patched] %s", db_rs)
+
+    # The cross-channel thread import must not treat the (now shared) Stable /
+    # Preview databases as another channel's data.
+    thread_import = zed_dir / "crates" / "agent_ui" / "src" / "thread_import.rs"
+    apply_replacements(
+        thread_import,
+        [(
+            "&& *channel != ReleaseChannel::Dev",
+            "&& !matches!(\n"
+            "                        *channel,\n"
+            "                        ReleaseChannel::Dev | ReleaseChannel::Stable | ReleaseChannel::Preview\n"
+            "                    )",
+        )],
+        dry_run=dry_run,
+        description="thread import channels",
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -946,6 +1158,7 @@ def main() -> int:
         apply_category_6,
         apply_category_7,
         apply_category_8,
+        apply_category_9,
     ]
 
     class WarningCounter(logging.Handler):
