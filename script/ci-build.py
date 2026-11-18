@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import io
 import os
+import shlex
 import subprocess
 import sys
 import time
@@ -58,15 +59,33 @@ def main() -> int:
     parser.add_argument("--jobs", type=int, default=4)
     parser.add_argument("--source-dir", default=".", help="Cargo project root")
     parser.add_argument("--retries", type=int, default=1, help="Max build attempts")
+    parser.add_argument(
+        "--zed-rustc-args",
+        default="",
+        help="Extra rustc args for the zed binary only (switches to `cargo rustc`), "
+        "pass as --zed-rustc-args=\"-C ...\"",
+    )
     args = parser.parse_args()
 
     source_dir = Path(args.source_dir).resolve()
     total = count_crates(source_dir)
     print(f"Building {total} crates...", flush=True)
 
-    cmd = ["cargo", "build", "--release", f"--jobs={args.jobs}", "--locked"]
+    cmd = ["cargo"]
+    # 对齐上游打包脚本（script/bundle-*）：zed 自身 crate 用 opt-level="z"，显著减小体积
+    if (source_dir / ".cargo" / "bundle-config.toml").exists():
+        cmd.extend(["--config", ".cargo/bundle-config.toml"])
+    rustc_args = shlex.split(args.zed_rustc_args)
+    if rustc_args:
+        cmd.extend(["rustc", "--package", "zed", "--bin", "zed"])
+    else:
+        cmd.append("build")
+    cmd.extend(["--release", f"--jobs={args.jobs}", "--locked"])
     if args.target:
         cmd.extend(["--target", args.target])
+    if rustc_args:
+        cmd.append("--")
+        cmd.extend(rustc_args)
 
     last_exit = 1
     for attempt in range(1, args.retries + 1):

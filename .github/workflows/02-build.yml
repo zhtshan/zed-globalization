@@ -497,7 +497,7 @@ jobs:
             Write-Host "=== 编译 CLI 辅助二进制 ==="
             # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
             Push-Location D:\z
-            cargo build --release --package cli --locked --manifest-path D:\z\Cargo.toml
+            cargo --config .cargo/bundle-config.toml build --release --package cli --locked --manifest-path D:\z\Cargo.toml
             Pop-Location
           }
 
@@ -853,7 +853,7 @@ jobs:
             Write-Host "=== 编译 CLI 辅助二进制 ==="
             # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
             Push-Location C:\z
-            cargo build --release --package cli --locked --target aarch64-pc-windows-msvc --manifest-path C:\z\Cargo.toml
+            cargo --config .cargo/bundle-config.toml build --release --package cli --locked --target aarch64-pc-windows-msvc --manifest-path C:\z\Cargo.toml
             Pop-Location
           }
 
@@ -1324,7 +1324,7 @@ jobs:
           MONITOR_PID=$!
 
           set +e
-          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --jobs 4
+          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --jobs 4 --zed-rustc-args="-C llvm-args=-addrsig -C link-arg=-Wl,--icf=safe"
           BUILD_EXIT=$?
           set -e
 
@@ -1336,7 +1336,7 @@ jobs:
 
           echo "=== 编译 CLI 辅助二进制 ==="
           # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
+          (cd "$GITHUB_WORKSPACE/zed" && cargo --config .cargo/bundle-config.toml build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -1684,7 +1684,7 @@ jobs:
           MONITOR_PID=$!
 
           set +e
-          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --target aarch64-apple-darwin --jobs 4
+          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --target aarch64-apple-darwin --jobs 4 --zed-rustc-args="-C link-arg=-Wl,-unexported_symbol,__R*"
           BUILD_EXIT=$?
           set -e
 
@@ -1701,7 +1701,7 @@ jobs:
 
           echo "=== 编译 CLI 辅助二进制 ==="
           # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --target aarch64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
+          (cd "$GITHUB_WORKSPACE/zed" && cargo --config .cargo/bundle-config.toml build --release --package cli --target aarch64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -1927,7 +1927,7 @@ jobs:
           MONITOR_PID=$!
 
           set +e
-          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --target x86_64-apple-darwin --jobs 4
+          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --target x86_64-apple-darwin --jobs 4 --zed-rustc-args="-C link-arg=-Wl,-unexported_symbol,__R*"
           BUILD_EXIT=$?
           set -e
 
@@ -1944,7 +1944,7 @@ jobs:
 
           echo "=== 编译 CLI 辅助二进制 ==="
           # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --target x86_64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
+          (cd "$GITHUB_WORKSPACE/zed" && cargo --config .cargo/bundle-config.toml build --release --package cli --target x86_64-apple-darwin --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
@@ -2360,7 +2360,7 @@ jobs:
           MONITOR_PID=$!
 
           set +e
-          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --jobs 4
+          python3 "$GITHUB_WORKSPACE/script/ci-build.py" --source-dir "$GITHUB_WORKSPACE/zed" --jobs 4 --zed-rustc-args="-C llvm-args=-addrsig -C link-arg=-Wl,--icf=safe"
           BUILD_EXIT=$?
           set -e
 
@@ -2372,7 +2372,7 @@ jobs:
 
           echo "=== 编译 CLI 辅助二进制 ==="
           # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-          (cd "$GITHUB_WORKSPACE/zed" && cargo build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
+          (cd "$GITHUB_WORKSPACE/zed" && cargo --config .cargo/bundle-config.toml build --release --package cli --locked --manifest-path "$GITHUB_WORKSPACE/zed/Cargo.toml")
 
       - name: 停止 sccache
         if: env.SCCACHE_AVAILABLE == 'true'
