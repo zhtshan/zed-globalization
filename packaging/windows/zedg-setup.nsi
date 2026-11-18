@@ -20,6 +20,10 @@
 ; 否则 ANSI 模式下中文在英文 CI 编译机 (CP1252) 上被转成 '?'，装出来就是乱码
 Unicode true
 
+; 默认 zlib 压缩：265MB 主程序只能压到 ~89MB；改用固实 LZMA（上游 Inno 同为 lzma+solid）可压到 ~60MB
+SetCompressor /SOLID lzma
+SetCompressorDictSize 64
+
 Name "${APP_NAME}"
 OutFile "..\zedg-setup.exe"
 InstallDir "$LOCALAPPDATA\Programs\ZedG"

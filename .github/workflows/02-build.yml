@@ -1425,7 +1425,7 @@ jobs:
         run: |
           # issue #60: 用 llvm-objcopy（官方做法）替代 GNU objcopy ——
           # 新版 LLVM 产物带 CREL 段，GNU objcopy 在旧 distro(22.04) 不识别会破坏重定位布局。
-          llvm-objcopy --strip-debug --discard-all zed/target/release/zed
+          llvm-objcopy --strip-unneeded zed/target/release/zed  # 对齐上游 bundle-linux:191，去掉静态符号表
           llvm-objcopy --strip-debug --discard-all zed/target/release/cli
 
           # issue #60 自检：确认 .rela.dyn[0] 是 RELATIVE，不是 PLT32
@@ -2460,7 +2460,7 @@ jobs:
       - name: 打包 Linux ARM64
         run: |
           # issue #60: 用 llvm-objcopy（官方做法）替代 GNU objcopy
-          llvm-objcopy --strip-debug --discard-all zed/target/release/zed
+          llvm-objcopy --strip-unneeded zed/target/release/zed  # 对齐上游 bundle-linux:191，去掉静态符号表
           llvm-objcopy --strip-debug --discard-all zed/target/release/cli
 
           # issue #60 自检：确认 .rela.dyn[0] 是 RELATIVE，不是错误的 PLT32 类型
