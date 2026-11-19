@@ -69,17 +69,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # 获取上游最新 stable release
-          STABLE_TAG=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases/latest" \
+          STABLE_TAG=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/zed-industries/zed/releases/latest" \
             | jq -r '.tag_name // empty')
           echo "上游 Stable: ${STABLE_TAG:-无}"
 
           # 获取上游最新 pre-release
-          PRE_TAG=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases" \
+          PRE_TAG=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/zed-industries/zed/releases" \
             | jq -r '[.[] | select(.prerelease==true and .draft==false)][0].tag_name // empty')
           echo "上游 Pre-release: ${PRE_TAG:-无}"
 
           # 获取本地所有 release tag（最近 30 个，用于去重比对）
-          LOCAL_TAGS=$(curl -s "https://api.github.com/repos/${{ github.repository }}/releases?per_page=30" \
+          LOCAL_TAGS=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/releases?per_page=30" \
             | jq -r '.[].tag_name // empty')
           echo "本地最近 tags:"
           echo "$LOCAL_TAGS" | head -5
@@ -117,7 +117,7 @@ jobs:
 
             if [ -n "$INPUT_VER" ]; then
               # 指定了具体版本号
-              REL_JSON=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases/tags/${INPUT_VER}")
+              REL_JSON=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/zed-industries/zed/releases/tags/${INPUT_VER}")
               V=$(echo "$REL_JSON" | jq -r '.tag_name // empty')
               if [ -z "$V" ] || [ "$V" == "null" ]; then
                 echo "::error::上游未找到版本 ${INPUT_VER}，请检查版本号"
@@ -148,7 +148,7 @@ jobs:
 
             else
               # auto：取最新的一个 release（不管类型）
-              LATEST_JSON=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases?per_page=1")
+              LATEST_JSON=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/zed-industries/zed/releases?per_page=1")
               V=$(echo "$LATEST_JSON" | jq -r '.[0].tag_name')
               P=$(echo "$LATEST_JSON" | jq -r '.[0].prerelease')
               echo "手动触发 auto，处理版本: $V (pre-release: $P)"
@@ -162,7 +162,7 @@ jobs:
             for TAG in "$STABLE_TAG" "$PRE_TAG"; do
               [ -z "$TAG" ] && continue
               [ "$TAG" == "null" ] && continue
-              IS_PRE=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases/tags/${TAG}" \
+              IS_PRE=$(curl -s --retry 3 -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/zed-industries/zed/releases/tags/${TAG}" \
                 | jq -r '.prerelease // false')
               INCLUDES=$(echo "$INCLUDES" | jq -c --arg v "$TAG" --arg p "$IS_PRE" \
                 '. + [{"version": $v, "is_prerelease": $p}]')
