@@ -443,14 +443,14 @@ jobs:
             --jq ".artifacts[] | select(.name == \"${CACHE_KEY}\") | .id" 2>/dev/null || true)
           [ -z "$ARTIFACT_ID" ] && echo "⚠ Artifact 不存在或已过期" && exit 0
           echo "下载缓存 Artifact (ID: $ARTIFACT_ID)..."
-          curl -sL \
+          # Windows 上 curl 为原生程序，MSYS_NO_PATHCONV=1 时 /tmp 不会被转换，写入失败（exit 23），改用工作区相对路径
+          curl -sfL \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
-            -o /tmp/sccache-cache.zip
-          unzip -p /tmp/sccache-cache.zip "${CACHE_KEY}.tar.gz" | \
-            tar -xzf - -C /d/ 2>/dev/null || true
-          rm -f /tmp/sccache-cache.zip
+            -o sccache-cache.zip
+          unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /d/
+          rm -f sccache-cache.zip
           echo "✓ 缓存已恢复（Artifact）"
           echo "PREV_ARTIFACT_ID=${ARTIFACT_ID}" >> "$GITHUB_ENV"
           echo "SCCACHE_CACHE_HIT=artifact" >> "$GITHUB_ENV"
@@ -476,6 +476,7 @@ jobs:
         shell: pwsh
         env:
           RELEASE_CHANNEL: stable
+          CARGO_PROFILE_RELEASE_DEBUG: "none"          # 禁用调试信息：PDB 未随包分发，减少链接耗时与内存（避免交换）
         run: |
           # 根据 sccache 可用性决定是否启用缓存
           if ($env:SCCACHE_AVAILABLE -eq "true") {
@@ -801,14 +802,14 @@ jobs:
             --jq ".artifacts[] | select(.name == \"${CACHE_KEY}\") | .id" 2>/dev/null || true)
           [ -z "$ARTIFACT_ID" ] && echo "⚠ Artifact 不存在或已过期" && exit 0
           echo "下载缓存 Artifact (ID: $ARTIFACT_ID)..."
-          curl -sL \
+          # Windows 上 curl 为原生程序，MSYS_NO_PATHCONV=1 时 /tmp 不会被转换，写入失败（exit 23），改用工作区相对路径
+          curl -sfL \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
-            -o /tmp/sccache-cache.zip
-          unzip -p /tmp/sccache-cache.zip "${CACHE_KEY}.tar.gz" | \
-            tar -xzf - -C /c/ 2>/dev/null || true
-          rm -f /tmp/sccache-cache.zip
+            -o sccache-cache.zip
+          unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /c/
+          rm -f sccache-cache.zip
           echo "✓ 缓存已恢复（Artifact）"
           echo "PREV_ARTIFACT_ID=${ARTIFACT_ID}" >> "$GITHUB_ENV"
           echo "SCCACHE_CACHE_HIT=artifact" >> "$GITHUB_ENV"
@@ -834,6 +835,7 @@ jobs:
         shell: pwsh
         env:
           RELEASE_CHANNEL: stable
+          CARGO_PROFILE_RELEASE_DEBUG: "none"          # 禁用调试信息：PDB 未随包分发，减少链接耗时与内存（避免交换）
         run: |
           if ($env:SCCACHE_AVAILABLE -eq "true") {
             $env:RUSTC_WRAPPER = "sccache"
