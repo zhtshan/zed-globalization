@@ -189446,6 +189446,11 @@
         },
         {
             "file": "zed/crates/editor/src/split.rs",
+            "original": "lhs display map should be released with the split editor",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/editor/src/split.rs",
             "original": "lhs display snapshot companion should point to rhs display map",
             "reason": "rule:test_assertion"
         },
@@ -189463,6 +189468,11 @@
             "file": "zed/crates/editor/src/split.rs",
             "original": "line {i}",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/editor/src/split.rs",
+            "original": "line {row}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/editor/src/split.rs",
@@ -189583,6 +189593,11 @@
             "file": "zed/crates/editor/src/split.rs",
             "original": "rhs display snapshot should not have a companion when unsplit",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/editor/src/split.rs",
+            "original": "rhs editor should keep its scroll position after the split editor is released",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/editor/src/split.rs",
@@ -217611,6 +217626,16 @@
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "b.bin",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "b.bin should be folded",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "b.txt",
             "reason": "ai:translate-empty"
         },
@@ -217683,6 +217708,11 @@
             "file": "zed/crates/git_ui/src/commit_view.rs",
             "original": "flake.lock @ abc1234",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/git_ui/src/commit_view.rs",
+            "original": "folded header is at row {}, but the scroll position is {}",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/git_ui/src/commit_view.rs",
@@ -275096,6 +275126,11 @@
         },
         {
             "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
+            "original": "/models/sse",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
             "original": "/props",
             "reason": "rule:path"
         },
@@ -275208,6 +275243,11 @@
             "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
             "original": "encrypted",
             "reason": "ai:serialization"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
+            "original": "http://localhost:9999",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
@@ -275415,6 +275455,11 @@
             "reason": "ai:translate-empty"
         },
         {
+            "file": "zed/crates/language_models/src/provider/llama_cpp.rs",
+            "original": "}}]}",
+            "reason": "ai:translate-empty"
+        },
+        {
             "file": "zed/crates/language_models/src/provider/lmstudio.rs",
             "original": "",
             "reason": "rule:empty_string"
@@ -275542,6 +275587,11 @@
         {
             "file": "zed/crates/language_models/src/provider/lmstudio.rs",
             "original": "stored-model",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models/src/provider/lmstudio.rs",
+            "original": "test-model",
             "reason": "ai:translate-empty"
         },
         {
@@ -349948,6 +349998,11 @@
             "file": "zed/crates/project/tests/integration/search.rs",
             "original": "x",
             "reason": "rule:test_assertion"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/search.rs",
+            "original": "x\\naaa",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/search.rs",
@@ -443376,6 +443431,11 @@
         },
         {
             "file": "zed/crates/vim/src/helix.rs",
+            "original": "\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
             "original": "]",
             "reason": "rule:punctuation"
         },
@@ -443673,6 +443733,11 @@
             "file": "zed/crates/vim/src/helix.rs",
             "original": "dd",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "deleted",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/helix.rs",
@@ -444453,6 +444518,11 @@
             "file": "zed/crates/vim/src/helix.rs",
             "original": "search_in_selection",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/vim/src/helix.rs",
+            "original": "second\\n",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/helix.rs",
@@ -451823,6 +451893,11 @@
             "file": "zed/crates/vim/src/normal/search.rs",
             "original": ": 2 , 5 s / a / b",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/vim/src/normal/search.rs",
+            "original": ": s / a / b",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/vim/src/normal/search.rs",
