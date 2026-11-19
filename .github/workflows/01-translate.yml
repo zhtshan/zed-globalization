@@ -51,6 +51,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: read
 
 env:
   ZED_REPO: https://github.com/zed-industries/zed.git
@@ -64,6 +65,8 @@ jobs:
       has_update: ${{ steps.check.outputs.has_update }}
     steps:
       - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           # 获取上游最新 stable release
           STABLE_TAG=$(curl -s "https://api.github.com/repos/zed-industries/zed/releases/latest" \
@@ -92,6 +95,17 @@ jobs:
                 return 0
               fi
             done <<< "$LOCAL_TAGS"
+            # 同版本的 02 构建仍在运行/排队（Release 尚未创建）也视为已处理，避免重复派发
+            # run-name 形如 "02 构建发行 v0.222.4"；查询失败时按未构建处理
+            local titles
+            # 不按单一 status 过滤：并发组里排队的 run 可能是 pending/waiting/queued，统一取"未完成"
+            titles=$(gh run list --repo "${{ github.repository }}" --workflow 02-build.yml --limit 30 \
+              --json displayTitle,status \
+              --jq '.[] | select(.status != "completed") | .displayTitle' 2>/dev/null) || true
+            if grep -qxF "02 构建发行 $upstream" <<< "$titles"; then
+              echo "$upstream 已有 02 构建在运行或排队" >&2
+              return 0
+            fi
             return 1
           }
 

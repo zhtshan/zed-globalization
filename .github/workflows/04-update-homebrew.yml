@@ -1,10 +1,6 @@
 name: 04 更新 Homebrew Cask
 
 on:
-  workflow_run:
-    workflows: ["02 构建发行"]
-    types: [completed]
-
   release:
     types: [published]
 
@@ -31,8 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'release' ||
-      github.event.workflow_run.conclusion == 'success'
+      github.event_name == 'release'
     steps:
       - name: 确定目标版本号
         run: |

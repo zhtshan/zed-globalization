@@ -1,5 +1,8 @@
 name: 02 构建发行
 
+# 运行名带上版本号，供 01 派发前识别“同版本已在构建/排队”
+run-name: 02 构建发行 ${{ github.event.client_payload.version || inputs.version || '' }}
+
 on:
   # 由 translate 链式触发
   repository_dispatch:
@@ -251,7 +254,7 @@ jobs:
         run: python3 patch_agent_env.py --source-root zed
 
       - name: 安装编译依赖
-        if: ${{ inputs.skip_check != true }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_check != true }}
         run: |
           sudo apt update
           sudo apt install -y build-essential pkg-config libasound2-dev \
@@ -264,11 +267,11 @@ jobs:
             libssl-dev libudev-dev libclang-dev clang cmake
 
       - name: 安装 Rust
-        if: ${{ inputs.skip_check != true }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_check != true }}
         uses: dtolnay/rust-toolchain@stable
 
       - name: 编译检查
-        if: ${{ inputs.skip_check != true }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_check != true }}
         env:
           RUSTC_WRAPPER: ""
         run: |
