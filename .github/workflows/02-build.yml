@@ -924,10 +924,11 @@ jobs:
         shell: bash
         run: |
           CACHE_KEY="sccache-windows-aarch64"
+          # ARM64 job 的 SCCACHE_DIR/CARGO_HOME 在 C:\cc（非 x64 的 D:\c），与恢复步骤的 -C /c/ 对应
           tar -czf "${CACHE_KEY}.tar.gz" \
             --ignore-failed-read \
-            -C /d \
-            c/sccache c/registry c/git 2>/dev/null || true
+            -C /c \
+            cc/sccache cc/registry cc/git 2>/dev/null || true
           echo "缓存归档大小: $(du -sh ${CACHE_KEY}.tar.gz | cut -f1)"
 
       - name: 上传 sccache 缓存 Artifact
