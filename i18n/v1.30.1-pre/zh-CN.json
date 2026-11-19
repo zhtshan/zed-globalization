@@ -118729,7 +118729,12 @@
         "def main(command, *args):": "",
         "connected and responsive": "",
         "early connect is cancelled when its execution ends": "",
-        "event loop progresses before the host connection is approved": ""
+        "event loop progresses before the host connection is approved": "",
+        "echo x > \\\"$TMPDIR/{file}\\\" && cat \\\"$TMPDIR/{file}\\\"": "",
+        "CapEff:\\t0000000000000000\\\" in status, status'": "",
+        "unix-server \\\"$TMPDIR/{file}\\\"": "",
+        "'\\\\''": "",
+        "for tool in python3 unshare cat chmod cp grep kill ln ls mkdir mv rm sleep stat truncate; do command -v \\\"$tool\\\" >/dev/null || exit 1; done": ""
     },
     "zed/crates/sandbox_linux/examples/run.rs": {
         "linux": "",

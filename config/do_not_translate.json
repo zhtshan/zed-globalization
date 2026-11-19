@@ -385361,6 +385361,11 @@
         },
         {
             "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
+            "original": "'\\\\''",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
             "original": "'{}'",
             "reason": "ai:translate-empty"
         },
@@ -385527,6 +385532,11 @@
         {
             "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
             "original": "API_KEY=hunter2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
+            "original": "CapEff:\\t0000000000000000\\\" in status, status'",
             "reason": "ai:translate-empty"
         },
         {
@@ -385961,6 +385971,11 @@
         },
         {
             "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
+            "original": "echo x > \\\"$TMPDIR/{file}\\\" && cat \\\"$TMPDIR/{file}\\\"",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
             "original": "echo x > after-narrowing.txt",
             "reason": "ai:translate-empty"
         },
@@ -386042,6 +386057,11 @@
         {
             "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
             "original": "flags = {flags}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
+            "original": "for tool in python3 unshare cat chmod cp grep kill ln ls mkdir mv rm sleep stat truncate; do command -v \\\"$tool\\\" >/dev/null || exit 1; done",
             "reason": "ai:translate-empty"
         },
         {
@@ -386787,6 +386807,11 @@
         {
             "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
             "original": "unix-server @{name}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox_linux/examples/end_to_end.rs",
+            "original": "unix-server \\\"$TMPDIR/{file}\\\"",
             "reason": "ai:translate-empty"
         },
         {
