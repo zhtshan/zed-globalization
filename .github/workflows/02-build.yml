@@ -278,6 +278,17 @@ jobs:
           cd zed
           cargo check 2>&1 | tail -5
 
+      # 补丁/品牌重命名会给 Cargo.toml 增加依赖（如 auto_update → github_releases），
+      # 而各平台构建带 --locked，Cargo.lock 必须同步。此前这由 cargo check 顺带完成，
+      # 链式触发跳过 cargo check 后需单独刷新；metadata 只解析依赖，不编译。
+      - name: 同步 Cargo.lock
+        env:
+          RUSTC_WRAPPER: ""
+        run: |
+          cd zed
+          cargo metadata --format-version 1 > /dev/null
+          git diff --stat -- Cargo.lock | tail -1
+
       - name: 生成本地化补丁
         run: |
           cd zed
