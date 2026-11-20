@@ -505,16 +505,9 @@ jobs:
               }
           }
 
-          python3 "$env:GITHUB_WORKSPACE\script\ci-build.py" --source-dir D:\z --jobs 4 --retries 3
+          # zed 与 cli 同一次 cargo 调用编译（对齐上游 bundle-windows.ps1），共享依赖只编一次
+          python3 "$env:GITHUB_WORKSPACE\script\ci-build.py" --source-dir D:\z --jobs 4 --retries 3 --with-cli
           $buildExit = $LASTEXITCODE
-
-          if ($buildExit -eq 0) {
-            Write-Host "=== 编译 CLI 辅助二进制 ==="
-            # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-            Push-Location D:\z
-            cargo --config .cargo/bundle-config.toml build --release --package cli --locked --manifest-path D:\z\Cargo.toml
-            Pop-Location
-          }
 
           # 停止监控并输出摘要
           Stop-Job $monitorJob; Remove-Job $monitorJob
@@ -862,16 +855,9 @@ jobs:
               }
           }
 
-          python3 "$env:GITHUB_WORKSPACE\script\ci-build.py" --source-dir C:\z --target aarch64-pc-windows-msvc --jobs 4 --retries 3
+          # zed 与 cli 同一次 cargo 调用编译（对齐上游 bundle-windows.ps1），共享依赖只编一次
+          python3 "$env:GITHUB_WORKSPACE\script\ci-build.py" --source-dir C:\z --target aarch64-pc-windows-msvc --jobs 4 --retries 3 --with-cli
           $buildExit = $LASTEXITCODE
-
-          if ($buildExit -eq 0) {
-            Write-Host "=== 编译 CLI 辅助二进制 ==="
-            # 在源码目录执行，使 rustup 读取上游 rust-toolchain.toml，避免落到 runner 的 stable 工具链
-            Push-Location C:\z
-            cargo --config .cargo/bundle-config.toml build --release --package cli --locked --target aarch64-pc-windows-msvc --manifest-path C:\z\Cargo.toml
-            Pop-Location
-          }
 
           Stop-Job $monitorJob; Remove-Job $monitorJob
           Write-Host "===== 内存监控摘要 ====="

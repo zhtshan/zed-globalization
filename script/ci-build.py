@@ -65,7 +65,15 @@ def main() -> int:
         help="Extra rustc args for the zed binary only (switches to `cargo rustc`), "
         "pass as --zed-rustc-args=\"-C ...\"",
     )
+    parser.add_argument(
+        "--with-cli",
+        action="store_true",
+        help="Build zed and cli in one cargo invocation (aligns with upstream bundle-windows.ps1), "
+        "so shared deps are compiled once; incompatible with --zed-rustc-args",
+    )
     args = parser.parse_args()
+    if args.with_cli and args.zed_rustc_args:
+        parser.error("--with-cli cannot be combined with --zed-rustc-args")
 
     source_dir = Path(args.source_dir).resolve()
     total = count_crates(source_dir)
@@ -80,6 +88,8 @@ def main() -> int:
         cmd.extend(["rustc", "--package", "zed", "--bin", "zed"])
     else:
         cmd.append("build")
+        if args.with_cli:
+            cmd.extend(["--package", "zed", "--package", "cli"])
     cmd.extend(["--release", f"--jobs={args.jobs}", "--locked"])
     if args.target:
         cmd.extend(["--target", args.target])
