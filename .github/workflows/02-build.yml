@@ -449,7 +449,12 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
             -o sccache-cache.zip
-          unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /d/
+          # 新格式为不压缩 .tar（sccache 条目本身已压缩），兼容旧的 .tar.gz
+          if unzip -l sccache-cache.zip "${CACHE_KEY}.tar" >/dev/null 2>&1; then
+            unzip -p sccache-cache.zip "${CACHE_KEY}.tar" | tar -xf - -C /d/
+          else
+            unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /d/
+          fi
           rm -f sccache-cache.zip
           echo "✓ 缓存已恢复（Artifact）"
           echo "PREV_ARTIFACT_ID=${ARTIFACT_ID}" >> "$GITHUB_ENV"
@@ -468,11 +473,18 @@ jobs:
 
       - name: 启动 sccache server
         if: env.SCCACHE_AVAILABLE == 'true'
+        env:
+          # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
+          SCCACHE_LOG: sccache::compiler=debug
+          SCCACHE_ERROR_LOG: D:\sccache.log
         run: |
+          # 时间戳标记：本次命中或新写入的缓存条目 mtime 会晚于它，用于构建后清理过期条目
+          New-Item -ItemType File -Force D:\sccache-start.marker | Out-Null
           sccache --start-server
           sccache --zero-stats
 
       - name: 构建 Release (带重试)
+        id: build
         shell: pwsh
         env:
           RELEASE_CHANNEL: stable
@@ -556,16 +568,52 @@ jobs:
           Write-Host ""
           sccache --stop-server || $true
 
+          # 未命中 crate 汇总（完整日志见 sccache-log-windows-x86_64 artifact，可跨次 diff）
+          $logFile = "D:\sccache.log"
+          if (Test-Path $logFile) {
+              $missLines = Select-String -Path $logFile -Pattern "Cache miss" -SimpleMatch
+              Write-Host "日志中 Cache miss 记录: $($missLines.Count) 条"
+              $missLines | ForEach-Object { if ($_.Line -match '\[([^\]]+)\]') { $Matches[1] } } |
+                  Sort-Object -Unique | Set-Content "D:\sccache-misses.txt"
+              Write-Host "===== 未命中 crate 列表 ====="
+              Get-Content "D:\sccache-misses.txt" | Write-Host
+          } else {
+              Write-Host "⚠ 未生成 sccache 日志: $logFile"
+          }
+
+      - name: 上传 sccache 诊断日志
+        if: always() && env.SCCACHE_AVAILABLE == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: sccache-log-windows-x86_64
+          path: |
+            D:\sccache.log
+            D:\sccache-misses.txt
+          retention-days: 14
+          if-no-files-found: ignore
+
       - name: 打包 sccache 缓存
         if: always() && env.SCCACHE_AVAILABLE == 'true'
         shell: bash
         run: |
           CACHE_KEY="sccache-windows-x86_64"
-          tar -czf "${CACHE_KEY}.tar.gz" \
+          # 清理本次构建未访问的条目（sccache 命中时会刷新文件 mtime），去掉调试信息关闭前等残留的无效缓存
+          # 仅在构建成功时执行，避免失败/中断时误删尚未访问到的有效条目
+          if [ "${{ steps.build.outcome }}" = "success" ] && [ -f /d/sccache-start.marker ]; then
+            echo "清理前缓存大小: $(du -sh /d/c/sccache | cut -f1)"
+            /usr/bin/find /d/c/sccache -type f ! -newer /d/sccache-start.marker -delete
+            echo "清理后缓存大小: $(du -sh /d/c/sccache | cut -f1)"
+          fi
+          # 不压缩：sccache 条目本身已压缩，gzip 只耗 CPU 时间
+          # 排除 registry/src、git/checkouts：cargo 会从 registry/cache、git/db 自动重建
+          tar -cf "${CACHE_KEY}.tar" \
             --ignore-failed-read \
+            --exclude="c/registry/src" \
+            --exclude="c/git/checkouts" \
             -C /d \
             c/sccache c/registry c/git 2>/dev/null || true
-          echo "缓存归档大小: $(du -sh ${CACHE_KEY}.tar.gz | cut -f1)"
+          echo "缓存归档大小: $(du -sh ${CACHE_KEY}.tar | cut -f1)"
 
       - name: 上传 sccache 缓存 Artifact
         id: upload_artifact
@@ -573,8 +621,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sccache-windows-x86_64
-          path: sccache-windows-x86_64.tar.gz
+          path: sccache-windows-x86_64.tar
           retention-days: 30
+          compression-level: 0
 
       - name: 更新缓存索引
         if: always() && env.SCCACHE_AVAILABLE == 'true' && steps.upload_artifact.outcome == 'success'
@@ -801,7 +850,12 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
             -o sccache-cache.zip
-          unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /c/
+          # 新格式为不压缩 .tar（sccache 条目本身已压缩），兼容旧的 .tar.gz
+          if unzip -l sccache-cache.zip "${CACHE_KEY}.tar" >/dev/null 2>&1; then
+            unzip -p sccache-cache.zip "${CACHE_KEY}.tar" | tar -xf - -C /c/
+          else
+            unzip -p sccache-cache.zip "${CACHE_KEY}.tar.gz" | tar -xzf - -C /c/
+          fi
           rm -f sccache-cache.zip
           echo "✓ 缓存已恢复（Artifact）"
           echo "PREV_ARTIFACT_ID=${ARTIFACT_ID}" >> "$GITHUB_ENV"
@@ -820,6 +874,10 @@ jobs:
 
       - name: 启动 sccache server
         if: env.SCCACHE_AVAILABLE == 'true'
+        env:
+          # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
+          SCCACHE_LOG: sccache::compiler=debug
+          SCCACHE_ERROR_LOG: C:\sccache.log
         run: |
           sccache --start-server
           sccache --zero-stats
@@ -905,17 +963,46 @@ jobs:
           Write-Host ""
           sccache --stop-server || $true
 
+          # 未命中 crate 汇总（完整日志见 sccache-log-windows-aarch64 artifact，可跨次 diff）
+          $logFile = "C:\sccache.log"
+          if (Test-Path $logFile) {
+              $missLines = Select-String -Path $logFile -Pattern "Cache miss" -SimpleMatch
+              Write-Host "日志中 Cache miss 记录: $($missLines.Count) 条"
+              $missLines | ForEach-Object { if ($_.Line -match '\[([^\]]+)\]') { $Matches[1] } } |
+                  Sort-Object -Unique | Set-Content "C:\sccache-misses.txt"
+              Write-Host "===== 未命中 crate 列表 ====="
+              Get-Content "C:\sccache-misses.txt" | Write-Host
+          } else {
+              Write-Host "⚠ 未生成 sccache 日志: $logFile"
+          }
+
+      - name: 上传 sccache 诊断日志
+        if: always() && env.SCCACHE_AVAILABLE == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: sccache-log-windows-aarch64
+          path: |
+            C:\sccache.log
+            C:\sccache-misses.txt
+          retention-days: 14
+          if-no-files-found: ignore
+
       - name: 打包 sccache 缓存
         if: always() && env.SCCACHE_AVAILABLE == 'true'
         shell: bash
         run: |
           CACHE_KEY="sccache-windows-aarch64"
           # ARM64 job 的 SCCACHE_DIR/CARGO_HOME 在 C:\cc（非 x64 的 D:\c），与恢复步骤的 -C /c/ 对应
-          tar -czf "${CACHE_KEY}.tar.gz" \
+          # 不压缩：sccache 条目本身已压缩，gzip 只耗 CPU 时间
+          # 排除 registry/src、git/checkouts：cargo 会从 registry/cache、git/db 自动重建
+          tar -cf "${CACHE_KEY}.tar" \
             --ignore-failed-read \
+            --exclude="cc/registry/src" \
+            --exclude="cc/git/checkouts" \
             -C /c \
             cc/sccache cc/registry cc/git 2>/dev/null || true
-          echo "缓存归档大小: $(du -sh ${CACHE_KEY}.tar.gz | cut -f1)"
+          echo "缓存归档大小: $(du -sh ${CACHE_KEY}.tar | cut -f1)"
 
       - name: 上传 sccache 缓存 Artifact
         id: upload_artifact
@@ -923,8 +1010,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sccache-windows-aarch64
-          path: sccache-windows-aarch64.tar.gz
+          path: sccache-windows-aarch64.tar
           retention-days: 30
+          compression-level: 0
 
       - name: 更新缓存索引
         if: always() && env.SCCACHE_AVAILABLE == 'true' && steps.upload_artifact.outcome == 'success'
