@@ -280821,6 +280821,11 @@
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "Preserve implementation details.",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "Received an error from the OpenAI API: internal server error",
             "reason": "rule:test_assertion"
         },
@@ -281023,6 +281028,11 @@
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
             "original": "deserialize_optional_status_code",
             "reason": "rule:identifier"
+        },
+        {
+            "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
+            "original": "developer",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/language_models_cloud/src/language_models_cloud.rs",
@@ -391623,6 +391633,21 @@
             "file": "zed/crates/search/src/text_finder/delegate.rs",
             "original": "/dir",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/search/src/text_finder/delegate.rs",
+            "original": "Banana",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/search/src/text_finder/delegate.rs",
+            "original": "Fruits – Banana, Apple, Mango",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/search/src/text_finder/delegate.rs",
+            "original": "Pear",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/search/src/text_finder/delegate.rs",
