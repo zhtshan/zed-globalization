@@ -473,13 +473,7 @@ jobs:
 
       - name: 启动 sccache server
         if: env.SCCACHE_AVAILABLE == 'true'
-        env:
-          # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
-          SCCACHE_LOG: sccache::compiler=debug
-          # 放在工作区内：upload-artifact 无法上传盘符根目录下的文件
-          SCCACHE_ERROR_LOG: ${{ github.workspace }}\sccache-diag\sccache.log
         run: |
-          New-Item -ItemType Directory -Force "$env:GITHUB_WORKSPACE\sccache-diag" | Out-Null
           # 时间戳标记：本次命中或新写入的缓存条目 mtime 会晚于它，用于构建后清理过期条目
           New-Item -ItemType File -Force D:\sccache-start.marker | Out-Null
           sccache --start-server
@@ -569,33 +563,6 @@ jobs:
           Write-Host "========================================="
           Write-Host ""
           sccache --stop-server || $true
-
-          # 未命中 crate 汇总（完整日志见 sccache-log-windows-x86_64 artifact，可跨次 diff）
-          $logFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache.log"
-          $missFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache-misses.txt"
-          if (Test-Path $logFile) {
-              # 日志带 ANSI 颜色码，先去掉再匹配 "[<crate>]: Cache miss in ..."
-              $misses = @(Get-Content $logFile |
-                  ForEach-Object { $_ -replace "\x1b\[[0-9;]*m", "" } |
-                  ForEach-Object { if ($_ -match '\[([^\]]+)\]: Cache miss') { $Matches[1] } })
-              Write-Host "日志中 Cache miss 记录: $($misses.Count) 条"
-              # 先 join 成单个字符串再写入：全部命中时也会生成（空）文件，避免后续 Get-Content 报错
-              (($misses | Sort-Object -Unique) -join "`n") | Set-Content $missFile
-              Write-Host "===== 未命中 crate 列表 ====="
-              Get-Content $missFile | Write-Host
-          } else {
-              Write-Host "⚠ 未生成 sccache 日志: $logFile"
-          }
-
-      - name: 上传 sccache 诊断日志
-        if: always() && env.SCCACHE_AVAILABLE == 'true'
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: sccache-log-windows-x86_64
-          path: sccache-diag/
-          retention-days: 14
-          if-no-files-found: ignore
 
       - name: 打包 sccache 缓存
         if: always() && env.SCCACHE_AVAILABLE == 'true'
@@ -879,13 +846,7 @@ jobs:
 
       - name: 启动 sccache server
         if: env.SCCACHE_AVAILABLE == 'true'
-        env:
-          # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
-          SCCACHE_LOG: sccache::compiler=debug
-          # 放在工作区内：upload-artifact 无法上传盘符根目录下的文件
-          SCCACHE_ERROR_LOG: ${{ github.workspace }}\sccache-diag\sccache.log
         run: |
-          New-Item -ItemType Directory -Force "$env:GITHUB_WORKSPACE\sccache-diag" | Out-Null
           sccache --start-server
           sccache --zero-stats
 
@@ -969,33 +930,6 @@ jobs:
           Write-Host "========================================="
           Write-Host ""
           sccache --stop-server || $true
-
-          # 未命中 crate 汇总（完整日志见 sccache-log-windows-aarch64 artifact，可跨次 diff）
-          $logFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache.log"
-          $missFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache-misses.txt"
-          if (Test-Path $logFile) {
-              # 日志带 ANSI 颜色码，先去掉再匹配 "[<crate>]: Cache miss in ..."
-              $misses = @(Get-Content $logFile |
-                  ForEach-Object { $_ -replace "\x1b\[[0-9;]*m", "" } |
-                  ForEach-Object { if ($_ -match '\[([^\]]+)\]: Cache miss') { $Matches[1] } })
-              Write-Host "日志中 Cache miss 记录: $($misses.Count) 条"
-              # 先 join 成单个字符串再写入：全部命中时也会生成（空）文件，避免后续 Get-Content 报错
-              (($misses | Sort-Object -Unique) -join "`n") | Set-Content $missFile
-              Write-Host "===== 未命中 crate 列表 ====="
-              Get-Content $missFile | Write-Host
-          } else {
-              Write-Host "⚠ 未生成 sccache 日志: $logFile"
-          }
-
-      - name: 上传 sccache 诊断日志
-        if: always() && env.SCCACHE_AVAILABLE == 'true'
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: sccache-log-windows-aarch64
-          path: sccache-diag/
-          retention-days: 14
-          if-no-files-found: ignore
 
       - name: 打包 sccache 缓存
         if: always() && env.SCCACHE_AVAILABLE == 'true'
