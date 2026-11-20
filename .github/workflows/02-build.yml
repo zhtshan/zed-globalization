@@ -476,8 +476,10 @@ jobs:
         env:
           # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
           SCCACHE_LOG: sccache::compiler=debug
-          SCCACHE_ERROR_LOG: D:\sccache.log
+          # 放在工作区内：upload-artifact 无法上传盘符根目录下的文件
+          SCCACHE_ERROR_LOG: ${{ github.workspace }}\sccache-diag\sccache.log
         run: |
+          New-Item -ItemType Directory -Force "$env:GITHUB_WORKSPACE\sccache-diag" | Out-Null
           # 时间戳标记：本次命中或新写入的缓存条目 mtime 会晚于它，用于构建后清理过期条目
           New-Item -ItemType File -Force D:\sccache-start.marker | Out-Null
           sccache --start-server
@@ -569,14 +571,18 @@ jobs:
           sccache --stop-server || $true
 
           # 未命中 crate 汇总（完整日志见 sccache-log-windows-x86_64 artifact，可跨次 diff）
-          $logFile = "D:\sccache.log"
+          $logFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache.log"
+          $missFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache-misses.txt"
           if (Test-Path $logFile) {
-              $missLines = Select-String -Path $logFile -Pattern "Cache miss" -SimpleMatch
-              Write-Host "日志中 Cache miss 记录: $($missLines.Count) 条"
-              $missLines | ForEach-Object { if ($_.Line -match '\[([^\]]+)\]') { $Matches[1] } } |
-                  Sort-Object -Unique | Set-Content "D:\sccache-misses.txt"
+              # 日志带 ANSI 颜色码，先去掉再匹配 "[<crate>]: Cache miss in ..."
+              $misses = @(Get-Content $logFile |
+                  ForEach-Object { $_ -replace "\x1b\[[0-9;]*m", "" } |
+                  ForEach-Object { if ($_ -match '\[([^\]]+)\]: Cache miss') { $Matches[1] } })
+              Write-Host "日志中 Cache miss 记录: $($misses.Count) 条"
+              # 先 join 成单个字符串再写入：全部命中时也会生成（空）文件，避免后续 Get-Content 报错
+              (($misses | Sort-Object -Unique) -join "`n") | Set-Content $missFile
               Write-Host "===== 未命中 crate 列表 ====="
-              Get-Content "D:\sccache-misses.txt" | Write-Host
+              Get-Content $missFile | Write-Host
           } else {
               Write-Host "⚠ 未生成 sccache 日志: $logFile"
           }
@@ -587,9 +593,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sccache-log-windows-x86_64
-          path: |
-            D:\sccache.log
-            D:\sccache-misses.txt
+          path: sccache-diag/
           retention-days: 14
           if-no-files-found: ignore
 
@@ -601,9 +605,10 @@ jobs:
           # 清理本次构建未访问的条目（sccache 命中时会刷新文件 mtime），去掉调试信息关闭前等残留的无效缓存
           # 仅在构建成功时执行，避免失败/中断时误删尚未访问到的有效条目
           if [ "${{ steps.build.outcome }}" = "success" ] && [ -f /d/sccache-start.marker ]; then
-            echo "清理前缓存大小: $(du -sh /d/c/sccache | cut -f1)"
-            /usr/bin/find /d/c/sccache -type f ! -newer /d/sccache-start.marker -delete
-            echo "清理后缓存大小: $(du -sh /d/c/sccache | cut -f1)"
+            echo "清理前缓存: $(du -sh /d/c/sccache | cut -f1)，$(/usr/bin/find /d/c/sccache -type f | wc -l) 个文件"
+            /usr/bin/find /d/c/sccache -type f ! -newer /d/sccache-start.marker -delete || true
+            # 保留文件数应约等于 命中数 + 未命中数（命中刷新 mtime、未命中新写入），可据此验证清理前提
+            echo "清理后缓存: $(du -sh /d/c/sccache | cut -f1)，$(/usr/bin/find /d/c/sccache -type f | wc -l) 个文件"
           fi
           # 不压缩：sccache 条目本身已压缩，gzip 只耗 CPU 时间
           # 排除 registry/src、git/checkouts：cargo 会从 registry/cache、git/db 自动重建
@@ -877,8 +882,10 @@ jobs:
         env:
           # 诊断源码未变却持续未命中的 crate：记录每次编译的命中/未命中
           SCCACHE_LOG: sccache::compiler=debug
-          SCCACHE_ERROR_LOG: C:\sccache.log
+          # 放在工作区内：upload-artifact 无法上传盘符根目录下的文件
+          SCCACHE_ERROR_LOG: ${{ github.workspace }}\sccache-diag\sccache.log
         run: |
+          New-Item -ItemType Directory -Force "$env:GITHUB_WORKSPACE\sccache-diag" | Out-Null
           sccache --start-server
           sccache --zero-stats
 
@@ -964,14 +971,18 @@ jobs:
           sccache --stop-server || $true
 
           # 未命中 crate 汇总（完整日志见 sccache-log-windows-aarch64 artifact，可跨次 diff）
-          $logFile = "C:\sccache.log"
+          $logFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache.log"
+          $missFile = "$env:GITHUB_WORKSPACE\sccache-diag\sccache-misses.txt"
           if (Test-Path $logFile) {
-              $missLines = Select-String -Path $logFile -Pattern "Cache miss" -SimpleMatch
-              Write-Host "日志中 Cache miss 记录: $($missLines.Count) 条"
-              $missLines | ForEach-Object { if ($_.Line -match '\[([^\]]+)\]') { $Matches[1] } } |
-                  Sort-Object -Unique | Set-Content "C:\sccache-misses.txt"
+              # 日志带 ANSI 颜色码，先去掉再匹配 "[<crate>]: Cache miss in ..."
+              $misses = @(Get-Content $logFile |
+                  ForEach-Object { $_ -replace "\x1b\[[0-9;]*m", "" } |
+                  ForEach-Object { if ($_ -match '\[([^\]]+)\]: Cache miss') { $Matches[1] } })
+              Write-Host "日志中 Cache miss 记录: $($misses.Count) 条"
+              # 先 join 成单个字符串再写入：全部命中时也会生成（空）文件，避免后续 Get-Content 报错
+              (($misses | Sort-Object -Unique) -join "`n") | Set-Content $missFile
               Write-Host "===== 未命中 crate 列表 ====="
-              Get-Content "C:\sccache-misses.txt" | Write-Host
+              Get-Content $missFile | Write-Host
           } else {
               Write-Host "⚠ 未生成 sccache 日志: $logFile"
           }
@@ -982,9 +993,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sccache-log-windows-aarch64
-          path: |
-            C:\sccache.log
-            C:\sccache-misses.txt
+          path: sccache-diag/
           retention-days: 14
           if-no-files-found: ignore
 
