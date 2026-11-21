@@ -52,6 +52,7 @@ jobs:
           EVENT_TAG: ${{ github.event.release.tag_name }}
           EVENT_IS_PRE: ${{ github.event.release.prerelease }}
           SCOOP_PAT: ${{ secrets.TAP_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -e
           BUCKET_REPO="https://x-access-token:${SCOOP_PAT}@github.com/${{ github.repository_owner }}/scoop-zedg.git"
@@ -60,9 +61,13 @@ jobs:
           fetch_assets() {
             local tag="$1" i json
             for i in $(seq 1 20); do
-              json=$(curl -s "https://api.github.com/repos/${GH_REPO}/releases/tags/$tag")
-              ASSET_X64=$(echo "$json" | jq -r '.assets[]|select(.name|test("windows-x86_64.*\\.zip"))|.browser_download_url')
-              ASSET_ARM64=$(echo "$json" | jq -r '.assets[]|select(.name|test("windows-aarch64.*\\.zip"))|.browser_download_url')
+              # 带 token 查询；刚发布的 Release 可能短暂查不到，失败时继续重试而不是让 jq 报错退出
+              if ! json=$(gh api "repos/${GH_REPO}/releases/tags/$tag" 2>/tmp/gh_err); then
+                echo "[$i/20] 查询 $tag 失败: $(cat /tmp/gh_err)"
+                json='{}'
+              fi
+              ASSET_X64=$(echo "$json" | jq -r '(.assets // [])[]|select(.name|test("windows-x86_64.*\\.zip"))|.browser_download_url')
+              ASSET_ARM64=$(echo "$json" | jq -r '(.assets // [])[]|select(.name|test("windows-aarch64.*\\.zip"))|.browser_download_url')
               [ -n "$ASSET_X64" ] && [ "$ASSET_X64" != "null" ] && return 0
               echo "[$i/20] $tag 产物未就绪，等待 15s..."; sleep 15
             done
