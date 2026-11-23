@@ -142501,6 +142501,11 @@
         },
         {
             "file": "zed/crates/edit_prediction/src/ollama.rs",
+            "original": "untitled",
+            "reason": "ai:api_identifier"
+        },
+        {
+            "file": "zed/crates/edit_prediction/src/ollama.rs",
             "original": "zeta",
             "reason": "ai:api_identifier"
         },
