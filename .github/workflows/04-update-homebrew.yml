@@ -62,33 +62,41 @@ jobs:
             RELEASE_JSON=$(curl -s "https://api.github.com/repos/${{ github.repository }}/releases/tags/$TAG")
             URL_ARM=$(echo "$RELEASE_JSON" | jq -r '.assets[] | select(.name | test("macos-aarch64.*\\.dmg")) | .browser_download_url' | head -1)
             URL_X86=$(echo "$RELEASE_JSON" | jq -r '.assets[] | select(.name | test("macos-x86_64.*\\.dmg")) | .browser_download_url' | head -1)
+            URL_SUMS=$(echo "$RELEASE_JSON" | jq -r '.assets[] | select(.name == "sha256sums.txt") | .browser_download_url' | head -1)
             if [ -n "$URL_ARM" ] && [ "$URL_ARM" != "null" ] && \
-               [ -n "$URL_X86" ] && [ "$URL_X86" != "null" ]; then
+               [ -n "$URL_X86" ] && [ "$URL_X86" != "null" ] && \
+               [ -n "$URL_SUMS" ] && [ "$URL_SUMS" != "null" ]; then
               echo "aarch64: $URL_ARM"
               echo "x86_64:  $URL_X86"
+              echo "sums:    $URL_SUMS"
               echo "ASSET_URL_ARM=$URL_ARM" >> $GITHUB_ENV
               echo "ASSET_URL_X86=$URL_X86" >> $GITHUB_ENV
+              echo "ASSET_URL_SUMS=$URL_SUMS" >> $GITHUB_ENV
               break
             fi
             echo "[$i/20] 产物未就绪，等待 15s..."
             sleep 15
           done
-          if [ -z "$URL_ARM" ] || [ "$URL_ARM" = "null" ]; then
-            echo "::error::未找到 macOS 分架构 DMG 产物"
+          if [ -z "$URL_ARM" ] || [ "$URL_ARM" = "null" ] || \
+             [ -z "$URL_SUMS" ] || [ "$URL_SUMS" = "null" ]; then
+            echo "::error::未找到 macOS 分架构 DMG 或 sha256sums.txt 产物"
             exit 1
           fi
 
-      - name: 下载并计算 Hash
+      - name: 从 sha256sums.txt 读取 Hash
         run: |
-          curl -L -o zedg-aarch64.dmg "$ASSET_URL_ARM"
-          curl -L -o zedg-x86_64.dmg  "$ASSET_URL_X86"
-          SHA256_ARM=$(sha256sum zedg-aarch64.dmg | awk '{print $1}')
-          SHA256_X86=$(sha256sum zedg-x86_64.dmg  | awk '{print $1}')
+          # 直接读取发版时生成的校验和，避免下载 DMG 计入下载次数
+          SUMS=$(curl -fsSL "$ASSET_URL_SUMS")
+          SHA256_ARM=$(echo "$SUMS" | awk -v f="$(basename "$ASSET_URL_ARM")" '$2==f {print $1}')
+          SHA256_X86=$(echo "$SUMS" | awk -v f="$(basename "$ASSET_URL_X86")" '$2==f {print $1}')
+          if [ ${#SHA256_ARM} -ne 64 ] || [ ${#SHA256_X86} -ne 64 ]; then
+            echo "::error::sha256sums.txt 中未找到 DMG 校验和"
+            exit 1
+          fi
           echo "SHA256_ARM=$SHA256_ARM" >> $GITHUB_ENV
           echo "SHA256_X86=$SHA256_X86" >> $GITHUB_ENV
           echo "aarch64 SHA256: $SHA256_ARM"
           echo "x86_64  SHA256: $SHA256_X86"
-          rm zedg-aarch64.dmg zedg-x86_64.dmg
 
       - name: 生成 Homebrew Cask
         run: |
