@@ -241031,6 +241031,21 @@
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " color-interpolation-filters=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " filter=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " filterUnits=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": " font-family=",
             "reason": "ai:translate-empty"
         },
@@ -241046,7 +241061,27 @@
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " in2=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " result=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " scale=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": " text-decoration=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " transform=",
             "reason": "ai:translate-empty"
         },
         {
@@ -241061,12 +241096,22 @@
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " xChannelSelector=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": " xmlns=",
             "reason": "ai:code_snippet"
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": " y=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": " yChannelSelector=",
             "reason": "ai:translate-empty"
         },
         {
@@ -241116,6 +241161,21 @@
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": "/></filter><rect width=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": "/></svg>",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": "/><feDisplacementMap in=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": "1",
             "reason": "rule:numeric"
         },
@@ -241148,6 +241208,11 @@
             "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": "></svg>",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": "><feFlood flood-color=",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
@@ -345911,6 +345976,16 @@
         },
         {
             "file": "zed/crates/project/tests/integration/project_tests.rs",
+            "original": "/outside",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/project_tests.rs",
+            "original": "/outside/b.rs",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/project_tests.rs",
             "original": "/parent",
             "reason": "rule:path"
         },
@@ -346383,6 +346458,11 @@
             "file": "zed/crates/project/tests/integration/project_tests.rs",
             "original": "/tmp",
             "reason": "rule:path"
+        },
+        {
+            "file": "zed/crates/project/tests/integration/project_tests.rs",
+            "original": "/with_settings",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/project/tests/integration/project_tests.rs",
@@ -366841,6 +366921,11 @@
         },
         {
             "file": "zed/crates/remote/src/remote_client.rs",
+            "original": "Client exited with exit_code 255",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/remote_client.rs",
             "original": "Connecting task is dead, removing it and restarting a connection",
             "reason": "api_identifier"
         },
@@ -366927,6 +367012,11 @@
         {
             "file": "zed/crates/remote/src/remote_client.rs",
             "original": "Windows",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/remote/src/remote_client.rs",
+            "original": "a new connection took over the remote server {}, stopping this client",
             "reason": "ai:translate-empty"
         },
         {
