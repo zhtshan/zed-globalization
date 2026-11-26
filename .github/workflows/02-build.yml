@@ -665,6 +665,23 @@ jobs:
             }
             if ($i -lt 3) { Write-Host "等待 30 秒后重试..."; Start-Sleep -Seconds 30 }
           }
+          # Chocolatey 社区源偶发 503/504，回退到 SourceForge 官方安装包静默安装
+          $nsisUrl = "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.13/nsis-3.13-setup.exe"
+          $nsisExe = Join-Path $env:RUNNER_TEMP "nsis-setup.exe"
+          for ($i = 1; $i -le 3; $i++) {
+            Write-Host "SourceForge 下载 NSIS 尝试 $i/3..."
+            try {
+              Invoke-WebRequest -Uri $nsisUrl -OutFile $nsisExe -UserAgent "Wget" -MaximumRedirection 10
+              Start-Process -FilePath $nsisExe -ArgumentList "/S" -Wait
+              if (Test-Path "C:\Program Files (x86)\NSIS\makensis.exe") {
+                Write-Host "NSIS 安装成功（SourceForge）"
+                exit 0
+              }
+            } catch {
+              Write-Host "下载/安装失败: $_"
+            }
+            if ($i -lt 3) { Start-Sleep -Seconds 15 }
+          }
           Write-Host "::error::NSIS 安装失败"
           exit 1
 
@@ -1021,6 +1038,23 @@ jobs:
               exit 0
             }
             if ($i -lt 3) { Write-Host "等待 30 秒后重试..."; Start-Sleep -Seconds 30 }
+          }
+          # Chocolatey 社区源偶发 503/504，回退到 SourceForge 官方安装包静默安装
+          $nsisUrl = "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.13/nsis-3.13-setup.exe"
+          $nsisExe = Join-Path $env:RUNNER_TEMP "nsis-setup.exe"
+          for ($i = 1; $i -le 3; $i++) {
+            Write-Host "SourceForge 下载 NSIS 尝试 $i/3..."
+            try {
+              Invoke-WebRequest -Uri $nsisUrl -OutFile $nsisExe -UserAgent "Wget" -MaximumRedirection 10
+              Start-Process -FilePath $nsisExe -ArgumentList "/S" -Wait
+              if (Test-Path "C:\Program Files (x86)\NSIS\makensis.exe") {
+                Write-Host "NSIS 安装成功（SourceForge）"
+                exit 0
+              }
+            } catch {
+              Write-Host "下载/安装失败: $_"
+            }
+            if ($i -lt 3) { Start-Sleep -Seconds 15 }
           }
           Write-Host "::error::NSIS 安装失败"
           exit 1
