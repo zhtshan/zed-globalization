@@ -17505,7 +17505,9 @@
         "{}: expected {expected:?} in {highlights:?}": "",
         "type highlight should be defined": "",
         "function highlight should be defined": "",
-        "{} highlights should exclude annotation whitespace and the arrow body": ""
+        "{} highlights should exclude annotation whitespace and the arrow body": "",
+        "class B { add(): this { return this; } }\\nfunction log(): void { void 0; }": "",
+        "const value:  number = 1;\\nconst identity = (input: number): number => { return input; };": ""
     },
     "zed/crates/line_ending_selector/src/line_ending_indicator.rs": {
         "change-line-ending": "",
@@ -49954,7 +49956,8 @@
         "git never opened the included config": "",
         "git command is still running": "",
         "git command in {repository:?} timed out": "",
-        "the timed out git process is still running": ""
+        "the timed out git process is still running": "",
+        ".git/included": ""
     },
     "zed/crates/fs/src/fs_watcher.rs": {
         "watcher add: {path:?}": "watcher add: {path:?}",
@@ -53341,7 +53344,8 @@
         "changed": "",
         " x=": "",
         " y=": "",
-        ">{text}</text></svg>": ""
+        ">{text}</text></svg>": "",
+        "><filter id=": ""
     },
     "zed/crates/gpui/src/tab_stop.rs": {
         "The order node did not correspond to an element, this is a GPUI bug": "顺序节点未对应任何元素,这是 GPUI 的 bug"
@@ -57880,7 +57884,8 @@
         "quad is painted": "",
         " ({url})": "",
         "Read docs (/guide) preview https://example.org": "",
-        " world": ""
+        " world": "",
+        "**[Read `docs`][ref]** ![preview](data:image/png;base64,AA==) <https://example.org>\\n\\n[ref]: /guide": ""
     },
     "zed/crates/markdown/src/parser.rs": {
         "Fenced": "",
@@ -59785,7 +59790,12 @@
         "range {start_row}..{end_row}": "",
         "range {start_row}..={end_row}": "",
         "line {index}": "",
-        "visited {steps} excerpts for a range that covers {} of {buffer_count}": ""
+        "visited {steps} excerpts for a range that covers {} of {buffer_count}": "",
+        "a1\\na2": "",
+        "b1\\nB2\\nb3\\nB4\\nb5": "",
+        "c1\\nc2": "",
+        "b1\\nb2\\nb3\\nb4\\nb5": "",
+        "a1\\na2\\nb1\\nb2\\nB2\\nb3\\nb4\\nB4\\nb5\\nc1\\nc2\\nd1": ""
     },
     "zed/crates/net/src/async_net.rs": {
         "windows": ""
@@ -103827,7 +103837,8 @@
         "dirlink/../target.lock": "",
         "a `..` in a symlink's target applies to the directory the symlinks before it lead to": "",
         "truncated.lock": "",
-        "truncating a file doesn't release the locks on it": ""
+        "truncating a file doesn't release the locks on it": "",
+        "../elsewhere/subdir": ""
     },
     "zed/crates/fuzzy_nucleo/src/fuzzy_nucleo.rs": {
         "Editor: Backspace": "",
@@ -112317,7 +112328,12 @@
         "ref: refs/heads/topic\\n": "",
         ".delta/clones/{name}/project.git": "",
         ".delta/worktrees/{name}/project": "",
-        "--file": ""
+        "--file": "",
+        "": "",
+        "\\\\\\\\": "",
+        "', ": "",
+        "\\\\n": "",
+        "[{label}]": ""
     },
     "zed/crates/git_ui_core/src/worktree_service.rs": {
         "refs/remotes/": "",
@@ -121455,6 +121471,7 @@
         "home\\project\\.git": "",
         "home\\other": "",
         "home\\other\\.git": "",
-        "home\\.config": ""
+        "home\\.config": "",
+        "{}:\\\\": ""
     }
 }

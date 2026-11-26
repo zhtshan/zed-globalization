@@ -210131,6 +210131,11 @@
         },
         {
             "file": "zed/crates/fs/src/fs.rs",
+            "original": ".git/included",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/fs/src/fs.rs",
             "original": "/",
             "reason": "rule:punctuation"
         },
@@ -211863,6 +211868,11 @@
             "file": "zed/crates/fs/tests/integration/fs_tests.rs",
             "original": "#!/bin/sh\\n",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/fs/tests/integration/fs_tests.rs",
+            "original": "../elsewhere/subdir",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/fs/tests/integration/fs_tests.rs",
@@ -231926,7 +231936,17 @@
         },
         {
             "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
+            "original": "",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
             "original": " • ",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
+            "original": "', ",
             "reason": "ai:translate-empty"
         },
         {
@@ -232602,6 +232622,21 @@
         {
             "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
             "original": "[core]\\n\\tworktree = ../../relative\\n",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
+            "original": "[{label}]",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
+            "original": "\\\\\\\\",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/git_ui_core/src/worktree_picker.rs",
+            "original": "\\\\n",
             "reason": "ai:translate-empty"
         },
         {
@@ -247367,6 +247402,11 @@
         {
             "file": "zed/crates/gpui/src/svg_renderer.rs",
             "original": "><feFlood flood-color=",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/gpui/src/svg_renderer.rs",
+            "original": "><filter id=",
             "reason": "ai:translate-empty"
         },
         {
@@ -297441,6 +297481,11 @@
         },
         {
             "file": "zed/crates/languages/src/typescript.rs",
+            "original": "class B { add(): this { return this; } }\\nfunction log(): void { void 0; }",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/languages/src/typescript.rs",
             "original": "class DataHandler",
             "reason": "ai:code_snippet"
         },
@@ -297628,6 +297673,11 @@
             "file": "zed/crates/languages/src/typescript.rs",
             "original": "const sym",
             "reason": "ai:code_snippet"
+        },
+        {
+            "file": "zed/crates/languages/src/typescript.rs",
+            "original": "const value:  number = 1;\\nconst identity = (input: number): number => { return input; };",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/languages/src/typescript.rs",
@@ -303538,6 +303588,11 @@
             "file": "zed/crates/markdown/src/markdown.rs",
             "original": "***\\n",
             "reason": "ai:test_assertion"
+        },
+        {
+            "file": "zed/crates/markdown/src/markdown.rs",
+            "original": "**[Read `docs`][ref]** ![preview](data:image/png;base64,AA==) <https://example.org>\\n\\n[ref]: /guide",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/markdown/src/markdown.rs",
@@ -317731,6 +317786,16 @@
         },
         {
             "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
+            "original": "a1\\na2",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
+            "original": "a1\\na2\\nb1\\nb2\\nB2\\nb3\\nb4\\nB4\\nb5\\nc1\\nc2\\nd1",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
             "original": "a\\n",
             "reason": "rule:test_fixture"
         },
@@ -317966,6 +318031,16 @@
         },
         {
             "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
+            "original": "b1\\nB2\\nb3\\nB4\\nb5",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
+            "original": "b1\\nb2\\nb3\\nb4\\nb5",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
             "original": "bar",
             "reason": "ai:test_assertion"
         },
@@ -318073,6 +318148,11 @@
             "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
             "original": "c\n",
             "reason": "rule:test_fixture"
+        },
+        {
+            "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
+            "original": "c1\\nc2",
+            "reason": "ai:translate-empty"
         },
         {
             "file": "zed/crates/multi_buffer/src/multi_buffer_tests.rs",
@@ -395302,6 +395382,11 @@
         {
             "file": "zed/crates/sandbox/src/windows_psec.rs",
             "original": "{error:#}",
+            "reason": "ai:translate-empty"
+        },
+        {
+            "file": "zed/crates/sandbox/src/windows_psec.rs",
+            "original": "{}:\\\\",
             "reason": "ai:translate-empty"
         },
         {
