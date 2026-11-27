@@ -368,51 +368,35 @@ jobs:
 
       - name: 安装 sccache
         shell: pwsh
+        env:
+          # 固定 >= v0.20.0：修复 Windows 上 rustc 命令行过长 (os error 206, mozilla/sccache#3026)
+          # Chocolatey 源仍为 v0.19.0，不再使用
+          SCCACHE_VERSION: v0.20.1
         run: |
           $installed = $false
+          $name    = "sccache-$env:SCCACHE_VERSION-x86_64-pc-windows-msvc"
+          $url     = "https://github.com/mozilla/sccache/releases/download/$env:SCCACHE_VERSION/$name.zip"
+          $zipPath = "D:\temp\sccache.zip"
+          $binDir  = "D:\temp\sccache-bin"
 
-          # 方案1: choco 安装（最多重试 3 次）
           for ($i = 1; $i -le 3; $i++) {
-            Write-Host "Chocolatey 安装 sccache 尝试 $i/3..."
-            choco install sccache -y --no-progress 2>&1
-            if ($LASTEXITCODE -eq 0 -and (Get-Command sccache -ErrorAction SilentlyContinue)) {
-              Write-Host "choco 安装成功"
-              $installed = $true
-              break
-            }
-            Write-Host "第 $i 次安装失败 (exit=$LASTEXITCODE)"
-            if ($i -lt 3) { Write-Host "等待 30 秒后重试..."; Start-Sleep -Seconds 30 }
-          }
-
-          # 方案2: 直接从 GitHub Releases 下载
-          if (-not $installed) {
-            Write-Host "choco 安装失败，尝试从 GitHub Releases 直接下载..."
+            Write-Host "下载 sccache $env:SCCACHE_VERSION 尝试 $i/3: $url"
             try {
-              $release = Invoke-RestMethod "https://api.github.com/repos/mozilla/sccache/releases/latest"
-              $asset = $release.assets | Where-Object {
-                $_.name -match "x86_64-pc-windows-msvc" -and $_.name -match "\.zip$"
-              } | Select-Object -First 1
-              if ($asset) {
-                Write-Host "下载: $($asset.browser_download_url)"
-                $zipPath = "D:\temp\sccache.zip"
-                $binDir  = "D:\temp\sccache-bin"
-                Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $zipPath -UseBasicParsing
-                Expand-Archive -Path $zipPath -DestinationPath $binDir -Force
-                $sccacheExe = Get-ChildItem -Path $binDir -Filter "sccache.exe" -Recurse | Select-Object -First 1
-                if ($sccacheExe) {
+              Invoke-WebRequest -Uri $url -OutFile $zipPath -UseBasicParsing
+              Expand-Archive -Path $zipPath -DestinationPath $binDir -Force
+              $sccacheExe = Get-ChildItem -Path $binDir -Filter "sccache.exe" -Recurse | Select-Object -First 1
+              if ($sccacheExe) {
+                & "$($sccacheExe.FullName)" --version
+                if ($LASTEXITCODE -eq 0) {
                   echo "$($sccacheExe.DirectoryName)" >> $env:GITHUB_PATH
-                  & "$($sccacheExe.FullName)" --version
-                  if ($LASTEXITCODE -eq 0) {
-                    Write-Host "GitHub Releases 安装成功"
-                    $installed = $true
-                  }
+                  $installed = $true
+                  break
                 }
-              } else {
-                Write-Host "未找到 Windows x86_64 资产"
               }
             } catch {
-              Write-Host "GitHub Releases 下载失败: $_"
+              Write-Host "第 $i 次下载失败: $_"
             }
+            if ($i -lt 3) { Start-Sleep -Seconds 15 }
           }
 
           if ($installed) {
@@ -756,53 +740,35 @@ jobs:
 
       - name: 安装 sccache
         shell: pwsh
+        env:
+          # 固定 >= v0.20.0：修复 Windows 上 rustc 命令行过长 (os error 206, mozilla/sccache#3026)
+          # Chocolatey 源仍为 v0.19.0，不再使用
+          SCCACHE_VERSION: v0.20.1
         run: |
           $installed = $false
+          $name    = "sccache-$env:SCCACHE_VERSION-aarch64-pc-windows-msvc"
+          $url     = "https://github.com/mozilla/sccache/releases/download/$env:SCCACHE_VERSION/$name.zip"
+          $zipPath = "C:\temp\sccache.zip"
+          $binDir  = "C:\temp\sccache-bin"
 
-          # 方案1: choco 安装（最多重试 3 次）
-          if (Get-Command choco -ErrorAction SilentlyContinue) {
-            for ($i = 1; $i -le 3; $i++) {
-              Write-Host "Chocolatey 安装 sccache 尝试 $i/3..."
-              choco install sccache -y --no-progress 2>&1
-              if ($LASTEXITCODE -eq 0 -and (Get-Command sccache -ErrorAction SilentlyContinue)) {
-                Write-Host "choco 安装成功"
-                $installed = $true
-                break
-              }
-              Write-Host "第 $i 次安装失败 (exit=$LASTEXITCODE)"
-              if ($i -lt 3) { Write-Host "等待 30 秒后重试..."; Start-Sleep -Seconds 30 }
-            }
-          }
-
-          # 方案2: 直接从 GitHub Releases 下载 ARM64 版本
-          if (-not $installed) {
-            Write-Host "尝试从 GitHub Releases 直接下载 ARM64 版本..."
+          for ($i = 1; $i -le 3; $i++) {
+            Write-Host "下载 sccache $env:SCCACHE_VERSION 尝试 $i/3: $url"
             try {
-              $release = Invoke-RestMethod "https://api.github.com/repos/mozilla/sccache/releases/latest"
-              $asset = $release.assets | Where-Object {
-                $_.name -match "aarch64-pc-windows-msvc" -and $_.name -match "\.zip$"
-              } | Select-Object -First 1
-              if ($asset) {
-                Write-Host "下载: $($asset.browser_download_url)"
-                $zipPath = "C:\temp\sccache.zip"
-                $binDir  = "C:\temp\sccache-bin"
-                Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $zipPath -UseBasicParsing
-                Expand-Archive -Path $zipPath -DestinationPath $binDir -Force
-                $sccacheExe = Get-ChildItem -Path $binDir -Filter "sccache.exe" -Recurse | Select-Object -First 1
-                if ($sccacheExe) {
+              Invoke-WebRequest -Uri $url -OutFile $zipPath -UseBasicParsing
+              Expand-Archive -Path $zipPath -DestinationPath $binDir -Force
+              $sccacheExe = Get-ChildItem -Path $binDir -Filter "sccache.exe" -Recurse | Select-Object -First 1
+              if ($sccacheExe) {
+                & "$($sccacheExe.FullName)" --version
+                if ($LASTEXITCODE -eq 0) {
                   echo "$($sccacheExe.DirectoryName)" >> $env:GITHUB_PATH
-                  & "$($sccacheExe.FullName)" --version
-                  if ($LASTEXITCODE -eq 0) {
-                    Write-Host "GitHub Releases 安装成功"
-                    $installed = $true
-                  }
+                  $installed = $true
+                  break
                 }
-              } else {
-                Write-Host "未找到 Windows ARM64 资产"
               }
             } catch {
-              Write-Host "GitHub Releases 下载失败: $_"
+              Write-Host "第 $i 次下载失败: $_"
             }
+            if ($i -lt 3) { Start-Sleep -Seconds 15 }
           }
 
           if ($installed) {
